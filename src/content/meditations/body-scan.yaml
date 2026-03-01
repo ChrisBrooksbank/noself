@@ -1,0 +1,108 @@
+id: body-scan
+title: Body Scan
+description: >
+    Systematically move awareness through the body from feet to head,
+    cultivating intimate contact with physical sensations and releasing
+    held tension through patient, non-judgmental attention.
+durations:
+    - 10
+    - 20
+steps:
+    10:
+        - instruction: >
+              Lie down or sit in a comfortable position. Let the body settle and
+              be still. Gently close your eyes.
+          durationSeconds: 30
+        - instruction: >
+              Take three slow, deep breaths. With each exhale, let the body
+              release a little more weight into whatever supports it.
+          durationSeconds: 40
+        - instruction: >
+              Bring your attention to the soles of your feet. Notice any
+              sensations there — pressure, warmth, tingling, or perhaps nothing
+              at all. Simply observe without trying to change anything.
+          durationSeconds: 90
+        - instruction: >
+              Slowly move awareness up through the lower legs, knees, and thighs.
+              Notice heaviness, tension, or ease. There is no right way to feel —
+              just observe what is actually present.
+          durationSeconds: 90
+        - instruction: >
+              Move attention to the hips, pelvis, and lower abdomen. Notice the
+              contact between your body and the surface beneath you. Breathe
+              gently into this area.
+          durationSeconds: 90
+        - instruction: >
+              Bring awareness up through the belly, chest, and back. Notice the
+              rise and fall of the breath. Let the chest soften with each exhale.
+          durationSeconds: 80
+        - instruction: >
+              Move attention to the shoulders, arms, and hands. Let the shoulders
+              drop. Notice any tension in the arms and let it release naturally.
+          durationSeconds: 90
+        - instruction: >
+              Bring awareness to the neck, head, and face. Soften the jaw, the
+              forehead, and the space around the eyes. Take one final breath.
+              When you are ready, gently open your eyes.
+          durationSeconds: 90
+    20:
+        - instruction: >
+              Lie down on your back or sit in a comfortable position. Let the
+              body be completely still. Close your eyes and allow yourself to
+              arrive here.
+          durationSeconds: 30
+        - instruction: >
+              Take three slow, deliberate breaths. With each exhale, let the
+              body release more fully into the support beneath you. There is
+              nothing to do but feel.
+          durationSeconds: 50
+        - instruction: >
+              Bring awareness to the soles of your feet. Notice whatever
+              sensations are present — pressure, temperature, tingling. You are
+              not trying to relax them; simply feel them with curiosity.
+          durationSeconds: 100
+        - instruction: >
+              Move awareness slowly up to the ankles and lower legs. Notice the
+              quality of sensation here. If you find tension, simply observe it
+              without trying to fix it.
+          durationSeconds: 100
+        - instruction: >
+              Bring attention to the knees and upper legs. Notice the weight of
+              the thighs, the feeling of the surface beneath them. Simply rest
+              awareness here.
+          durationSeconds: 100
+        - instruction: >
+              Move to the hips and pelvis. Notice any sensation — heaviness,
+              pressure, ease, numbness. Breathe gently and let this area be
+              exactly as it is.
+          durationSeconds: 100
+        - instruction: >
+              Bring awareness to the lower back and abdomen. With each breath,
+              notice the subtle movement of the belly. Let the lower back
+              release toward the floor or cushion.
+          durationSeconds: 100
+        - instruction: >
+              Move attention to the upper back, chest, and ribs. Notice the
+              rhythm of breathing in this area — the expansion and contraction.
+              Let the chest soften with each exhale.
+          durationSeconds: 100
+        - instruction: >
+              Bring awareness to the shoulders. This is often where we carry
+              tension without knowing it. Observe what is actually here without
+              judging it. Let the shoulders be heavy.
+          durationSeconds: 100
+        - instruction: >
+              Move down through the upper arms, elbows, forearms, and into the
+              hands and fingers. Notice any pulsing, warmth, or tingling in
+              the palms and fingertips.
+          durationSeconds: 100
+        - instruction: >
+              Bring awareness to the neck — front, back, and sides. Soften any
+              holding here. Let the head feel supported.
+          durationSeconds: 100
+        - instruction: >
+              Move awareness slowly through the face — the jaw, the mouth,
+              the cheeks, the eyes, the forehead. Soften the muscles around the
+              eyes. Let the scalp relax. Now hold the whole body in awareness
+              at once — from the crown of the head to the soles of the feet.
+          durationSeconds: 120

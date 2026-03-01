@@ -1,0 +1,177 @@
+id: vipassana
+title: Vipassana (Insight)
+description: >
+    Investigate the three characteristics of experience — impermanence, unsatisfactoriness,
+    and non-self — through sustained, precise observation of arising and passing phenomena.
+    This practice develops clear seeing that leads to liberation.
+durations:
+    - 10
+    - 20
+    - 30
+steps:
+    10:
+        - instruction: >
+              Find an upright, still posture. Gently close your eyes. Establish
+              the intention to observe clearly, without grasping or pushing away.
+          durationSeconds: 30
+        - instruction: >
+              Begin with three settling breaths. Let the body become quiet. You
+              are here to watch — not to control.
+          durationSeconds: 40
+        - instruction: >
+              Allow awareness to rest on physical sensations in the body. Notice
+              sensations arising and passing — tingling, pressure, warmth, coolness.
+              Observe each one without labeling it as good or bad.
+          durationSeconds: 90
+        - instruction: >
+              Notice the impermanence of each sensation. It arises — and then it
+              passes. Nothing stays the same for even two moments. See this
+              directly, not as an idea but as lived experience.
+          durationSeconds: 90
+        - instruction: >
+              Practice noting: when a sensation arises, note it silently as
+              "rising" — when it passes, note "passing." When a sound appears,
+              note "hearing." When a thought arises, note "thinking." Stay
+              close to direct experience.
+          durationSeconds: 90
+        - instruction: >
+              Who is doing the noting? See if you can find the observer. Notice
+              that the noting and the observed both arise and pass. There may be
+              no fixed self behind the experience — just experience itself.
+          durationSeconds: 80
+        - instruction: >
+              Continue watching. Let sensations, sounds, and thoughts come and
+              go without holding on. Each moment is complete. Each moment
+              passes. This is the nature of experience.
+          durationSeconds: 90
+        - instruction: >
+              Take a slow, full breath. Let awareness expand to include the whole
+              body. When you are ready, gently open your eyes.
+          durationSeconds: 90
+    20:
+        - instruction: >
+              Settle into an upright posture. Close your eyes. Set the intention
+              to observe experience as it is — not as you want it to be.
+          durationSeconds: 30
+        - instruction: >
+              Take three slow breaths to settle the mind. Let each exhale be a
+              small release of effort. You are here to watch.
+          durationSeconds: 40
+        - instruction: >
+              Begin by feeling the body from the inside. What sensations are
+              present? Pressure, vibration, warmth, heaviness, tingling. Rest
+              awareness here without grasping any particular sensation.
+          durationSeconds: 100
+        - instruction: >
+              Observe that every sensation arises and passes. Nothing remains
+              fixed. Even a persistent sensation — like back pressure — shifts
+              slightly moment to moment. See this impermanence clearly: anicca.
+          durationSeconds: 120
+        - instruction: >
+              Practice noting. When the breath rises: "rising." When it falls:
+              "falling." When a sound appears: "hearing." When a thought
+              forms: "thinking." Stay close to bare experience — not the story
+              about experience, but the raw fact of it.
+          durationSeconds: 100
+        - instruction: >
+              Notice that many arising phenomena are uninvited. Thoughts appear
+              without you choosing them. Sensations arise on their own. This is
+              the mark of dukkha — experience often resists our control. Observe
+              this without adding suffering to suffering.
+          durationSeconds: 100
+        - instruction: >
+              Continue with equanimity. When pleasant sensations arise, notice
+              the pull toward them. When unpleasant sensations arise, notice the
+              push away from them. Gently release both and return to bare
+              observation.
+          durationSeconds: 120
+        - instruction: >
+              Expand awareness to include all phenomena at once: sensations,
+              sounds, thoughts, the sense of breathing. Let awareness be wide
+              and open — receiving everything without grasping anything.
+          durationSeconds: 120
+        - instruction: >
+              Inquire into the observer. Is there a fixed self behind this
+              awareness? Or does the observer itself arise and pass, just like
+              what it observes? Rest with this question — not as philosophy but
+              as direct investigation.
+          durationSeconds: 120
+        - instruction: >
+              In these final minutes, continue watching everything that arises
+              and passes. You are not building anything, not getting anywhere —
+              simply seeing clearly.
+          durationSeconds: 100
+        - instruction: >
+              Take a slow, full breath. Gently return awareness to the body as
+              a whole. When you are ready, softly open your eyes.
+          durationSeconds: 150
+    30:
+        - instruction: >
+              Settle into an upright posture. Let the spine be long. Close your
+              eyes. Establish the intention: to observe clearly, without grasping
+              or aversion, whatever arises.
+          durationSeconds: 30
+        - instruction: >
+              Take three deep, settling breaths. Let each exhale carry away
+              hurry, effort, and expectation. You are simply here — watching.
+          durationSeconds: 50
+        - instruction: >
+              Rest awareness on the body. Without trying to change anything,
+              feel the body from the inside. What sensations are present?
+              Where is there pressure, warmth, vibration, stillness?
+          durationSeconds: 150
+        - instruction: >
+              Observe the arising and passing of sensations. Nothing is fixed.
+              Even the feeling of your hands in your lap — it shifts, pulses,
+              changes. This impermanence — anicca — is the most fundamental
+              characteristic of conditioned experience.
+          durationSeconds: 150
+        - instruction: >
+              Introduce the noting technique. Label each predominant experience
+              softly and silently: "rising, falling" with the breath. "Thinking"
+              when thought arises. "Hearing" for sounds. "Feeling" for
+              sensations. Let the labels be light — a gentle acknowledgment.
+          durationSeconds: 150
+        - instruction: >
+              Notice the three characteristics directly. Anicca: nothing stays.
+              Dukkha: even pleasant experience is unstable and cannot be held.
+              Anatta: look for the one who is experiencing — can you find a
+              fixed, permanent self? Or just more arising and passing?
+          durationSeconds: 180
+        - instruction: >
+              Cultivate equanimity. Let phenomena arise and pass without
+              preference. When pleasant sensations appear, note: "pleasant."
+              When unpleasant appear, note: "unpleasant." Neither grasped,
+              neither rejected. Simply seen.
+          durationSeconds: 180
+        - instruction: >
+              Expand awareness to include sounds — both near and distant. Every
+              sound arises, exists briefly, and dissolves. Note: "hearing."
+              Let sounds be just sounds — not interpretations, not stories.
+          durationSeconds: 150
+        - instruction: >
+              Watch mental events: thoughts, images, intentions, emotions. Each
+              is like a bubble rising in water — it appears, exists for a moment,
+              and pops. Note "thinking" or "imagining" and let each pass.
+          durationSeconds: 150
+        - instruction: >
+              Rest now in wide, open awareness. All phenomena — breath,
+              sensation, sound, thought — arise and pass within this open
+              field. You are not inside awareness. You are not separate from it.
+              There is just seeing, just hearing, just knowing.
+          durationSeconds: 150
+        - instruction: >
+              Continue in this open observation. Wherever the mind goes, let
+              it return to bare noticing — not to a self watching, but to
+              watching itself. This clarity is vipassana.
+          durationSeconds: 150
+        - instruction: >
+              In these final minutes, let practice simply be presence. No
+              technique needed — just clear, open, undefended awareness of
+              whatever arises. Rest here.
+          durationSeconds: 180
+        - instruction: >
+              Gently deepen the breath. Become aware of the sounds in the room.
+              Feel the body as a whole. When you are ready, slowly open your
+              eyes and let the quality of clear seeing extend into the day.
+          durationSeconds: 130

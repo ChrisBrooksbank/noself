@@ -1,0 +1,23 @@
+id: dependent-origination-prompts
+conceptId: dependent-origination
+prompts:
+    - id: dependent-origination-1
+      conceptId: dependent-origination
+      depth: beginner
+      question: Think of a recent emotional reaction you had -- frustration, anxiety, or irritation. What conditions came together to produce it? Could it have arisen without those conditions?
+      guidance: >
+          Choose a mild reaction from today or recently. Trace it back: what triggered it? What mood were you in beforehand? What expectations or beliefs were operating? What had happened in the hours or days before? Notice how many conditions had to align for that specific reaction to arise in that specific way. No single condition was sufficient on its own. This is dependent origination in everyday experience -- nothing arises from a single cause, and nothing arises from no cause at all.
+
+    - id: dependent-origination-2
+      conceptId: dependent-origination
+      depth: intermediate
+      question: The teaching of dependent origination describes how suffering perpetuates itself through a chain running from ignorance to craving to clinging to becoming. Can you trace this chain in a pattern from your own life?
+      guidance: >
+          Bring to mind a recurring pattern in your experience -- a habit, a relationship dynamic, a way you tend to react under stress. Now trace it through the links: where is there ignorance (not seeing clearly)? Where does craving arise from that? Where does clinging follow? What kind of "becoming" -- reinforcing a self-concept or way of being -- perpetuates the cycle? You are not judging yourself -- you are mapping a mechanism. Seeing the mechanism clearly is the beginning of freedom from it.
+
+    - id: dependent-origination-3
+      conceptId: dependent-origination
+      depth: advanced
+      question: If all phenomena arise dependently, including the mind that perceives them, what is the basis for a genuine spiritual path? Who walks it?
+      guidance: >
+          This is the deep question: if the practitioner is also a dependent arising -- constructed from conditions, moment by moment -- what does it mean to "practice" or "awaken"? Contemplate the paradox: Buddhist practice is directed toward liberation from a self that, upon investigation, was never fixed to begin with. Yet the path is real, the effort matters, the transformation is genuine. Rest with the tension between the conventional truth (a practitioner walking a path) and the ultimate truth (no fixed practitioner, no fixed path). Both are true, neither is absolute.

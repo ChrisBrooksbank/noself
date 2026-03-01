@@ -1,0 +1,23 @@
+id: five-aggregates-prompts
+conceptId: five-aggregates
+prompts:
+    - id: five-aggregates-1
+      conceptId: five-aggregates
+      depth: beginner
+      question: Right now, what are you experiencing? Can you sort your experience into physical sensations, feelings of pleasant or unpleasant or neutral, perceptions, mental activity, and consciousness?
+      guidance: >
+          Take a moment to sit quietly and inventory your present experience. Notice physical sensations -- weight, temperature, tension, the contact of your body with the seat. Notice the feeling tone: are these sensations pleasant, unpleasant, or neutral? Notice perceptions arising -- recognizing sounds, sights, smells as specific things. Notice mental formations -- thoughts, intentions, mood, attention moving. Finally, notice the bare fact of being aware: consciousness itself. You have just scanned the five aggregates (skandhas) that constitute experience. None of them is "you" -- they are what experience is made of.
+
+    - id: five-aggregates-2
+      conceptId: five-aggregates
+      depth: intermediate
+      question: The Buddha asked whether the five aggregates are self. If they are not-self, where is the self? Is there anything left when you remove body, feeling, perception, mental formations, and consciousness?
+      guidance: >
+          Sit and systematically examine each aggregate: is the body you? No -- it changes, you have no ultimate control over it. Are your feelings you? They arise and pass, often unexpectedly. Are your perceptions you? They are shaped by conditioning and context. Are your thoughts and intentions you? They arise unbidden. Is consciousness itself you? It too depends on conditions. After releasing identification with each, what remains? Notice whether there is a sense of "still something here" -- or whether that too is another aggregate trying to claim selfhood.
+
+    - id: five-aggregates-3
+      conceptId: five-aggregates
+      depth: advanced
+      question: If consciousness itself is one of the five aggregates, conditioned and not-self, what does awareness mean in a post-egoic context? Is there a witness that is not itself witnessed?
+      guidance: >
+          Many contemplative paths posit an unconditioned "pure awareness" underlying experience -- a witness that is never itself an object. Buddhist analysis, particularly in the Pali texts, treats even this sense of a witnessing presence as a subtle form of clinging -- making consciousness into a self. Sit with this carefully: is there an awareness that is genuinely not another conditioned arising? Or does the sense of "pure witnessing" dissolve under sufficiently close investigation? This is among the most refined inquiries in Buddhist philosophy -- not to be forced to a conclusion, but held with precision and humility.

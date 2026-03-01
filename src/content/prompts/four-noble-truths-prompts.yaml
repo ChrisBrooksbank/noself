@@ -1,0 +1,30 @@
+id: four-noble-truths-prompts
+conceptId: four-noble-truths
+prompts:
+    - id: four-noble-truths-1
+      conceptId: four-noble-truths
+      depth: beginner
+      question: The First Noble Truth is often translated as "life is suffering" — but more precisely, it points to the pervasive unsatisfactoriness of conditioned existence. Where do you notice this in your daily life?
+      guidance: >
+          Sit quietly and scan your experience over the past day or week. Not the dramatic sufferings — but the subtle ones: waiting for something to be over, wanting something to be different, a low-level restlessness beneath ordinary moments. This is what the Buddha called dukkha — not necessarily acute pain, but a friction, a gap between how things are and how we want them to be. The First Noble Truth is not pessimistic — it is honest. Acknowledging it clearly is the beginning of a genuine path toward its resolution.
+
+    - id: four-noble-truths-2
+      conceptId: four-noble-truths
+      depth: beginner
+      question: The Second Noble Truth points to craving (tanha) as the origin of suffering. Right now, what are you craving — even subtly? What do you want to have, to become, or to avoid?
+      guidance: >
+          Let the question settle gently. You may notice obvious cravings: wanting something, avoiding discomfort, seeking approval or security. But also notice subtler forms: craving for pleasant experience to continue, craving for unpleasant experience to end, craving to be seen a certain way. The Second Noble Truth says: suffering doesn't arise from conditions themselves, but from our craving in relation to them. Notice the craving without judgment — you are mapping a mechanism, not condemning yourself.
+
+    - id: four-noble-truths-3
+      conceptId: four-noble-truths
+      depth: intermediate
+      question: The Third Noble Truth declares that the cessation of craving is possible — that liberation is not just an ideal but an actual human possibility. What does your own experience suggest about this? Have you known moments free from craving?
+      guidance: >
+          Contemplate: have you ever known moments of genuine stillness, or flow, or unexpected peace — moments when wanting seemed to pause and experience was simply complete as it was? These glimpses, however brief, are the Third Noble Truth touching ordinary life. They are not full liberation, but they are its flavor. Buddhism is unusual in that it presents freedom not as a theological promise but as an empirical possibility — something to be tested in direct experience. What do your own moments of ease, acceptance, or deep stillness tell you?
+
+    - id: four-noble-truths-4
+      conceptId: four-noble-truths
+      depth: advanced
+      question: The Fourth Noble Truth is the Eightfold Path — a complete way of living. How does the path operate as an integrated whole, rather than a checklist of separate practices?
+      guidance: >
+          The Eightfold Path is often listed as eight separate items, but the Buddha taught it as a mutually supporting whole. Right View shapes Right Intention; Right Speech, Action, and Livelihood embody intention in the world; Right Effort, Mindfulness, and Concentration train the mind to see clearly. Sit with a particular area of the path you find challenging — perhaps right speech, or right livelihood, or sustaining right effort. How does it connect to the other factors? How does weakness in one area affect the others? The path is not a ladder to climb but a wheel to turn: all parts must move together.

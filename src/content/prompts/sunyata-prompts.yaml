@@ -1,0 +1,23 @@
+id: sunyata-prompts
+conceptId: sunyata
+prompts:
+    - id: sunyata-1
+      conceptId: sunyata
+      depth: beginner
+      question: Pick up an ordinary object near you — a cup, a phone, a pen. What is it made of? What came before it? What would it be without its parts and history?
+      guidance: >
+          Hold the object or simply look at it. Begin to trace backwards: the materials it is made from, the people who made it, the resources extracted, the chain of causes and conditions that led to this thing being here in your hand. Notice: at what point does the "thing itself" appear? Is there a cup independent of clay, water, fire, labor, design, and use? Sunyata — emptiness — does not mean the cup is nothing. It means the cup lacks a self-contained, independent existence. It is full of everything that is not it.
+
+    - id: sunyata-2
+      conceptId: sunyata
+      depth: intermediate
+      question: How do you define yourself? Now look at those definitions — your roles, traits, history, preferences. What are they empty of? What are they full of?
+      guidance: >
+          Sit quietly and let the question land: who are you? List the answers that arise — roles, relationships, characteristics, memories, values. For each one, ask: does this exist independently, or is it dependent on relationships, circumstances, and other people? A "parent" requires a child. A "kind person" requires others to be kind toward. A "memory" requires a past that is itself a web of conditions. Notice that emptiness of inherent existence is not absence — it is radical interdependence. What does it feel like to recognize yourself as a nexus of relationships rather than a standalone entity?
+
+    - id: sunyata-3
+      conceptId: sunyata
+      depth: advanced
+      question: If phenomena are empty of inherent existence, are our perceptions, concepts, and even the teaching of emptiness itself also empty? What implications does this have?
+      guidance: >
+          This is the edge of the teaching: even emptiness is empty. Nagarjuna and the Madhyamaka school argue that sunyata is not a metaphysical ground or ultimate substance — it too lacks inherent existence. Contemplate: what would it mean to hold even your deepest insights as empty of absolute status? Does this lead to nihilism — the view that nothing matters — or to something subtler? Rest with the paradox that the teaching points beyond itself. The raft is not the shore.

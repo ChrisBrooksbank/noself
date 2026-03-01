@@ -1,0 +1,23 @@
+id: dukkha-prompts
+conceptId: dukkha
+prompts:
+    - id: dukkha-1
+      conceptId: dukkha
+      depth: beginner
+      question: Is there something in your life right now that you wish were different? Something you want more of, or want to go away? What does that wanting feel like in the body?
+      guidance: >
+          Sit for a few moments and let a current dissatisfaction come to mind — nothing dramatic is necessary. A mild irritation, a restless wish for things to be otherwise. Now drop out of the story and notice the feeling itself: where is it in the body? What texture, temperature, or weight does it have? You are not trying to fix or remove it — just observe it directly. This is dukkha in its simplest form: the subtle friction of wanting things other than what is.
+
+    - id: dukkha-2
+      conceptId: dukkha
+      depth: intermediate
+      question: Even pleasant experiences contain a kind of subtle dissatisfaction — the wish that they wouldn't end, or the worry that they might. Can you notice this undercurrent in enjoyable moments?
+      guidance: >
+          Recall a recent pleasant experience — a good conversation, a satisfying meal, a moment of calm. Now look beneath the pleasure: was there a quiet grasping, a wish to hold on, a background awareness that it would pass? Buddhism calls this "viparinama-dukkha" — the suffering of change within pleasant experience. This is not pessimism; it is precision. Seeing this clearly is the beginning of a different relationship with pleasure: enjoying it fully without needing it to last.
+
+    - id: dukkha-3
+      conceptId: dukkha
+      depth: advanced
+      question: The Buddha said all conditioned existence is dukkha. What would it mean to fully accept this — not as resignation, but as a clear-eyed foundation for practice?
+      guidance: >
+          Sit with the full scope of the teaching: not just obvious pain, not just the suffering of change, but the pervasive unsatisfactoriness of conditioned experience as such — "sankhara-dukkha," the inherent instability of everything constructed. This is not an invitation to despair, but to thoroughgoing investigation. If conditioned existence is fundamentally unreliable as a source of lasting fulfillment, what does that redirect attention toward? Rest with the question without needing to resolve it.

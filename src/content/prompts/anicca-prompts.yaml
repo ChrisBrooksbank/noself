@@ -1,0 +1,23 @@
+id: anicca-prompts
+conceptId: anicca
+prompts:
+    - id: anicca-1
+      conceptId: anicca
+      depth: beginner
+      question: Think of something you cherish — a relationship, a feeling of wellbeing, a pleasant moment. How long did it last? How long will it last?
+      guidance: >
+          Sit quietly and bring to mind something precious to you. Notice the warmth or pleasure it evokes. Now gently ask: did this always exist? Will it always exist? What does it feel like to acknowledge that it will change or end? You don't need to feel sad — just see clearly. Impermanence isn't a problem to solve; it's the nature of all conditioned things.
+
+    - id: anicca-2
+      conceptId: anicca
+      depth: intermediate
+      question: Right now, in this moment, what is changing? What is ending? What is being born?
+      guidance: >
+          Close your eyes and direct attention to the body. Notice the breath — each inhale ending, each exhale beginning. Notice sensations arising and dissolving: a tingling, a pressure, a sound fading. Notice thoughts and emotions passing like weather. Try to catch the exact moment something ends and something new begins. Can you find a fixed moment that is not itself in flux? Rest in the recognition that change is not an exception — it is the texture of experience itself.
+
+    - id: anicca-3
+      conceptId: anicca
+      depth: advanced
+      question: If everything is impermanent — including your values, your sense of self, your spiritual understanding — what does this mean for how you hold your views and commitments?
+      guidance: >
+          Contemplate this carefully: even insight into impermanence is itself impermanent. Even a deep sense of peace will pass. Does this destabilize the path, or deepen it? Buddhist teaching says clinging to views — even correct ones — perpetuates suffering. Investigate what it would mean to hold your practice, your understanding, and your sense of identity lightly, as one holds a bird: firmly enough not to lose it, gently enough not to crush it.

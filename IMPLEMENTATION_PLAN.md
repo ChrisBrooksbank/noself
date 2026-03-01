@@ -52,7 +52,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 
 ### Bug Fix
 
-- [ ] Fix failing nav test: `src/core/nav.test.ts` expects Home link text "Home" but nav renders brand name instead; update `nav.ts` or the test to match actual intended behavior (spec: navigation-search.md)
+- [x] Fix failing nav test: `src/core/nav.test.ts` expects Home link text "Home" but nav renders brand name instead; update `nav.ts` or the test to match actual intended behavior (spec: navigation-search.md)
 
 ### Practice — Phase 1: Content Infrastructure
 

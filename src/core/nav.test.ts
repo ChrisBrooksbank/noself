@@ -15,8 +15,9 @@ describe('renderNav', () => {
 
     it('renders a Home link', () => {
         renderNav(container, 'home');
-        const links = Array.from(container.querySelectorAll('a'));
-        const homeLink = links.find((l) => l.getAttribute('href') === '#/');
+        const homeLink = container.querySelector<HTMLAnchorElement>(
+            'a[href="#/"].site-nav__link',
+        );
         expect(homeLink).not.toBeNull();
         expect(homeLink?.textContent?.trim()).toBe('Home');
     });

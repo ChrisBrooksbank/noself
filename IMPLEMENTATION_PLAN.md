@@ -61,7 +61,7 @@
 
 ### Navigation & Search
 
-- [ ] Build catalog view in `src/core/catalogView.ts`: list all 30 concepts with title, pali name, brief; show read/unread badge using `readingHistory` (spec: navigation-search.md)
+- [x] Build catalog view in `src/core/catalogView.ts`: list all 30 concepts with title, pali name, brief; show read/unread badge using `readingHistory` (spec: navigation-search.md)
 - [ ] Add live text search input to catalog view that filters by title, pali, sanskrit, and brief as user types (debounced via existing `debounce` helper) (spec: navigation-search.md)
 - [ ] Add category filter buttons to catalog view; filter list to selected category; allow "All" to show everything (spec: navigation-search.md)
 - [ ] Create shared `src/core/nav.ts` navigation bar component (Home / Catalog links) rendered on all views (spec: navigation-search.md)

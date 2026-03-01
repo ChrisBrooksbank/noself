@@ -1,4 +1,5 @@
 {
+    "ignoreBinaries": ["netlify"],
     "paths": {
         "@/*": ["src/*"],
         "@api/*": ["src/api/*"],

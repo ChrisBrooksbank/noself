@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
     plugins: [
         VitePWA({
-            registerType: 'autoUpdate',
+            registerType: 'prompt',
             includeAssets: ['favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png'],
             manifest: {
                 name: 'noself',

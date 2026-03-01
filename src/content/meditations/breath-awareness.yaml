@@ -1,0 +1,117 @@
+id: breath-awareness
+title: Breath Awareness
+description: >
+    Anchor attention in the direct sensations of breathing. A foundational
+    practice for cultivating calm and insight through present-moment awareness.
+durations:
+    - 5
+    - 10
+    - 20
+steps:
+    5:
+        - instruction: Find a comfortable position and gently close your eyes.
+          durationSeconds: 20
+        - instruction: >
+              Take three slow, deep breaths to settle the body and mind. Let
+              each exhale release any tension you are carrying.
+          durationSeconds: 30
+        - instruction: >
+              Let your breathing return to its natural rhythm. You don't need
+              to control it — just observe each breath as it arises and passes.
+          durationSeconds: 50
+        - instruction: >
+              Notice the sensations where you feel the breath most clearly —
+              perhaps at the nostrils, the chest, or the belly.
+          durationSeconds: 60
+        - instruction: >
+              Rest your attention lightly on the breath. When the mind wanders,
+              gently return — no frustration needed. This returning is the
+              practice.
+          durationSeconds: 90
+        - instruction: >
+              Take one final deep breath. Carry this stillness with you as you
+              slowly open your eyes.
+          durationSeconds: 50
+    10:
+        - instruction: >
+              Find a comfortable, upright posture. Gently close your eyes or
+              soften your gaze downward toward the floor.
+          durationSeconds: 30
+        - instruction: >
+              Take three slow, deliberate breaths. Let each exhale release any
+              tension you are holding in the body.
+          durationSeconds: 40
+        - instruction: >
+              Allow your breathing to settle into its natural rhythm. You don't
+              need to control it — simply observe.
+          durationSeconds: 60
+        - instruction: >
+              Notice the physical sensations of breathing: the coolness of the
+              in-breath at your nostrils, the gentle warmth of the out-breath.
+          durationSeconds: 90
+        - instruction: >
+              Rest your attention on this one breath — then the next. Each
+              moment of breathing is complete in itself.
+          durationSeconds: 90
+        - instruction: >
+              When thoughts, sounds, or sensations draw you away, notice that
+              the mind has wandered and return to the breath. No frustration
+              needed.
+          durationSeconds: 90
+        - instruction: >
+              Continue resting in the natural breath. The breath is always
+              here, always available as an anchor to the present moment.
+          durationSeconds: 120
+        - instruction: >
+              Gently begin to deepen your breathing. Wiggle your fingers and
+              toes. When you are ready, slowly open your eyes.
+          durationSeconds: 80
+    20:
+        - instruction: >
+              Settle into a comfortable, upright position. Let your hands rest
+              in your lap. Gently close your eyes.
+          durationSeconds: 30
+        - instruction: >
+              Take three deep, slow breaths. With each exhale, let the body
+              soften a little more.
+          durationSeconds: 40
+        - instruction: >
+              Allow the breath to return to its natural pace. There is nothing
+              to do here — just breathe.
+          durationSeconds: 60
+        - instruction: >
+              Bring your attention to the direct sensations of breathing. Notice
+              the air entering and leaving your body.
+          durationSeconds: 90
+        - instruction: >
+              Rest your awareness at the place where you feel the breath most
+              clearly — the nostrils, the chest, or the belly.
+          durationSeconds: 90
+        - instruction: >
+              Each breath is a complete moment: the in-breath, the brief pause,
+              the out-breath. Observe this cycle without trying to change it.
+          durationSeconds: 120
+        - instruction: >
+              When the mind wanders — as it will — gently return attention to
+              the breath. This returning is the practice.
+          durationSeconds: 120
+        - instruction: >
+              Notice any subtle qualities of the breath: its depth, its rhythm,
+              whether it feels smooth or uneven. Simply observe.
+          durationSeconds: 120
+        - instruction: >
+              Rest deeply in this awareness. You are the observer, watching the
+              breath without needing to change it.
+          durationSeconds: 150
+        - instruction: >
+              If sleepiness arises, straighten your posture slightly. If
+              agitation arises, take one deliberate, slow breath to reanchor.
+          durationSeconds: 90
+        - instruction: >
+              In these final minutes, let awareness rest on the breath as it
+              is — not perfect, not imperfect. Just breath.
+          durationSeconds: 150
+        - instruction: >
+              Gently deepen the breath. Become aware of the room around you.
+              When you are ready, softly open your eyes.
+          durationSeconds: 140

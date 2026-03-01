@@ -7,6 +7,7 @@ import { renderHomeView } from '@core/homeView.js';
 import { renderCatalogView } from '@core/catalogView.js';
 import { renderConceptView } from '@core/conceptView.js';
 import { renderPracticeHubView } from '@core/practice/practiceHubView.js';
+import { renderMeditationListView } from '@core/practice/meditationListView.js';
 
 const config = loadConfig();
 
@@ -58,11 +59,7 @@ start((route) => {
             renderPracticeHubView(viewHost);
             break;
         case 'practiceMediate':
-            viewHost.innerHTML = `
-                <div class="page stack" role="main">
-                    <h1>Guided Meditations</h1>
-                    <p>Coming soon.</p>
-                </div>`;
+            renderMeditationListView(viewHost);
             break;
         case 'practiceMeditateSession':
             viewHost.innerHTML = `

@@ -1,0 +1,23 @@
+id: anatta-prompts
+conceptId: anatta
+prompts:
+    - id: anatta-1
+      conceptId: anatta
+      depth: beginner
+      question: When you say "I am tired" or "I am happy," what is the "I" that you're referring to? Can you find it?
+      guidance: >
+          Sit quietly for a few moments. Notice sensations in the body — heaviness, warmth, movement of breath. Notice thoughts arising and passing. Now ask: where is the one who is tired or happy? Is it the sensations? The thoughts? The body? See if you can locate a fixed, central "I" behind these experiences. There is no right answer — just look openly.
+
+    - id: anatta-2
+      conceptId: anatta
+      depth: intermediate
+      question: If you observe your thoughts, feelings, and sensations arising and passing, who or what is doing the observing? Is the observer separate from what is observed?
+      guidance: >
+          Rest in awareness for a few minutes, watching whatever arises — sounds, breath, thoughts, emotions. Then gently turn attention back on itself: who is watching? Notice whether this "watcher" can itself be observed. If it can be observed, is it truly separate, or just another arising? Stay with the question without forcing an answer. The investigation itself is the practice.
+
+    - id: anatta-3
+      conceptId: anatta
+      depth: advanced
+      question: If there is no fixed self, what is it that continuity of memory and personality appears to belong to? How does the sense of "me" persist without a permanent self underneath it?
+      guidance: >
+          Contemplate the stream of experience: memories connecting past to present, habits shaping responses, a name that has followed you through decades. None of these require a fixed, unchanging entity — a river has continuity without any one water molecule persisting. Sit with the paradox: apparent continuity, no fixed ground. Notice whether this is threatening or liberating — or both.

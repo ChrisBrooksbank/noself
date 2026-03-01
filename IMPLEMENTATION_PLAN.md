@@ -69,7 +69,7 @@
 
 ### PWA & Offline
 
-- [ ] Verify vite-plugin-pwa `globPatterns` includes bundled JS (which contains all YAML content); add smoke test that loads a concept with network disabled (spec: offline-pwa.md)
+- [x] Verify vite-plugin-pwa `globPatterns` includes bundled JS (which contains all YAML content); add smoke test that loads a concept with network disabled (spec: offline-pwa.md)
 - [ ] Add online/offline status indicator in nav bar: subtle banner or icon that updates on `window` `online`/`offline` events (spec: offline-pwa.md)
 - [ ] Add "Install app" prompt/instructions shown once when `beforeinstallprompt` fires (spec: offline-pwa.md)
 

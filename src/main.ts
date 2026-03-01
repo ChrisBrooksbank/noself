@@ -1,7 +1,7 @@
 import { logger } from '@utils/logger.js';
 import { loadConfig } from '@config/loader.js';
 import { start } from '@core/router.js';
-import { renderNav } from '@core/nav.js';
+import { renderNav, initOnlineStatus } from '@core/nav.js';
 import { renderHomeView } from '@core/homeView.js';
 import { renderCatalogView } from '@core/catalogView.js';
 import { renderConceptView } from '@core/conceptView.js';
@@ -24,6 +24,8 @@ app.innerHTML = `
 
 const navHost = app.querySelector<HTMLElement>('#nav-host')!;
 const viewHost = app.querySelector<HTMLElement>('#view-host')!;
+
+initOnlineStatus(navHost);
 
 start((route) => {
     logger.debug('Route', route);

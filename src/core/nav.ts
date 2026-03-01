@@ -8,6 +8,10 @@ function navLink(href: string, label: string, active: boolean): string {
 }
 
 export function renderNav(container: HTMLElement, activeType: Route['type']): void {
+    const isOffline = !navigator.onLine;
+    const offlineClass = isOffline
+        ? 'site-nav__offline-badge'
+        : 'site-nav__offline-badge site-nav__offline-badge--hidden';
     container.innerHTML = `
         <nav class="site-nav" aria-label="Main navigation">
             <div class="site-nav__inner page">
@@ -16,6 +20,27 @@ export function renderNav(container: HTMLElement, activeType: Route['type']): vo
                     ${navLink('#/', 'Home', activeType === 'home')}
                     ${navLink('#/catalog', 'Catalog', activeType === 'catalog')}
                 </ul>
+                <span class="${offlineClass}" role="status" aria-live="polite">offline</span>
             </div>
         </nav>`;
+}
+
+export function initOnlineStatus(navHost: HTMLElement): () => void {
+    function update(): void {
+        const badge = navHost.querySelector<HTMLElement>('.site-nav__offline-badge');
+        if (!badge) return;
+        if (navigator.onLine) {
+            badge.classList.add('site-nav__offline-badge--hidden');
+        } else {
+            badge.classList.remove('site-nav__offline-badge--hidden');
+        }
+    }
+
+    window.addEventListener('online', update);
+    window.addEventListener('offline', update);
+
+    return () => {
+        window.removeEventListener('online', update);
+        window.removeEventListener('offline', update);
+    };
 }

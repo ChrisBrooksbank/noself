@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { renderNav } from './nav.js';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { renderNav, initOnlineStatus } from './nav.js';
 
 describe('renderNav', () => {
     let container: HTMLElement;
@@ -82,5 +82,79 @@ describe('renderNav', () => {
         const catalogLink =
             container.querySelector<HTMLAnchorElement>('a[href="#/catalog"]');
         expect(catalogLink?.classList.contains('site-nav__link--active')).toBe(true);
+    });
+});
+
+describe('renderNav offline indicator', () => {
+    let container: HTMLElement;
+
+    afterEach(() => {
+        vi.restoreAllMocks();
+    });
+
+    beforeEach(() => {
+        container = document.createElement('div');
+    });
+
+    it('hides offline badge when online', () => {
+        vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+        renderNav(container, 'home');
+        const badge = container.querySelector('.site-nav__offline-badge');
+        expect(badge).not.toBeNull();
+        expect(badge?.classList.contains('site-nav__offline-badge--hidden')).toBe(true);
+    });
+
+    it('shows offline badge when offline', () => {
+        vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+        renderNav(container, 'home');
+        const badge = container.querySelector('.site-nav__offline-badge');
+        expect(badge).not.toBeNull();
+        expect(badge?.classList.contains('site-nav__offline-badge--hidden')).toBe(false);
+    });
+});
+
+describe('initOnlineStatus', () => {
+    let container: HTMLElement;
+    let cleanup: () => void;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+        vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+        renderNav(container, 'home');
+    });
+
+    afterEach(() => {
+        cleanup?.();
+        vi.restoreAllMocks();
+    });
+
+    it('shows badge when offline event fires', () => {
+        cleanup = initOnlineStatus(container);
+        vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+        window.dispatchEvent(new Event('offline'));
+        const badge = container.querySelector('.site-nav__offline-badge');
+        expect(badge?.classList.contains('site-nav__offline-badge--hidden')).toBe(false);
+    });
+
+    it('hides badge when online event fires', () => {
+        // Start offline
+        vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+        renderNav(container, 'home');
+        cleanup = initOnlineStatus(container);
+        // Come back online
+        vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+        window.dispatchEvent(new Event('online'));
+        const badge = container.querySelector('.site-nav__offline-badge');
+        expect(badge?.classList.contains('site-nav__offline-badge--hidden')).toBe(true);
+    });
+
+    it('returns a cleanup function that removes event listeners', () => {
+        cleanup = initOnlineStatus(container);
+        cleanup();
+        vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+        window.dispatchEvent(new Event('offline'));
+        // Badge should still be hidden since listener was removed
+        const badge = container.querySelector('.site-nav__offline-badge');
+        expect(badge?.classList.contains('site-nav__offline-badge--hidden')).toBe(true);
     });
 });

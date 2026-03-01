@@ -346,6 +346,21 @@ hr {
     color: var(--color-accent);
 }
 
+.site-nav__offline-badge {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.site-nav__offline-badge--hidden {
+    display: none;
+}
+
 /* =========================================================
    Catalog View
    ========================================================= */

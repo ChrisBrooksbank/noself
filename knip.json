@@ -19,6 +19,7 @@
         "src/content/prompts/index.ts",
         "src/content/paths/index.ts",
         "src/content/sutras/index.ts",
-        "src/content/pujas/index.ts"
+        "src/content/pujas/index.ts",
+        "src/content/mantras/index.ts"
     ]
 }

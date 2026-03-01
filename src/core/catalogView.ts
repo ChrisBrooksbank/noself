@@ -68,7 +68,7 @@ export function renderCatalogView(container: HTMLElement): void {
         <div class="catalog-view page stack-lg" role="main">
             <h1 class="catalog-view__heading">All Concepts</h1>
             <div class="catalog-search">
-                <label for="catalog-search-input" class="visually-hidden">Search concepts</label>
+                <label for="catalog-search-input" class="sr-only">Search concepts</label>
                 <input
                     id="catalog-search-input"
                     class="catalog-search__input"

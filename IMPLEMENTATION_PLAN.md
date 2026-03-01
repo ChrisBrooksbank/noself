@@ -65,7 +65,7 @@
 - [x] Add live text search input to catalog view that filters by title, pali, sanskrit, and brief as user types (debounced via existing `debounce` helper) (spec: navigation-search.md)
 - [x] Add category filter buttons to catalog view; filter list to selected category; allow "All" to show everything (spec: navigation-search.md)
 - [x] Create shared `src/core/nav.ts` navigation bar component (Home / Catalog links) rendered on all views (spec: navigation-search.md)
-- [ ] Ensure all views use responsive CSS: single-column on ≤320px, no horizontal overflow (spec: navigation-search.md)
+- [x] Ensure all views use responsive CSS: single-column on ≤320px, no horizontal overflow (spec: navigation-search.md)
 
 ### PWA & Offline
 

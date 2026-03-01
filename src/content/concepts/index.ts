@@ -90,3 +90,5 @@ export const CONCEPT_IDS = [
 ] as const;
 
 export type ConceptId = (typeof CONCEPT_IDS)[number];
+
+export { loadConcepts, getConceptById, resetConceptCache } from './loader.js';

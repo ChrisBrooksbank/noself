@@ -5,6 +5,8 @@ vi.mock('../practiceHistory.js', () => ({
     getTotalSessionCount: vi.fn(() => 0),
     getMeditationSessions: vi.fn(() => []),
     getPromptSessions: vi.fn(() => []),
+    getPujaSessions: vi.fn(() => []),
+    getMantraSessions: vi.fn(() => []),
 }));
 
 import * as practiceHistory from '../practiceHistory.js';
@@ -17,6 +19,8 @@ describe('renderPracticeHubView', () => {
         vi.mocked(practiceHistory.getTotalSessionCount).mockReturnValue(0);
         vi.mocked(practiceHistory.getMeditationSessions).mockReturnValue([]);
         vi.mocked(practiceHistory.getPromptSessions).mockReturnValue([]);
+        vi.mocked(practiceHistory.getPujaSessions).mockReturnValue([]);
+        vi.mocked(practiceHistory.getMantraSessions).mockReturnValue([]);
     });
 
     it('renders the Practice heading', () => {
@@ -25,10 +29,10 @@ describe('renderPracticeHubView', () => {
         expect(heading?.textContent).toBe('Practice');
     });
 
-    it('renders three section cards', () => {
+    it('renders five section cards', () => {
         renderPracticeHubView(container);
         const cards = container.querySelectorAll('.practice-hub__card');
-        expect(cards.length).toBe(3);
+        expect(cards.length).toBe(5);
     });
 
     it('renders Meditate card with link to /practice/meditate', () => {
@@ -58,6 +62,22 @@ describe('renderPracticeHubView', () => {
         expect(pathsLink).toBeTruthy();
     });
 
+    it('renders Puja card with link to /practice/pujas', () => {
+        renderPracticeHubView(container);
+        const links = Array.from(container.querySelectorAll('.practice-hub__card-link'));
+        const pujaLink = links.find((l) => l.getAttribute('href') === '#/practice/pujas');
+        expect(pujaLink).toBeTruthy();
+    });
+
+    it('renders Mantras card with link to /practice/mantras', () => {
+        renderPracticeHubView(container);
+        const links = Array.from(container.querySelectorAll('.practice-hub__card-link'));
+        const mantraLink = links.find(
+            (l) => l.getAttribute('href') === '#/practice/mantras',
+        );
+        expect(mantraLink).toBeTruthy();
+    });
+
     it('renders history link', () => {
         renderPracticeHubView(container);
         const historyLink = container.querySelector('.practice-hub__history-link');
@@ -71,7 +91,7 @@ describe('renderPracticeHubView', () => {
     });
 
     it('shows stats when sessions exist', () => {
-        vi.mocked(practiceHistory.getTotalSessionCount).mockReturnValue(5);
+        vi.mocked(practiceHistory.getTotalSessionCount).mockReturnValue(7);
         vi.mocked(practiceHistory.getMeditationSessions).mockReturnValue([
             {
                 meditationId: 'breath-awareness',
@@ -93,13 +113,25 @@ describe('renderPracticeHubView', () => {
             { promptId: 'anatta-beginner', satWith: '2026-03-01T03:00:00Z' },
             { promptId: 'anicca-beginner', satWith: '2026-03-01T04:00:00Z' },
         ]);
+        vi.mocked(practiceHistory.getPujaSessions).mockReturnValue([
+            { pujaId: 'sevenfold-puja', completedAt: '2026-03-01T05:00:00Z' },
+        ]);
+        vi.mocked(practiceHistory.getMantraSessions).mockReturnValue([
+            {
+                mantraId: 'avalokiteshvara',
+                repetitions: 108,
+                completedAt: '2026-03-01T06:00:00Z',
+            },
+        ]);
 
         renderPracticeHubView(container);
         const stats = container.querySelector('.practice-hub__stats');
         expect(stats).toBeTruthy();
-        expect(stats?.textContent).toContain('5 sessions total');
+        expect(stats?.textContent).toContain('7 sessions total');
         expect(stats?.textContent).toContain('3 meditations');
         expect(stats?.textContent).toContain('2 prompts');
+        expect(stats?.textContent).toContain('1 puja');
+        expect(stats?.textContent).toContain('1 mantra');
     });
 
     it('uses singular form for single session', () => {

@@ -5,6 +5,7 @@
 Build a mobile-first PWA inspired by Thich Nhat Hanh's writing and the "Tiny Buddha" desk calendar. The app helps explore ultimate reality through daily contemplations, an interconnected concept web, and meditation support. Starting from an empty directory at `C:\code\noself`.
 
 **User decisions:**
+
 - Both color themes (dark contemplative default + light parchment as light mode)
 - Serif typography for contemplation text (Crimson Pro), sans-serif for UI (Inter)
 - Personal daily cycle (Day 1 = first app open, not calendar-based)
@@ -31,6 +32,7 @@ Build a mobile-first PWA inspired by Thich Nhat Hanh's writing and the "Tiny Bud
 A working, installable PWA that shows one contemplation per day.
 
 ### Step 1: Project scaffolding
+
 - `npm create vite@latest` with React + TypeScript template
 - Install deps: tailwindcss, @tailwindcss/vite, react-router, vite-plugin-pwa, @mdx-js/rollup, date-fns, framer-motion
 - Configure `vite.config.ts` with MDX plugin + PWA plugin
@@ -38,6 +40,7 @@ A working, installable PWA that shows one contemplation per day.
 - **Files:** `vite.config.ts`, `tailwind.config.ts`, `tsconfig.json`, `package.json`, `index.html`
 
 ### Step 2: Theme system + typography
+
 - CSS custom properties for both themes in `src/styles/globals.css`
 - Dark contemplative (default): `#1a1a2e` bg, `#e8e0d4` text, `#c9a96e` gold accent, `#7c9473` sage
 - Light parchment: `#f5f0e8` bg, `#2d2a26` text, `#4a2c40` burgundy accent, `#2d3a5c` indigo
@@ -47,6 +50,7 @@ A working, installable PWA that shows one contemplation per day.
 - **Files:** `src/styles/globals.css`, `src/hooks/useTheme.ts`, `src/components/ui/ThemeToggle.tsx`
 
 ### Step 3: Content pipeline
+
 - MDX compilation via `@mdx-js/rollup` in vite config
 - `import.meta.glob('./content/daily/*.mdx')` for dynamic loading
 - Frontmatter schema: `day`, `title`, `source`, `tradition`, `concepts`
@@ -54,12 +58,14 @@ A working, installable PWA that shows one contemplation per day.
 - **Files:** `src/lib/content.ts`, `src/content/daily/001.mdx` through `007.mdx`
 
 ### Step 4: Write 7 seed contemplations
+
 - Follow template: epigraph quote + 2-4 paragraph contemplation + reflection prompt
 - Draw from public domain sources (Pali Canon, Heart Sutra, Dhammapada) + original commentary in TNH's accessible style
 - Themes: no-self, impermanence, interbeing, dependent origination, mindfulness, emptiness, the present moment
 - **Files:** `src/content/daily/001.mdx` through `007.mdx`
 
 ### Step 5: Daily contemplation screen
+
 - Full-screen reading experience - this IS the home screen
 - Day cycling: `differenceInDays(today, firstOpenDate) % totalContemplations + 1`
 - Paragraph-by-paragraph fade-in on scroll (Framer Motion, 400-600ms, ease-in-out)
@@ -69,12 +75,14 @@ A working, installable PWA that shows one contemplation per day.
 - **Files:** `src/components/contemplation/DailyContemplation.tsx`, `src/hooks/useDaily.ts`, `src/components/ui/FadeIn.tsx`, `src/components/ui/BookmarkButton.tsx`
 
 ### Step 6: Local state management
+
 - `useLocalState` hook for typed localStorage access
 - User state: `firstOpenDate`, `completedDays`, `bookmarks`, theme preference
 - No external state library - React context + hooks only
 - **Files:** `src/hooks/useLocalState.ts`, `src/hooks/useBookmarks.ts`
 
 ### Step 7: PWA configuration
+
 - Web app manifest: name "noself", standalone display, portrait orientation
 - Theme/background colors matching dark theme
 - Service worker via vite-plugin-pwa `generateSW` strategy
@@ -83,6 +91,7 @@ A working, installable PWA that shows one contemplation per day.
 - **Files:** `vite.config.ts` (PWA config section), `public/icons/`
 
 ### Step 8: App shell + routing
+
 - `AppShell.tsx` layout wrapper
 - React Router: `/` (today), `/bookmarks` (saved contemplations)
 - Minimal navigation - hamburger or small bottom bar with just Today + Bookmarks for now

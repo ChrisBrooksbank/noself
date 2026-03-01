@@ -1,0 +1,6 @@
+{
+    "appTitle": "noself",
+    "debug": false,
+    "logLevel": "info",
+    "apiBaseUrl": "https://api.example.com"
+}

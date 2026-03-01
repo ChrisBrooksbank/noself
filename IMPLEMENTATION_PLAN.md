@@ -67,7 +67,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 - [x] Create `src/content/paths/index.ts` with `PracticePath`, `PathSession` types and `PATH_IDS` array (spec: docs/practice-plan.md)
 - [x] Create `src/content/paths/loader.ts` with Zod schema + `import.meta.glob` loader (spec: docs/practice-plan.md)
 - [x] Write `src/content/paths/seven-day-metta.yaml` (7 sessions combining concept study + prompts + meditations) (spec: docs/practice-plan.md)
-- [ ] Write remaining 2 path YAMLs: `foundations-of-mindfulness.yaml`, `exploring-non-self.yaml` (spec: docs/practice-plan.md)
+- [x] Write remaining 2 path YAMLs: `foundations-of-mindfulness.yaml`, `exploring-non-self.yaml` (spec: docs/practice-plan.md)
 
 ### Practice — Phase 2: Data Layer
 

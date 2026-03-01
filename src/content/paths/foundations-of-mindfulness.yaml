@@ -1,0 +1,48 @@
+id: foundations-of-mindfulness
+title: Foundations of Mindfulness
+description: >
+    A seven-session introduction to core Buddhist teachings and mindfulness
+    practice. Move through impermanence, suffering, and the path of awakening
+    while building a daily meditation habit from the ground up.
+sessions:
+    - day: 1
+      title: Arriving in the Present Moment
+      conceptId: sati
+      promptId: anicca-1
+      meditationId: breath-awareness
+
+    - day: 2
+      title: Everything Changes
+      conceptId: anicca
+      promptId: anicca-2
+      meditationId: breath-awareness
+
+    - day: 3
+      title: The Nature of Suffering
+      conceptId: dukkha
+      promptId: dukkha-1
+      meditationId: body-scan
+
+    - day: 4
+      title: The Four Noble Truths
+      conceptId: four-noble-truths
+      promptId: four-noble-truths-1
+      meditationId: body-scan
+
+    - day: 5
+      title: The Noble Eightfold Path
+      conceptId: noble-eightfold-path
+      promptId: four-noble-truths-2
+      meditationId: breath-awareness
+
+    - day: 6
+      title: Awareness Without Judgment
+      conceptId: vipassana
+      promptId: dukkha-2
+      meditationId: vipassana
+
+    - day: 7
+      title: Integration and Continuing Practice
+      conceptId: nirvana
+      promptId: four-noble-truths-3
+      meditationId: open-awareness

@@ -1,0 +1,43 @@
+id: exploring-non-self
+title: Exploring Non-Self
+description: >
+    A six-session deep dive into the Buddhist teaching of anatta (non-self).
+    Through concept study, guided contemplation, and meditation, investigate
+    the nature of identity and discover what remains when the fixed self is
+    seen through.
+sessions:
+    - day: 1
+      title: Who Are You, Really?
+      conceptId: anatta
+      promptId: anatta-1
+      meditationId: breath-awareness
+
+    - day: 2
+      title: The Five Aggregates
+      conceptId: five-aggregates
+      promptId: five-aggregates-1
+      meditationId: body-scan
+
+    - day: 3
+      title: How the Self Arises
+      conceptId: dependent-origination
+      promptId: dependent-origination-1
+      meditationId: vipassana
+
+    - day: 4
+      title: Emptiness and Form
+      conceptId: sunyata
+      promptId: sunyata-1
+      meditationId: open-awareness
+
+    - day: 5
+      title: The Observer and the Observed
+      conceptId: anatta
+      promptId: anatta-2
+      meditationId: vipassana
+
+    - day: 6
+      title: Living Without a Fixed Self
+      conceptId: anatta
+      promptId: anatta-3
+      meditationId: open-awareness

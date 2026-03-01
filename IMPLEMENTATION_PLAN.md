@@ -123,7 +123,7 @@ Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully s
 ### Puja & Mantra — Phase 3: Routing + Nav
 
 - [x] Extend `src/core/router.ts` with 6 new route types: `practicePujas`, `practicePujaStudy`, `practicePujaPerform`, `practiceMantras`, `practiceMantraDetail`, `practiceMantraChant`; add `parseHash` matchers (match `/perform` and `/chant` before bare `/:id`) (spec: docs/plan-puja-mantra-sections.md)
-- [ ] Extend `src/main.ts` with 6 new route cases; `pujaPerformView` and `mantraChantView` assign to `currentCleanup` (spec: docs/plan-puja-mantra-sections.md)
+- [x] Extend `src/main.ts` with 6 new route cases; `pujaPerformView` and `mantraChantView` assign to `currentCleanup` (spec: docs/plan-puja-mantra-sections.md)
 
 ### Puja & Mantra — Phase 4: Views
 

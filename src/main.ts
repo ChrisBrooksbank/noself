@@ -105,6 +105,54 @@ start((route) => {
                     <p>Coming soon.</p>
                 </div>`;
             break;
+        case 'practicePujas':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Pujas</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practicePujaStudy':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Puja Study</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practicePujaPerform':
+            currentCleanup = (() => {
+                viewHost.innerHTML = `
+                    <div class="page stack" role="main">
+                        <h1>Puja Perform</h1>
+                        <p>Coming soon.</p>
+                    </div>`;
+                return () => {};
+            })();
+            break;
+        case 'practiceMantras':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Mantras</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practiceMantraDetail':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Mantra Detail</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practiceMantraChant':
+            currentCleanup = (() => {
+                viewHost.innerHTML = `
+                    <div class="page stack" role="main">
+                        <h1>Mantra Chant</h1>
+                        <p>Coming soon.</p>
+                    </div>`;
+                return () => {};
+            })();
+            break;
         default:
             viewHost.innerHTML = `
                 <div class="page stack" role="main">

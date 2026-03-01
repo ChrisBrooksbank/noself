@@ -18,6 +18,7 @@ import { renderMeditationSessionView } from '@core/practice/meditationSessionVie
 import { renderSutrasListView } from '@core/sutrasListView.js';
 import { renderSutraStudyView } from '@core/sutraStudyView.js';
 import { renderPujaPerformView } from '@core/practice/pujaPerformView.js';
+import { renderMantraListView } from '@core/practice/mantraListView.js';
 
 const config = loadConfig();
 
@@ -124,11 +125,7 @@ start((route) => {
             currentCleanup = renderPujaPerformView(viewHost, route.id);
             break;
         case 'practiceMantras':
-            viewHost.innerHTML = `
-                <div class="page stack" role="main">
-                    <h1>Mantras</h1>
-                    <p>Coming soon.</p>
-                </div>`;
+            renderMantraListView(viewHost);
             break;
         case 'practiceMantraDetail':
             viewHost.innerHTML = `

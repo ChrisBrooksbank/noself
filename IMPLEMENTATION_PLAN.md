@@ -130,7 +130,7 @@ Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully s
 - [x] Create `src/core/practice/pujaListView.ts` — cards with title, tradition, description; links to study + perform (mirrors `meditationListView.ts`) (spec: docs/plan-puja-mantra-sections.md)
 - [x] Create `src/core/practice/pujaStudyView.ts` — sections with original/translation/commentary/related concepts (mirrors `sutraStudyView.ts`) (spec: docs/plan-puja-mantra-sections.md)
 - [x] Create `src/core/practice/pujaPerformView.ts` — step-by-step ritual flow with timer; returns cleanup function (mirrors `meditationSessionView.ts`) (spec: docs/plan-puja-mantra-sections.md)
-- [ ] Create `src/core/practice/mantraListView.ts` — cards with title, sanskrit, tradition (mirrors `meditationListView.ts`) (spec: docs/plan-puja-mantra-sections.md)
+- [x] Create `src/core/practice/mantraListView.ts` — cards with title, sanskrit, tradition (mirrors `meditationListView.ts`) (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Create `src/core/practice/mantraDetailView.ts` — large mantra text, syllable breakdown, meaning, related concepts (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Create `src/core/practice/mantraChantView.ts` — mala counter (42/108), large tap button, 108-dot circular mala visualization, haptic feedback via `navigator.vibrate?.(10)`, bell every 27 beads, completion logging; returns cleanup function (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Update `src/core/practice/practiceHubView.ts` — add Puja and Mantra cards after Paths; add puja/mantra counts to stats summary (spec: docs/plan-puja-mantra-sections.md)

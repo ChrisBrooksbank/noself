@@ -56,7 +56,7 @@
 
 - [x] Create `src/core/dailyConcept.ts` with a deterministic date-seed algorithm: `dayIndex = daysSinceEpoch % 30`, returns concept for today and is stable for the same calendar date (spec: daily-practice.md)
 - [x] Create `src/core/readingHistory.ts` localStorage service: `markViewed(id)`, `isViewed(id)`, `getViewedIds()`, `markContemplated(id)`, `getStatus(id)` (spec: daily-practice.md)
-- [ ] Build home screen view in `src/core/homeView.ts`: daily concept card (title, brief, link to full view) + progress counter ("X of 30 concepts explored") + recent history list (spec: daily-practice.md)
+- [x] Build home screen view in `src/core/homeView.ts`: daily concept card (title, brief, link to full view) + progress counter ("X of 30 concepts explored") + recent history list (spec: daily-practice.md)
 - [ ] Add contemplated / revisit toggle button in the concept detail view, persisted via `readingHistory` (spec: daily-practice.md)
 
 ### Navigation & Search

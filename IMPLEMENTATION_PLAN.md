@@ -56,7 +56,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 
 ### Practice — Phase 1: Content Infrastructure
 
-- [ ] Create `src/content/meditations/index.ts` with `Meditation`, `MeditationStep`, `MeditationDuration` types and `MEDITATION_IDS` array (spec: docs/practice-plan.md)
+- [x] Create `src/content/meditations/index.ts` with `Meditation`, `MeditationStep`, `MeditationDuration` types and `MEDITATION_IDS` array (spec: docs/practice-plan.md)
 - [ ] Create `src/content/meditations/loader.ts` with Zod schema + `import.meta.glob` loader (mirrors `src/content/concepts/loader.ts`) (spec: docs/practice-plan.md)
 - [ ] Write `src/content/meditations/breath-awareness.yaml` with steps for 5/10/20 min durations (spec: docs/practice-plan.md)
 - [ ] Write remaining 4 meditation YAMLs: `metta.yaml` (10/15/20 min), `body-scan.yaml` (10/20 min), `vipassana.yaml` (10/20/30 min), `open-awareness.yaml` (10/20 min) (spec: docs/practice-plan.md)

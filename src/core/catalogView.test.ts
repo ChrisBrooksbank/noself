@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { renderCatalogView } from './catalogView.js';
+import { renderCatalogView, matchesSearch } from './catalogView.js';
 
 const { mockConcepts, viewedIds } = vi.hoisted(() => {
     const mockConcepts = [
@@ -109,5 +109,58 @@ describe('renderCatalogView', () => {
         const hrefs = links.map((l) => l.getAttribute('href'));
         expect(hrefs).toContain('#/concept/anatta');
         expect(hrefs).toContain('#/concept/nirvana');
+    });
+
+    it('renders a search input', () => {
+        renderCatalogView(container);
+        const input = container.querySelector<HTMLInputElement>('#catalog-search-input');
+        expect(input).toBeTruthy();
+        expect(input?.getAttribute('type')).toBe('search');
+    });
+});
+
+describe('matchesSearch', () => {
+    const concept = {
+        id: 'anatta',
+        title: 'No-Self',
+        pali: 'anattā',
+        sanskrit: 'anātman',
+        category: 'three-marks' as const,
+        related: [],
+        brief: 'The teaching that no permanent self exists.',
+        essentials: '',
+        deep: '',
+        examples: [],
+    };
+
+    it('matches by title (case-insensitive)', () => {
+        expect(matchesSearch(concept, 'no-self')).toBe(true);
+        expect(matchesSearch(concept, 'NO-SELF')).toBe(true);
+    });
+
+    it('matches by pali', () => {
+        expect(matchesSearch(concept, 'anattā')).toBe(true);
+    });
+
+    it('matches by sanskrit', () => {
+        expect(matchesSearch(concept, 'anātman')).toBe(true);
+    });
+
+    it('matches by brief content', () => {
+        expect(matchesSearch(concept, 'permanent')).toBe(true);
+    });
+
+    it('returns false when no field matches', () => {
+        expect(matchesSearch(concept, 'nirvana')).toBe(false);
+    });
+
+    it('handles null pali gracefully', () => {
+        const noPali = { ...concept, pali: null };
+        expect(matchesSearch(noPali, 'anattā')).toBe(false);
+    });
+
+    it('handles null sanskrit gracefully', () => {
+        const noSanskrit = { ...concept, sanskrit: null };
+        expect(matchesSearch(noSanskrit, 'anātman')).toBe(false);
     });
 });

@@ -1,0 +1,48 @@
+id: seven-day-metta
+title: 7-Day Metta
+description: >
+    A week-long immersion in loving-kindness practice. Each day combines
+    conceptual study, contemplation, and guided meditation to progressively
+    open the heart — from self-compassion outward to all beings.
+sessions:
+    - day: 1
+      title: The Seed of Goodwill
+      conceptId: metta
+      promptId: metta-1
+      meditationId: metta
+
+    - day: 2
+      title: Offering Kindness to Yourself
+      conceptId: anatta
+      promptId: metta-2
+      meditationId: metta
+
+    - day: 3
+      title: Expanding the Circle
+      conceptId: metta
+      promptId: metta-3
+      meditationId: metta
+
+    - day: 4
+      title: The Nature of Suffering
+      conceptId: dukkha
+      promptId: dukkha-1
+      meditationId: breath-awareness
+
+    - day: 5
+      title: Impermanence and Compassion
+      conceptId: anicca
+      promptId: anicca-1
+      meditationId: breath-awareness
+
+    - day: 6
+      title: Interconnection
+      conceptId: dependent-origination
+      promptId: dependent-origination-1
+      meditationId: metta
+
+    - day: 7
+      title: Metta for All Beings
+      conceptId: metta
+      promptId: metta-3
+      meditationId: metta

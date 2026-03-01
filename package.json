@@ -1,7 +1,7 @@
 {
     "name": "noself",
     "private": true,
-    "version": "0.1.0",
+    "version": "0.2.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -17,6 +17,7 @@
         "test": "vitest",
         "test:run": "vitest run",
         "test:coverage": "vitest run --coverage",
+        "deploy": "npm run check && npm run test:run && npm run build && netlify deploy --prod",
         "prepare": "husky"
     },
     "dependencies": {

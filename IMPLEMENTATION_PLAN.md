@@ -137,7 +137,7 @@ Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully s
 
 ### Puja & Mantra — Phase 5: Styles
 
-- [ ] Add puja/mantra CSS to `src/styles/main.css`: `.puja-*` classes (reuse `.sutra-*` and `.meditation-*` patterns), `.mantra-detail` syllable grid, `.mala` / `.mala__bead` circular layout, `.mantra-chant__counter` / `.mantra-chant__tap-target` (spec: docs/plan-puja-mantra-sections.md)
+- [x] Add puja/mantra CSS to `src/styles/main.css`: `.puja-*` classes (reuse `.sutra-*` and `.meditation-*` patterns), `.mantra-detail` syllable grid, `.mala` / `.mala__bead` circular layout, `.mantra-chant__counter` / `.mantra-chant__tap-target` (spec: docs/plan-puja-mantra-sections.md)
 
 ### Puja & Mantra — Phase 6: Tests
 

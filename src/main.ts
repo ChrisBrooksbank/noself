@@ -1,6 +1,10 @@
 import { logger } from '@utils/logger.js';
 import { loadConfig } from '@config/loader.js';
 import { start } from '@core/router.js';
+import { renderNav } from '@core/nav.js';
+import { renderHomeView } from '@core/homeView.js';
+import { renderCatalogView } from '@core/catalogView.js';
+import { renderConceptView } from '@core/conceptView.js';
 
 const config = loadConfig();
 
@@ -14,20 +18,32 @@ logger.info(`${config.appTitle} started`);
 const app = document.querySelector<HTMLDivElement>('#app');
 if (!app) throw new Error('#app element not found');
 
+app.innerHTML = `
+    <div id="nav-host"></div>
+    <div id="view-host"></div>`;
+
+const navHost = app.querySelector<HTMLElement>('#nav-host')!;
+const viewHost = app.querySelector<HTMLElement>('#view-host')!;
+
 start((route) => {
     logger.debug('Route', route);
+    renderNav(navHost, route.type);
 
     switch (route.type) {
         case 'home':
-            app.innerHTML = `<h1>${config.appTitle}</h1>`;
+            renderHomeView(viewHost);
             break;
         case 'catalog':
-            app.innerHTML = `<p>Catalog — coming soon</p>`;
+            renderCatalogView(viewHost);
             break;
         case 'concept':
-            app.innerHTML = `<p>Concept: ${route.id}</p>`;
+            renderConceptView(viewHost, route.id);
             break;
         default:
-            app.innerHTML = `<p>Not found</p>`;
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <p>Page not found.</p>
+                    <a href="#/">Return home</a>
+                </div>`;
     }
 });

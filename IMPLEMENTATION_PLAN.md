@@ -71,7 +71,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 
 ### Practice — Phase 2: Data Layer
 
-- [ ] Create `src/core/practiceHistory.ts` — localStorage module tracking completed meditation sessions, sat-with prompts, path session completions (mirrors `readingHistory.ts`) (spec: docs/practice-plan.md)
+- [x] Create `src/core/practiceHistory.ts` — localStorage module tracking completed meditation sessions, sat-with prompts, path session completions (mirrors `readingHistory.ts`) (spec: docs/practice-plan.md)
 - [ ] Create `src/core/practice/dailyPrompt.ts` — deterministic daily prompt rotation using `daysSinceEpoch % totalPrompts` (mirrors `dailyConcept.ts`) (spec: docs/practice-plan.md)
 
 ### Practice — Phase 3: Audio + Timer

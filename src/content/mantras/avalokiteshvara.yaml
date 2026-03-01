@@ -1,0 +1,48 @@
+id: avalokiteshvara
+title: Avalokiteshvara Mantra
+sanskrit: 'Om Mani Padme Hum'
+pali: null
+tradition: Mahayana
+description: >-
+    The mantra of Avalokiteshvara, the bodhisattva of compassion. Among the most
+    widely recited mantras in Tibetan and East Asian Buddhism, it embodies the
+    qualities of compassion and wisdom inseparable from emptiness.
+syllables:
+    - text: Om
+      meaning: >-
+          The sacred syllable representing the body, speech, and mind of all buddhas.
+          It purifies pride and the obscurations of the body.
+    - text: Mani
+      meaning: >-
+          "Jewel" — symbolising the altruistic intention to awaken for the benefit of
+          all beings (bodhicitta). It purifies jealousy and obscurations of speech.
+    - text: Padme
+      meaning: >-
+          "Lotus" — wisdom that perceives the nature of reality; the lotus grows from
+          mud yet remains unstained, symbolising purity within samsara. It purifies
+          attachment and obscurations of mind.
+    - text: Hum
+      meaning: >-
+          Indivisibility of method (compassion) and wisdom. It purifies aggression
+          and the obscurations of the senses, sealing the mantra with non-dual
+          awareness.
+meaning: >-
+    Often translated as "the jewel in the lotus" or "behold the jewel in the
+    lotus," the mantra encapsulates the union of compassion (mani/jewel) and
+    wisdom (padme/lotus). It is said that all the teachings of the Buddha are
+    contained within these six syllables, and that reciting them with sincere
+    attention purifies the obscurations of body, speech, and mind while
+    cultivating the loving compassion of Avalokiteshvara.
+usage: >-
+    Recite silently or aloud during seated meditation, walking practice, or any
+    moment of daily life. The traditional mala count is 108 repetitions per
+    session — one full circuit of the mala beads. A shorter round of 27 or 42
+    repetitions is suitable for briefer sittings. Coordinate each syllable with
+    the breath if helpful: inhale on "Om Mani," exhale on "Padme Hum." The
+    quality of attention and compassionate intention matters more than speed or
+    volume.
+defaultRepetitions: 108
+relatedConcepts:
+    - compassion
+    - sunyata
+    - bodhicitta

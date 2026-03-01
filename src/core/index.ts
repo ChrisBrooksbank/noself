@@ -1,2 +1,2 @@
-// Core module — extend with domain logic, state management, etc.
-export {};
+export type { Route, RouteHandler } from './router.js';
+export { parseHash, navigate, start } from './router.js';

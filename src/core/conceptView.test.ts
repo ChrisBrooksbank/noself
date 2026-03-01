@@ -23,6 +23,20 @@ vi.mock('../content/concepts/index.js', () => ({
                 ],
             };
         }
+        if (id === 'anicca') {
+            return {
+                id: 'anicca',
+                title: 'Impermanence',
+                pali: 'Anicca',
+                sanskrit: null,
+                category: 'three-marks',
+                related: [],
+                brief: 'All conditioned phenomena are impermanent.',
+                essentials: 'Essentials.',
+                deep: 'Deep.',
+                examples: [],
+            };
+        }
         if (id === 'no-terms') {
             return {
                 id: 'no-terms',
@@ -109,6 +123,34 @@ describe('renderConceptView', () => {
         const related = container.querySelector('.concept-related');
         expect(related?.textContent).toContain('anicca');
         expect(related?.textContent).toContain('dukkha');
+    });
+
+    it('renders related concepts as clickable hash links', () => {
+        renderConceptView(container, 'anatta');
+        const links = container.querySelectorAll('.concept-related__link');
+        expect(links.length).toBe(2);
+        const hrefs = Array.from(links).map((l) => l.getAttribute('href'));
+        expect(hrefs).toContain('#/concept/anicca');
+        expect(hrefs).toContain('#/concept/dukkha');
+    });
+
+    it('renders related concept title when concept exists', () => {
+        renderConceptView(container, 'anatta');
+        const links = Array.from(container.querySelectorAll('.concept-related__link'));
+        const aniccaLink = links.find(
+            (l) => l.getAttribute('href') === '#/concept/anicca',
+        );
+        expect(aniccaLink?.textContent).toBe('Impermanence');
+    });
+
+    it('falls back to concept ID as link label when concept is unknown', () => {
+        renderConceptView(container, 'anatta');
+        const links = Array.from(container.querySelectorAll('.concept-related__link'));
+        // 'dukkha' is not in the mock, so label should be the raw ID
+        const dukkhaLink = links.find(
+            (l) => l.getAttribute('href') === '#/concept/dukkha',
+        );
+        expect(dukkhaLink?.textContent).toBe('dukkha');
     });
 
     it('does not render terms section when pali and sanskrit are null', () => {

@@ -25,7 +25,13 @@ function renderExamples(examples: ConceptExample[]): string {
 function renderRelated(related: string[]): string {
     if (related.length === 0) return '';
 
-    const links = related.map((id) => id).join(', ');
+    const links = related
+        .map((id) => {
+            const concept = getConceptById(id);
+            const label = concept ? concept.title : id;
+            return `<a href="#/concept/${id}" class="concept-related__link">${label}</a>`;
+        })
+        .join(', ');
 
     return `
         <section class="concept-section">

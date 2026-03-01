@@ -50,7 +50,7 @@
 
 - [x] Create `src/core/conceptView.ts` that renders a full concept detail page (title + pali/sanskrit header, brief, essentials, deep, examples with source/commentary) to DOM (spec: content-display.md)
 - [x] Add `src/utils/formatText.ts` helper that converts paragraph breaks and block-quote markers in YAML text fields into HTML (spec: content-display.md)
-- [ ] Render related concept IDs as clickable hash links in the concept view (spec: content-display.md)
+- [x] Render related concept IDs as clickable hash links in the concept view (spec: content-display.md)
 
 ### Daily Practice
 

@@ -91,7 +91,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 - [x] Create `src/core/practice/meditationListView.ts` — browse all 5 meditations with title, duration options, description (spec: docs/practice-plan.md)
 - [x] Create `src/core/practice/promptsView.ts` — daily prompt display + browse all prompts by concept/depth; "Sat with this" button persisted via `practiceHistory` (spec: docs/practice-plan.md)
 - [x] Create `src/core/practice/pathsListView.ts` — list all 3 paths with title, session count, progress indicator (spec: docs/practice-plan.md)
-- [ ] Create `src/core/practice/pathDetailView.ts` — session list with completion checkboxes persisted via `practiceHistory` (spec: docs/practice-plan.md)
+- [x] Create `src/core/practice/pathDetailView.ts` — session list with completion checkboxes persisted via `practiceHistory` (spec: docs/practice-plan.md)
 - [ ] Create `src/core/practice/practiceHistoryView.ts` — log of all completed sessions (meditation + prompts + path sessions) with timestamps (spec: docs/practice-plan.md)
 - [ ] Create `src/core/practice/meditationSessionView.ts` — active timer UI with instruction display, step progression, pause/resume/stop controls, bell integration; returns cleanup function (spec: docs/practice-plan.md)
 

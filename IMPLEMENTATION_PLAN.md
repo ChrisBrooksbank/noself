@@ -76,7 +76,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 
 ### Practice — Phase 3: Audio + Timer
 
-- [ ] Create `src/core/practice/bellSound.ts` — Web Audio API bell tone (~800 Hz sine + harmonic, exponential gain ramp-down, lazy `AudioContext`) (spec: docs/practice-plan.md)
+- [x] Create `src/core/practice/bellSound.ts` — Web Audio API bell tone (~800 Hz sine + harmonic, exponential gain ramp-down, lazy `AudioContext`) (spec: docs/practice-plan.md)
 - [ ] Create `src/core/practice/meditationTimer.ts` — timer state machine (idle → running → paused → completed) with step progression and bell-on-step callbacks (spec: docs/practice-plan.md)
 
 ### Practice — Phase 4: Routing + Nav

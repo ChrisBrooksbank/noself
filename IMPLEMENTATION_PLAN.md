@@ -102,7 +102,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 ### Practice — Phase 7: Tests
 
 - [x] Add tests for meditation and prompt loaders (validate all YAMLs load, IDs are valid, required fields present) (spec: docs/practice-plan.md)
-- [ ] Add tests for `practiceHistory.ts` and `dailyPrompt.ts` (mirrors existing test patterns) (spec: docs/practice-plan.md)
+- [x] Add tests for `practiceHistory.ts` and `dailyPrompt.ts` (mirrors existing test patterns) (spec: docs/practice-plan.md)
 - [ ] Add tests for `bellSound.ts` and `meditationTimer.ts` (mock AudioContext, use `vi.useFakeTimers`) (spec: docs/practice-plan.md)
 - [ ] Add view tests for all 7 practice views (mirror `homeView.test.ts` pattern) (spec: docs/practice-plan.md)
 - [ ] Add router tests for 7 new practice routes (spec: docs/practice-plan.md)

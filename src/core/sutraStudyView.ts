@@ -4,7 +4,10 @@ import type { Sutra, SutraSection } from '../content/sutras/index.js';
 
 function renderToc(sections: SutraSection[]): string {
     const items = sections
-        .map((s) => `<li><a href="#section-${s.id}">${s.title}</a></li>`)
+        .map(
+            (s) =>
+                `<li><a href="javascript:void(0)" data-scroll-to="section-${s.id}">${s.title}</a></li>`,
+        )
         .join('');
 
     return `
@@ -95,4 +98,13 @@ export function renderSutraStudyView(container: HTMLElement, id: string): void {
     }
 
     container.innerHTML = renderSutra(sutra);
+
+    container.addEventListener('click', (e) => {
+        const target = (e.target as HTMLElement).closest<HTMLElement>('[data-scroll-to]');
+        if (target) {
+            e.preventDefault();
+            const el = document.getElementById(target.dataset.scrollTo!);
+            el?.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 }

@@ -19,6 +19,9 @@ import { renderSutrasListView } from '@core/sutrasListView.js';
 import { renderSutraStudyView } from '@core/sutraStudyView.js';
 import { renderPujaPerformView } from '@core/practice/pujaPerformView.js';
 import { renderMantraListView } from '@core/practice/mantraListView.js';
+import { renderMantraDetailView } from '@core/practice/mantraDetailView.js';
+import { renderPujaListView } from '@core/practice/pujaListView.js';
+import { renderPujaStudyView } from '@core/practice/pujaStudyView.js';
 
 const config = loadConfig();
 
@@ -108,18 +111,10 @@ start((route) => {
                 </div>`;
             break;
         case 'practicePujas':
-            viewHost.innerHTML = `
-                <div class="page stack" role="main">
-                    <h1>Pujas</h1>
-                    <p>Coming soon.</p>
-                </div>`;
+            renderPujaListView(viewHost);
             break;
         case 'practicePujaStudy':
-            viewHost.innerHTML = `
-                <div class="page stack" role="main">
-                    <h1>Puja Study</h1>
-                    <p>Coming soon.</p>
-                </div>`;
+            renderPujaStudyView(viewHost, route.id);
             break;
         case 'practicePujaPerform':
             currentCleanup = renderPujaPerformView(viewHost, route.id);
@@ -128,11 +123,7 @@ start((route) => {
             renderMantraListView(viewHost);
             break;
         case 'practiceMantraDetail':
-            viewHost.innerHTML = `
-                <div class="page stack" role="main">
-                    <h1>Mantra Detail</h1>
-                    <p>Coming soon.</p>
-                </div>`;
+            renderMantraDetailView(viewHost, route.id);
             break;
         case 'practiceMantraChant':
             currentCleanup = (() => {

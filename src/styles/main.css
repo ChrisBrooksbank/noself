@@ -633,6 +633,42 @@ a.card:hover,
     line-height: var(--leading-relaxed);
 }
 
+/* Guidance modal */
+
+.guidance-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: var(--space-md);
+}
+
+.guidance-modal {
+    max-width: 28rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modal-fade-in 0.3s ease;
+}
+
+.guidance-modal__close {
+    align-self: center;
+}
+
+@keyframes modal-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* =========================================================
    Install Banner
    ========================================================= */

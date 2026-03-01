@@ -22,27 +22,60 @@ function renderProgress(viewedCount: number): string {
         </p>`;
 }
 
-function renderGuidance(): string {
+const GUIDANCE_KEY = 'noself:guidanceLastShown';
+const GUIDANCE_INTERVAL_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
+
+function shouldShowGuidance(): boolean {
+    const last = localStorage.getItem(GUIDANCE_KEY);
+    if (!last) return true;
+    return Date.now() - Number(last) >= GUIDANCE_INTERVAL_MS;
+}
+
+function markGuidanceShown(): void {
+    localStorage.setItem(GUIDANCE_KEY, String(Date.now()));
+}
+
+function renderGuidanceModal(): string {
     return `
-        <section class="home-guidance card stack-sm" aria-label="A note on practice">
-            <h2 class="home-guidance__heading">Beyond Reading</h2>
-            <p class="home-guidance__text">
-                In the Buddhist tradition, reading about the Dhamma is called
-                <em>sutamaya panna</em> — wisdom gained from hearing or study.
-                It is a valuable first step, but only the beginning.
-            </p>
-            <p class="home-guidance__text">
-                Deeper understanding comes through <em>cintamaya panna</em>,
-                personal reflection, and ultimately through
-                <em>bhavanamaya panna</em> — the direct insight that arises
-                from meditative practice.
-            </p>
-            <p class="home-guidance__text">
-                If these teachings resonate with you, consider finding a local
-                sangha and a qualified teacher. A living community of practice
-                can offer what no app or book can.
-            </p>
-        </section>`;
+        <div class="guidance-modal-overlay" role="dialog" aria-modal="true" aria-label="A note on practice">
+            <div class="guidance-modal card stack-sm">
+                <h2 class="home-guidance__heading">Beyond Reading</h2>
+                <p class="home-guidance__text">
+                    In the Buddhist tradition, reading about the Dhamma is called
+                    <em>sutamaya panna</em> — wisdom gained from hearing or study.
+                    It is a valuable first step, but only the beginning.
+                </p>
+                <p class="home-guidance__text">
+                    Deeper understanding comes through <em>cintamaya panna</em>,
+                    personal reflection, and ultimately through
+                    <em>bhavanamaya panna</em> — the direct insight that arises
+                    from meditative practice.
+                </p>
+                <p class="home-guidance__text">
+                    If these teachings resonate with you, consider finding a local
+                    sangha and a qualified teacher. A living community of practice
+                    can offer what no app or book can.
+                </p>
+                <button class="btn guidance-modal__close" type="button">Close</button>
+            </div>
+        </div>`;
+}
+
+function showGuidanceModal(container: HTMLElement): void {
+    if (!shouldShowGuidance()) return;
+
+    container.insertAdjacentHTML('beforeend', renderGuidanceModal());
+    markGuidanceShown();
+
+    const overlay = container.querySelector<HTMLElement>('.guidance-modal-overlay');
+    if (!overlay) return;
+
+    const close = (): void => overlay.remove();
+
+    overlay.querySelector('.guidance-modal__close')?.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) close();
+    });
 }
 
 function renderHistory(viewedIds: string[]): string {
@@ -73,6 +106,7 @@ export function renderHomeView(container: HTMLElement): void {
             ${renderDailyCard(concept.id, concept.title, concept.brief)}
             ${renderProgress(viewedIds.length)}
             ${renderHistory(viewedIds)}
-            ${renderGuidance()}
         </div>`;
+
+    showGuidanceModal(container);
 }

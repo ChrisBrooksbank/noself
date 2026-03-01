@@ -2,7 +2,7 @@
 
 ## Status
 
-- Planning iterations: 2
+- Planning iterations: 3
 - Build iterations: 18
 - Last updated: 2026-03-01
 
@@ -29,9 +29,9 @@
 
 - `src/core/nav.test.ts` — expects "Home" link text but nav renders brand text ("noself") instead of a labeled Home link
 
-### Not Implemented — Practice Section
+### Not Implemented — Puja & Mantra Sections
 
-Full practice section planned in `docs/practice-plan.md`. Not covered by existing specs. Nothing implemented yet.
+Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully satisfied. Puja and Mantra are new practice modalities not yet started.
 
 ---
 
@@ -106,6 +106,45 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 - [x] Add tests for `bellSound.ts` and `meditationTimer.ts` (mock AudioContext, use `vi.useFakeTimers`) (spec: docs/practice-plan.md)
 - [x] Add view tests for all 7 practice views (mirror `homeView.test.ts` pattern) (spec: docs/practice-plan.md)
 - [x] Add router tests for 7 new practice routes (spec: docs/practice-plan.md)
+
+### Puja & Mantra — Phase 1: Content Infrastructure
+
+- [ ] Create `src/content/pujas/index.ts` with `Puja`, `PujaSection`, `RitualStep` types and `PUJA_IDS` array (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Create `src/content/pujas/loader.ts` with Zod schema + `import.meta.glob` loader (mirrors `src/content/sutras/loader.ts`) (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Write `src/content/pujas/sevenfold-puja.yaml` with sections (study) and ritualSteps (perform) for the Triratna Sevenfold Puja (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Create `src/content/mantras/index.ts` with `Mantra`, `MantraSyllable` types and `MANTRA_IDS` array (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Create `src/content/mantras/loader.ts` with Zod schema + `import.meta.glob` loader (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Write `src/content/mantras/avalokiteshvara.yaml` with sanskrit, syllables, meaning, usage, defaultRepetitions (spec: docs/plan-puja-mantra-sections.md)
+
+### Puja & Mantra — Phase 2: Data Layer
+
+- [ ] Extend `src/core/practiceHistory.ts` with `pujas: PujaSession[]` and `mantras: MantraSession[]` fields; add `logPujaSession()`, `getPujaSessions()`, `logMantraSession()`, `getMantraSessions()`; update `getTotalSessionCount()`; use `??` defaults for backward compatibility (spec: docs/plan-puja-mantra-sections.md)
+
+### Puja & Mantra — Phase 3: Routing + Nav
+
+- [ ] Extend `src/core/router.ts` with 6 new route types: `practicePujas`, `practicePujaStudy`, `practicePujaPerform`, `practiceMantras`, `practiceMantraDetail`, `practiceMantraChant`; add `parseHash` matchers (match `/perform` and `/chant` before bare `/:id`) (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Extend `src/main.ts` with 6 new route cases; `pujaPerformView` and `mantraChantView` assign to `currentCleanup` (spec: docs/plan-puja-mantra-sections.md)
+
+### Puja & Mantra — Phase 4: Views
+
+- [ ] Create `src/core/practice/pujaListView.ts` — cards with title, tradition, description; links to study + perform (mirrors `meditationListView.ts`) (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Create `src/core/practice/pujaStudyView.ts` — sections with original/translation/commentary/related concepts (mirrors `sutraStudyView.ts`) (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Create `src/core/practice/pujaPerformView.ts` — step-by-step ritual flow with timer; returns cleanup function (mirrors `meditationSessionView.ts`) (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Create `src/core/practice/mantraListView.ts` — cards with title, sanskrit, tradition (mirrors `meditationListView.ts`) (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Create `src/core/practice/mantraDetailView.ts` — large mantra text, syllable breakdown, meaning, related concepts (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Create `src/core/practice/mantraChantView.ts` — mala counter (42/108), large tap button, 108-dot circular mala visualization, haptic feedback via `navigator.vibrate?.(10)`, bell every 27 beads, completion logging; returns cleanup function (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Update `src/core/practice/practiceHubView.ts` — add Puja and Mantra cards after Paths; add puja/mantra counts to stats summary (spec: docs/plan-puja-mantra-sections.md)
+
+### Puja & Mantra — Phase 5: Styles
+
+- [ ] Add puja/mantra CSS to `src/styles/main.css`: `.puja-*` classes (reuse `.sutra-*` and `.meditation-*` patterns), `.mantra-detail` syllable grid, `.mala` / `.mala__bead` circular layout, `.mantra-chant__counter` / `.mantra-chant__tap-target` (spec: docs/plan-puja-mantra-sections.md)
+
+### Puja & Mantra — Phase 6: Tests
+
+- [ ] Add loader tests: `src/content/pujas/loader.test.ts` and `src/content/mantras/loader.test.ts` (validate YAMLs load, IDs valid, required fields present) (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Add view tests for all 6 new views: `pujaListView`, `pujaStudyView`, `pujaPerformView`, `mantraListView`, `mantraDetailView`, `mantraChantView` (mirror existing view test patterns) (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Update `src/core/router.test.ts` with 6 new parse cases for puja/mantra routes (spec: docs/plan-puja-mantra-sections.md)
+- [ ] Update `src/core/practiceHistory.test.ts` with tests for `logPujaSession`, `getPujaSessions`, `logMantraSession`, `getMantraSessions`, updated `getTotalSessionCount` (spec: docs/plan-puja-mantra-sections.md)
 
 ---
 

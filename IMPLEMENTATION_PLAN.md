@@ -110,7 +110,7 @@ Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully s
 ### Puja & Mantra — Phase 1: Content Infrastructure
 
 - [x] Create `src/content/pujas/index.ts` with `Puja`, `PujaSection`, `RitualStep` types and `PUJA_IDS` array (spec: docs/plan-puja-mantra-sections.md)
-- [ ] Create `src/content/pujas/loader.ts` with Zod schema + `import.meta.glob` loader (mirrors `src/content/sutras/loader.ts`) (spec: docs/plan-puja-mantra-sections.md)
+- [x] Create `src/content/pujas/loader.ts` with Zod schema + `import.meta.glob` loader (mirrors `src/content/sutras/loader.ts`) (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Write `src/content/pujas/sevenfold-puja.yaml` with sections (study) and ritualSteps (perform) for the Triratna Sevenfold Puja (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Create `src/content/mantras/index.ts` with `Mantra`, `MantraSyllable` types and `MANTRA_IDS` array (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Create `src/content/mantras/loader.ts` with Zod schema + `import.meta.glob` loader (spec: docs/plan-puja-mantra-sections.md)

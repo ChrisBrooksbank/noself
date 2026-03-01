@@ -60,3 +60,5 @@ export type PujaId = (typeof PUJA_IDS)[number];
 
 /** All puja IDs in the library */
 export const PUJA_IDS = ['sevenfold-puja'] as const;
+
+export { loadPujas, getPujaById, resetPujaCache } from './loader.js';

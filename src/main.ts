@@ -31,8 +31,16 @@ const viewHost = app.querySelector<HTMLElement>('#view-host')!;
 initOnlineStatus(navHost);
 initInstallPrompt(installHost);
 
+let currentCleanup: (() => void) | null = null;
+
 start((route) => {
     logger.debug('Route', route);
+
+    if (currentCleanup) {
+        currentCleanup();
+        currentCleanup = null;
+    }
+
     renderNav(navHost, route.type);
 
     switch (route.type) {
@@ -44,6 +52,55 @@ start((route) => {
             break;
         case 'concept':
             renderConceptView(viewHost, route.id);
+            break;
+        case 'practice':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Practice</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practiceMediate':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Guided Meditations</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practiceMeditateSession':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Meditation Session</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practicePrompts':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Contemplation Prompts</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practicePaths':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Practice Paths</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practicePathDetail':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Path Detail</h1>
+                    <p>Coming soon.</p>
+                </div>`;
+            break;
+        case 'practiceHistory':
+            viewHost.innerHTML = `
+                <div class="page stack" role="main">
+                    <h1>Practice History</h1>
+                    <p>Coming soon.</p>
+                </div>`;
             break;
         default:
             viewHost.innerHTML = `

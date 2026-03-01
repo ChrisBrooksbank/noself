@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { renderCatalogView, matchesSearch } from './catalogView.js';
+import { renderCatalogView, matchesSearch, matchesCategory } from './catalogView.js';
 
 const { mockConcepts, viewedIds } = vi.hoisted(() => {
     const mockConcepts = [
@@ -117,6 +117,65 @@ describe('renderCatalogView', () => {
         expect(input).toBeTruthy();
         expect(input?.getAttribute('type')).toBe('search');
     });
+
+    it('renders category filter buttons including "All"', () => {
+        renderCatalogView(container);
+        const filterGroup = container.querySelector('.catalog-filter');
+        expect(filterGroup).toBeTruthy();
+        const buttons = filterGroup?.querySelectorAll('.catalog-filter__btn');
+        expect(buttons?.length).toBeGreaterThan(1);
+        const allBtn = Array.from(buttons ?? []).find(
+            (b) => b.getAttribute('data-category') === 'all',
+        );
+        expect(allBtn).toBeTruthy();
+        expect(allBtn?.classList.contains('catalog-filter__btn--active')).toBe(true);
+        expect(allBtn?.getAttribute('aria-pressed')).toBe('true');
+    });
+
+    it('filters to selected category when a filter button is clicked', () => {
+        renderCatalogView(container);
+        const threeMarksBtn = container.querySelector<HTMLButtonElement>(
+            '[data-category="three-marks"]',
+        )!;
+        threeMarksBtn.click();
+        const items = container.querySelectorAll('.catalog-item');
+        // Only 'anatta' has category 'three-marks'
+        expect(items.length).toBe(1);
+        expect(items[0]?.querySelector('.catalog-item__link')?.textContent?.trim()).toBe(
+            'No-Self',
+        );
+    });
+
+    it('shows all concepts when "All" filter is clicked after category filter', () => {
+        renderCatalogView(container);
+        const threeMarksBtn = container.querySelector<HTMLButtonElement>(
+            '[data-category="three-marks"]',
+        )!;
+        threeMarksBtn.click();
+        const allBtn = container.querySelector<HTMLButtonElement>(
+            '[data-category="all"]',
+        )!;
+        allBtn.click();
+        const items = container.querySelectorAll('.catalog-item');
+        expect(items.length).toBe(2);
+    });
+
+    it('marks the clicked filter button as active and others inactive', () => {
+        renderCatalogView(container);
+        const liberationBtn = container.querySelector<HTMLButtonElement>(
+            '[data-category="liberation"]',
+        )!;
+        liberationBtn.click();
+        expect(liberationBtn.classList.contains('catalog-filter__btn--active')).toBe(
+            true,
+        );
+        expect(liberationBtn.getAttribute('aria-pressed')).toBe('true');
+        const allBtn = container.querySelector<HTMLButtonElement>(
+            '[data-category="all"]',
+        )!;
+        expect(allBtn.classList.contains('catalog-filter__btn--active')).toBe(false);
+        expect(allBtn.getAttribute('aria-pressed')).toBe('false');
+    });
 });
 
 describe('matchesSearch', () => {
@@ -162,5 +221,32 @@ describe('matchesSearch', () => {
     it('handles null sanskrit gracefully', () => {
         const noSanskrit = { ...concept, sanskrit: null };
         expect(matchesSearch(noSanskrit, 'anātman')).toBe(false);
+    });
+});
+
+describe('matchesCategory', () => {
+    const concept = {
+        id: 'anatta',
+        title: 'No-Self',
+        pali: 'anattā',
+        sanskrit: null,
+        category: 'three-marks' as const,
+        related: [],
+        brief: '',
+        essentials: '',
+        deep: '',
+        examples: [],
+    };
+
+    it('returns true for "all"', () => {
+        expect(matchesCategory(concept, 'all')).toBe(true);
+    });
+
+    it('returns true when category matches', () => {
+        expect(matchesCategory(concept, 'three-marks')).toBe(true);
+    });
+
+    it('returns false when category does not match', () => {
+        expect(matchesCategory(concept, 'liberation')).toBe(false);
     });
 });

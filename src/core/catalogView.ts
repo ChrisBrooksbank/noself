@@ -1,7 +1,18 @@
 import { loadConcepts } from '../content/concepts/index.js';
 import { isViewed } from './readingHistory.js';
 import { debounce } from '../utils/helpers.js';
-import type { Concept } from '../content/concepts/index.js';
+import type { Concept, ConceptCategory } from '../content/concepts/index.js';
+
+const CATEGORIES: Array<{ value: ConceptCategory | 'all'; label: string }> = [
+    { value: 'all', label: 'All' },
+    { value: 'foundational', label: 'Foundational' },
+    { value: 'three-marks', label: 'Three Marks' },
+    { value: 'mind-and-practice', label: 'Mind & Practice' },
+    { value: 'buddhist-psychology', label: 'Psychology' },
+    { value: 'brahmaviharas', label: 'Brahmaviharas' },
+    { value: 'mahayana', label: 'Mahayana' },
+    { value: 'liberation', label: 'Liberation' },
+];
 
 function renderConceptItem(concept: Concept): string {
     const viewed = isViewed(concept.id);
@@ -27,6 +38,13 @@ function renderConceptItem(concept: Concept): string {
         </li>`;
 }
 
+export function matchesCategory(
+    concept: Concept,
+    category: ConceptCategory | 'all',
+): boolean {
+    return category === 'all' || concept.category === category;
+}
+
 export function matchesSearch(concept: Concept, query: string): boolean {
     const q = query.toLowerCase();
     return (
@@ -39,6 +57,12 @@ export function matchesSearch(concept: Concept, query: string): boolean {
 
 export function renderCatalogView(container: HTMLElement): void {
     const concepts = loadConcepts();
+    let activeCategory: ConceptCategory | 'all' = 'all';
+
+    const categoryButtons = CATEGORIES.map(
+        (cat) =>
+            `<button class="btn catalog-filter__btn${cat.value === 'all' ? ' catalog-filter__btn--active' : ''}" data-category="${cat.value}" aria-pressed="${cat.value === 'all'}">${cat.label}</button>`,
+    ).join('');
 
     container.innerHTML = `
         <div class="catalog-view page stack-lg" role="main">
@@ -53,17 +77,23 @@ export function renderCatalogView(container: HTMLElement): void {
                     aria-label="Search concepts"
                 />
             </div>
+            <div class="catalog-filter btn-group" role="group" aria-label="Filter by category">
+                ${categoryButtons}
+            </div>
             <ul class="catalog-list stack-sm" aria-label="Buddhist concepts" aria-live="polite">
             </ul>
         </div>`;
 
     const list = container.querySelector<HTMLElement>('.catalog-list')!;
     const input = container.querySelector<HTMLInputElement>('#catalog-search-input')!;
+    const filterGroup = container.querySelector<HTMLElement>('.catalog-filter')!;
 
     function renderList(query: string): void {
-        const filtered = query
-            ? concepts.filter((c) => matchesSearch(c, query))
-            : concepts;
+        const filtered = concepts.filter(
+            (c) =>
+                (query ? matchesSearch(c, query) : true) &&
+                matchesCategory(c, activeCategory),
+        );
         list.innerHTML = filtered.map(renderConceptItem).join('');
     }
 
@@ -73,5 +103,20 @@ export function renderCatalogView(container: HTMLElement): void {
 
     input.addEventListener('input', () => {
         debouncedRender(input.value.trim());
+    });
+
+    filterGroup.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(
+            '.catalog-filter__btn',
+        );
+        if (!btn) return;
+        activeCategory = btn.dataset.category as ConceptCategory | 'all';
+        filterGroup
+            .querySelectorAll<HTMLButtonElement>('.catalog-filter__btn')
+            .forEach((b) => {
+                b.classList.toggle('catalog-filter__btn--active', b === btn);
+                b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+            });
+        renderList(input.value.trim());
     });
 }

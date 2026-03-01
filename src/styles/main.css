@@ -274,6 +274,19 @@ hr {
     border-width: 0;
 }
 
+/* Category filter active state */
+.catalog-filter__btn--active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+}
+
+.catalog-filter__btn--active:hover,
+.catalog-filter__btn--active:focus-visible {
+    background-color: #c73652;
+    border-color: #c73652;
+}
+
 /* =========================================================
    Responsive
    ========================================================= */

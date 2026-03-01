@@ -81,7 +81,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 
 ### Practice — Phase 4: Routing + Nav
 
-- [ ] Extend `src/core/router.ts` with 7 new route types: `practice`, `practiceMediate`, `practiceMeditateSession`, `practicePrompts`, `practicePaths`, `practicePathDetail`, `practiceHistory` (spec: docs/practice-plan.md)
+- [x] Extend `src/core/router.ts` with 7 new route types: `practice`, `practiceMediate`, `practiceMeditateSession`, `practicePrompts`, `practicePaths`, `practicePathDetail`, `practiceHistory` (spec: docs/practice-plan.md)
 - [ ] Extend `src/core/nav.ts` with "Practice" link; active when `route.type.startsWith('practice')` (spec: docs/practice-plan.md)
 - [ ] Extend `src/main.ts` with route cases for all 7 practice routes, add module-level `currentCleanup` mechanism (spec: docs/practice-plan.md)
 

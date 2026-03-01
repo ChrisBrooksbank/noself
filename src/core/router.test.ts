@@ -28,6 +28,40 @@ describe('parseHash', () => {
     it('returns notFound for unknown paths', () => {
         expect(parseHash('#/unknown')).toEqual({ type: 'notFound' });
     });
+
+    it('returns practice for #/practice', () => {
+        expect(parseHash('#/practice')).toEqual({ type: 'practice' });
+    });
+
+    it('returns practiceMediate for #/practice/meditate', () => {
+        expect(parseHash('#/practice/meditate')).toEqual({ type: 'practiceMediate' });
+    });
+
+    it('returns practiceMeditateSession with id for #/practice/meditate/:id', () => {
+        expect(parseHash('#/practice/meditate/breath-awareness')).toEqual({
+            type: 'practiceMeditateSession',
+            id: 'breath-awareness',
+        });
+    });
+
+    it('returns practicePrompts for #/practice/prompts', () => {
+        expect(parseHash('#/practice/prompts')).toEqual({ type: 'practicePrompts' });
+    });
+
+    it('returns practicePaths for #/practice/paths', () => {
+        expect(parseHash('#/practice/paths')).toEqual({ type: 'practicePaths' });
+    });
+
+    it('returns practicePathDetail with id for #/practice/paths/:id', () => {
+        expect(parseHash('#/practice/paths/seven-day-metta')).toEqual({
+            type: 'practicePathDetail',
+            id: 'seven-day-metta',
+        });
+    });
+
+    it('returns practiceHistory for #/practice/history', () => {
+        expect(parseHash('#/practice/history')).toEqual({ type: 'practiceHistory' });
+    });
 });
 
 describe('navigate', () => {

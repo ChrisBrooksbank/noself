@@ -2,6 +2,8 @@ export type Route =
     | { type: 'home' }
     | { type: 'catalog' }
     | { type: 'concept'; id: string }
+    | { type: 'sutras' }
+    | { type: 'sutraDetail'; id: string }
     | { type: 'practice' }
     | { type: 'practiceMediate' }
     | { type: 'practiceMeditateSession'; id: string }
@@ -23,6 +25,11 @@ export function parseHash(hash: string): Route {
 
     const conceptMatch = path.match(/^\/concept\/([^/]+)$/);
     if (conceptMatch?.[1]) return { type: 'concept', id: conceptMatch[1] };
+
+    if (path === '/sutras') return { type: 'sutras' };
+
+    const sutraMatch = path.match(/^\/sutra\/([^/]+)$/);
+    if (sutraMatch?.[1]) return { type: 'sutraDetail', id: sutraMatch[1] };
 
     if (path === '/practice') return { type: 'practice' };
     if (path === '/practice/meditate') return { type: 'practiceMediate' };

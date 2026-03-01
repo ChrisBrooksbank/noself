@@ -62,6 +62,17 @@ describe('parseHash', () => {
     it('returns practiceHistory for #/practice/history', () => {
         expect(parseHash('#/practice/history')).toEqual({ type: 'practiceHistory' });
     });
+
+    it('returns sutras for #/sutras', () => {
+        expect(parseHash('#/sutras')).toEqual({ type: 'sutras' });
+    });
+
+    it('returns sutraDetail with id for #/sutra/:id', () => {
+        expect(parseHash('#/sutra/heart-sutra')).toEqual({
+            type: 'sutraDetail',
+            id: 'heart-sutra',
+        });
+    });
 });
 
 describe('navigate', () => {

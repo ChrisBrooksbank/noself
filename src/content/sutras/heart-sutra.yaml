@@ -1,0 +1,239 @@
+id: heart-sutra
+title: Heart Sutra
+sanskrit: 'Prajnaparamitahridaya'
+pali: null
+tradition: Mahayana
+description: >-
+    The Heart Sutra is the most widely recited text in Mahayana Buddhism.
+    In just a few hundred words it distills the vast Prajnaparamita literature
+    into a radical declaration: form is emptiness, emptiness is form. It is
+    both a philosophical statement and a contemplative practice, inviting
+    the practitioner to see through all conceptual categories to the
+    luminous nature of reality itself.
+
+sections:
+    - id: the-setting
+      order: 1
+      title: The Setting
+      original: >-
+          Arya-Avalokiteshvaro bodhisattvo gambhiram prajnaparamita-charyam
+          charamano vyavalokayati sma: panca-skandhas tams ca svabhava-
+          shunyams pashyati sma.
+      originalLanguage: Sanskrit
+      translation: >-
+          The noble Avalokiteshvara Bodhisattva, while practicing the deep
+          practice of Prajnaparamita, looked upon the five aggregates and
+          saw that they are empty of self-nature.
+      commentary: >-
+          The sutra opens with Avalokiteshvara — the bodhisattva of compassion —
+          engaged in deep meditative insight. This is significant: it is not
+          intellectual analysis but direct contemplative seeing that reveals
+          emptiness. The five aggregates (form, feeling, perception, mental
+          formations, consciousness) are the Buddhist analysis of what we call
+          "a person." Seeing them as empty is seeing through the illusion of a
+          fixed, separate self.
+      relatedConcepts:
+          - bodhisattva
+          - five-aggregates
+          - prajna
+          - sunyata
+
+    - id: form-is-emptiness
+      order: 2
+      title: Form is Emptiness
+      original: >-
+          Iha Shariputra rupam shunyata, shunyataiva rupam; rupan na prithak
+          shunyata, shunyataya na prithag rupam; yad rupam sa shunyata,
+          ya shunyata tad rupam.
+      originalLanguage: Sanskrit
+      translation: >-
+          Here, Shariputra, form is emptiness, emptiness itself is form.
+          Emptiness is not other than form, form is not other than emptiness.
+          What is form, that is emptiness; what is emptiness, that is form.
+      commentary: >-
+          This is the heart of the Heart Sutra — a complete identity between
+          form and emptiness. Emptiness here does not mean nothingness or a void.
+          It means that all phenomena lack inherent, independent existence; they
+          arise only in dependence on causes and conditions. But this emptiness
+          is not separate from the vivid appearances of the world. The cup on the
+          table is empty of a fixed essence, yet it holds your tea. Emptiness and
+          form are not two different things viewed from different angles — they
+          are the same reality.
+      relatedConcepts:
+          - sunyata
+          - five-aggregates
+          - dependent-origination
+
+    - id: emptiness-of-aggregates
+      order: 3
+      title: Emptiness of the Aggregates
+      original: >-
+          Evam eva vedana-samjna-samskara-vijnanam. Iha Shariputra
+          sarva-dharmah shunyata-lakshanah.
+      originalLanguage: Sanskrit
+      translation: >-
+          The same is true of feelings, perceptions, mental formations, and
+          consciousness. Here, Shariputra, all dharmas are marked with emptiness.
+      commentary: >-
+          Having declared form empty, the sutra extends this to all five
+          aggregates. Feelings, perceptions, mental formations, and consciousness
+          are equally empty of inherent existence. Then comes the sweeping
+          generalization: all dharmas — all phenomena without exception — bear
+          the mark of emptiness. This is not nihilism but a liberation from
+          clinging to anything as ultimately solid or permanent.
+      relatedConcepts:
+          - five-aggregates
+          - sunyata
+          - anicca
+
+    - id: no-characteristics
+      order: 4
+      title: No Characteristics
+      original: >-
+          Anutpanna aniruddha, amala avimala, anuna aparipurnah.
+      originalLanguage: Sanskrit
+      translation: >-
+          They are not produced, not destroyed; not defiled, not pure;
+          not increasing, not decreasing.
+      commentary: >-
+          The sutra now strips away every conceptual category we use to grasp
+          reality. In emptiness there is no arising and no ceasing — because
+          what never had inherent existence cannot truly come into being or
+          pass away. There is no purity or defilement — these are relative
+          labels, not ultimate realities. Nothing increases or decreases
+          because there is no fixed quantity to measure. Each negation removes
+          another layer of conceptual overlay, pointing to a reality beyond
+          all categories.
+      relatedConcepts:
+          - sunyata
+          - anicca
+          - anatta
+
+    - id: no-sense-realms
+      order: 5
+      title: No Sense Realms
+      original: >-
+          Na chakshuh-shrotra-ghrana-jihva-kaya-manamsi. Na rupa-shabda-
+          gandha-rasa-sprashtavya-dharmah. Na chakshur-dhatur yavan
+          na mano-vijnana-dhatuh.
+      originalLanguage: Sanskrit
+      translation: >-
+          There is no eye, no ear, no nose, no tongue, no body, no mind.
+          No form, no sound, no smell, no taste, no touch, no object of mind.
+          No realm of eyes, and so forth until no realm of mind consciousness.
+      commentary: >-
+          The sutra systematically negates the six sense organs, their six
+          objects, and the six consciousnesses — the eighteen dhatus that form
+          the Buddhist map of subjective experience. This does not deny that
+          you see, hear, and think. It denies that any of these exist as
+          independent, self-standing entities. The eye does not see by its own
+          power; seeing arises from the interdependence of eye, object, light,
+          attention, and consciousness. None of the links in this chain exists
+          on its own.
+      relatedConcepts:
+          - sunyata
+          - dependent-origination
+          - anatta
+
+    - id: no-dependent-origination
+      order: 6
+      title: No Dependent Origination
+      original: >-
+          Na-avidya na-avidya-kshayo yavan na jaramaranam
+          na jaramarana-kshayo.
+      originalLanguage: Sanskrit
+      translation: >-
+          There is no ignorance, no extinction of ignorance, and so forth
+          until no aging and death, no extinction of aging and death.
+      commentary: >-
+          Now the sutra negates the twelve links of dependent origination —
+          the chain that explains how suffering arises and perpetuates through
+          cyclic existence. But it goes further: it also negates their
+          cessation. This is a radical move. The path from ignorance to
+          suffering, and the reversal of that path, are themselves empty.
+          This does not mean practice is pointless. It means that even the
+          concepts of bondage and liberation are provisional tools, not
+          ultimate realities.
+      relatedConcepts:
+          - dependent-origination
+          - twelve-links
+          - samsara
+
+    - id: no-four-noble-truths
+      order: 7
+      title: No Four Noble Truths
+      original: >-
+          Na duhkha-samudaya-nirodha-margah. Na jnanam, na praptih,
+          na-apraptih.
+      originalLanguage: Sanskrit
+      translation: >-
+          There is no suffering, no origination, no stopping, no path.
+          There is no cognition, no attainment, and no non-attainment.
+      commentary: >-
+          This is perhaps the most startling negation. The Four Noble Truths
+          are the foundation of all Buddhist teaching, yet here they too are
+          declared empty. Suffering exists conventionally, but ultimately it has
+          no inherent nature to cling to. The path exists conventionally, but
+          there is no fixed "path" existing out there waiting to be walked.
+          There is nothing to attain because there is no separate self to do
+          the attaining and no separate goal to be attained. This is the
+          perfection of wisdom — seeing that even the Dharma itself is a raft
+          to be set down.
+      relatedConcepts:
+          - four-noble-truths
+          - dukkha
+          - sunyata
+          - nirvana
+
+    - id: bodhisattva-attainment
+      order: 8
+      title: "The Bodhisattva's Attainment"
+      original: >-
+          Tasmac Chariputra apraptivad bodhisattvasya prajnaparamitam ashritya
+          viharaty acittavaranah. Cittavarana-nashtitvad atrasto viparyasa-
+          atikranto nishtha-nirvana-praptah.
+      originalLanguage: Sanskrit
+      translation: >-
+          Therefore, Shariputra, since there is no attainment, a bodhisattva,
+          relying on the Perfection of Wisdom, dwells with nothing obscuring
+          the mind. With nothing obscuring the mind, there is no fear.
+          Having gone completely beyond all error, one reaches the
+          final end of nirvana.
+      commentary: >-
+          Because there is nothing to attain, the bodhisattva's mind is free
+          from all obstruction. When you no longer grasp at gaining something
+          or avoiding something, fear dissolves. The "errors" transcended are
+          the four distortions — seeing permanence in the impermanent, self in
+          the selfless, beauty in the impure, and happiness in suffering. But
+          even these corrections are ultimately let go. The nirvana reached is
+          not a place or state but the cessation of all conceptual fabrication
+          about reality.
+      relatedConcepts:
+          - bodhisattva
+          - prajna
+          - nirvana
+          - anatta
+
+    - id: the-mantra
+      order: 9
+      title: The Mantra
+      original: >-
+          Tadyatha: gate gate paragate parasamgate bodhi svaha.
+      originalLanguage: Sanskrit
+      translation: >-
+          Thus: gone, gone, gone beyond, gone completely beyond — awakening! So be it.
+      commentary: >-
+          The sutra concludes with a mantra — a practice that moves beyond
+          conceptual understanding into direct experience. "Gate gate" means
+          "gone, gone" — gone beyond the shore of suffering. "Paragate" is
+          "gone beyond" — transcending even the concept of transcendence.
+          "Parasamgate" is "gone completely beyond" — gone beyond all categories
+          including "beyond." "Bodhi svaha" is a joyful exclamation of
+          awakening. The mantra enacts what the sutra teaches: each repetition
+          is a letting go, a release of one more layer of clinging, until
+          nothing remains but the luminous awareness that was always already here.
+      relatedConcepts:
+          - awakening
+          - prajna
+          - sunyata
+          - bhavana

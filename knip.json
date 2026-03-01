@@ -17,6 +17,7 @@
         "src/content/concepts/index.ts",
         "src/content/meditations/index.ts",
         "src/content/prompts/index.ts",
-        "src/content/paths/index.ts"
+        "src/content/paths/index.ts",
+        "src/content/sutras/index.ts"
     ]
 }

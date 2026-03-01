@@ -13,6 +13,8 @@ import { renderPromptsView } from '@core/practice/promptsView.js';
 import { renderPathsListView } from '@core/practice/pathsListView.js';
 import { renderPathDetailView } from '@core/practice/pathDetailView.js';
 import { renderMeditationSessionView } from '@core/practice/meditationSessionView.js';
+import { renderSutrasListView } from '@core/sutrasListView.js';
+import { renderSutraStudyView } from '@core/sutraStudyView.js';
 
 const config = loadConfig();
 
@@ -63,6 +65,12 @@ start((route) => {
             break;
         case 'concept':
             renderConceptView(viewHost, route.id);
+            break;
+        case 'sutras':
+            renderSutrasListView(viewHost);
+            break;
+        case 'sutraDetail':
+            renderSutraStudyView(viewHost, route.id);
             break;
         case 'practice':
             renderPracticeHubView(viewHost);

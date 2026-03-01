@@ -6,11 +6,13 @@ export default defineConfig({
     plugins: [
         VitePWA({
             registerType: 'autoUpdate',
-            includeAssets: ['favicon.svg'],
+            includeAssets: ['favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png'],
             manifest: {
                 name: 'noself',
                 short_name: 'noself',
                 description: 'Buddhist contemplation PWA',
+                start_url: '/',
+                scope: '/',
                 theme_color: '#1a1a2e',
                 background_color: '#1a1a2e',
                 display: 'standalone',

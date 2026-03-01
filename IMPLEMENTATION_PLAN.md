@@ -144,7 +144,7 @@ Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully s
 - [x] Add loader tests: `src/content/pujas/loader.test.ts` and `src/content/mantras/loader.test.ts` (validate YAMLs load, IDs valid, required fields present) (spec: docs/plan-puja-mantra-sections.md)
 - [x] Add view tests for all 6 new views: `pujaListView`, `pujaStudyView`, `pujaPerformView`, `mantraListView`, `mantraDetailView`, `mantraChantView` (mirror existing view test patterns) (spec: docs/plan-puja-mantra-sections.md)
 - [x] Update `src/core/router.test.ts` with 6 new parse cases for puja/mantra routes (spec: docs/plan-puja-mantra-sections.md)
-- [ ] Update `src/core/practiceHistory.test.ts` with tests for `logPujaSession`, `getPujaSessions`, `logMantraSession`, `getMantraSessions`, updated `getTotalSessionCount` (spec: docs/plan-puja-mantra-sections.md)
+- [x] Update `src/core/practiceHistory.test.ts` with tests for `logPujaSession`, `getPujaSessions`, `logMantraSession`, `getMantraSessions`, updated `getTotalSessionCount` (spec: docs/plan-puja-mantra-sections.md)
 
 ---
 

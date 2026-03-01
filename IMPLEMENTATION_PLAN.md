@@ -43,7 +43,7 @@
 ### Foundation
 
 - [x] Install `yaml` package and create `src/content/concepts/loader.ts` that imports all 30 YAML files via `import.meta.glob` and parses + validates them into `Concept[]` (spec: content-display.md)
-- [ ] Add base CSS (`src/styles/main.css`) with reset, custom properties (colors, typography), and layout primitives; link from `index.html` (spec: navigation-search.md)
+- [x] Add base CSS (`src/styles/main.css`) with reset, custom properties (colors, typography), and layout primitives; link from `index.html` (spec: navigation-search.md)
 - [ ] Implement hash-based client-side router in `src/core/router.ts` supporting routes: `#/` (home), `#/catalog`, `#/concept/:id`; wire into `main.ts` (spec: navigation-search.md)
 
 ### Content Display

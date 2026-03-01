@@ -2,86 +2,136 @@
 
 ## Status
 
-- Planning iterations: 1
-- Build iterations: 0
+- Planning iterations: 2
+- Build iterations: 18
 - Last updated: 2026-03-01
 
 ## Gap Analysis
 
-### Already Implemented
+### Fully Implemented (all 4 specs)
 
-- [x] TypeScript `Concept` / `ConceptExample` / `ConceptCategory` / `ConceptId` types (`src/content/concepts/index.ts`)
-- [x] All 30 YAML concept files in `src/content/concepts/`
-- [x] PWA manifest + icons (vite-plugin-pwa configured, icons in `public/`)
-- [x] Service worker auto-generation via vite-plugin-pwa
-- [x] Config / logger / helpers infrastructure
+- [x] TypeScript `Concept` types + all 30 YAML concept files (`src/content/concepts/`)
+- [x] YAML loader with Zod validation (`src/content/concepts/loader.ts`)
+- [x] Base CSS with design system (`src/styles/main.css`)
+- [x] Hash-based router (`src/core/router.ts`) — routes: `#/`, `#/catalog`, `#/concept/:id`
+- [x] Concept detail view (`src/core/conceptView.ts`) with examples, related links, toggle
+- [x] Text formatter (`src/utils/formatText.ts`)
+- [x] Daily concept selection (`src/core/dailyConcept.ts`) — deterministic date seed
+- [x] Reading history (`src/core/readingHistory.ts`) — localStorage persistence
+- [x] Home view (`src/core/homeView.ts`) — daily card, progress, recent history
+- [x] Catalog view (`src/core/catalogView.ts`) — search, category filter, read badges
+- [x] Nav bar (`src/core/nav.ts`) — Home/Catalog links, online/offline status
+- [x] PWA manifest + service worker (vite-plugin-pwa)
+- [x] Install prompt (`src/core/installPrompt.ts`)
+- [x] Responsive layout (≤320px)
 
-### Not Implemented (everything UI and feature logic)
+### Failing Test (needs fix)
 
-- No YAML loader / concept data service
-- No UI rendering (no framework, no components, no CSS)
-- No routing between views
-- No daily concept selection
-- No localStorage reading history / progress
-- No catalog / search / filter views
-- No online/offline state handling
+- `src/core/nav.test.ts` — expects "Home" link text but nav renders brand text ("noself") instead of a labeled Home link
+
+### Not Implemented — Practice Section
+
+Full practice section planned in `docs/practice-plan.md`. Not covered by existing specs. Nothing implemented yet.
 
 ---
 
 ## Architectural Decisions
 
-- **No UI framework** — use vanilla TypeScript with DOM manipulation. Project has no React/Vue deps and is intentionally minimal.
-- **YAML loading** — use Vite's `import.meta.glob` with `?raw` or install a YAML parser (`yaml` package). Import all 30 at build time so content is bundled and auto-cached by service worker.
-- **Routing** — simple hash-based client-side router (`#/`, `#/concept/:id`, `#/catalog`). No external router dependency.
-- **CSS** — vanilla CSS with custom properties. Mobile-first, no framework.
-- **State** — plain TypeScript module with localStorage persistence. No state library.
+- **No UI framework** — vanilla TypeScript with DOM manipulation.
+- **YAML loading** — Vite `import.meta.glob` with `yaml` package; all content bundled.
+- **Routing** — hash-based client-side router.
+- **CSS** — vanilla CSS with custom properties, mobile-first.
+- **State** — plain TypeScript modules with localStorage persistence.
+- **Practice section** mirrors existing patterns exactly (see `docs/practice-plan.md`).
+- **Timer cleanup** — module-level `currentCleanup` callback in `main.ts` called before each route render.
+- **Bell sound** — Web Audio API sine wave oscillator, `AudioContext` created lazily on first user interaction.
 
 ---
 
 ## Tasks
 
-### Foundation
+### Bug Fix
 
-- [x] Install `yaml` package and create `src/content/concepts/loader.ts` that imports all 30 YAML files via `import.meta.glob` and parses + validates them into `Concept[]` (spec: content-display.md)
-- [x] Add base CSS (`src/styles/main.css`) with reset, custom properties (colors, typography), and layout primitives; link from `index.html` (spec: navigation-search.md)
-- [x] Implement hash-based client-side router in `src/core/router.ts` supporting routes: `#/` (home), `#/catalog`, `#/concept/:id`; wire into `main.ts` (spec: navigation-search.md)
+- [ ] Fix failing nav test: `src/core/nav.test.ts` expects Home link text "Home" but nav renders brand name instead; update `nav.ts` or the test to match actual intended behavior (spec: navigation-search.md)
 
-### Content Display
+### Practice — Phase 1: Content Infrastructure
 
-- [x] Create `src/core/conceptView.ts` that renders a full concept detail page (title + pali/sanskrit header, brief, essentials, deep, examples with source/commentary) to DOM (spec: content-display.md)
-- [x] Add `src/utils/formatText.ts` helper that converts paragraph breaks and block-quote markers in YAML text fields into HTML (spec: content-display.md)
-- [x] Render related concept IDs as clickable hash links in the concept view (spec: content-display.md)
+- [ ] Create `src/content/meditations/index.ts` with `Meditation`, `MeditationStep`, `MeditationDuration` types and `MEDITATION_IDS` array (spec: docs/practice-plan.md)
+- [ ] Create `src/content/meditations/loader.ts` with Zod schema + `import.meta.glob` loader (mirrors `src/content/concepts/loader.ts`) (spec: docs/practice-plan.md)
+- [ ] Write `src/content/meditations/breath-awareness.yaml` with steps for 5/10/20 min durations (spec: docs/practice-plan.md)
+- [ ] Write remaining 4 meditation YAMLs: `metta.yaml` (10/15/20 min), `body-scan.yaml` (10/20 min), `vipassana.yaml` (10/20/30 min), `open-awareness.yaml` (10/20 min) (spec: docs/practice-plan.md)
+- [ ] Create `src/content/prompts/index.ts` with `Prompt`, `PromptDepth` types and `PROMPT_FILE_IDS` array (spec: docs/practice-plan.md)
+- [ ] Create `src/content/prompts/loader.ts` with Zod schema + `import.meta.glob` loader (spec: docs/practice-plan.md)
+- [ ] Write `src/content/prompts/anatta-prompts.yaml` with 3 prompts (beginner/intermediate/advanced) (spec: docs/practice-plan.md)
+- [ ] Write remaining 7 prompt YAMLs: `anicca`, `dukkha`, `metta`, `sunyata`, `dependent-origination`, `five-aggregates`, `four-noble-truths` (3-4 prompts each) (spec: docs/practice-plan.md)
+- [ ] Create `src/content/paths/index.ts` with `PracticePath`, `PathSession` types and `PATH_IDS` array (spec: docs/practice-plan.md)
+- [ ] Create `src/content/paths/loader.ts` with Zod schema + `import.meta.glob` loader (spec: docs/practice-plan.md)
+- [ ] Write `src/content/paths/seven-day-metta.yaml` (7 sessions combining concept study + prompts + meditations) (spec: docs/practice-plan.md)
+- [ ] Write remaining 2 path YAMLs: `foundations-of-mindfulness.yaml`, `exploring-non-self.yaml` (spec: docs/practice-plan.md)
 
-### Daily Practice
+### Practice — Phase 2: Data Layer
 
-- [x] Create `src/core/dailyConcept.ts` with a deterministic date-seed algorithm: `dayIndex = daysSinceEpoch % 30`, returns concept for today and is stable for the same calendar date (spec: daily-practice.md)
-- [x] Create `src/core/readingHistory.ts` localStorage service: `markViewed(id)`, `isViewed(id)`, `getViewedIds()`, `markContemplated(id)`, `getStatus(id)` (spec: daily-practice.md)
-- [x] Build home screen view in `src/core/homeView.ts`: daily concept card (title, brief, link to full view) + progress counter ("X of 30 concepts explored") + recent history list (spec: daily-practice.md)
-- [x] Add contemplated / revisit toggle button in the concept detail view, persisted via `readingHistory` (spec: daily-practice.md)
+- [ ] Create `src/core/practiceHistory.ts` — localStorage module tracking completed meditation sessions, sat-with prompts, path session completions (mirrors `readingHistory.ts`) (spec: docs/practice-plan.md)
+- [ ] Create `src/core/practice/dailyPrompt.ts` — deterministic daily prompt rotation using `daysSinceEpoch % totalPrompts` (mirrors `dailyConcept.ts`) (spec: docs/practice-plan.md)
 
-### Navigation & Search
+### Practice — Phase 3: Audio + Timer
 
-- [x] Build catalog view in `src/core/catalogView.ts`: list all 30 concepts with title, pali name, brief; show read/unread badge using `readingHistory` (spec: navigation-search.md)
-- [x] Add live text search input to catalog view that filters by title, pali, sanskrit, and brief as user types (debounced via existing `debounce` helper) (spec: navigation-search.md)
-- [x] Add category filter buttons to catalog view; filter list to selected category; allow "All" to show everything (spec: navigation-search.md)
-- [x] Create shared `src/core/nav.ts` navigation bar component (Home / Catalog links) rendered on all views (spec: navigation-search.md)
-- [x] Ensure all views use responsive CSS: single-column on ≤320px, no horizontal overflow (spec: navigation-search.md)
+- [ ] Create `src/core/practice/bellSound.ts` — Web Audio API bell tone (~800 Hz sine + harmonic, exponential gain ramp-down, lazy `AudioContext`) (spec: docs/practice-plan.md)
+- [ ] Create `src/core/practice/meditationTimer.ts` — timer state machine (idle → running → paused → completed) with step progression and bell-on-step callbacks (spec: docs/practice-plan.md)
 
-### PWA & Offline
+### Practice — Phase 4: Routing + Nav
 
-- [x] Verify vite-plugin-pwa `globPatterns` includes bundled JS (which contains all YAML content); add smoke test that loads a concept with network disabled (spec: offline-pwa.md)
-- [x] Add online/offline status indicator in nav bar: subtle banner or icon that updates on `window` `online`/`offline` events (spec: offline-pwa.md)
-- [x] Add "Install app" prompt/instructions shown once when `beforeinstallprompt` fires (spec: offline-pwa.md)
+- [ ] Extend `src/core/router.ts` with 7 new route types: `practice`, `practiceMediate`, `practiceMeditateSession`, `practicePrompts`, `practicePaths`, `practicePathDetail`, `practiceHistory` (spec: docs/practice-plan.md)
+- [ ] Extend `src/core/nav.ts` with "Practice" link; active when `route.type.startsWith('practice')` (spec: docs/practice-plan.md)
+- [ ] Extend `src/main.ts` with route cases for all 7 practice routes, add module-level `currentCleanup` mechanism (spec: docs/practice-plan.md)
+
+### Practice — Phase 5: Views
+
+- [ ] Create `src/core/practice/practiceHubView.ts` — landing page with cards for Meditate / Prompts / Paths + practice summary stats (spec: docs/practice-plan.md)
+- [ ] Create `src/core/practice/meditationListView.ts` — browse all 5 meditations with title, duration options, description (spec: docs/practice-plan.md)
+- [ ] Create `src/core/practice/promptsView.ts` — daily prompt display + browse all prompts by concept/depth; "Sat with this" button persisted via `practiceHistory` (spec: docs/practice-plan.md)
+- [ ] Create `src/core/practice/pathsListView.ts` — list all 3 paths with title, session count, progress indicator (spec: docs/practice-plan.md)
+- [ ] Create `src/core/practice/pathDetailView.ts` — session list with completion checkboxes persisted via `practiceHistory` (spec: docs/practice-plan.md)
+- [ ] Create `src/core/practice/practiceHistoryView.ts` — log of all completed sessions (meditation + prompts + path sessions) with timestamps (spec: docs/practice-plan.md)
+- [ ] Create `src/core/practice/meditationSessionView.ts` — active timer UI with instruction display, step progression, pause/resume/stop controls, bell integration; returns cleanup function (spec: docs/practice-plan.md)
+
+### Practice — Phase 6: Styles
+
+- [ ] Add practice CSS to `src/styles/main.css`: timer display, progress ring or countdown, prompt cards, path session list, practice hub cards, history list (spec: docs/practice-plan.md)
+
+### Practice — Phase 7: Tests
+
+- [ ] Add tests for meditation and prompt loaders (validate all YAMLs load, IDs are valid, required fields present) (spec: docs/practice-plan.md)
+- [ ] Add tests for `practiceHistory.ts` and `dailyPrompt.ts` (mirrors existing test patterns) (spec: docs/practice-plan.md)
+- [ ] Add tests for `bellSound.ts` and `meditationTimer.ts` (mock AudioContext, use `vi.useFakeTimers`) (spec: docs/practice-plan.md)
+- [ ] Add view tests for all 7 practice views (mirror `homeView.test.ts` pattern) (spec: docs/practice-plan.md)
+- [ ] Add router tests for 7 new practice routes (spec: docs/practice-plan.md)
 
 ---
 
 ## Completed
 
-<!-- Completed tasks move here -->
+- [x] Install `yaml` package and create `src/content/concepts/loader.ts`
+- [x] Add base CSS (`src/styles/main.css`) with reset, custom properties, layout primitives
+- [x] Implement hash-based client-side router in `src/core/router.ts`
+- [x] Create `src/core/conceptView.ts` — full concept detail page
+- [x] Add `src/utils/formatText.ts` — paragraph/blockquote formatter
+- [x] Render related concept IDs as clickable hash links
+- [x] Create `src/core/dailyConcept.ts` — deterministic date-seed daily concept
+- [x] Create `src/core/readingHistory.ts` — localStorage reading history service
+- [x] Build home screen view (`src/core/homeView.ts`)
+- [x] Add contemplated/revisit toggle in concept detail view
+- [x] Build catalog view (`src/core/catalogView.ts`) with search + category filter
+- [x] Add online/offline status indicator in nav bar
+- [x] Add "Install app" prompt via `beforeinstallprompt`
+- [x] Verify PWA offline support (all YAML bundled, cached by service worker)
+- [x] Responsive CSS for ≤320px
 
 ## Notes
 
-- All YAML content bundled at build time → auto-cached by service worker; no separate cache config needed for YAML files.
-- `markViewed(id)` should be called automatically when the concept detail view renders.
-- The router is the integration point: it dispatches to homeView, catalogView, or conceptView based on hash.
-- `readingHistory` module is a shared dependency for catalog badges, home progress counter, and concept detail toggle.
+- All YAML content bundled at build time → auto-cached by service worker.
+- `markViewed(id)` called automatically when concept detail view renders.
+- Router is the integration point dispatching to all views.
+- Practice content (meditations/prompts/paths) mirrors the concepts pattern: Zod schema + `import.meta.glob` + cache.
+- Meditation session view is the most complex — implement last within Phase 5.
+- Nav test failure: nav renders brand name as first link; test expects "Home" text — investigate before fixing to understand intent.

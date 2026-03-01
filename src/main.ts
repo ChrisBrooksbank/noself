@@ -6,6 +6,7 @@ import { initInstallPrompt } from '@core/installPrompt.js';
 import { renderHomeView } from '@core/homeView.js';
 import { renderCatalogView } from '@core/catalogView.js';
 import { renderConceptView } from '@core/conceptView.js';
+import { renderPracticeHubView } from '@core/practice/practiceHubView.js';
 
 const config = loadConfig();
 
@@ -54,11 +55,7 @@ start((route) => {
             renderConceptView(viewHost, route.id);
             break;
         case 'practice':
-            viewHost.innerHTML = `
-                <div class="page stack" role="main">
-                    <h1>Practice</h1>
-                    <p>Coming soon.</p>
-                </div>`;
+            renderPracticeHubView(viewHost);
             break;
         case 'practiceMediate':
             viewHost.innerHTML = `

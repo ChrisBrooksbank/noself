@@ -8,6 +8,10 @@ import {
     logPathSessionComplete,
     isPathSessionComplete,
     getPathSessions,
+    logPujaSession,
+    getPujaSessions,
+    logMantraSession,
+    getMantraSessions,
     getTotalSessionCount,
 } from './practiceHistory.js';
 
@@ -95,6 +99,49 @@ describe('logPathSessionComplete / isPathSessionComplete / getPathSessions', () 
     });
 });
 
+describe('logPujaSession / getPujaSessions', () => {
+    it('returns empty array initially', () => {
+        expect(getPujaSessions()).toEqual([]);
+    });
+
+    it('records a puja session', () => {
+        logPujaSession('sevenfold-puja');
+        const sessions = getPujaSessions();
+        expect(sessions).toHaveLength(1);
+        const session = sessions[0]!;
+        expect(session.pujaId).toBe('sevenfold-puja');
+        expect(session.completedAt).toBeTruthy();
+    });
+
+    it('records multiple puja sessions', () => {
+        logPujaSession('sevenfold-puja');
+        logPujaSession('sevenfold-puja');
+        expect(getPujaSessions()).toHaveLength(2);
+    });
+});
+
+describe('logMantraSession / getMantraSessions', () => {
+    it('returns empty array initially', () => {
+        expect(getMantraSessions()).toEqual([]);
+    });
+
+    it('records a mantra session with repetitions', () => {
+        logMantraSession('avalokiteshvara', 108);
+        const sessions = getMantraSessions();
+        expect(sessions).toHaveLength(1);
+        const session = sessions[0]!;
+        expect(session.mantraId).toBe('avalokiteshvara');
+        expect(session.repetitions).toBe(108);
+        expect(session.completedAt).toBeTruthy();
+    });
+
+    it('records multiple mantra sessions', () => {
+        logMantraSession('avalokiteshvara', 108);
+        logMantraSession('avalokiteshvara', 42);
+        expect(getMantraSessions()).toHaveLength(2);
+    });
+});
+
 describe('getTotalSessionCount', () => {
     it('returns 0 initially', () => {
         expect(getTotalSessionCount()).toBe(0);
@@ -111,6 +158,20 @@ describe('getTotalSessionCount', () => {
         logPathSessionComplete('seven-day-metta', 0);
         expect(getTotalSessionCount()).toBe(0);
     });
+
+    it('counts puja and mantra sessions', () => {
+        logPujaSession('sevenfold-puja');
+        logMantraSession('avalokiteshvara', 108);
+        expect(getTotalSessionCount()).toBe(2);
+    });
+
+    it('counts all session types together', () => {
+        logMeditationSession('breath-awareness', 10);
+        logPromptSatWith('anatta-1');
+        logPujaSession('sevenfold-puja');
+        logMantraSession('avalokiteshvara', 108);
+        expect(getTotalSessionCount()).toBe(4);
+    });
 });
 
 describe('persistence', () => {
@@ -119,5 +180,23 @@ describe('persistence', () => {
         const raw = localStorage.getItem('noself:practiceHistory');
         expect(raw).not.toBeNull();
         expect(raw).toContain('vipassana');
+    });
+
+    it('handles legacy data without pujas/mantras fields', () => {
+        const legacy = JSON.stringify({
+            meditations: [
+                {
+                    meditationId: 'metta',
+                    durationMinutes: 10,
+                    completedAt: '2024-01-01T00:00:00.000Z',
+                },
+            ],
+            prompts: [],
+            pathSessions: [],
+        });
+        localStorage.setItem('noself:practiceHistory', legacy);
+        expect(getPujaSessions()).toEqual([]);
+        expect(getMantraSessions()).toEqual([]);
+        expect(getMeditationSessions()).toHaveLength(1);
     });
 });

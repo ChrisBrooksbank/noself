@@ -17,22 +17,42 @@ interface PathSessionCompletion {
     completedAt: string; // ISO 8601
 }
 
+interface PujaSession {
+    pujaId: string;
+    completedAt: string; // ISO 8601
+}
+
+interface MantraSession {
+    mantraId: string;
+    repetitions: number;
+    completedAt: string; // ISO 8601
+}
+
 interface PracticeStore {
     meditations: MeditationSession[];
     prompts: PromptSession[];
     pathSessions: PathSessionCompletion[];
+    pujas: PujaSession[];
+    mantras: MantraSession[];
 }
 
 function load(): PracticeStore {
     try {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (raw) {
-            return JSON.parse(raw) as PracticeStore;
+            const parsed = JSON.parse(raw) as Partial<PracticeStore>;
+            return {
+                meditations: parsed.meditations ?? [],
+                prompts: parsed.prompts ?? [],
+                pathSessions: parsed.pathSessions ?? [],
+                pujas: parsed.pujas ?? [],
+                mantras: parsed.mantras ?? [],
+            };
         }
     } catch {
         // ignore parse errors
     }
-    return { meditations: [], prompts: [], pathSessions: [] };
+    return { meditations: [], prompts: [], pathSessions: [], pujas: [], mantras: [] };
 }
 
 function save(store: PracticeStore): void {
@@ -95,7 +115,32 @@ export function getPathSessions(): PathSessionCompletion[] {
     return load().pathSessions;
 }
 
+export function logPujaSession(pujaId: string): void {
+    const store = load();
+    store.pujas.push({ pujaId, completedAt: new Date().toISOString() });
+    save(store);
+}
+
+export function getPujaSessions(): PujaSession[] {
+    return load().pujas;
+}
+
+export function logMantraSession(mantraId: string, repetitions: number): void {
+    const store = load();
+    store.mantras.push({ mantraId, repetitions, completedAt: new Date().toISOString() });
+    save(store);
+}
+
+export function getMantraSessions(): MantraSession[] {
+    return load().mantras;
+}
+
 export function getTotalSessionCount(): number {
     const store = load();
-    return store.meditations.length + store.prompts.length;
+    return (
+        store.meditations.length +
+        store.prompts.length +
+        store.pujas.length +
+        store.mantras.length
+    );
 }

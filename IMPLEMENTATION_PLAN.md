@@ -118,7 +118,7 @@ Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully s
 
 ### Puja & Mantra — Phase 2: Data Layer
 
-- [ ] Extend `src/core/practiceHistory.ts` with `pujas: PujaSession[]` and `mantras: MantraSession[]` fields; add `logPujaSession()`, `getPujaSessions()`, `logMantraSession()`, `getMantraSessions()`; update `getTotalSessionCount()`; use `??` defaults for backward compatibility (spec: docs/plan-puja-mantra-sections.md)
+- [x] Extend `src/core/practiceHistory.ts` with `pujas: PujaSession[]` and `mantras: MantraSession[]` fields; add `logPujaSession()`, `getPujaSessions()`, `logMantraSession()`, `getMantraSessions()`; update `getTotalSessionCount()`; use `??` defaults for backward compatibility (spec: docs/plan-puja-mantra-sections.md)
 
 ### Puja & Mantra — Phase 3: Routing + Nav
 

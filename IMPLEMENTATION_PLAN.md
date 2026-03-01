@@ -65,7 +65,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 - [x] Write `src/content/prompts/anatta-prompts.yaml` with 3 prompts (beginner/intermediate/advanced) (spec: docs/practice-plan.md)
 - [x] Write remaining 7 prompt YAMLs: `anicca`, `dukkha`, `metta`, `sunyata`, `dependent-origination`, `five-aggregates`, `four-noble-truths` (3-4 prompts each) (spec: docs/practice-plan.md)
 - [x] Create `src/content/paths/index.ts` with `PracticePath`, `PathSession` types and `PATH_IDS` array (spec: docs/practice-plan.md)
-- [ ] Create `src/content/paths/loader.ts` with Zod schema + `import.meta.glob` loader (spec: docs/practice-plan.md)
+- [x] Create `src/content/paths/loader.ts` with Zod schema + `import.meta.glob` loader (spec: docs/practice-plan.md)
 - [ ] Write `src/content/paths/seven-day-metta.yaml` (7 sessions combining concept study + prompts + meditations) (spec: docs/practice-plan.md)
 - [ ] Write remaining 2 path YAMLs: `foundations-of-mindfulness.yaml`, `exploring-non-self.yaml` (spec: docs/practice-plan.md)
 

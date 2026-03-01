@@ -97,7 +97,7 @@ Full practice section planned in `docs/practice-plan.md`. Not covered by existin
 
 ### Practice — Phase 6: Styles
 
-- [ ] Add practice CSS to `src/styles/main.css`: timer display, progress ring or countdown, prompt cards, path session list, practice hub cards, history list (spec: docs/practice-plan.md)
+- [x] Add practice CSS to `src/styles/main.css`: timer display, progress ring or countdown, prompt cards, path session list, practice hub cards, history list (spec: docs/practice-plan.md)
 
 ### Practice — Phase 7: Tests
 

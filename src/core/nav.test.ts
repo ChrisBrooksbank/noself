@@ -69,6 +69,36 @@ describe('renderNav', () => {
         expect(activeLinks.length).toBe(0);
     });
 
+    it('renders a Practice link', () => {
+        renderNav(container, 'home');
+        const practiceLink =
+            container.querySelector<HTMLAnchorElement>('a[href="#/practice"]');
+        expect(practiceLink).not.toBeNull();
+        expect(practiceLink?.textContent?.trim()).toBe('Practice');
+    });
+
+    it('marks Practice link as active on practice route', () => {
+        renderNav(container, 'practice');
+        const practiceLink =
+            container.querySelector<HTMLAnchorElement>('a[href="#/practice"]');
+        expect(practiceLink?.classList.contains('site-nav__link--active')).toBe(true);
+        expect(practiceLink?.getAttribute('aria-current')).toBe('page');
+    });
+
+    it('marks Practice link as active on practice sub-routes', () => {
+        renderNav(container, 'practiceMediate');
+        const practiceLink =
+            container.querySelector<HTMLAnchorElement>('a[href="#/practice"]');
+        expect(practiceLink?.classList.contains('site-nav__link--active')).toBe(true);
+    });
+
+    it('does not mark Practice link as active on home route', () => {
+        renderNav(container, 'home');
+        const practiceLink =
+            container.querySelector<HTMLAnchorElement>('a[href="#/practice"]');
+        expect(practiceLink?.classList.contains('site-nav__link--active')).toBe(false);
+    });
+
     it('renders a brand link', () => {
         renderNav(container, 'home');
         const brand = container.querySelector('.site-nav__brand');

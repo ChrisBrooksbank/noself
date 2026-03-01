@@ -19,6 +19,7 @@ export function renderNav(container: HTMLElement, activeType: Route['type']): vo
                 <ul class="site-nav__links" role="list">
                     ${navLink('#/', 'Home', activeType === 'home')}
                     ${navLink('#/catalog', 'Catalog', activeType === 'catalog')}
+                    ${navLink('#/practice', 'Practice', activeType.startsWith('practice'))}
                 </ul>
                 <span class="${offlineClass}" role="status" aria-live="polite">offline</span>
             </div>

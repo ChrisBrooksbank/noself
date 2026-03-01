@@ -509,6 +509,20 @@ hr {
     font-size: var(--text-sm);
 }
 
+.home-guidance__heading {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-subtle);
+}
+
+.home-guidance__text {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+}
+
 /* =========================================================
    Install Banner
    ========================================================= */

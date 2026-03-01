@@ -22,6 +22,29 @@ function renderProgress(viewedCount: number): string {
         </p>`;
 }
 
+function renderGuidance(): string {
+    return `
+        <section class="home-guidance card stack-sm" aria-label="A note on practice">
+            <h2 class="home-guidance__heading">Beyond Reading</h2>
+            <p class="home-guidance__text">
+                In the Buddhist tradition, reading about the Dhamma is called
+                <em>sutamaya panna</em> — wisdom gained from hearing or study.
+                It is a valuable first step, but only the beginning.
+            </p>
+            <p class="home-guidance__text">
+                Deeper understanding comes through <em>cintamaya panna</em>,
+                personal reflection, and ultimately through
+                <em>bhavanamaya panna</em> — the direct insight that arises
+                from meditative practice.
+            </p>
+            <p class="home-guidance__text">
+                If these teachings resonate with you, consider finding a local
+                sangha and a qualified teacher. A living community of practice
+                can offer what no app or book can.
+            </p>
+        </section>`;
+}
+
 function renderHistory(viewedIds: string[]): string {
     const recent = viewedIds.slice(-MAX_HISTORY).reverse();
     if (recent.length === 0) return '';
@@ -50,5 +73,6 @@ export function renderHomeView(container: HTMLElement): void {
             ${renderDailyCard(concept.id, concept.title, concept.brief)}
             ${renderProgress(viewedIds.length)}
             ${renderHistory(viewedIds)}
+            ${renderGuidance()}
         </div>`;
 }

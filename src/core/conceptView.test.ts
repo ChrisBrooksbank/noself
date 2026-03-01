@@ -55,11 +55,33 @@ vi.mock('../content/concepts/index.js', () => ({
     },
 }));
 
+const mockMarkViewed = vi.fn();
+const mockMarkContemplated = vi.fn();
+const mockMarkRevisit = vi.fn();
+let mockStatus: 'viewed' | 'contemplated' | 'revisit' | null = null;
+
+vi.mock('./readingHistory.js', () => ({
+    markViewed: (id: string) => mockMarkViewed(id),
+    markContemplated: (id: string) => {
+        mockMarkContemplated(id);
+        mockStatus = 'contemplated';
+    },
+    markRevisit: (id: string) => {
+        mockMarkRevisit(id);
+        mockStatus = 'revisit';
+    },
+    getStatus: () => mockStatus,
+}));
+
 describe('renderConceptView', () => {
     let container: HTMLElement;
 
     beforeEach(() => {
         container = document.createElement('div');
+        mockStatus = null;
+        mockMarkViewed.mockClear();
+        mockMarkContemplated.mockClear();
+        mockMarkRevisit.mockClear();
     });
 
     it('renders the concept title', () => {
@@ -121,7 +143,8 @@ describe('renderConceptView', () => {
     it('renders related concepts', () => {
         renderConceptView(container, 'anatta');
         const related = container.querySelector('.concept-related');
-        expect(related?.textContent).toContain('anicca');
+        // 'anicca' resolves to title 'Impermanence'; 'dukkha' is unknown so shows raw id
+        expect(related?.textContent).toContain('Impermanence');
         expect(related?.textContent).toContain('dukkha');
     });
 
@@ -180,5 +203,106 @@ describe('renderConceptView', () => {
         renderConceptView(container, 'nonexistent');
         const link = container.querySelector('a');
         expect(link?.getAttribute('href')).toBe('#/');
+    });
+
+    it('calls markViewed when rendering a valid concept', () => {
+        renderConceptView(container, 'anatta');
+        expect(mockMarkViewed).toHaveBeenCalledWith('anatta');
+    });
+
+    it('does not call markViewed for an unknown concept', () => {
+        renderConceptView(container, 'nonexistent');
+        expect(mockMarkViewed).not.toHaveBeenCalled();
+    });
+
+    describe('practice toggle buttons', () => {
+        it('renders contemplated and revisit buttons', () => {
+            renderConceptView(container, 'anatta');
+            const contemBtn = container.querySelector('.js-toggle-contemplated');
+            const revisitBtn = container.querySelector('.js-toggle-revisit');
+            expect(contemBtn).not.toBeNull();
+            expect(revisitBtn).not.toBeNull();
+        });
+
+        it('buttons are not active when status is null', () => {
+            mockStatus = null;
+            renderConceptView(container, 'anatta');
+            const contemBtn = container.querySelector<HTMLButtonElement>(
+                '.js-toggle-contemplated',
+            );
+            const revisitBtn =
+                container.querySelector<HTMLButtonElement>('.js-toggle-revisit');
+            expect(contemBtn?.classList.contains('btn-primary')).toBe(false);
+            expect(revisitBtn?.classList.contains('btn-primary')).toBe(false);
+            expect(contemBtn?.getAttribute('aria-pressed')).toBe('false');
+            expect(revisitBtn?.getAttribute('aria-pressed')).toBe('false');
+        });
+
+        it('contemplated button is active when status is contemplated', () => {
+            mockStatus = 'contemplated';
+            renderConceptView(container, 'anatta');
+            const contemBtn = container.querySelector<HTMLButtonElement>(
+                '.js-toggle-contemplated',
+            );
+            const revisitBtn =
+                container.querySelector<HTMLButtonElement>('.js-toggle-revisit');
+            expect(contemBtn?.classList.contains('btn-primary')).toBe(true);
+            expect(contemBtn?.getAttribute('aria-pressed')).toBe('true');
+            expect(revisitBtn?.classList.contains('btn-primary')).toBe(false);
+            expect(revisitBtn?.getAttribute('aria-pressed')).toBe('false');
+        });
+
+        it('revisit button is active when status is revisit', () => {
+            mockStatus = 'revisit';
+            renderConceptView(container, 'anatta');
+            const contemBtn = container.querySelector<HTMLButtonElement>(
+                '.js-toggle-contemplated',
+            );
+            const revisitBtn =
+                container.querySelector<HTMLButtonElement>('.js-toggle-revisit');
+            expect(revisitBtn?.classList.contains('btn-primary')).toBe(true);
+            expect(revisitBtn?.getAttribute('aria-pressed')).toBe('true');
+            expect(contemBtn?.classList.contains('btn-primary')).toBe(false);
+        });
+
+        it('clicking contemplated button calls markContemplated', () => {
+            renderConceptView(container, 'anatta');
+            const contemBtn = container.querySelector<HTMLButtonElement>(
+                '.js-toggle-contemplated',
+            );
+            contemBtn?.click();
+            expect(mockMarkContemplated).toHaveBeenCalledWith('anatta');
+        });
+
+        it('clicking revisit button calls markRevisit', () => {
+            renderConceptView(container, 'anatta');
+            const revisitBtn =
+                container.querySelector<HTMLButtonElement>('.js-toggle-revisit');
+            revisitBtn?.click();
+            expect(mockMarkRevisit).toHaveBeenCalledWith('anatta');
+        });
+
+        it('clicking contemplated updates button to active state', () => {
+            renderConceptView(container, 'anatta');
+            const contemBtn = container.querySelector<HTMLButtonElement>(
+                '.js-toggle-contemplated',
+            );
+            contemBtn?.click();
+            expect(contemBtn?.classList.contains('btn-primary')).toBe(true);
+            expect(contemBtn?.getAttribute('aria-pressed')).toBe('true');
+        });
+
+        it('clicking revisit deactivates contemplated button', () => {
+            mockStatus = 'contemplated';
+            renderConceptView(container, 'anatta');
+            const contemBtn = container.querySelector<HTMLButtonElement>(
+                '.js-toggle-contemplated',
+            );
+            const revisitBtn =
+                container.querySelector<HTMLButtonElement>('.js-toggle-revisit');
+            revisitBtn?.click();
+            expect(revisitBtn?.classList.contains('btn-primary')).toBe(true);
+            expect(contemBtn?.classList.contains('btn-primary')).toBe(false);
+        });
     });
 });

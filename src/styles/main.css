@@ -254,6 +254,13 @@ hr {
     border-color: #c73652;
 }
 
+/* Button group — horizontal row of buttons */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
 /* Visually hidden (for accessibility) */
 .sr-only {
     position: absolute;

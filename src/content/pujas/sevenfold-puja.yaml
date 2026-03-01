@@ -1,0 +1,287 @@
+id: sevenfold-puja
+title: The Sevenfold Puja
+tradition: Triratna
+description: >
+    A devotional liturgy from the Triratna Buddhist Community, drawing on
+    Sanskrit and Pali verses to express worship, salutation, refuge,
+    confession, rejoicing, supplication, and self-surrender. Practised
+    individually or in community as an offering of the whole person to the
+    Three Jewels.
+sections:
+    - id: worship
+      order: 1
+      title: Worship
+      original: >
+          Vandami buddham karunamahasarum
+          vandami dhammam vimalatvadassanam
+          vandami sangham varasila-dharam
+          vandaniyam mama natthiputtaro.
+      originalLanguage: Pali
+      translation: >
+          I worship the Buddha, the ocean of great compassion.
+          I worship the Dharma, pure and clear as a mirror.
+          I worship the Sangha, bearing the precious Precepts.
+          There is none more worthy of worship for me.
+      commentary: >
+          The puja opens with acts of reverent homage to the Three Jewels.
+          Worship (vandana) is not servile submission but an orientation of
+          the whole being toward what is supremely valuable. By bowing
+          before the Buddha, we acknowledge the possibility of Awakening
+          within ourselves; by honouring the Dharma, we commit to truth; by
+          revering the Sangha, we situate our practice within a living
+          community.
+      relatedConcepts:
+          - three-jewels
+          - buddha
+          - dharma
+          - sangha
+
+    - id: salutation
+      order: 2
+      title: Salutation
+      original: >
+          Namo tassa bhagavato arahato samma-sambuddhassa.
+          Namo tassa bhagavato arahato samma-sambuddhassa.
+          Namo tassa bhagavato arahato samma-sambuddhassa.
+      originalLanguage: Pali
+      translation: >
+          Homage to him, the Blessed One, the Worthy One, the Perfectly
+          Enlightened One.
+          (repeated three times)
+      commentary: >
+          This ancient formula of salutation is one of the oldest acts of
+          Buddhist devotion. It is addressed directly to the historical
+          Buddha — Shakyamuni — acknowledging his full liberation and
+          perfect understanding of reality. Repeating the salutation three
+          times establishes a gesture of body, speech, and mind in unison.
+      relatedConcepts:
+          - buddha
+          - nirvana
+
+    - id: going-for-refuge
+      order: 3
+      title: Going for Refuge
+      original: >
+          Buddham saranam gacchami.
+          Dhammam saranam gacchami.
+          Sangham saranam gacchami.
+      originalLanguage: Pali
+      translation: >
+          I go for refuge to the Buddha.
+          I go for refuge to the Dharma.
+          I go for refuge to the Sangha.
+      commentary: >
+          Going for Refuge is the defining act of a Buddhist. To go for
+          refuge is to make the Three Jewels the centre of one's life, the
+          orientation around which all activities revolve. This is not mere
+          repetition of a formula; it is a renewal of commitment and
+          intention. In the Triratna tradition, effective Going for Refuge
+          is understood as the heart of the spiritual path.
+      relatedConcepts:
+          - three-jewels
+          - sangha
+
+    - id: confession
+      order: 4
+      title: Confession of Faults
+      original: >
+          Kayena vaca cittena pamadena maya katam
+          accayam khamatha me bhante
+          bhuripanna tathagata.
+      originalLanguage: Pali
+      translation: >
+          Whatever fault has been committed by me through body, speech, or
+          mind out of heedlessness — may you, O Blessed One of great
+          wisdom, the Tathagata, forgive it.
+      commentary: >
+          Confession (papa-desana) cultivates honesty and lightens the
+          burden of habitual self-concealment. By acknowledging unskilful
+          actions openly — at least inwardly — we interrupt the cycles of
+          denial that reinforce them. Confession here is not about guilt or
+          punishment but about clear seeing: recognising where we have acted
+          contrary to our own values so that we can act differently going
+          forward.
+      relatedConcepts:
+          - karma
+          - the-five-precepts
+
+    - id: rejoicing
+      order: 5
+      title: Rejoicing in Merit
+      original: >
+          Yad-idam kinci kusalam kammam
+          katam sattanam sukhavasena
+          tam anumodami sabbam eva.
+      originalLanguage: Pali
+      translation: >
+          Whatever meritorious actions have been performed by any beings for
+          the sake of happiness — in all of these I rejoice.
+      commentary: >
+          Rejoicing in merit (punya-anumodana) counters envy and
+          self-preoccupation by opening the heart to delight in the
+          goodness of others. It is said that rejoicing earns merit
+          equivalent to the act itself, because the intention of the heart
+          is the same. This practice widens the sense of self and nurtures
+          sympathetic joy (mudita) — one of the four brahmaviharas.
+      relatedConcepts:
+          - brahmaviharas
+          - karma
+
+    - id: entreaty
+      order: 6
+      title: Entreaty and Supplication
+      original: >
+          Brahma ca lokadhipati sahampati
+          katanjali anathayi yacatha
+          ativijjha-manussehilokam
+          desetu dhammam anukampaya.
+      originalLanguage: Pali
+      translation: >
+          The divine Brahma, lord of the world, Sahampati, with folded
+          hands beseeched the Blessed One: "May the Blessed One teach the
+          Dharma out of compassion for beings."
+      commentary: >
+          This section re-enacts the great entreaty made to the newly
+          Awakened Buddha by Sahampati Brahma, asking him not to remain
+          silent but to teach. It is a supplication for the Dharma to
+          continue flowing into the world — a reminder that the Buddha's
+          teaching was given as an act of boundless compassion, and that
+          we, the practitioners, are beneficiaries of that gift. It also
+          expresses the aspiration that the conditions for the Dharma to
+          flourish may be maintained.
+      relatedConcepts:
+          - dharma
+          - compassion
+
+    - id: transference
+      order: 7
+      title: Transference of Merit and Self-Surrender
+      original: >
+          Idam me punnam asavakkhaya vaham hotu.
+          Idam me punnam nibbana-sacchikarana vaham hotu.
+          Mama punna-bhagam sabba-sattanam dema.
+      originalLanguage: Pali
+      translation: >
+          May this merit of mine lead to the destruction of the taints.
+          May this merit of mine lead to the realisation of Nirvana.
+          We give a share of this merit to all beings.
+      commentary: >
+          The puja closes with a gesture of generosity that both grounds
+          and expands the practice. Transferring merit dissolves any
+          subtle attachment to the spiritual work we have just performed;
+          we offer the fruits of our devotion to all beings everywhere.
+          This enacts the bodhisattva spirit: whatever benefit arises from
+          our practice, may it flow outward without limit.
+      relatedConcepts:
+          - nirvana
+          - bodhisattva
+          - compassion
+
+ritualSteps:
+    - id: preparation
+      order: 1
+      title: Preparation
+      instruction: >
+          Find a quiet space. Light a candle and, if you have one, incense.
+          Place any images of the Buddha or other supports for devotion in
+          front of you. Sit comfortably in an upright posture with your
+          hands in your lap. Take three slow breaths to settle body and mind.
+      durationSeconds: 60
+      sectionRef: null
+
+    - id: offering-flowers
+      order: 2
+      title: Offering
+      instruction: >
+          If you have flowers, a candle, or incense, offer them now.
+          As you do so, reflect inwardly: "I offer these beautiful,
+          impermanent things as a symbol of my own commitment to the
+          beautiful and impermanent path." If you have no physical objects,
+          make a mental offering of appreciation for this moment of practice.
+      durationSeconds: 60
+      sectionRef: worship
+
+    - id: perform-worship
+      order: 3
+      title: Worship
+      instruction: >
+          Recite or read the Vandana verse slowly, allowing each word to
+          land. As you praise the Buddha, Dharma, and Sangha, let the
+          sense of their value become real and present — not just concepts
+          but living realities you are orienting toward. You may place your
+          palms together (anjali) as a gesture of reverence.
+      durationSeconds: 90
+      sectionRef: worship
+
+    - id: perform-salutation
+      order: 4
+      title: Salutation
+      instruction: >
+          Recite the Namo Tassa formula three times. You may bow slightly
+          with each repetition, bringing body as well as speech into the
+          gesture. Feel the weight of that word "Homage" — what it means
+          to offer respect to a being who became fully awake.
+      durationSeconds: 60
+      sectionRef: salutation
+
+    - id: perform-refuge
+      order: 5
+      title: Going for Refuge
+      instruction: >
+          Recite the Refuge formula three times slowly. Between each line,
+          pause and let the meaning settle. "I go for refuge to the
+          Buddha" — sense what it means to make Awakening your orientation.
+          "I go for refuge to the Dharma" — sense your commitment to
+          truth and the teachings. "I go for refuge to the Sangha" — sense
+          your connection to the community of practice.
+      durationSeconds: 120
+      sectionRef: going-for-refuge
+
+    - id: perform-confession
+      order: 6
+      title: Confession of Faults
+      instruction: >
+          Recite the Confession verse once. Then sit quietly for a moment
+          and honestly acknowledge one or two unskilful habits or actions
+          from the recent past. Don't dramatise or indulge guilt — simply
+          see clearly and resolve to act with greater care going forward.
+          Offer the acknowledgement to the space of awareness and let it go.
+      durationSeconds: 120
+      sectionRef: confession
+
+    - id: perform-rejoicing
+      order: 7
+      title: Rejoicing in Merit
+      instruction: >
+          Recite the Rejoicing verse. Then call to mind the good you have
+          witnessed recently — kindness shown by others, moments of courage
+          or generosity you encountered or heard about. Let yourself
+          genuinely delight in this. This is mudita — sympathetic joy.
+          Notice how widening your appreciation shifts the tone of the mind.
+      durationSeconds: 120
+      sectionRef: rejoicing
+
+    - id: perform-entreaty
+      order: 8
+      title: Entreaty and Supplication
+      instruction: >
+          Recite the Entreaty verse. Then hold in mind the aspiration that
+          the Dharma — the truth of how things are, and the path toward
+          liberation — may continue to be known, practised, and shared.
+          Reflect on the teachers and communities who have kept this
+          transmission alive across centuries.
+      durationSeconds: 90
+      sectionRef: entreaty
+
+    - id: perform-transference
+      order: 9
+      title: Transference of Merit
+      instruction: >
+          Recite the Transference verse. Then sit for a few moments with
+          open, spacious awareness. Silently offer the merit of this
+          practice outward: to loved ones, to difficult people, to all
+          beings everywhere. Allow the boundary of self and other to
+          soften. When you are ready, gently bow and bring the puja to a
+          close.
+      durationSeconds: 120
+      sectionRef: transference

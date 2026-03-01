@@ -42,3 +42,5 @@ export type MantraId = (typeof MANTRA_IDS)[number];
 
 /** All mantra IDs in the library */
 export const MANTRA_IDS = ['avalokiteshvara'] as const;
+
+export { loadMantras, getMantraById, resetMantraCache } from './loader.js';

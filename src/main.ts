@@ -11,6 +11,7 @@ import { renderMeditationListView } from '@core/practice/meditationListView.js';
 import { renderPromptsView } from '@core/practice/promptsView.js';
 import { renderPathsListView } from '@core/practice/pathsListView.js';
 import { renderPathDetailView } from '@core/practice/pathDetailView.js';
+import { renderMeditationSessionView } from '@core/practice/meditationSessionView.js';
 
 const config = loadConfig();
 
@@ -65,11 +66,7 @@ start((route) => {
             renderMeditationListView(viewHost);
             break;
         case 'practiceMeditateSession':
-            viewHost.innerHTML = `
-                <div class="page stack" role="main">
-                    <h1>Meditation Session</h1>
-                    <p>Coming soon.</p>
-                </div>`;
+            currentCleanup = renderMeditationSessionView(viewHost, route.id);
             break;
         case 'practicePrompts':
             renderPromptsView(viewHost);

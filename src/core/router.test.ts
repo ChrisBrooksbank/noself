@@ -73,6 +73,42 @@ describe('parseHash', () => {
             id: 'heart-sutra',
         });
     });
+
+    it('returns practicePujas for #/practice/pujas', () => {
+        expect(parseHash('#/practice/pujas')).toEqual({ type: 'practicePujas' });
+    });
+
+    it('returns practicePujaStudy with id for #/practice/puja/:id', () => {
+        expect(parseHash('#/practice/puja/sevenfold-puja')).toEqual({
+            type: 'practicePujaStudy',
+            id: 'sevenfold-puja',
+        });
+    });
+
+    it('returns practicePujaPerform with id for #/practice/puja/:id/perform', () => {
+        expect(parseHash('#/practice/puja/sevenfold-puja/perform')).toEqual({
+            type: 'practicePujaPerform',
+            id: 'sevenfold-puja',
+        });
+    });
+
+    it('returns practiceMantras for #/practice/mantras', () => {
+        expect(parseHash('#/practice/mantras')).toEqual({ type: 'practiceMantras' });
+    });
+
+    it('returns practiceMantraDetail with id for #/practice/mantra/:id', () => {
+        expect(parseHash('#/practice/mantra/avalokiteshvara')).toEqual({
+            type: 'practiceMantraDetail',
+            id: 'avalokiteshvara',
+        });
+    });
+
+    it('returns practiceMantraChant with id for #/practice/mantra/:id/chant', () => {
+        expect(parseHash('#/practice/mantra/avalokiteshvara/chant')).toEqual({
+            type: 'practiceMantraChant',
+            id: 'avalokiteshvara',
+        });
+    });
 });
 
 describe('navigate', () => {

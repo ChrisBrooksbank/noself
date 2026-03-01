@@ -11,6 +11,12 @@ export type Route =
     | { type: 'practicePaths' }
     | { type: 'practicePathDetail'; id: string }
     | { type: 'practiceHistory' }
+    | { type: 'practicePujas' }
+    | { type: 'practicePujaStudy'; id: string }
+    | { type: 'practicePujaPerform'; id: string }
+    | { type: 'practiceMantras' }
+    | { type: 'practiceMantraDetail'; id: string }
+    | { type: 'practiceMantraChant'; id: string }
     | { type: 'notFound' };
 
 export type RouteHandler = (route: Route) => void;
@@ -44,6 +50,24 @@ export function parseHash(hash: string): Route {
     const pathDetailMatch = path.match(/^\/practice\/paths\/([^/]+)$/);
     if (pathDetailMatch?.[1])
         return { type: 'practicePathDetail', id: pathDetailMatch[1] };
+
+    if (path === '/practice/pujas') return { type: 'practicePujas' };
+    if (path === '/practice/mantras') return { type: 'practiceMantras' };
+
+    const pujaPerformMatch = path.match(/^\/practice\/puja\/([^/]+)\/perform$/);
+    if (pujaPerformMatch?.[1])
+        return { type: 'practicePujaPerform', id: pujaPerformMatch[1] };
+
+    const pujaStudyMatch = path.match(/^\/practice\/puja\/([^/]+)$/);
+    if (pujaStudyMatch?.[1]) return { type: 'practicePujaStudy', id: pujaStudyMatch[1] };
+
+    const mantraChantMatch = path.match(/^\/practice\/mantra\/([^/]+)\/chant$/);
+    if (mantraChantMatch?.[1])
+        return { type: 'practiceMantraChant', id: mantraChantMatch[1] };
+
+    const mantraDetailMatch = path.match(/^\/practice\/mantra\/([^/]+)$/);
+    if (mantraDetailMatch?.[1])
+        return { type: 'practiceMantraDetail', id: mantraDetailMatch[1] };
 
     return { type: 'notFound' };
 }

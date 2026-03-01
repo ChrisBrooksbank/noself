@@ -2,6 +2,7 @@ import { logger } from '@utils/logger.js';
 import { loadConfig } from '@config/loader.js';
 import { start } from '@core/router.js';
 import { renderNav, initOnlineStatus } from '@core/nav.js';
+import { initInstallPrompt } from '@core/installPrompt.js';
 import { renderHomeView } from '@core/homeView.js';
 import { renderCatalogView } from '@core/catalogView.js';
 import { renderConceptView } from '@core/conceptView.js';
@@ -20,12 +21,15 @@ if (!app) throw new Error('#app element not found');
 
 app.innerHTML = `
     <div id="nav-host"></div>
+    <div id="install-host"></div>
     <div id="view-host"></div>`;
 
 const navHost = app.querySelector<HTMLElement>('#nav-host')!;
+const installHost = app.querySelector<HTMLElement>('#install-host')!;
 const viewHost = app.querySelector<HTMLElement>('#view-host')!;
 
 initOnlineStatus(navHost);
+initInstallPrompt(installHost);
 
 start((route) => {
     logger.debug('Route', route);

@@ -127,7 +127,7 @@ Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully s
 
 ### Puja & Mantra — Phase 4: Views
 
-- [ ] Create `src/core/practice/pujaListView.ts` — cards with title, tradition, description; links to study + perform (mirrors `meditationListView.ts`) (spec: docs/plan-puja-mantra-sections.md)
+- [x] Create `src/core/practice/pujaListView.ts` — cards with title, tradition, description; links to study + perform (mirrors `meditationListView.ts`) (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Create `src/core/practice/pujaStudyView.ts` — sections with original/translation/commentary/related concepts (mirrors `sutraStudyView.ts`) (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Create `src/core/practice/pujaPerformView.ts` — step-by-step ritual flow with timer; returns cleanup function (mirrors `meditationSessionView.ts`) (spec: docs/plan-puja-mantra-sections.md)
 - [ ] Create `src/core/practice/mantraListView.ts` — cards with title, sanskrit, tradition (mirrors `meditationListView.ts`) (spec: docs/plan-puja-mantra-sections.md)

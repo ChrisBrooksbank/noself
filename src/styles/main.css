@@ -244,7 +244,7 @@ a:focus-visible {
 
 blockquote {
     border-left: 3px solid var(--color-gold);
-    padding-left: var(--space-4);
+    padding: var(--space-3) 0 var(--space-3) var(--space-4);
     margin: var(--space-6) 0;
     color: var(--color-text-muted);
     font-style: italic;
@@ -571,7 +571,16 @@ a.card:hover,
 }
 
 .concept-body {
+    font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
+}
+
+.concept-body p + p {
+    margin-top: var(--space-6);
+}
+
+.concept-section > .concept-body {
+    margin-top: var(--space-3);
 }
 
 .concept-example__source {
@@ -581,7 +590,7 @@ a.card:hover,
 }
 
 .concept-example__commentary {
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: var(--color-text-muted);
     font-style: italic;
 }
@@ -1034,9 +1043,13 @@ a.card:hover,
 
 .prompt-card__guidance {
     margin-top: var(--space-2);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: var(--color-text-muted);
     line-height: var(--leading-relaxed);
+}
+
+.prompt-card__guidance p + p {
+    margin-top: var(--space-6);
 }
 
 .prompt-card__sat-btn {
@@ -1213,7 +1226,7 @@ a.card:hover,
 
 .path-session__brief,
 .path-session__description {
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: var(--color-text-subtle);
     margin-bottom: var(--space-2);
 }
@@ -1535,6 +1548,10 @@ a.card:hover,
     font-size: var(--text-base);
     color: var(--color-text-muted);
     line-height: var(--leading-relaxed);
+}
+
+.sutra-section__commentary p + p {
+    margin-top: var(--space-6);
 }
 
 .sutra-section__related {

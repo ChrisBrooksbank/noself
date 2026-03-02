@@ -1,0 +1,246 @@
+id: diamond-sutra
+title: Diamond Sutra
+sanskrit: 'Vajracchedika Prajnaparamita'
+pali: null
+tradition: Mahayana
+description: >-
+    The Diamond Sutra is one of the most influential texts in Mahayana Buddhism.
+    Its full title — Vajracchedika Prajnaparamita, "The Diamond That Cuts Through
+    Illusion" — captures its central function: to cut through all conceptual
+    attachments like a diamond cuts through anything. In a dialogue between the
+    Buddha and his disciple Subhuti, the sutra systematically dismantles every
+    concept the mind clings to — self, being, dharma, merit, and even the
+    Buddha's own teaching — revealing a wisdom that holds nothing and excludes
+    nothing.
+
+sections:
+    - id: the-setting
+      order: 1
+      title: The Setting
+      original: >-
+          Evam maya shrutam. Ekasmin samaye Bhagavan Shravasyam viharati sma
+          Jetavane Anathapindadasya arame mahatabhikshu-sanghena sardham.
+      originalLanguage: Sanskrit
+      translation: >-
+          Thus have I heard. At one time the Blessed One was dwelling in
+          Shravasti, in the Jeta Grove, in the garden of Anathapindada, together
+          with a great assembly of monks.
+      commentary: >-
+          The sutra opens with the traditional formula "thus have I heard,"
+          establishing Ananda as the faithful recorder of the Buddha's words.
+          The setting is the Jeta Grove — a real historical place donated to the
+          sangha by the wealthy layman Anathapindada. The ordinariness of the
+          setting is significant: the Buddha has just returned from his alms round,
+          eaten his meal, washed his feet, and sat down. The most profound teaching
+          on the nature of reality emerges from the most everyday activities.
+      relatedConcepts:
+          - three-jewels
+          - sati
+
+    - id: subhutis-question
+      order: 2
+      title: "Subhuti's Question"
+      original: >-
+          Katham Bhagavan bodhisattva-yane samprasthitena sthatum, katham
+          pratipattavyam, katham chittam pragrahitavyam?
+      originalLanguage: Sanskrit
+      translation: >-
+          How, Blessed One, should one who has set out on the bodhisattva path
+          take their stand? How should they practice? How should they master
+          their mind?
+      commentary: >-
+          Subhuti asks the fundamental question of the entire Mahayana path: how
+          should a bodhisattva — one who aspires to awaken for the benefit of all
+          beings — actually live and practice? The question addresses three
+          dimensions: where to take one's stand (view), how to practice (conduct),
+          and how to work with the mind (meditation). The Buddha's answer will
+          systematically undermine every fixed position the mind might take,
+          revealing that the bodhisattva's true ground is groundlessness itself.
+      relatedConcepts:
+          - bodhisattva
+          - bhavana
+          - prajna
+
+    - id: the-nature-of-generosity
+      order: 3
+      title: The Nature of Generosity
+      original: >-
+          Na bodhisattvena vastupratishtitena danam datavyam. Na kvachit-
+          pratishtitena danam datavyam.
+      originalLanguage: Sanskrit
+      translation: >-
+          A bodhisattva should not give a gift while dwelling in anything.
+          They should give without dwelling in anything at all.
+      commentary: >-
+          The Buddha begins his answer not with metaphysics but with generosity —
+          the first of the six perfections. True giving is without any ground:
+          no sense of a giver, no sense of a receiver, no sense of a gift.
+          This does not mean giving carelessly or without intention. It means
+          giving without the self-referential commentary that turns even the most
+          generous act into a project of self-enhancement. When generosity is
+          released from the grip of ego, it becomes boundless — like space, which
+          gives room to everything without calculating.
+      relatedConcepts:
+          - bodhisattva
+          - anatta
+          - karma
+
+    - id: no-self-no-being
+      order: 4
+      title: No Self, No Being
+      original: >-
+          Na Subhute bodhisattvena mahasattvena atma-samjna utpadayitavya, na
+          sattva-samjna, na jiva-samjna, na pudgala-samjna utpadayitavya.
+      originalLanguage: Sanskrit
+      translation: >-
+          Subhuti, a great bodhisattva should not give rise to the notion of a
+          self, nor a notion of a being, nor a notion of a living soul, nor a
+          notion of a person.
+      commentary: >-
+          The sutra introduces the four negations that form its backbone. There is
+          no self (atman) — no unchanging inner essence. No being (sattva) — no
+          fixed entity that persists through time. No living soul (jiva) — no
+          vital principle separate from the process of life. No person (pudgala) —
+          no ultimate individual behind experience. These four negations do not
+          deny the conventional reality of persons but cut through the deeply
+          rooted belief that there is something solid, permanent, and independent
+          at the core of experience. This teaching is the diamond itself.
+      relatedConcepts:
+          - anatta
+          - sunyata
+          - five-aggregates
+
+    - id: the-raft-metaphor
+      order: 5
+      title: The Raft Metaphor
+      original: >-
+          Dharma-paryayasyapi prahanataya dharma eva prahatavyah, praga
+          evadharma. Kolopamam vo Bhagavata dharma-paryayam deshitam ajanata.
+      originalLanguage: Sanskrit
+      translation: >-
+          Even the Dharma should be let go of, how much more so non-Dharma.
+          Know that the Blessed One's teaching is like a raft — the Dharma is
+          for crossing over, not for holding on to.
+      commentary: >-
+          This is one of the most radical statements in the entire Buddhist
+          canon. The teaching itself — the Dharma — is a means, not an end. Like
+          a raft used to cross a river, it is essential during the crossing but
+          absurd to carry on your back once you reach the far shore. Clinging to
+          Buddhist teachings, practices, or even enlightenment as fixed truths
+          is itself a form of bondage. The Buddha here undermines attachment to
+          his own authority and doctrine. Freedom means being free from
+          everything, including the path to freedom.
+      relatedConcepts:
+          - sunyata
+          - middle-way
+          - prajna
+
+    - id: wherever-there-are-signs
+      order: 6
+      title: Wherever There Are Signs There Is Delusion
+      original: >-
+          Yavat Subhute laksana-sampat tavanneva mrishavadam.
+          Sarva-samjna-apeta hy asamjna buddhah iti vaktavyah.
+      originalLanguage: Sanskrit
+      translation: >-
+          Wherever there are signs, Subhuti, there is delusion. If you see that
+          all signs are not signs, then you see the Tathagata.
+      commentary: >-
+          Signs (lakshana) are the characteristics by which we identify and
+          categorise phenomena — this is a table, that is a person, this is
+          Buddhist, that is enlightenment. The sutra declares that wherever we fix
+          reality into such categories, we are deluded. To see the Tathagata —
+          the Buddha, reality as it is — we must see through all signs to the
+          signless nature of things. This does not mean denying appearances but
+          recognizing that no appearance exhausts the reality it presents. The
+          finger is not the moon. Every concept, however useful, is ultimately
+          a distortion.
+      relatedConcepts:
+          - sunyata
+          - three-marks
+          - prajna
+          - vipassana
+
+    - id: the-merit-of-the-sutra
+      order: 7
+      title: The Merit of the Sutra
+      original: >-
+          Yash chayam Subhute kulaputro va kuladuhita va trisahasra-mahasahasram
+          lokadhatumaptaratna-paripur nam kritva danam dadyat, yash chaitah
+          sutranta-chaturpadikamapi gatham udgrhya parebhyo deshayet, ayam eva
+          tato nidanam bahutaram punyaskandham prasunuyat, apramanam
+          asankhyeyam.
+      originalLanguage: Sanskrit
+      translation: >-
+          If, Subhuti, a son or daughter of good family were to fill the three
+          thousand worlds with the seven precious treasures and give them all
+          away, and if another person were to take from this sutra even a
+          four-line verse and teach it to others, the merit of the latter would
+          be immeasurably, incalculably greater.
+      commentary: >-
+          The sutra repeatedly makes this extraordinary comparison between
+          material generosity and the gift of wisdom. No amount of worldly
+          giving — even filling entire universes with jewels — equals the merit
+          of sharing even a fragment of this teaching. Why? Because material gifts
+          address temporary needs while wisdom liberates beings at the root. A
+          single verse of the Diamond Sutra, truly understood and shared, has the
+          power to cut through the fundamental ignorance that is the source of
+          all suffering. This passage also reflects the Mahayana emphasis on the
+          perfection of wisdom as the highest of all practices.
+      relatedConcepts:
+          - karma
+          - prajna
+          - bodhisattva
+
+    - id: the-diamond-analogy
+      order: 8
+      title: The Diamond Analogy
+      original: >-
+          Vajracchedika nama prajnaparamita.
+      originalLanguage: Sanskrit
+      translation: >-
+          This is called the Perfection of Wisdom that Cuts Like a Diamond.
+      commentary: >-
+          The sutra's title is its teaching in miniature. A diamond (vajra) is the
+          hardest substance — it cuts through everything and nothing cuts through
+          it. Prajnaparamita — the perfection of wisdom — cuts through all
+          delusion, all conceptual fabrication, all grasping at self and phenomena.
+          Unlike intellectual analysis, which can always be countered by further
+          analysis, this wisdom cuts at the root. It does not replace one set of
+          ideas with another but dissolves the very mechanism of fixation. The
+          diamond is also transparent — it does not obstruct light but transmits
+          it perfectly, just as wisdom does not obstruct experience but allows
+          reality to shine through as it is.
+      relatedConcepts:
+          - prajna
+          - sunyata
+          - awakening
+
+    - id: the-closing-verse
+      order: 9
+      title: The Closing Verse
+      original: >-
+          Tara ka timira mashokabudbuda svapna vidyud iva cha abhralakshana.
+          Evam drashtavyam sarva-samskara.
+      originalLanguage: Sanskrit
+      translation: >-
+          Like a star, a fault of vision, a lamp, an illusion, a dewdrop,
+          a bubble, a dream, a flash of lightning, a cloud — thus should all
+          conditioned things be regarded.
+      commentary: >-
+          The sutra ends with nine similes for the nature of conditioned
+          existence — perhaps the most beautiful verse in all of Buddhist
+          literature. A star is visible but untouchable. A fault of vision
+          (floater) appears real but has no external referent. A lamp is
+          momentary and dependent on fuel. An illusion appears but deceives. A
+          dewdrop is exquisite and vanishing. A bubble is beautiful but
+          insubstantial. A dream is vivid but unreal. Lightning is powerful but
+          instantaneous. A cloud appears solid but is merely vapour. These images
+          do not negate the world; they reveal its nature — luminous, fleeting,
+          empty of permanence, and therefore infinitely precious. To see all
+          things this way is the diamond wisdom itself.
+      relatedConcepts:
+          - anicca
+          - sunyata
+          - dependent-origination
+          - awakening

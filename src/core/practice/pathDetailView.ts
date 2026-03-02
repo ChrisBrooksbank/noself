@@ -1,32 +1,57 @@
 import { getPathById } from '../../content/paths/loader.js';
 import type { PathSession } from '../../content/paths/index.js';
+import { getConceptById } from '../../content/concepts/loader.js';
+import { getPromptById } from '../../content/prompts/loader.js';
+import { getMeditationById } from '../../content/meditations/loader.js';
 import { isPathSessionComplete, logPathSessionComplete } from '../practiceHistory.js';
 
 function renderSessionItem(pathId: string, session: PathSession, index: number): string {
     const done = isPathSessionComplete(pathId, index);
     const checkedAttr = done ? ' checked' : '';
     const doneClass = done ? ' path-session--done' : '';
-    const links: string[] = [];
+    const sections: string[] = [];
 
     if (session.conceptId) {
-        links.push(
-            `<a href="#/concept/${session.conceptId}" class="path-session__link">Study: ${session.conceptId}</a>`,
-        );
-    }
-    if (session.promptId) {
-        links.push(
-            `<a href="#/practice/prompts" class="path-session__link">Contemplate</a>`,
-        );
-    }
-    if (session.meditationId) {
-        links.push(
-            `<a href="#/practice/meditate/${session.meditationId}" class="path-session__link">Meditate</a>`,
-        );
+        const concept = getConceptById(session.conceptId);
+        if (concept) {
+            sections.push(`
+                <div class="path-session__concept">
+                    <h4 class="path-session__section-title">${concept.title}</h4>
+                    <p class="path-session__brief">${concept.brief}</p>
+                    <a href="#/concept/${session.conceptId}" class="path-session__link">Read more</a>
+                </div>`);
+        }
     }
 
-    const linksHtml =
-        links.length > 0
-            ? `<div class="path-session__links">${links.join('')}</div>`
+    if (session.promptId) {
+        const prompt = getPromptById(session.promptId);
+        if (prompt) {
+            sections.push(`
+                <div class="path-session__prompt">
+                    <p class="path-session__question">${prompt.question}</p>
+                    <details class="path-session__guidance">
+                        <summary>Guidance</summary>
+                        <p>${prompt.guidance}</p>
+                    </details>
+                </div>`);
+        }
+    }
+
+    if (session.meditationId) {
+        const meditation = getMeditationById(session.meditationId);
+        if (meditation) {
+            sections.push(`
+                <div class="path-session__meditation">
+                    <h4 class="path-session__section-title">${meditation.title}</h4>
+                    <p class="path-session__description">${meditation.description}</p>
+                    <a href="#/practice/meditate/${session.meditationId}" class="path-session__link">Start session</a>
+                </div>`);
+        }
+    }
+
+    const contentHtml =
+        sections.length > 0
+            ? `<div class="path-session__content">${sections.join('')}</div>`
             : '';
 
     return `
@@ -43,7 +68,7 @@ function renderSessionItem(pathId: string, session: PathSession, index: number):
                 <span class="path-session__day">Day ${session.day}</span>
                 <span class="path-session__title">${session.title}</span>
             </label>
-            ${linksHtml}
+            ${contentHtml}
         </li>`;
 }
 

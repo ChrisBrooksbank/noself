@@ -1188,11 +1188,52 @@ a.card:hover,
     color: var(--color-text);
 }
 
-.path-session__links {
+.path-session__content {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    margin-top: var(--space-2);
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-top: var(--space-3);
+    padding-left: calc(1.125rem + var(--space-3));
+}
+
+.path-session__concept,
+.path-session__prompt,
+.path-session__meditation {
+    padding: var(--space-3);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-sm);
+}
+
+.path-session__section-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+}
+
+.path-session__brief,
+.path-session__description {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+    margin-bottom: var(--space-2);
+}
+
+.path-session__question {
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+}
+
+.path-session__guidance {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+}
+
+.path-session__guidance summary {
+    cursor: pointer;
+    color: var(--color-accent);
+    font-size: var(--text-xs);
 }
 
 .path-session__link {

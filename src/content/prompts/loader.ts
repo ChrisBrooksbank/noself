@@ -64,6 +64,10 @@ export function getPromptsByConceptId(conceptId: string): Prompt[] {
     return getAllPrompts().filter((p) => p.conceptId === conceptId);
 }
 
+export function getPromptById(id: string): Prompt | undefined {
+    return getAllPrompts().find((p) => p.id === id);
+}
+
 export function getPromptFileById(id: string): PromptFile | undefined {
     return loadPromptFiles().find((f) => f.id === id);
 }

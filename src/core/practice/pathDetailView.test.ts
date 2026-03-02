@@ -18,6 +18,42 @@ vi.mock('../../content/paths/loader.js', () => ({
     getPathById: vi.fn((id: string) => (id === 'seven-day-metta' ? mockPath : undefined)),
 }));
 
+vi.mock('../../content/concepts/loader.js', () => ({
+    getConceptById: vi.fn((id: string) =>
+        id === 'metta'
+            ? {
+                  id: 'metta',
+                  title: 'Loving-Kindness',
+                  brief: 'Metta is the practice of unconditional goodwill.',
+              }
+            : undefined,
+    ),
+}));
+
+vi.mock('../../content/prompts/loader.js', () => ({
+    getPromptById: vi.fn((id: string) =>
+        id === 'metta-1'
+            ? {
+                  id: 'metta-1',
+                  question: 'How does metta arise?',
+                  guidance: 'Reflect on warmth toward a loved one.',
+              }
+            : undefined,
+    ),
+}));
+
+vi.mock('../../content/meditations/loader.js', () => ({
+    getMeditationById: vi.fn((id: string) =>
+        id === 'metta'
+            ? {
+                  id: 'metta',
+                  title: 'Metta Meditation',
+                  description: 'A guided loving-kindness meditation.',
+              }
+            : undefined,
+    ),
+}));
+
 vi.mock('../practiceHistory.js', () => ({
     isPathSessionComplete: vi.fn(() => false),
     logPathSessionComplete: vi.fn(),
@@ -113,31 +149,46 @@ describe('renderPathDetailView', () => {
         expect(sessions.length).toBe(1);
     });
 
-    it('renders concept study link for sessions with conceptId', () => {
+    it('renders concept brief inline for sessions with conceptId', () => {
         renderPathDetailView(container, 'seven-day-metta');
-        const links = Array.from(container.querySelectorAll('.path-session__link'));
-        const conceptLink = links.find(
-            (l) => l.getAttribute('href') === '#/concept/metta',
+        const conceptSection = container.querySelector('.path-session__concept');
+        expect(conceptSection).toBeTruthy();
+        expect(
+            conceptSection?.querySelector('.path-session__section-title')?.textContent,
+        ).toBe('Loving-Kindness');
+        expect(conceptSection?.querySelector('.path-session__brief')?.textContent).toBe(
+            'Metta is the practice of unconditional goodwill.',
         );
-        expect(conceptLink).toBeTruthy();
+        const readMore = conceptSection?.querySelector('.path-session__link');
+        expect(readMore?.getAttribute('href')).toBe('#/concept/metta');
+        expect(readMore?.textContent).toBe('Read more');
     });
 
-    it('renders meditation link for sessions with meditationId', () => {
+    it('renders prompt question and guidance for sessions with promptId', () => {
         renderPathDetailView(container, 'seven-day-metta');
-        const links = Array.from(container.querySelectorAll('.path-session__link'));
-        const meditateLink = links.find(
-            (l) => l.getAttribute('href') === '#/practice/meditate/metta',
+        const promptSection = container.querySelector('.path-session__prompt');
+        expect(promptSection).toBeTruthy();
+        expect(promptSection?.querySelector('.path-session__question')?.textContent).toBe(
+            'How does metta arise?',
         );
-        expect(meditateLink).toBeTruthy();
+        const guidance = promptSection?.querySelector('.path-session__guidance');
+        expect(guidance).toBeTruthy();
+        expect(guidance?.textContent).toContain('Reflect on warmth toward a loved one.');
     });
 
-    it('renders contemplate link for sessions with promptId', () => {
+    it('renders meditation description and start link for sessions with meditationId', () => {
         renderPathDetailView(container, 'seven-day-metta');
-        const links = Array.from(container.querySelectorAll('.path-session__link'));
-        const promptLink = links.find(
-            (l) => l.getAttribute('href') === '#/practice/prompts',
-        );
-        expect(promptLink).toBeTruthy();
+        const meditationSection = container.querySelector('.path-session__meditation');
+        expect(meditationSection).toBeTruthy();
+        expect(
+            meditationSection?.querySelector('.path-session__section-title')?.textContent,
+        ).toBe('Metta Meditation');
+        expect(
+            meditationSection?.querySelector('.path-session__description')?.textContent,
+        ).toBe('A guided loving-kindness meditation.');
+        const startLink = meditationSection?.querySelector('.path-session__link');
+        expect(startLink?.getAttribute('href')).toBe('#/practice/meditate/metta');
+        expect(startLink?.textContent).toBe('Start session');
     });
 
     it('renders progress indicator', () => {

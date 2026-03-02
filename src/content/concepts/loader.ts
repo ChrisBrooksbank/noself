@@ -31,6 +31,7 @@ const conceptSchema = z.object({
         .transform((v) => v ?? null),
     category: z.enum(conceptCategoryValues),
     related: z.array(z.string()).default([]),
+    simpleBrief: z.string().optional(),
     brief: z.string(),
     essentials: z.string(),
     deep: z.string(),

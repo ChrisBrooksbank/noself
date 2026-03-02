@@ -3,8 +3,11 @@ import {
     setTheme,
     getFontSize,
     setFontSize,
+    getExpertiseLevel,
+    setExpertiseLevel,
     type Theme,
     type FontSize,
+    type ExpertiseLevel,
 } from './preferences.js';
 
 let panelEl: HTMLElement | null = null;
@@ -13,6 +16,7 @@ let isOpen = false;
 function buildPanel(): string {
     const theme = getTheme();
     const fontSize = getFontSize();
+    const expertiseLevel = getExpertiseLevel();
 
     const themeOptions: { value: Theme; label: string }[] = [
         { value: 'dark', label: 'Dark' },
@@ -25,6 +29,20 @@ function buildPanel(): string {
         { value: 'medium', label: 'Medium' },
         { value: 'large', label: 'Large' },
         { value: 'xl', label: 'Extra Large' },
+    ];
+
+    const expertiseOptions: { value: ExpertiseLevel; label: string; desc: string }[] = [
+        {
+            value: 1,
+            label: 'Exploring',
+            desc: 'Simple introductions, beginner meditations',
+        },
+        { value: 2, label: 'Deepening', desc: 'Fuller teachings, sutras, and mantras' },
+        {
+            value: 3,
+            label: 'Immersed',
+            desc: 'Everything, including pujas and original texts',
+        },
     ];
 
     const themeRadios = themeOptions
@@ -47,6 +65,17 @@ function buildPanel(): string {
         )
         .join('');
 
+    const expertiseRadios = expertiseOptions
+        .map(
+            (opt) => `
+        <label class="settings-panel__option">
+            <input type="radio" name="expertiseLevel" value="${opt.value}"${opt.value === expertiseLevel ? ' checked' : ''}>
+            <span class="settings-panel__option-label">${opt.label}</span>
+            <span class="settings-panel__option-desc">${opt.desc}</span>
+        </label>`,
+        )
+        .join('');
+
     return `
         <div class="settings-panel" role="dialog" aria-label="Accessibility settings">
             <div class="settings-panel__inner">
@@ -55,6 +84,10 @@ function buildPanel(): string {
                     <button class="settings-panel__close" aria-label="Close settings">&times;</button>
                 </div>
                 <div class="settings-panel__sections">
+                    <fieldset class="settings-panel__fieldset">
+                        <legend class="settings-panel__legend">Experience</legend>
+                        <div class="settings-panel__options settings-panel__options--stacked">${expertiseRadios}</div>
+                    </fieldset>
                     <fieldset class="settings-panel__fieldset">
                         <legend class="settings-panel__legend">Theme</legend>
                         <div class="settings-panel__options">${themeRadios}</div>
@@ -117,6 +150,15 @@ function bindPanelEvents(): void {
         .forEach((input) => {
             input.addEventListener('change', () => {
                 setFontSize(input.value as FontSize);
+            });
+        });
+
+    panelEl
+        .querySelectorAll<HTMLInputElement>('input[name="expertiseLevel"]')
+        .forEach((input) => {
+            input.addEventListener('change', () => {
+                setExpertiseLevel(Number(input.value) as ExpertiseLevel);
+                window.dispatchEvent(new HashChangeEvent('hashchange'));
             });
         });
 }

@@ -23,6 +23,7 @@ const meditationSchema = z.object({
     id: z.string(),
     title: z.string(),
     description: z.string(),
+    level: z.union([z.literal(1), z.literal(2), z.literal(3)]).optional(),
     durations: z.array(meditationDurationSchema),
     steps: z.record(z.string(), z.array(meditationStepSchema)).transform((record) => {
         const result: Partial<

@@ -36,6 +36,10 @@ vi.mock('../../content/prompts/loader.js', () => ({
     getAllPrompts: vi.fn(() => mockPrompts),
 }));
 
+vi.mock('../preferences.js', () => ({
+    getExpertiseLevel: vi.fn(() => 3),
+}));
+
 vi.mock('../practiceHistory.js', () => ({
     logPromptSatWith: vi.fn(),
     isPromptSatWith: vi.fn(() => false),

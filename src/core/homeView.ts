@@ -1,6 +1,7 @@
 import { getDailyConcept } from './dailyConcept.js';
 import { getViewedIds } from './readingHistory.js';
 import { getConceptById, CONCEPT_IDS } from '../content/concepts/index.js';
+import { getExpertiseLevel } from './preferences.js';
 
 const TOTAL_CONCEPTS = CONCEPT_IDS.length;
 const MAX_HISTORY = 5;
@@ -100,10 +101,13 @@ function renderHistory(viewedIds: string[]): string {
 export function renderHomeView(container: HTMLElement): void {
     const concept = getDailyConcept();
     const viewedIds = getViewedIds();
+    const level = getExpertiseLevel();
+    const briefText =
+        level === 1 ? (concept.simpleBrief ?? concept.brief) : concept.brief;
 
     container.innerHTML = `
         <div class="home-view page stack-lg" role="main">
-            ${renderDailyCard(concept.id, concept.title, concept.brief)}
+            ${renderDailyCard(concept.id, concept.title, briefText)}
             ${renderProgress(viewedIds.length)}
             ${renderHistory(viewedIds)}
         </div>`;

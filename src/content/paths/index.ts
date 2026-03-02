@@ -28,6 +28,8 @@ export interface PracticePath {
     title: string;
     /** 1-2 sentence description shown in the paths list */
     description: string;
+    /** Minimum expertise level required (1=Exploring, 2=Deepening, 3=Immersed). Defaults to 1. */
+    level?: 1 | 2 | 3;
     /** Ordered list of sessions */
     sessions: PathSession[];
 }

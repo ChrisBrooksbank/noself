@@ -2,6 +2,10 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { renderMeditationListView } from './meditationListView.js';
 import type { Meditation } from '../../content/meditations/index.js';
 
+vi.mock('../preferences.js', () => ({
+    getExpertiseLevel: vi.fn(() => 3),
+}));
+
 const mockMeditations: Meditation[] = [
     {
         id: 'breath-awareness',

@@ -6,6 +6,7 @@ import {
     markRevisit,
     getStatus,
 } from './readingHistory.js';
+import { getExpertiseLevel } from './preferences.js';
 
 function renderExamples(examples: ConceptExample[]): string {
     if (examples.length === 0) return '';
@@ -62,9 +63,36 @@ function renderToggle(id: string): string {
 }
 
 function buildConceptHTML(concept: Concept, id: string): string {
+    const level = getExpertiseLevel();
     const terms = [concept.pali, concept.sanskrit].filter(Boolean);
     const termStr =
         terms.length > 0 ? `<p class="concept-terms">${terms.join(' · ')}</p>` : '';
+
+    const briefText =
+        level === 1 ? (concept.simpleBrief ?? concept.brief) : concept.brief;
+
+    const essentialsSection =
+        level >= 2
+            ? `<section class="concept-section stack">
+                <h2 class="concept-section__heading">Essentials</h2>
+                <div class="concept-body">${concept.essentials}</div>
+            </section>`
+            : '';
+
+    const deepSection =
+        level >= 3
+            ? `<section class="concept-section stack">
+                <h2 class="concept-section__heading">Deep Teaching</h2>
+                <div class="concept-body">${concept.deep}</div>
+            </section>`
+            : '';
+
+    const examplesSection = level >= 3 ? renderExamples(concept.examples) : '';
+
+    const levelHint =
+        level < 3
+            ? `<p class="concept-level-hint">There's more to explore — change your level in Settings.</p>`
+            : '';
 
     return `
         <article class="concept-view page stack-lg" aria-label="${concept.title}">
@@ -72,22 +100,15 @@ function buildConceptHTML(concept: Concept, id: string): string {
                 <span class="badge">${concept.category}</span>
                 <h1 class="concept-title">${concept.title}</h1>
                 ${termStr}
-                <p class="concept-brief">${concept.brief}</p>
+                <p class="concept-brief">${briefText}</p>
             </header>
 
-            <section class="concept-section stack">
-                <h2 class="concept-section__heading">Essentials</h2>
-                <div class="concept-body">${concept.essentials}</div>
-            </section>
-
-            <section class="concept-section stack">
-                <h2 class="concept-section__heading">Deep Teaching</h2>
-                <div class="concept-body">${concept.deep}</div>
-            </section>
-
-            ${renderExamples(concept.examples)}
+            ${essentialsSection}
+            ${deepSection}
+            ${examplesSection}
             ${renderRelated(concept.related)}
             ${renderToggle(id)}
+            ${levelHint}
         </article>`;
 }
 

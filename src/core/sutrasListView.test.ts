@@ -29,8 +29,9 @@ describe('renderSutrasListView', () => {
 
     it('shows tradition badge', () => {
         renderSutrasListView(container);
-        const badge = container.querySelector('.badge');
-        expect(badge?.textContent).toBe('Mahayana');
+        const badges = container.querySelectorAll('.badge');
+        const texts = Array.from(badges).map((b) => b.textContent);
+        expect(texts).toContain('Mahayana');
     });
 
     it('shows section count', () => {

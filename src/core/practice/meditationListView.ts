@@ -1,8 +1,12 @@
 import { loadMeditations } from '../../content/meditations/loader.js';
+import { getExpertiseLevel } from '../preferences.js';
 import type { Meditation } from '../../content/meditations/index.js';
 
 function renderDurationOptions(meditation: Meditation): string {
-    return meditation.durations
+    const level = getExpertiseLevel();
+    const durations =
+        level === 1 ? meditation.durations.filter((d) => d <= 10) : meditation.durations;
+    return durations
         .map(
             (min) =>
                 `<a href="#/practice/meditate/${meditation.id}?duration=${min}" class="meditation-item__duration-link btn btn--sm">${min} min</a>`,
@@ -22,7 +26,8 @@ function renderMeditationItem(meditation: Meditation): string {
 }
 
 export function renderMeditationListView(container: HTMLElement): void {
-    const meditations = loadMeditations();
+    const level = getExpertiseLevel();
+    const meditations = loadMeditations().filter((m) => (m.level ?? 1) <= level);
 
     const sorted = [...meditations].sort((a, b) => a.title.localeCompare(b.title));
 

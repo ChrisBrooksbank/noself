@@ -4,7 +4,7 @@ import { start } from '@core/router.js';
 import { renderNav, initOnlineStatus } from '@core/nav.js';
 import { initInstallPrompt } from '@core/installPrompt.js';
 import { initUpdatePrompt } from '@core/updatePrompt.js';
-import { initPreferences } from '@core/preferences.js';
+import { initPreferences, getExpertiseLevel } from '@core/preferences.js';
 import { initSettingsPanel } from '@core/settingsPanel.js';
 import { renderHomeView } from '@core/homeView.js';
 import { renderCatalogView } from '@core/catalogView.js';
@@ -65,6 +65,31 @@ start((route) => {
     if (currentCleanup) {
         currentCleanup();
         currentCleanup = null;
+    }
+
+    const level = getExpertiseLevel();
+
+    // Route guards: redirect level-gated content to home
+    const sutraRoutes = ['sutras', 'sutraDetail'] as const;
+    const mantraRoutes = [
+        'practiceMantras',
+        'practiceMantraDetail',
+        'practiceMantraChant',
+    ] as const;
+    const pujaRoutes = [
+        'practicePujas',
+        'practicePujaStudy',
+        'practicePujaPerform',
+    ] as const;
+
+    if (
+        (sutraRoutes.includes(route.type as (typeof sutraRoutes)[number]) && level < 2) ||
+        (mantraRoutes.includes(route.type as (typeof mantraRoutes)[number]) &&
+            level < 2) ||
+        (pujaRoutes.includes(route.type as (typeof pujaRoutes)[number]) && level < 3)
+    ) {
+        window.location.hash = '#/';
+        return;
     }
 
     renderNav(navHost, route.type);

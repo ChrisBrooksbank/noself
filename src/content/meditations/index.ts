@@ -23,6 +23,8 @@ export interface Meditation {
     title: string;
     /** 1-2 sentence description shown in the meditation list */
     description: string;
+    /** Minimum expertise level required (1=Exploring, 2=Deepening, 3=Immersed). Defaults to 1. */
+    level?: 1 | 2 | 3;
     /** Available duration options for this meditation (in minutes) */
     durations: MeditationDuration[];
     /**

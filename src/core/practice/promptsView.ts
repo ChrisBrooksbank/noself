@@ -2,6 +2,7 @@ import { getDailyPrompt } from './dailyPrompt.js';
 import { getAllPrompts } from '../../content/prompts/loader.js';
 import type { Prompt, PromptDepth } from '../../content/prompts/index.js';
 import { logPromptSatWith, isPromptSatWith } from '../practiceHistory.js';
+import { getExpertiseLevel } from '../preferences.js';
 
 const DEPTH_LABELS: Record<PromptDepth, string> = {
     beginner: 'Beginner',
@@ -47,12 +48,17 @@ function renderDailyPromptSection(prompt: Prompt): string {
 }
 
 function renderDepthFilter(activeDepth: PromptDepth | 'all'): string {
-    const options: Array<{ value: PromptDepth | 'all'; label: string }> = [
+    const level = getExpertiseLevel();
+    if (level === 1) return '';
+
+    const allOptions: Array<{ value: PromptDepth | 'all'; label: string }> = [
         { value: 'all', label: 'All' },
         { value: 'beginner', label: 'Beginner' },
         { value: 'intermediate', label: 'Intermediate' },
         { value: 'advanced', label: 'Advanced' },
     ];
+    const options =
+        level === 2 ? allOptions.filter((o) => o.value !== 'advanced') : allOptions;
     const buttons = options
         .map(({ value, label }) => {
             const active = value === activeDepth ? ' btn--active' : '';
@@ -163,9 +169,16 @@ function attachEventListeners(container: HTMLElement, allPrompts: Prompt[]): voi
     });
 }
 
+function filterPromptsByLevel(prompts: Prompt[]): Prompt[] {
+    const level = getExpertiseLevel();
+    if (level === 1) return prompts.filter((p) => p.depth === 'beginner');
+    if (level === 2) return prompts.filter((p) => p.depth !== 'advanced');
+    return prompts;
+}
+
 export function renderPromptsView(container: HTMLElement): void {
     const dailyPrompt = getDailyPrompt();
-    const allPrompts = getAllPrompts();
+    const allPrompts = filterPromptsByLevel(getAllPrompts());
 
     container.innerHTML = `
         <div class="prompts-view page stack-lg" role="main">

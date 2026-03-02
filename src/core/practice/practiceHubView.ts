@@ -5,6 +5,7 @@ import {
     getPujaSessions,
     getMantraSessions,
 } from '../practiceHistory.js';
+import { getExpertiseLevel } from '../preferences.js';
 
 function renderStatsSummary(
     totalSessions: number,
@@ -41,47 +42,60 @@ function renderCard(
 }
 
 export function renderPracticeHubView(container: HTMLElement): void {
+    const level = getExpertiseLevel();
     const totalSessions = getTotalSessionCount();
     const meditationCount = getMeditationSessions().length;
     const promptCount = getPromptSessions().length;
     const pujaCount = getPujaSessions().length;
     const mantraCount = getMantraSessions().length;
 
+    const meditateCard = renderCard(
+        '#/practice/meditate',
+        'Meditate',
+        'Guided timer sessions with step-by-step instructions and bell sounds.',
+        'Browse Meditations',
+    );
+    const contemplateCard = renderCard(
+        '#/practice/prompts',
+        'Contemplate',
+        'Daily reflection prompts tied to core Buddhist concepts.',
+        'View Prompts',
+    );
+    const pathsCard = renderCard(
+        '#/practice/paths',
+        'Paths',
+        'Structured multi-session curricula combining study, prompts, and meditation.',
+        'Browse Paths',
+    );
+    const mantrasCard =
+        level >= 2
+            ? renderCard(
+                  '#/practice/mantras',
+                  'Mantras',
+                  'Sacred syllables for chanting practice with mala bead counter.',
+                  'Browse Mantras',
+              )
+            : '';
+    const pujaCard =
+        level >= 3
+            ? renderCard(
+                  '#/practice/pujas',
+                  'Puja',
+                  'Devotional liturgies to study and perform, including the Triratna Sevenfold Puja.',
+                  'Browse Pujas',
+              )
+            : '';
+
     container.innerHTML = `
         <div class="practice-hub-view page stack-lg" role="main">
             <h1 class="practice-hub__heading">Practice</h1>
             ${renderStatsSummary(totalSessions, meditationCount, promptCount, pujaCount, mantraCount)}
             <div class="practice-hub__cards stack-md">
-                ${renderCard(
-                    '#/practice/meditate',
-                    'Meditate',
-                    'Guided timer sessions with step-by-step instructions and bell sounds.',
-                    'Browse Meditations',
-                )}
-                ${renderCard(
-                    '#/practice/prompts',
-                    'Contemplate',
-                    'Daily reflection prompts tied to core Buddhist concepts.',
-                    'View Prompts',
-                )}
-                ${renderCard(
-                    '#/practice/paths',
-                    'Paths',
-                    'Structured multi-session curricula combining study, prompts, and meditation.',
-                    'Browse Paths',
-                )}
-                ${renderCard(
-                    '#/practice/pujas',
-                    'Puja',
-                    'Devotional liturgies to study and perform, including the Triratna Sevenfold Puja.',
-                    'Browse Pujas',
-                )}
-                ${renderCard(
-                    '#/practice/mantras',
-                    'Mantras',
-                    'Sacred syllables for chanting practice with mala bead counter.',
-                    'Browse Mantras',
-                )}
+                ${meditateCard}
+                ${contemplateCard}
+                ${pathsCard}
+                ${mantrasCard}
+                ${pujaCard}
             </div>
             <a href="#/practice/history" class="practice-hub__history-link">View practice history</a>
         </div>`;

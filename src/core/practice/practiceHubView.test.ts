@@ -1,6 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { renderPracticeHubView } from './practiceHubView.js';
 
+vi.mock('../preferences.js', () => ({
+    getExpertiseLevel: vi.fn(() => 3),
+}));
+
 vi.mock('../practiceHistory.js', () => ({
     getTotalSessionCount: vi.fn(() => 0),
     getMeditationSessions: vi.fn(() => []),

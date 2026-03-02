@@ -1,6 +1,7 @@
 import { loadPaths } from '../../content/paths/loader.js';
 import type { PracticePath } from '../../content/paths/index.js';
 import { getPathSessions } from '../practiceHistory.js';
+import { getExpertiseLevel } from '../preferences.js';
 
 function getPathProgress(path: PracticePath): { completed: number; total: number } {
     const sessions = getPathSessions();
@@ -42,7 +43,8 @@ function renderPathItem(path: PracticePath): string {
 }
 
 export function renderPathsListView(container: HTMLElement): void {
-    const paths = loadPaths();
+    const level = getExpertiseLevel();
+    const paths = loadPaths().filter((p) => (p.level ?? 1) <= level);
 
     container.innerHTML = `
         <div class="paths-list-view page stack-lg" role="main">

@@ -1,6 +1,7 @@
 import { loadConcepts } from '../content/concepts/index.js';
 import { isViewed } from './readingHistory.js';
 import { debounce } from '../utils/helpers.js';
+import { getExpertiseLevel } from './preferences.js';
 import type { Concept, ConceptCategory } from '../content/concepts/index.js';
 
 const CATEGORIES: Array<{ value: ConceptCategory | 'all'; label: string }> = [
@@ -15,6 +16,7 @@ const CATEGORIES: Array<{ value: ConceptCategory | 'all'; label: string }> = [
 ];
 
 function renderConceptItem(concept: Concept): string {
+    const level = getExpertiseLevel();
     const viewed = isViewed(concept.id);
     const paliLabel = concept.pali
         ? `<span class="catalog-item__pali">${concept.pali}</span>`
@@ -22,6 +24,8 @@ function renderConceptItem(concept: Concept): string {
     const badge = viewed
         ? `<span class="badge catalog-item__badge" aria-label="Read">Read</span>`
         : `<span class="badge catalog-item__badge catalog-item__badge--unread" aria-label="New">New</span>`;
+    const briefText =
+        level === 1 ? (concept.simpleBrief ?? concept.brief) : concept.brief;
 
     return `
         <li class="catalog-item card">
@@ -34,7 +38,7 @@ function renderConceptItem(concept: Concept): string {
                 </div>
                 ${badge}
             </div>
-            <p class="catalog-item__brief">${concept.brief}</p>
+            <p class="catalog-item__brief">${briefText}</p>
         </li>`;
 }
 

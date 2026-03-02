@@ -60,6 +60,10 @@ const mockMarkContemplated = vi.fn();
 const mockMarkRevisit = vi.fn();
 let mockStatus: 'viewed' | 'contemplated' | 'revisit' | null = null;
 
+vi.mock('./preferences.js', () => ({
+    getExpertiseLevel: vi.fn(() => 3),
+}));
+
 vi.mock('./readingHistory.js', () => ({
     markViewed: (id: string) => mockMarkViewed(id),
     markContemplated: (id: string) => {

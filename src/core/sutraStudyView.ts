@@ -1,5 +1,6 @@
 import { getSutraById } from '../content/sutras/index.js';
 import { getConceptById } from '../content/concepts/index.js';
+import { getExpertiseLevel } from './preferences.js';
 import type { Sutra, SutraSection } from '../content/sutras/index.js';
 
 function renderToc(sections: SutraSection[]): string {
@@ -36,13 +37,19 @@ function renderRelatedConcepts(ids: string[]): string {
 }
 
 function renderSection(section: SutraSection): string {
+    const level = getExpertiseLevel();
+    const originalBlock =
+        level >= 3
+            ? `<div class="sutra-section__original">
+                <span class="sutra-section__original-label">${section.originalLanguage}</span>
+                ${section.original}
+            </div>`
+            : '';
+
     return `
         <article id="section-${section.id}" class="sutra-section card stack">
             <h3 class="sutra-section__title">${section.title}</h3>
-            <div class="sutra-section__original">
-                <span class="sutra-section__original-label">${section.originalLanguage}</span>
-                ${section.original}
-            </div>
+            ${originalBlock}
             <p class="sutra-section__translation">${section.translation}</p>
             <details class="sutra-section__commentary-details">
                 <summary class="sutra-section__commentary-summary">Commentary</summary>

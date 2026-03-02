@@ -14,6 +14,7 @@ const practicePathSchema = z.object({
     id: z.string(),
     title: z.string(),
     description: z.string(),
+    level: z.union([z.literal(1), z.literal(2), z.literal(3)]).optional(),
     sessions: z.array(pathSessionSchema),
 });
 

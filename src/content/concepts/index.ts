@@ -28,6 +28,8 @@ export interface Concept {
     /** IDs of related concepts for the concept web */
     related: string[];
 
+    /** Plain-language brief for newcomers (optional, used at Level 1) */
+    simpleBrief?: string;
     /** 1-2 sentences. Used on concept web cards and quick references. */
     brief: string;
     /** 2-3 paragraphs. Accessible introduction with genuine understanding. */

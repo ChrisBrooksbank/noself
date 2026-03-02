@@ -1,5 +1,9 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { renderSutraStudyView } from './sutraStudyView.js';
+
+vi.mock('./preferences.js', () => ({
+    getExpertiseLevel: vi.fn(() => 3),
+}));
 
 describe('renderSutraStudyView', () => {
     let container: HTMLElement;

@@ -1,0 +1,236 @@
+# Level 1 — Exploring
+- id: mingyur-key-to-meditation
+  title: The Key to Meditation
+  teacher: Yongey Mingyur Rinpoche
+  channel: '@MingyurRinpoche'
+  channelUrl: https://www.youtube.com/@MingyurRinpoche
+  videoUrl: https://www.youtube.com/watch?v=nOJTbWC-ULc
+  duration: '10m'
+  description: A warm, accessible introduction to meditation from one of the most beloved Tibetan teachers of our time.
+  level: 1
+  tradition: Tibetan
+  topics: [meditation, awareness, beginner]
+  relatedConcepts: [sati, bhavana]
+
+- id: mingyur-breathing-meditation
+  title: How to Do Breathing Meditation
+  teacher: Yongey Mingyur Rinpoche
+  channel: '@MingyurRinpoche'
+  channelUrl: https://www.youtube.com/@MingyurRinpoche
+  videoUrl: https://www.youtube.com/watch?v=nTyMacgMgKk
+  duration: '8m'
+  description: Simple, joyful instructions for breathing meditation that cuts through common misconceptions.
+  level: 1
+  tradition: Tibetan
+  topics: [breathing, meditation, calm]
+  relatedConcepts: [samatha, sati]
+
+- id: brahm-letting-go
+  title: Four Ways of Letting Go
+  teacher: Ajahn Brahm
+  channel: '@BuddhistSocietyWA'
+  channelUrl: https://www.youtube.com/@BuddhistSocietyWA
+  videoUrl: https://www.youtube.com/watch?v=0ZO5GCZJQNI
+  duration: '1h'
+  description: Ajahn Brahm's gentle, humorous teaching on releasing attachment and finding peace.
+  level: 1
+  tradition: Theravada
+  topics: [letting-go, attachment, peace]
+  relatedConcepts: [dukkha, upekkha]
+
+- id: tnh-mindful-living
+  title: The Art of Mindful Living
+  teacher: Thich Nhat Hanh
+  channel: '@plumvillage'
+  channelUrl: https://www.youtube.com/@plumvillage
+  videoUrl: https://www.youtube.com/watch?v=wMNrSMmRC7I
+  duration: '2h 20m'
+  description: A full-length dharma talk on bringing mindfulness into everyday life from the beloved Zen master.
+  level: 1
+  tradition: Zen
+  topics: [mindfulness, daily-life, presence]
+  relatedConcepts: [sati, interbeing]
+
+- id: brach-rain-self-compassion
+  title: The RAIN of Self-Compassion
+  teacher: Tara Brach
+  channel: '@TaraBrach'
+  channelUrl: https://www.youtube.com/@TaraBrach
+  videoUrl: https://www.youtube.com/watch?v=W8e_tAEM80k
+  duration: '11m'
+  description: An accessible introduction to the RAIN practice for working with difficult emotions through self-compassion.
+  level: 1
+  tradition: Insight
+  topics: [self-compassion, emotions, rain]
+  relatedConcepts: [karuna, metta]
+
+- id: brahm-guided-meditation
+  title: Friday Night Guided Meditation
+  teacher: Ajahn Brahm
+  channel: '@BuddhistSocietyWA'
+  channelUrl: https://www.youtube.com/@BuddhistSocietyWA
+  videoUrl: https://www.youtube.com/watch?v=gOOxivVbo6E
+  duration: '30m'
+  description: A calming guided meditation session from one of the most popular Western Theravada teachers.
+  level: 1
+  tradition: Theravada
+  topics: [guided-meditation, calm, samatha]
+  relatedConcepts: [samatha, bhavana]
+
+# Level 2 — Deepening
+- id: fronsdal-intro-mindfulness
+  title: Introduction to Mindfulness Meditation
+  teacher: Gil Fronsdal
+  channel: '@InsightMeditationCenter'
+  channelUrl: https://www.youtube.com/@InsightMeditationCenter
+  videoUrl: https://www.youtube.com/watch?v=srPaEexG5Xo
+  duration: '1h'
+  description: A thorough yet approachable introduction to mindfulness meditation from a respected Insight teacher.
+  level: 2
+  tradition: Insight
+  topics: [mindfulness, meditation, satipatthana]
+  relatedConcepts: [vipassana, sati]
+
+- id: goldstein-abiding-mindfulness
+  title: Abiding in Mindfulness
+  teacher: Joseph Goldstein
+  channel: '@InsightMeditationSociety'
+  channelUrl: https://www.youtube.com/@InsightMeditationSociety
+  videoUrl: https://www.youtube.com/watch?v=kfcI33Bj7dQ
+  duration: '45m'
+  description: Joseph Goldstein explores the four foundations of mindfulness with clarity and depth.
+  level: 2
+  tradition: Insight
+  topics: [satipatthana, mindfulness, awareness]
+  relatedConcepts: [sati, vipassana]
+
+- id: salzberg-loving-kindness
+  title: Loving-Kindness Meditation
+  teacher: Sharon Salzberg
+  channel: '@SharonSalzberg'
+  channelUrl: https://www.youtube.com/@SharonSalzberg
+  videoUrl: https://www.youtube.com/watch?v=zhiHCU2GpJk
+  duration: '20m'
+  description: A guided metta meditation from the teacher who helped bring loving-kindness practice to the West.
+  level: 2
+  tradition: Insight
+  topics: [metta, loving-kindness, compassion]
+  relatedConcepts: [metta, karuna]
+
+- id: brahm-understanding-suffering
+  title: Understanding Suffering
+  teacher: Ajahn Brahm
+  channel: '@BuddhistSocietyWA'
+  channelUrl: https://www.youtube.com/@BuddhistSocietyWA
+  videoUrl: https://www.youtube.com/watch?v=MdyaaQxHbHY
+  duration: '1h'
+  description: A deep yet accessible exploration of the First Noble Truth and why understanding suffering is liberating.
+  level: 2
+  tradition: Theravada
+  topics: [suffering, noble-truths, liberation]
+  relatedConcepts: [four-noble-truths, dukkha]
+
+- id: tnh-heart-buddha-teaching
+  title: The Heart of the Buddha's Teaching
+  teacher: Thich Nhat Hanh
+  channel: '@plumvillage'
+  channelUrl: https://www.youtube.com/@plumvillage
+  videoUrl: https://www.youtube.com/watch?v=NJx-x5YsSa4
+  duration: '1h 30m'
+  description: Thich Nhat Hanh presents the core teachings of the Buddha with his signature gentleness and clarity.
+  level: 2
+  tradition: Zen
+  topics: [noble-truths, eightfold-path, core-teachings]
+  relatedConcepts: [noble-eightfold-path, interbeing]
+
+- id: mingyur-awareness-beyond-mindfulness
+  title: 'Awareness: Going Beyond Mindfulness'
+  teacher: Yongey Mingyur Rinpoche
+  channel: '@MingyurRinpoche'
+  channelUrl: https://www.youtube.com/@MingyurRinpoche
+  videoUrl: https://www.youtube.com/watch?v=pGLs1E1vF8U
+  duration: '15m'
+  description: Mingyur Rinpoche points to the awareness that underlies all experience, beyond technique.
+  level: 2
+  tradition: Tibetan
+  topics: [awareness, insight, nature-of-mind]
+  relatedConcepts: [vipassana, awakening]
+
+# Level 3 — Immersed
+- id: bodhi-four-noble-truths
+  title: The Four Noble Truths (lecture)
+  teacher: Bhikkhu Bodhi
+  channel: BAUS YouTube
+  channelUrl: https://www.youtube.com/@baborealandsouthern
+  videoUrl: https://www.youtube.com/watch?v=8aAEB4LYSck
+  duration: '1h 30m'
+  description: A rigorous scholarly lecture on the Four Noble Truths by one of the foremost Pali Canon translators.
+  level: 3
+  tradition: Theravada
+  topics: [noble-truths, pali-canon, doctrine]
+  relatedConcepts: [four-noble-truths]
+
+- id: bodhi-noble-eightfold-path
+  title: The Noble Eightfold Path (lecture)
+  teacher: Bhikkhu Bodhi
+  channel: BAUS YouTube
+  channelUrl: https://www.youtube.com/@baborealandsouthern
+  videoUrl: https://www.youtube.com/watch?v=_elej83fZ-A
+  duration: '1h 30m'
+  description: A systematic exploration of the Eightfold Path drawing on canonical Pali sources.
+  level: 3
+  tradition: Theravada
+  topics: [eightfold-path, pali-canon, practice]
+  relatedConcepts: [noble-eightfold-path]
+
+- id: bodhi-five-aggregates
+  title: The Five Aggregates (lecture)
+  teacher: Bhikkhu Bodhi
+  channel: BAUS YouTube
+  channelUrl: https://www.youtube.com/@baborealandsouthern
+  videoUrl: https://www.youtube.com/watch?v=5avXSga0sXQ
+  duration: '1h 30m'
+  description: A detailed lecture on the five aggregates and their role in understanding non-self.
+  level: 3
+  tradition: Theravada
+  topics: [aggregates, anatta, analysis]
+  relatedConcepts: [five-aggregates, anatta]
+
+- id: brahm-dependent-origination
+  title: Dependent Origination
+  teacher: Ajahn Brahm
+  channel: '@BuddhistSocietyWA'
+  channelUrl: https://www.youtube.com/@BuddhistSocietyWA
+  videoUrl: https://www.youtube.com/watch?v=1a-OmY4Oavk
+  duration: '1h'
+  description: Ajahn Brahm unpacks the chain of dependent origination with his characteristic clarity and humor.
+  level: 3
+  tradition: Theravada
+  topics: [dependent-origination, causality, twelve-links]
+  relatedConcepts: [dependent-origination, twelve-links]
+
+- id: goldstein-emptiness-dependent-origination
+  title: Emptiness and Dependent Origination
+  teacher: Joseph Goldstein
+  channel: '@InsightMeditationSociety'
+  channelUrl: https://www.youtube.com/@InsightMeditationSociety
+  videoUrl: https://www.youtube.com/watch?v=epHiGYzpRMI
+  duration: '45m'
+  description: Joseph Goldstein bridges Theravada and Mahayana perspectives on emptiness and interdependence.
+  level: 3
+  tradition: Insight
+  topics: [emptiness, dependent-origination, sunyata]
+  relatedConcepts: [sunyata, dependent-origination]
+
+- id: tnh-diamond-sutra
+  title: The Diamond Sutra (commentary)
+  teacher: Thich Nhat Hanh
+  channel: '@plumvillage'
+  channelUrl: https://www.youtube.com/@plumvillage
+  videoUrl: https://www.youtube.com/watch?v=ewVbR4-Bp0s
+  duration: '1h+'
+  description: Thich Nhat Hanh offers a profound commentary on the Diamond Sutra and the nature of emptiness.
+  level: 3
+  tradition: Zen
+  topics: [diamond-sutra, emptiness, prajna]
+  relatedConcepts: [sunyata, anatta, prajna]

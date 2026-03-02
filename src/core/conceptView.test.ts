@@ -62,6 +62,7 @@ let mockStatus: 'viewed' | 'contemplated' | 'revisit' | null = null;
 
 vi.mock('./preferences.js', () => ({
     getExpertiseLevel: vi.fn(() => 3),
+    getShowVideoLinks: vi.fn(() => true),
 }));
 
 vi.mock('./readingHistory.js', () => ({

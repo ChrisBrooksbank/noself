@@ -1,12 +1,13 @@
 import { getConceptById } from '../content/concepts/index.js';
 import type { Concept, ConceptExample } from '../content/concepts/index.js';
+import { loadVideos } from '../content/videos/index.js';
 import {
     markViewed,
     markContemplated,
     markRevisit,
     getStatus,
 } from './readingHistory.js';
-import { getExpertiseLevel } from './preferences.js';
+import { getExpertiseLevel, getShowVideoLinks } from './preferences.js';
 
 function renderExamples(examples: ConceptExample[]): string {
     if (examples.length === 0) return '';
@@ -44,6 +45,33 @@ function renderRelated(related: string[]): string {
         <section class="concept-section">
             <h3 class="concept-section__heading">Related Concepts</h3>
             <p class="concept-related">${links}</p>
+        </section>`;
+}
+
+function renderVideos(conceptId: string, level: 1 | 2 | 3): string {
+    if (!getShowVideoLinks()) return '';
+
+    const videos = loadVideos().filter(
+        (v) => v.level <= level && v.relatedConcepts.includes(conceptId),
+    );
+    if (videos.length === 0) return '';
+
+    const items = videos
+        .map(
+            (v) => `
+        <li class="video-item">
+            <a href="${v.videoUrl}" target="_blank" rel="noopener noreferrer" class="video-item__link">
+                ${v.title}
+            </a>
+            <span class="video-item__meta">${v.teacher} · ${v.duration}</span>
+        </li>`,
+        )
+        .join('');
+
+    return `
+        <section class="concept-section stack">
+            <h2 class="concept-section__heading">Video Teachings</h2>
+            <ul class="video-list stack-sm">${items}</ul>
         </section>`;
 }
 
@@ -106,6 +134,7 @@ function buildConceptHTML(concept: Concept, id: string): string {
             ${essentialsSection}
             ${deepSection}
             ${examplesSection}
+            ${renderVideos(id, level)}
             ${renderRelated(concept.related)}
             ${renderToggle(id)}
             ${levelHint}

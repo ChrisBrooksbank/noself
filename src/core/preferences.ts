@@ -5,6 +5,7 @@ export type ExpertiseLevel = 1 | 2 | 3;
 const THEME_KEY = 'noself:theme';
 const FONT_SIZE_KEY = 'noself:fontSize';
 const EXPERTISE_KEY = 'noself:expertiseLevel';
+const SHOW_VIDEO_LINKS_KEY = 'noself:showVideoLinks';
 
 const THEMES: Theme[] = ['dark', 'light', 'auto'];
 const FONT_SIZES: FontSize[] = ['small', 'medium', 'large', 'xl'];
@@ -52,6 +53,20 @@ export function setExpertiseLevel(level: ExpertiseLevel): void {
     applyExpertiseLevel(level);
 }
 
+export function getShowVideoLinks(): boolean {
+    const stored = localStorage.getItem(SHOW_VIDEO_LINKS_KEY);
+    return stored === null ? true : stored === 'true';
+}
+
+export function setShowVideoLinks(show: boolean): void {
+    localStorage.setItem(SHOW_VIDEO_LINKS_KEY, String(show));
+    applyShowVideoLinks(show);
+}
+
+function applyShowVideoLinks(show: boolean): void {
+    document.documentElement.setAttribute('data-show-videos', String(show));
+}
+
 function applyTheme(theme: Theme): void {
     document.documentElement.setAttribute('data-theme', theme);
 
@@ -81,4 +96,5 @@ export function initPreferences(): void {
     applyTheme(getTheme());
     applyFontSize(getFontSize());
     applyExpertiseLevel(getExpertiseLevel());
+    applyShowVideoLinks(getShowVideoLinks());
 }

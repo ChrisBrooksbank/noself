@@ -5,6 +5,8 @@ import {
     setFontSize,
     getExpertiseLevel,
     setExpertiseLevel,
+    getShowVideoLinks,
+    setShowVideoLinks,
     type Theme,
     type FontSize,
     type ExpertiseLevel,
@@ -17,6 +19,7 @@ function buildPanel(): string {
     const theme = getTheme();
     const fontSize = getFontSize();
     const expertiseLevel = getExpertiseLevel();
+    const showVideoLinks = getShowVideoLinks();
 
     const themeOptions: { value: Theme; label: string }[] = [
         { value: 'dark', label: 'Dark' },
@@ -96,6 +99,16 @@ function buildPanel(): string {
                         <legend class="settings-panel__legend">Text Size</legend>
                         <div class="settings-panel__options">${fontRadios}</div>
                     </fieldset>
+                    <fieldset class="settings-panel__fieldset">
+                        <legend class="settings-panel__legend">Videos</legend>
+                        <div class="settings-panel__options settings-panel__options--stacked">
+                            <label class="settings-panel__option">
+                                <input type="checkbox" name="showVideoLinks"${showVideoLinks ? ' checked' : ''}>
+                                <span class="settings-panel__option-label">Show video links</span>
+                                <span class="settings-panel__option-desc">Suggested YouTube videos from respected teachers</span>
+                            </label>
+                        </div>
+                    </fieldset>
                 </div>
             </div>
         </div>`;
@@ -161,6 +174,13 @@ function bindPanelEvents(): void {
                 window.dispatchEvent(new HashChangeEvent('hashchange'));
             });
         });
+
+    const videoCheckbox = panelEl.querySelector<HTMLInputElement>(
+        'input[name="showVideoLinks"]',
+    );
+    videoCheckbox?.addEventListener('change', () => {
+        setShowVideoLinks(videoCheckbox.checked);
+    });
 }
 
 function updateToggleButton(): void {

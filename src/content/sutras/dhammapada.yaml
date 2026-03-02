@@ -1,0 +1,357 @@
+id: dhammapada
+title: Dhammapada
+sanskrit: Dharmapada
+pali: Dhammapada
+tradition: Theravada
+description: >-
+    The Dhammapada — "Verses of the Dharma" — is one of the best-known and most
+    widely translated texts in the Pali Canon. A collection of 423 verses in 26
+    chapters, it distills the essence of the Buddha's ethical and contemplative
+    teaching into pithy, memorable sayings. Unlike the discursive suttas, the
+    Dhammapada speaks in the language of direct experience — terse, vivid, and
+    startlingly practical. Its verses address the fundamental territory of human
+    life: how the mind shapes reality, why heedfulness matters, what distinguishes
+    wisdom from folly, and how to walk the path from suffering to liberation.
+    Treasured across all Buddhist traditions, the Dhammapada remains a living
+    companion for contemplative practice.
+
+sections:
+    - id: yamakavagga
+      order: 1
+      title: 'Yamakavagga: Pairs'
+      original: >-
+          Manopubbangama dhamma, manosettha manomaya.
+          Manasa ce padutthena, bhasati va karoti va,
+          tato nam dukkhamanveti, cakkamva vahato padam.
+
+          Manopubbangama dhamma, manosettha manomaya.
+          Manasa ce pasannena, bhasati va karoti va,
+          tato nam sukhamanveti, chayava anapayini.
+      originalLanguage: Pali
+      translation: >-
+          Mind is the forerunner of all actions. All deeds are led by mind, created
+          by mind. If one speaks or acts with a corrupt mind, suffering follows as
+          the wheel follows the hoof of the ox.
+
+          Mind is the forerunner of all actions. All deeds are led by mind, created
+          by mind. If one speaks or acts with a pure mind, happiness follows as a
+          shadow that never departs.
+      commentary: >-
+          The Dhammapada opens with its most fundamental insight: mind comes first.
+          Before any word is spoken or action taken, mind has already shaped the
+          intention that drives it. These paired verses — which give the chapter its
+          name — present the stark choice that underlies all of Buddhist ethics.
+          A corrupted mind, driven by greed, hatred, or delusion, generates
+          suffering as inevitably as a wheel follows the ox that pulls it. A purified
+          mind generates wellbeing as naturally as a shadow follows a body. This is
+          not moralistic prescription but phenomenological observation: the quality
+          of mind determines the quality of experience. The entire Dhammapada
+          unfolds from this premise.
+      relatedConcepts:
+          - karma
+          - sati
+          - three-poisons
+
+    - id: appamadavagga
+      order: 2
+      title: 'Appamadavagga: Heedfulness'
+      original: >-
+          Appamado amatapadam, pamado maccuno padam.
+          Appamatta na miyanti, ye pamatta yatha mata.
+
+          Uyyunjanti satimanto, na nikete ramantiyo.
+          Hamsa apathevanuyanti, okamokam jahanti te.
+      originalLanguage: Pali
+      translation: >-
+          Heedfulness is the path to the deathless. Heedlessness is the path to
+          death. The heedful do not die; the heedless are as if already dead.
+
+          The mindful exert themselves. They do not delight in a fixed abode.
+          Like swans that leave the lake, they abandon attachment after attachment.
+      commentary: >-
+          Appamada — heedfulness, non-negligence, careful attention — is the quality
+          the Buddha emphasized in his very last words: "All conditioned things are
+          impermanent. Work out your salvation with diligence." This chapter places
+          heedfulness at the centre of the path, calling it the road to the
+          deathless (amata) — a term for nibbana. Heedfulness is not anxious
+          vigilance but a quality of wakefulness that takes nothing for granted.
+          The heedless person sleepwalks through life, missing its transience and
+          therefore its preciousness. The image of swans leaving the lake
+          beautifully captures the mindful person's freedom: present but unattached,
+          moving through the world without clinging to any resting place.
+      relatedConcepts:
+          - sati
+          - noble-eightfold-path
+          - anicca
+
+    - id: cittavagga
+      order: 3
+      title: 'Cittavagga: The Mind'
+      original: >-
+          Phandanam capalam cittam, durakkham dunnivarayam.
+          Ujum karoti medhavi, usukaro va tejanam.
+
+          Dunniggahassa lahuno, yatthakamanipatino,
+          cittassa damatho sadhu. Cittam dantam sukhavaham.
+      originalLanguage: Pali
+      translation: >-
+          The flickering, fickle mind, difficult to guard, difficult to control —
+          the wise person straightens it as a fletcher straightens an arrow.
+
+          Hard to restrain, flighty, alighting where it wishes — it is good to
+          tame the mind. A tamed mind brings happiness.
+      commentary: >-
+          The mind chapter goes straight to the heart of meditation practice. The
+          untrained mind is compared to a flickering flame, a flighty bird, a fish
+          pulled from water — restless, reactive, impossible to pin down. But the
+          Dhammapada does not counsel suppression. The fletcher metaphor is precise:
+          the craftsman does not break the arrow shaft but patiently straightens it
+          with heat and attention. So too with the mind. Through sustained,
+          patient practice — samatha and vipassana working together — the mind's
+          natural capacity for clarity and stillness is revealed. The tamed mind
+          is not a dull mind but one that has found its own inherent happiness,
+          no longer compulsively chasing stimulation.
+      relatedConcepts:
+          - bhavana
+          - samatha
+          - sati
+
+    - id: pupphavagga
+      order: 4
+      title: 'Pupphavagga: Flowers'
+      original: >-
+          Yathapi puppham vannagandhasampannam, petalam
+          apagandhakamaneva.
+
+          Yo ca vassasatam jive, apassam udayabbayam,
+          ekaham jivitam seyyo, passato udayabbayam.
+      originalLanguage: Pali
+      translation: >-
+          As a flower that is beautiful and colourful but without fragrance — even
+          so are the well-spoken words of one who does not practise them.
+
+          Though one should live a hundred years without seeing the arising and
+          passing away of things, better is a single day lived seeing their arising
+          and passing away.
+      commentary: >-
+          The flower chapter weaves together two central themes: the integration of
+          understanding and practice, and the direct perception of impermanence. A
+          beautiful flower without scent is like a person who knows the teachings
+          intellectually but does not embody them — impressive on the surface,
+          lacking the transformative fragrance of lived practice. The second verse
+          makes a striking claim: a single day of truly seeing impermanence —
+          udayabbaya, the arising and passing away of all phenomena — is worth more
+          than a century of unseeing existence. This is not hyperbole but a precise
+          description of vipassana insight. When impermanence is seen directly rather
+          than merely believed, the entire relationship to experience shifts.
+      relatedConcepts:
+          - anicca
+          - three-marks
+          - vipassana
+
+    - id: balavagga
+      order: 5
+      title: 'Balavagga: The Fool'
+      original: >-
+          Digha jagarato ratti, digham santassa yojanam.
+          Digho balanam samsaro, saddhamman avijanatam.
+
+          Yavajivampi ce balo, panditam payirupasati,
+          na so dhammam vijanati, dabbi suparasam yatha.
+      originalLanguage: Pali
+      translation: >-
+          Long is the night to one who is wakeful. Long is the road to one who
+          is weary. Long is the cycle of birth and death to the fool who does not
+          know the true teaching.
+
+          Even if a fool associates with a wise person all their life, they will
+          not understand the Dhamma, just as a spoon cannot taste the soup.
+      commentary: >-
+          The Dhammapada's portrait of the fool is not contemptuous but
+          compassionate — it describes a universal tendency, not a fixed category of
+          person. The fool is anyone operating from ignorance (avijja), the
+          fundamental not-knowing that stands at the root of the three poisons. The
+          image of the long night captures the subjective experience of suffering:
+          time stretches painfully when the mind is agitated. Samsara itself — the
+          endless round of becoming — feels interminable to one who cannot see
+          through it. Most striking is the spoon metaphor: mere proximity to wisdom
+          is insufficient. Understanding requires active engagement, a willingness
+          to taste rather than merely stir. Wisdom cannot be absorbed passively;
+          it must be directly known.
+      relatedConcepts:
+          - three-poisons
+          - dukkha
+          - samsara
+
+    - id: panditavagga
+      order: 6
+      title: 'Panditavagga: The Wise'
+      original: >-
+          Nidhinavidam iva bhumim, vindeyya ratanassa saddhammasavanam.
+
+          Yo ca vassasatam jive, duppanno asamahito,
+          ekaham jivitam seyyo, pannavantassa jhayino.
+      originalLanguage: Pali
+      translation: >-
+          One who hears the true Dhamma discovers it as one who finds buried
+          treasure.
+
+          Though one should live a hundred years, without wisdom and concentration,
+          better is a single day lived with wisdom and meditative absorption.
+      commentary: >-
+          The wise chapter presents wisdom not as intellectual brilliance but as a
+          quality of discernment rooted in direct experience. The buried treasure
+          metaphor is significant: the Dhamma is not something new to be acquired
+          but something already present to be uncovered. Wisdom in the Buddhist
+          sense is always a recognition — seeing what was there all along beneath
+          the layers of confusion. The second verse pairs wisdom (panna) with
+          meditative absorption (jhana), insisting that both are necessary.
+          Concentration without wisdom becomes mere trance; wisdom without
+          concentration lacks the stability to penetrate deeply. Together they form
+          the foundation of the wise person's life — a life that the Dhammapada
+          insists is more valuable in a single day than a century of heedless
+          existence.
+      relatedConcepts:
+          - prajna
+          - three-jewels
+          - bhavana
+
+    - id: dhammatthavagga
+      order: 7
+      title: 'Dhammatthavagga: The Just'
+      original: >-
+          Na tena hoti dhammattho, yenattham sahasanayana.
+          Yo ca attham anatthanca, ubho niccheyya pandito.
+
+          Asahasena dhammena, samena nayati pare.
+          Dhammassa gutto medhavi, dhammattho ti pavuccati.
+      originalLanguage: Pali
+      translation: >-
+          One is not just merely by deciding a case hastily. The wise person
+          investigates both right and wrong.
+
+          One who guides others not by force but by what is right and fair, who
+          is a guardian of the Dhamma and wise — that one is called just.
+      commentary: >-
+          The chapter on justice addresses right conduct in the world — an essential
+          dimension of the eightfold path that is sometimes overlooked in
+          contemplative circles focused on meditation. True justice, the Dhammapada
+          teaches, is not about imposing one's will or rushing to judgement. It
+          requires careful investigation, considering both sides, and acting from
+          wisdom rather than impulse. The just person is described as a guardian
+          of the Dhamma — one who protects truth not through force but through
+          fairness, patience, and discernment. This teaching grounds ethics not in
+          external rules but in the quality of mind that applies them. Right action
+          and right speech are not merely moral injunctions but expressions of a
+          mind that has been trained in heedfulness.
+      relatedConcepts:
+          - five-precepts
+          - noble-eightfold-path
+          - karma
+
+    - id: malavagga
+      order: 8
+      title: 'Malavagga: Impurities'
+      original: >-
+          Ayasava malam samutthitam, tatutthaya tameva khadati.
+          Evam atidhonacarinam, sakani kammani nayanti duggatim.
+
+          Attana va katam papam, attana sankilissati.
+          Attana akatam papam, attana va visujjhati.
+          Suddhi asuddhi paccattam, nanno annam visodhaye.
+      originalLanguage: Pali
+      translation: >-
+          As rust arising from iron eats the very iron from which it arose, even
+          so one's own deeds lead the transgressor to a state of woe.
+
+          By oneself is evil done, by oneself one is defiled. By oneself evil is
+          left undone, by oneself one is purified. Purity and impurity depend on
+          oneself — no one can purify another.
+      commentary: >-
+          The impurities chapter addresses the three poisons — greed, hatred, and
+          delusion — not as external enemies but as internal corrosions. The rust
+          metaphor is precise: defilements are not foreign substances imposed from
+          outside but arise from within the mind itself, and they consume the very
+          mind that generates them. This is the mechanism of karma at the
+          psychological level: unwholesome mental states are self-punishing, not
+          because of cosmic justice but because of their intrinsic nature. The
+          chapter's most powerful teaching is radical self-responsibility: no one
+          can purify another. No teacher, no ritual, no external authority can do
+          the work of inner transformation. This is not individualism but a
+          recognition that liberation is an inside job — each person must walk
+          the path themselves.
+      relatedConcepts:
+          - three-poisons
+          - karma
+          - bhavana
+
+    - id: bhikkhuvagga
+      order: 9
+      title: 'Bhikkhuvagga: The Mendicant'
+      original: >-
+          Sabbasankharasamatham, sabbupadhipatinissaggam,
+          tanhakkhayam viragam nirodham nibbanam.
+
+          Sila ca bale bahussute ca, dhammesu ca suppatipattiyo.
+          Etadeva mangalamuttamam.
+      originalLanguage: Pali
+      translation: >-
+          The stilling of all formations, the relinquishing of all attachments,
+          the destruction of craving, dispassion, cessation — nibbana.
+
+          Virtue, learning, and well-practised conduct in accord with the Dhamma —
+          this is the highest blessing.
+      commentary: >-
+          The mendicant chapter describes the ideal of the practitioner who has
+          renounced not merely worldly possessions but the deeper possessiveness of
+          the mind. The description of nibbana here is characteristically via
+          negativa — not a place or state to be attained but the cessation of
+          everything that obscures freedom: formations stilled, attachments
+          relinquished, craving destroyed. The middle way is evident: neither
+          indulgence nor mortification, but the balanced cultivation of virtue
+          (sila), learning (suta), and practice (patipatti). The Dhammapada insists
+          that all three are necessary — ethical conduct provides the foundation,
+          learning provides the map, and direct practice provides the
+          transformation. This integration of morality, wisdom, and meditation
+          is the hallmark of the Buddha's path.
+      relatedConcepts:
+          - middle-way
+          - nirvana
+          - noble-eightfold-path
+
+    - id: buddhavagga
+      order: 10
+      title: 'Buddhavagga: The Buddha'
+      original: >-
+          Yassa jitam navajiyati, jitamassa no yati koci loke.
+          Tam buddhamanantacocaram, apadam kena padena nessatha.
+
+          Tumhehi kiccamatappam, akkhataro Tathagata.
+          Patipanna pamokkhanti, jhayino Marabandana.
+      originalLanguage: Pali
+      translation: >-
+          Whose victory is not undone, whose victory no one in the world can take
+          away — by what track can you trace that awakened one, trackless and of
+          infinite range?
+
+          You yourselves must make the effort. The Tathagatas only point the way.
+          Those who meditate and practise the path will be freed from the bonds
+          of Mara.
+      commentary: >-
+          The final chapter selected here celebrates the Buddha — not as a deity
+          to be worshipped but as the exemplar of human awakening. The awakened one
+          is described as "trackless" (apadam) — beyond all categories, unable to
+          be traced or defined by any conceptual path. This echoes the Diamond
+          Sutra's teaching that wherever there are signs there is delusion. But
+          the Dhammapada's most important teaching on the Buddha is intensely
+          practical: "You yourselves must make the effort." The Tathagata does not
+          save; the Tathagata points. This radical emphasis on self-effort is the
+          beating heart of Theravada Buddhism. Liberation is not a gift to be
+          received but a reality to be realized through one's own dedicated
+          practice. The bonds of Mara — delusion, craving, aversion — are broken
+          not by faith alone but by the sustained, heedful practice of the path.
+      relatedConcepts:
+          - awakening
+          - four-noble-truths
+          - bhavana
+          - sati

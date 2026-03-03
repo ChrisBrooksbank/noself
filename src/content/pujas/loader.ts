@@ -30,11 +30,19 @@ const ritualStepSchema = z.object({
         .transform((v) => v ?? null),
 });
 
+const pujaVideoSchema = z.object({
+    title: z.string(),
+    teacher: z.string(),
+    videoUrl: z.string().url(),
+    duration: z.string(),
+});
+
 const pujaSchema = z.object({
     id: z.string(),
     title: z.string(),
     tradition: z.string(),
     description: z.string(),
+    videos: z.array(pujaVideoSchema).optional(),
     sections: z.array(pujaSectionSchema).default([]),
     ritualSteps: z.array(ritualStepSchema).default([]),
 });

@@ -5,6 +5,18 @@
  * the schema defined by the types below.
  */
 
+/** A YouTube video linked to a puja */
+export interface PujaVideo {
+    /** Title of the video */
+    title: string;
+    /** Teacher or channel name */
+    teacher: string;
+    /** Full YouTube URL */
+    videoUrl: string;
+    /** Human-readable duration (e.g. "1h 5m") */
+    duration: string;
+}
+
 /** A study section within a puja (same shape as SutraSection) */
 export interface PujaSection {
     /** URL-safe identifier for in-page anchoring */
@@ -50,6 +62,8 @@ export interface Puja {
     tradition: string;
     /** Brief description shown in the puja list */
     description: string;
+    /** Optional YouTube videos related to this puja */
+    videos?: PujaVideo[];
     /** Ordered study sections (for study view) */
     sections: PujaSection[];
     /** Ordered ritual steps (for perform view) */

@@ -32,6 +32,10 @@ const mockPuja: Puja = {
     ritualSteps: [],
 };
 
+vi.mock('../preferences.js', () => ({
+    getShowVideoLinks: vi.fn(() => true),
+}));
+
 vi.mock('../../content/pujas/index.js', () => ({
     getPujaById: vi.fn((id: string) => (id === 'sevenfold-puja' ? mockPuja : undefined)),
 }));

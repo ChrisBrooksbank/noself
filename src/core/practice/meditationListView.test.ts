@@ -4,6 +4,7 @@ import type { Meditation } from '../../content/meditations/index.js';
 
 vi.mock('../preferences.js', () => ({
     getExpertiseLevel: vi.fn(() => 3),
+    getShowVideoLinks: vi.fn(() => true),
 }));
 
 const mockMeditations: Meditation[] = [

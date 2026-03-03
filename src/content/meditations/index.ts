@@ -16,6 +16,20 @@ export interface MeditationStep {
     durationSeconds: number;
 }
 
+/** A YouTube video linked to a meditation */
+export interface MeditationVideo {
+    /** Title of the video */
+    title: string;
+    /** Teacher or channel name */
+    teacher: string;
+    /** Full YouTube URL */
+    videoUrl: string;
+    /** Human-readable duration (e.g. "10:23") */
+    duration: string;
+    /** Whether this is a teaching talk or a guided session */
+    type: 'teaching' | 'guided';
+}
+
 export interface Meditation {
     /** URL-safe identifier, matches the filename (e.g. "breath-awareness") */
     id: string;
@@ -27,6 +41,8 @@ export interface Meditation {
     level?: 1 | 2 | 3;
     /** Available duration options for this meditation (in minutes) */
     durations: MeditationDuration[];
+    /** Optional YouTube videos related to this meditation */
+    videos?: MeditationVideo[];
     /**
      * Step sequences keyed by duration (in minutes).
      * Each entry is an ordered list of steps for that session length.

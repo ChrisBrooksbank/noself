@@ -1,5 +1,5 @@
 import { loadMeditations } from '../../content/meditations/loader.js';
-import { getExpertiseLevel } from '../preferences.js';
+import { getExpertiseLevel, getShowVideoLinks } from '../preferences.js';
 import type { Meditation } from '../../content/meditations/index.js';
 
 function renderDurationOptions(meditation: Meditation): string {
@@ -14,11 +14,26 @@ function renderDurationOptions(meditation: Meditation): string {
         .join('');
 }
 
+function renderMeditationVideos(meditation: Meditation): string {
+    if (!getShowVideoLinks() || !meditation.videos || meditation.videos.length === 0)
+        return '';
+
+    const items = meditation.videos
+        .map(
+            (v) =>
+                `<a href="${v.videoUrl}" target="_blank" rel="noopener noreferrer" class="meditation-item__video-link"><svg class="video-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 4.5v7l5-3.5z" fill="currentColor"/></svg>${v.title} · ${v.teacher} · ${v.duration}</a>`,
+        )
+        .join('');
+
+    return `<div class="meditation-item__videos">${items}</div>`;
+}
+
 function renderMeditationItem(meditation: Meditation): string {
     return `
         <li class="meditation-item card stack-sm">
             <h2 class="meditation-item__title">${meditation.title}</h2>
             <p class="meditation-item__desc">${meditation.description}</p>
+            ${renderMeditationVideos(meditation)}
             <div class="meditation-item__durations btn-group" aria-label="Duration options for ${meditation.title}">
                 ${renderDurationOptions(meditation)}
             </div>

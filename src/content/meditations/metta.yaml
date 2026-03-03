@@ -4,6 +4,17 @@ description: >
     Cultivate boundless goodwill toward yourself and all beings. This practice
     systematically expands the heart from self-compassion outward to include
     friends, neutral people, difficult people, and all of existence.
+videos:
+    - title: 10-Minute Guided Loving-Kindness Meditation
+      teacher: Sharon Salzberg
+      videoUrl: https://www.youtube.com/watch?v=FyKKvCO_vSA
+      duration: '10m'
+      type: guided
+    - title: 'Guided Meditation: The Practice of RAIN'
+      teacher: Tara Brach
+      videoUrl: https://www.youtube.com/watch?v=W8e_tAEM80k
+      duration: '20m'
+      type: guided
 durations:
     - 10
     - 15

@@ -4,6 +4,17 @@ description: >
     Systematically move awareness through the body from feet to head,
     cultivating intimate contact with physical sensations and releasing
     held tension through patient, non-judgmental attention.
+videos:
+    - title: Body Scan Meditation
+      teacher: Jon Kabat-Zinn
+      videoUrl: https://www.youtube.com/watch?v=15q-N-_kkrU
+      duration: '45m'
+      type: guided
+    - title: Mindfulness with Jon Kabat-Zinn
+      teacher: Jon Kabat-Zinn
+      videoUrl: https://www.youtube.com/watch?v=3nwwKbM_vJc
+      duration: '1h 12m'
+      type: teaching
 durations:
     - 10
     - 20

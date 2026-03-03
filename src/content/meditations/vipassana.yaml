@@ -5,6 +5,17 @@ description: >
     Investigate the three characteristics of experience — impermanence, unsatisfactoriness,
     and non-self — through sustained, precise observation of arising and passing phenomena.
     This practice develops clear seeing that leads to liberation.
+videos:
+    - title: Introduction to Mindfulness Meditation
+      teacher: Gil Fronsdal
+      videoUrl: https://www.youtube.com/watch?v=yveuKMXz8aQ
+      duration: '1h'
+      type: teaching
+    - title: 'Mindfulness: What it is and is Not'
+      teacher: Joseph Goldstein
+      videoUrl: https://www.youtube.com/watch?v=3Uqoxo_jPXQ
+      duration: '1h 15m'
+      type: teaching
 durations:
     - 10
     - 20

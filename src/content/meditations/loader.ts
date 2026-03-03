@@ -19,12 +19,21 @@ const meditationStepSchema = z.object({
     durationSeconds: z.number().int().positive(),
 });
 
+const meditationVideoSchema = z.object({
+    title: z.string(),
+    teacher: z.string(),
+    videoUrl: z.string().url(),
+    duration: z.string(),
+    type: z.enum(['teaching', 'guided']),
+});
+
 const meditationSchema = z.object({
     id: z.string(),
     title: z.string(),
     description: z.string(),
     level: z.union([z.literal(1), z.literal(2), z.literal(3)]).optional(),
     durations: z.array(meditationDurationSchema),
+    videos: z.array(meditationVideoSchema).optional(),
     steps: z.record(z.string(), z.array(meditationStepSchema)).transform((record) => {
         const result: Partial<
             Record<MeditationDuration, (typeof meditationStepSchema._type)[]>

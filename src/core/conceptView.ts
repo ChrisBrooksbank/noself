@@ -61,7 +61,7 @@ function renderVideos(conceptId: string, level: 1 | 2 | 3): string {
             (v) => `
         <li class="video-item">
             <a href="${v.videoUrl}" target="_blank" rel="noopener noreferrer" class="video-item__link">
-                ${v.title}
+                <svg class="video-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 4.5v7l5-3.5z" fill="currentColor"/></svg>${v.title}
             </a>
             <span class="video-item__meta">${v.teacher} · ${v.duration}</span>
         </li>`,

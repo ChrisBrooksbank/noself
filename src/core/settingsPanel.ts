@@ -99,15 +99,11 @@ function buildPanel(): string {
                         <legend class="settings-panel__legend">Text Size</legend>
                         <div class="settings-panel__options">${fontRadios}</div>
                     </fieldset>
-                    <fieldset class="settings-panel__fieldset">
-                        <legend class="settings-panel__legend">Videos</legend>
-                        <div class="settings-panel__options settings-panel__options--stacked">
-                            <label class="settings-panel__option">
-                                <input type="checkbox" name="showVideoLinks"${showVideoLinks ? ' checked' : ''}>
-                                <span class="settings-panel__option-label">Show video links</span>
-                                <span class="settings-panel__option-desc">Suggested YouTube videos from respected teachers</span>
-                            </label>
-                        </div>
+                    <fieldset class="settings-panel__fieldset settings-panel__fieldset--inline">
+                        <label class="settings-panel__toggle">
+                            <input type="checkbox" name="showVideoLinks"${showVideoLinks ? ' checked' : ''}>
+                            <span class="settings-panel__toggle-label">Show video links</span>
+                        </label>
                     </fieldset>
                 </div>
             </div>

@@ -234,3 +234,162 @@
   tradition: Zen
   topics: [emptiness, perception, prajna]
   relatedConcepts: [sunyata, anatta, prajna]
+
+# Level 1 — Exploring (additions)
+- id: bodhi-intro-buddha
+  title: 'Introduction to Buddhism: The Buddha'
+  teacher: Bhikkhu Bodhi
+  channel: AudioBuddha
+  channelUrl: https://www.youtube.com/@AudioBuddha
+  videoUrl: https://www.youtube.com/watch?v=4niBATVsdrc
+  duration: '1h 15m'
+  description: Bhikkhu Bodhi introduces the historical Buddha and the core meaning of taking refuge in the Three Jewels.
+  level: 1
+  tradition: Theravada
+  topics: [buddha, refuge, introduction]
+  relatedConcepts: [three-jewels]
+
+- id: tnh-karma
+  title: Why do people have different Karma?
+  teacher: Thich Nhat Hanh
+  channel: Plum Village
+  channelUrl: https://www.youtube.com/@PlumVillageApp
+  videoUrl: https://www.youtube.com/watch?v=B7I4jP9s8bQ
+  duration: '10m'
+  description: Thich Nhat Hanh explains karma in accessible terms, exploring why people experience different conditions.
+  level: 1
+  tradition: Zen
+  topics: [karma, action, cause-and-effect]
+  relatedConcepts: [karma]
+
+- id: mingyur-four-noble-truths
+  title: How the Four Noble Truths Can Reduce Suffering
+  teacher: Yongey Mingyur Rinpoche
+  channel: '@MingyurRinpoche'
+  channelUrl: https://www.youtube.com/@MingyurRinpoche
+  videoUrl: https://www.youtube.com/watch?v=4gaGdr2FTf4
+  duration: '15m'
+  description: Mingyur Rinpoche offers a warm, practical explanation of the Four Noble Truths and their relevance to daily life.
+  level: 1
+  tradition: Tibetan
+  topics: [noble-truths, suffering, beginner]
+  relatedConcepts: [four-noble-truths, dukkha]
+
+- id: chan-duc-right-wrong
+  title: 'Right and Wrong: a Buddhist Perspective'
+  teacher: "Sister Ch\xE2n \u0110\u1EE9c"
+  channel: Plum Village
+  channelUrl: https://www.youtube.com/@PlumVillageApp
+  videoUrl: https://www.youtube.com/watch?v=8kvOyEimLQU
+  duration: '30m'
+  description: Sister Chân Đức explores the five precepts as a guide to ethical living in the modern world.
+  level: 1
+  tradition: Zen
+  topics: [ethics, precepts, daily-life]
+  relatedConcepts: [five-precepts]
+
+# Level 2 — Deepening (additions)
+- id: brahm-middle-way
+  title: The Middle Way
+  teacher: Ajahn Brahm
+  channel: Ajahn Brahm Rains Retreats
+  channelUrl: https://www.youtube.com/@AjahnBrahmRainsRetreats
+  videoUrl: https://www.youtube.com/watch?v=-bT8_N5r3pQ
+  duration: '1h'
+  description: Ajahn Brahm explores the Middle Way as a practical approach to avoiding extremes in practice and daily life.
+  level: 2
+  tradition: Theravada
+  topics: [middle-way, balance, practice]
+  relatedConcepts: [middle-way]
+
+- id: goldstein-impermanence
+  title: The Radical Truth of Impermanence
+  teacher: Joseph Goldstein
+  channel: Be Here Now Network
+  channelUrl: https://www.youtube.com/@BeHereNowNetwork
+  videoUrl: https://www.youtube.com/watch?v=48aMHxcEfVo
+  duration: '45m'
+  description: Joseph Goldstein explores impermanence as a radical truth that transforms our relationship to experience.
+  level: 2
+  tradition: Insight
+  topics: [impermanence, change, insight]
+  relatedConcepts: [anicca, three-marks]
+
+- id: namdak-three-poisons
+  title: A Guide to Overcoming the Three Poisons
+  teacher: Geshe Namdak
+  channel: Study Buddhism
+  channelUrl: https://www.youtube.com/@StudyBuddhism
+  videoUrl: https://www.youtube.com/watch?v=1Krz8dVNTGc
+  duration: '15m'
+  description: Geshe Namdak provides a clear guide to understanding and working with the three root poisons of greed, hatred, and delusion.
+  level: 2
+  tradition: Tibetan
+  topics: [poisons, afflictions, transformation]
+  relatedConcepts: [three-poisons]
+
+- id: goldstein-mudita
+  title: Guided Sympathetic Joy (Mudita) Meditation
+  teacher: Joseph Goldstein
+  channel: Non-clinging Awareness
+  channelUrl: https://www.youtube.com/@Non-clingAwareness
+  videoUrl: https://www.youtube.com/watch?v=4AC4BddbSu4
+  duration: '15m'
+  description: A guided meditation cultivating mudita, the practice of rejoicing in the happiness and success of others.
+  level: 2
+  tradition: Insight
+  topics: [mudita, joy, guided-meditation]
+  relatedConcepts: [mudita]
+
+- id: mingyur-seeing-buddhas
+  title: Seeing All Beings as Buddhas
+  teacher: Yongey Mingyur Rinpoche
+  channel: '@MingyurRinpoche'
+  channelUrl: https://www.youtube.com/@MingyurRinpoche
+  videoUrl: https://www.youtube.com/watch?v=0zoUxWKblwQ
+  duration: '10m'
+  description: Mingyur Rinpoche teaches the profound practice of seeing buddha-nature in all beings, a key Mahayana perspective.
+  level: 2
+  tradition: Tibetan
+  topics: [buddha-nature, bodhisattva, perception]
+  relatedConcepts: [buddha-nature, bodhisattva]
+
+- id: mingyur-what-is-buddha
+  title: What is a Buddha?
+  teacher: Yongey Mingyur Rinpoche
+  channel: '@MingyurRinpoche'
+  channelUrl: https://www.youtube.com/@MingyurRinpoche
+  videoUrl: https://www.youtube.com/watch?v=3lkZ-WdSPcA
+  duration: '12m'
+  description: Mingyur Rinpoche explains what a Buddha truly is, connecting the meaning of awakening to refuge in the Three Jewels.
+  level: 2
+  tradition: Tibetan
+  topics: [buddha, awakening, refuge]
+  relatedConcepts: [three-jewels, awakening]
+
+# Level 3 — Immersed (additions)
+- id: bodhi-nibbana
+  title: 'Introduction to Buddhism: Nibbana'
+  teacher: Bhikkhu Bodhi
+  channel: AudioBuddha
+  channelUrl: https://www.youtube.com/@AudioBuddha
+  videoUrl: https://www.youtube.com/watch?v=FVqFyYsgho4
+  duration: '1h'
+  description: Bhikkhu Bodhi offers a scholarly exploration of nibbana as the ultimate goal of the Buddhist path.
+  level: 3
+  tradition: Theravada
+  topics: [nirvana, liberation, goal]
+  relatedConcepts: [nirvana, awakening]
+
+- id: bodhi-karma-rebirth
+  title: Karma and Rebirth (Lecture 4)
+  teacher: Bhikkhu Bodhi
+  channel: BAUS Chuang Yen Monastery
+  channelUrl: https://www.youtube.com/@BAUSChuangYenMonastery
+  videoUrl: https://www.youtube.com/watch?v=6Cvq99SmITA
+  duration: '1h 30m'
+  description: A rigorous lecture on the mechanics of karma and its relationship to rebirth and the cycle of samsara.
+  level: 3
+  tradition: Theravada
+  topics: [karma, rebirth, samsara]
+  relatedConcepts: [karma, samsara]

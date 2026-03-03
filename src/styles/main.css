@@ -2506,9 +2506,14 @@ html[data-font-size='xl'] {
 }
 
 .settings-panel__sections {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: var(--space-5);
+}
+
+@media (min-width: 480px) {
+    .settings-panel__sections {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .settings-panel__fieldset {

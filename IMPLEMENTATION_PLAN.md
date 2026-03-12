@@ -2,7 +2,7 @@
 
 ## Status
 
-- Planning iterations: 4
+- Planning iterations: 5
 - Build iterations: 18
 - Last updated: 2026-03-12
 
@@ -26,9 +26,13 @@
 - [x] Responsive layout (≤320px)
 - [x] Full practice system: meditations, prompts, paths, sutras, pujas, mantras
 
-### Not Implemented — Sanskrit/Pali Enrichment (spec: specs/sanskrit-enrichment.md)
+### Fully Implemented — Sanskrit/Pali Enrichment (spec: specs/sanskrit-enrichment.md)
 
-Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no UI rendering required per spec acceptance criteria.
+Data-only enrichment complete: `SacredTerm` types, Zod schemas, all 30 concept YAMLs enriched, mantra syllable phonetics, puja section phonetic/gloss, sutra section phonetic/gloss, loader validation tests.
+
+### Not Implemented — Sanskrit/Pali UI (spec: specs/sanskrit-ui.md)
+
+UI surface layer for the enriched data. Phases 1–5 below (prerequisite data layer is complete).
 
 ---
 
@@ -174,6 +178,35 @@ Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no
 ### Sanskrit/Pali Enrichment — Phase 6: Validation
 
 - [x] Add/update loader tests to validate enriched YAML fields load correctly; verify all 30 concepts have `terms` with required SacredTerm fields; run full `npm run check` (spec: specs/sanskrit-enrichment.md)
+
+### Sanskrit/Pali UI — Phase 1: Wire Up Data
+
+- [ ] Extract shared `sacredTermSchema` from concepts loader to a shared location so all loaders can reuse it (spec: specs/sanskrit-ui.md)
+- [ ] Add `terms` field to Sutra types + loaders — currently silently dropped from YAML (spec: specs/sanskrit-ui.md)
+- [ ] Add `terms` field to Puja types + loaders — currently silently dropped from YAML (spec: specs/sanskrit-ui.md)
+- [ ] Add loader tests to verify terms are parsed for sutras and pujas (spec: specs/sanskrit-ui.md)
+
+### Sanskrit/Pali UI — Phase 2: Popover Component
+
+- [ ] Create `renderSacredTermSpan()` — returns interactive `<span>` with data attributes for phonetic, literal, etymology, counterpart language (spec: specs/sanskrit-ui.md)
+- [ ] Create `initSacredTermTooltips()` — delegated click/tap singleton popover showing pronunciation, literal meaning, etymology, Pali↔Sanskrit equivalent; dismiss on outside click/Escape (spec: specs/sanskrit-ui.md)
+- [ ] Add CSS — dotted underline on `.sacred-term` spans, positioned popover using existing design tokens (spec: specs/sanskrit-ui.md)
+
+### Sanskrit/Pali UI — Phase 3: View Integration
+
+- [ ] Concept view — replace flat `concept.pali · concept.sanskrit` with interactive sacred-term spans + init popovers (spec: specs/sanskrit-ui.md)
+- [ ] Sutra study view — make sutra title term interactive, surface word-by-word gloss data in expandable sections (spec: specs/sanskrit-ui.md)
+- [ ] Puja study view — same interactive term + gloss pattern as sutra (spec: specs/sanskrit-ui.md)
+- [ ] Mantra detail view — add phonetic display alongside syllables (spec: specs/sanskrit-ui.md)
+
+### Sanskrit/Pali UI — Phase 4: Terms Detail Card
+
+- [ ] Sacred Terms section in concept detail — visible card showing both Pali and Sanskrit with all metadata at a glance, no interaction needed (spec: specs/sanskrit-ui.md)
+
+### Sanskrit/Pali UI — Phase 5: Testing
+
+- [ ] Unit tests for popover rendering and keyboard/accessibility handling (spec: specs/sanskrit-ui.md)
+- [ ] Update existing view tests to verify terms display (spec: specs/sanskrit-ui.md)
 
 ---
 

@@ -37,6 +37,44 @@ sections:
           - five-aggregates
           - prajna
           - sunyata
+      phonetic: >-
+          AHR-ya ah-va-lo-ki-TESH-va-ro bo-dhi-SAHT-tvo gam-BHI-ram
+          PRAJ-na-pa-RA-mi-ta CHA-ryam cha-RA-ma-no vya-va-LO-ka-ya-ti sma:
+          PAN-cha SKAN-dhas tams cha sva-BHA-va-SHUN-yams PASH-ya-ti sma.
+      gloss:
+          - word: Arya
+            meaning: noble / venerable
+            phonetic: AHR-ya
+          - word: Avalokiteshvaro
+            meaning: the one who looks down with compassion; Bodhisattva of Compassion
+            phonetic: ah-va-lo-ki-TESH-va-ro
+          - word: bodhisattvo
+            meaning: awakening being
+            phonetic: bo-dhi-SAHT-tvo
+          - word: gambhiram
+            meaning: deep / profound
+            phonetic: gam-BHI-ram
+          - word: prajnaparamita
+            meaning: perfection of wisdom (prajna = wisdom, paramita = perfection)
+            phonetic: PRAJ-na-pa-RA-mi-ta
+          - word: charyam
+            meaning: practice / course / conduct
+            phonetic: CHA-ryam
+          - word: charamano
+            meaning: while practicing / moving through
+            phonetic: cha-RA-ma-no
+          - word: vyavalokayati
+            meaning: looked upon / perceived clearly / surveyed
+            phonetic: vya-va-LO-ka-ya-ti
+          - word: panca-skandhas
+            meaning: five aggregates (form, feeling, perception, formations, consciousness)
+            phonetic: PAN-cha-SKAN-dhas
+          - word: svabhava-shunyams
+            meaning: empty of self-nature / lacking inherent existence
+            phonetic: sva-BHA-va-SHUN-yams
+          - word: pashyati
+            meaning: sees / perceives / beholds
+            phonetic: PASH-ya-ti
 
     - id: form-is-emptiness
       order: 2
@@ -63,6 +101,41 @@ sections:
           - sunyata
           - five-aggregates
           - dependent-origination
+      phonetic: >-
+          IH-ha SHA-ri-poo-tra RU-pam SHUN-ya-ta, shun-ya-TAI-va RU-pam;
+          RU-pan na PRI-thak SHUN-ya-ta, shun-ya-TA-ya na PRI-thag RU-pam;
+          yad RU-pam sa SHUN-ya-ta, ya SHUN-ya-ta tad RU-pam.
+      gloss:
+          - word: Iha
+            meaning: here / in this context
+            phonetic: IH-ha
+          - word: Shariputra
+            meaning: name of the Buddha's disciple being addressed
+            phonetic: SHA-ri-poo-tra
+          - word: rupam
+            meaning: form / material phenomena / the body
+            phonetic: RU-pam
+          - word: shunyata
+            meaning: emptiness / voidness of inherent existence
+            phonetic: SHUN-ya-ta
+          - word: shunyataiva
+            meaning: emptiness itself (shunyata + eva = itself)
+            phonetic: shun-ya-TAI-va
+          - word: prithak
+            meaning: separate / other / apart from
+            phonetic: PRI-thak
+          - word: yad
+            meaning: what / that which
+            phonetic: yad
+          - word: sa
+            meaning: that / it is
+            phonetic: sa
+          - word: ya
+            meaning: which / what
+            phonetic: ya
+          - word: tad
+            meaning: that
+            phonetic: tad
 
     - id: emptiness-of-aggregates
       order: 3
@@ -85,6 +158,9 @@ sections:
           - five-aggregates
           - sunyata
           - anicca
+      phonetic: >-
+          E-vam E-va ve-DA-na-sam-JNA-sam-SKA-ra-vij-NA-nam. IH-ha SHA-ri-poo-tra
+          SAR-va-DHAR-mah SHUN-ya-ta-LAK-sha-nah.
 
     - id: no-characteristics
       order: 4
@@ -108,6 +184,8 @@ sections:
           - sunyata
           - anicca
           - anatta
+      phonetic: >-
+          an-UT-pan-na an-i-RUD-dha, a-MA-la a-vi-MA-la, a-NU-na a-pa-ri-PUR-nah.
 
     - id: no-sense-realms
       order: 5
@@ -134,6 +212,10 @@ sections:
           - sunyata
           - dependent-origination
           - anatta
+      phonetic: >-
+          na CHAK-shuh SHRO-tra GHRA-na JIH-va KA-ya ma-NAM-si. na RU-pa SHAB-da
+          GAN-dha RA-sa sprash-TAV-ya-DHAR-mah. na CHAK-shur-DHA-tur YA-van
+          na ma-no-vij-NA-na-DHA-tuh.
 
     - id: no-dependent-origination
       order: 6
@@ -158,6 +240,9 @@ sections:
           - dependent-origination
           - twelve-links
           - samsara
+      phonetic: >-
+          na a-VID-ya na a-VID-ya-KSHA-yo YA-van na ja-ra-MA-ra-nam
+          na ja-ra-MA-ra-na-KSHA-yo.
 
     - id: no-four-noble-truths
       order: 7
@@ -184,6 +269,9 @@ sections:
           - dukkha
           - sunyata
           - nirvana
+      phonetic: >-
+          na DUH-kha-sa-mu-DA-ya-ni-RO-dha-MAR-gah. na JNA-nam, na PRAP-tih,
+          na a-PRAP-tih.
 
     - id: bodhisattva-attainment
       order: 8
@@ -213,6 +301,11 @@ sections:
           - prajna
           - nirvana
           - anatta
+      phonetic: >-
+          TAS-mac SHA-ri-poo-tra a-PRAP-ti-vad bo-dhi-SAHT-va-sya
+          PRAJ-na-pa-RA-mi-tam ash-RIT-ya vi-HA-ra-ty a-chit-ta-VA-ra-nah.
+          chit-ta-VA-ra-na-NASH-tit-vad a-TRAS-to vi-par-YA-sa-a-ti-KRAN-to
+          NISH-tha-nir-VA-na-PRAP-tah.
 
     - id: the-mantra
       order: 9
@@ -237,3 +330,24 @@ sections:
           - prajna
           - sunyata
           - bhavana
+      phonetic: >-
+          TAD-ya-tha: GA-te GA-te PA-ra-GA-te PA-ra-sam-GA-te BO-dhi SVA-ha.
+      gloss:
+          - word: tadyatha
+            meaning: thus / as follows / it is like this
+            phonetic: TAD-ya-tha
+          - word: gate
+            meaning: gone (feminine vocative of gata; addressed to Prajnaparamita)
+            phonetic: GA-te
+          - word: paragate
+            meaning: gone beyond (para = beyond + gate)
+            phonetic: PA-ra-GA-te
+          - word: parasamgate
+            meaning: gone completely beyond (parama = completely + beyond + gone)
+            phonetic: PA-ra-sam-GA-te
+          - word: bodhi
+            meaning: awakening / enlightenment
+            phonetic: BO-dhi
+          - word: svaha
+            meaning: so be it / hail / may it be so (auspicious exclamation)
+            phonetic: SVA-ha

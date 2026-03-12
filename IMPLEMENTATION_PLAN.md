@@ -167,7 +167,7 @@ Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no
 
 ### Sanskrit/Pali Enrichment — Phase 5: Sutras
 
-- [ ] Add `phonetic` to all sections and `gloss` to key passages in heart-sutra.yaml (the-setting, form-is-emptiness, the-mantra) (spec: specs/sanskrit-enrichment.md)
+- [x] Add `phonetic` to all sections and `gloss` to key passages in heart-sutra.yaml (the-setting, form-is-emptiness, the-mantra) (spec: specs/sanskrit-enrichment.md)
 - [ ] Add `phonetic` to all sections and `gloss` to key passages in diamond-sutra.yaml (opening formula, closing verse) (spec: specs/sanskrit-enrichment.md)
 - [ ] Add `phonetic` to all sections and `gloss` to twin-verses opening in dhammapada.yaml (spec: specs/sanskrit-enrichment.md)
 

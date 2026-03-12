@@ -205,7 +205,7 @@ UI surface layer for the enriched data. Phases 1–5 below (prerequisite data la
 
 ### Sanskrit/Pali UI — Phase 5: Testing
 
-- [ ] Unit tests for popover rendering and keyboard/accessibility handling (spec: specs/sanskrit-ui.md)
+- [x] Unit tests for popover rendering and keyboard/accessibility handling (spec: specs/sanskrit-ui.md)
 - [ ] Update existing view tests to verify terms display (spec: specs/sanskrit-ui.md)
 
 ---

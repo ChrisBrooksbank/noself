@@ -2,6 +2,16 @@ import { parse } from 'yaml';
 import { z } from 'zod';
 import type { Concept, ConceptCategory } from './index.js';
 
+const sacredTermSchema = z.object({
+    text: z.string(),
+    language: z.enum(['pali', 'sanskrit', 'hybrid']),
+    literal: z.string(),
+    etymology: z.string().optional(),
+    phonetic: z.string(),
+    ipa: z.string().optional(),
+    audio: z.string().optional(),
+});
+
 const conceptCategoryValues = [
     'foundational',
     'three-marks',
@@ -36,6 +46,12 @@ const conceptSchema = z.object({
     essentials: z.string(),
     deep: z.string(),
     examples: z.array(conceptExampleSchema).default([]),
+    terms: z
+        .object({
+            pali: sacredTermSchema.optional(),
+            sanskrit: sacredTermSchema.optional(),
+        })
+        .optional(),
 });
 
 const rawYaml = import.meta.glob('./*.yaml', {

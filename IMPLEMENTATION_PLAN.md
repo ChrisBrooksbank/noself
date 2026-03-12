@@ -145,7 +145,7 @@ Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no
 
 ### Sanskrit/Pali Enrichment — Phase 1: Types + Schemas
 
-- [ ] Add `SacredTerm` and `GlossEntry` types to `src/types/`; update Concept Zod schema with optional `terms` field; update Mantra schema with optional `phonetic`/`literal` on syllables and top-level `phonetic`; update Sutra/Puja section schema with optional `phonetic`, `audio`, `gloss`; ensure backward compat; run `npm run check` (spec: specs/sanskrit-enrichment.md)
+- [x] Add `SacredTerm` and `GlossEntry` types to `src/types/`; update Concept Zod schema with optional `terms` field; update Mantra schema with optional `phonetic`/`literal` on syllables and top-level `phonetic`; update Sutra/Puja section schema with optional `phonetic`, `audio`, `gloss`; ensure backward compat; run `npm run check` (spec: specs/sanskrit-enrichment.md)
 
 ### Sanskrit/Pali Enrichment — Phase 2: Concept YAMLs
 

@@ -5,6 +5,9 @@
  * the schema defined by the types below.
  */
 
+import type { GlossEntry } from '../../types/sacred-terms.js';
+export type { GlossEntry };
+
 export interface SutraSection {
     /** URL-safe identifier for in-page anchoring */
     id: string;
@@ -22,6 +25,12 @@ export interface SutraSection {
     commentary: string;
     /** IDs of related concepts for cross-linking */
     relatedConcepts: string[];
+    /** Full passage pronunciation guide */
+    phonetic?: string;
+    /** Path to curated audio file */
+    audio?: string;
+    /** Word-by-word gloss for study */
+    gloss?: GlossEntry[];
 }
 
 export interface Sutra {

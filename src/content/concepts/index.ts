@@ -5,6 +5,9 @@
  * the schema defined by the `Concept` type below.
  */
 
+import type { SacredTerm } from '../../types/sacred-terms.js';
+export type { SacredTerm };
+
 export interface ConceptExample {
     /** Attribution — sutta reference or "Author, Book Title" */
     source: string;
@@ -39,6 +42,11 @@ export interface Concept {
 
     /** Illustrative quotes with source attribution and commentary */
     examples: ConceptExample[];
+    /** Optional enriched Sanskrit/Pali term metadata */
+    terms?: {
+        pali?: SacredTerm;
+        sanskrit?: SacredTerm;
+    };
 }
 
 export type ConceptCategory =

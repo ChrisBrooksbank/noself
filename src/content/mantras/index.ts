@@ -11,6 +11,10 @@ export interface MantraSyllable {
     text: string;
     /** Meaning or significance of this syllable */
     meaning: string;
+    /** Phonetic pronunciation: "OHM" */
+    phonetic?: string;
+    /** Short literal label vs longer meaning */
+    literal?: string;
 }
 
 export interface Mantra {
@@ -36,6 +40,10 @@ export interface Mantra {
     defaultRepetitions: number;
     /** IDs of related concepts for cross-linking */
     relatedConcepts: string[];
+    /** Full mantra pronunciation guide: "OHM MAH-nee PAHD-may HOOM" */
+    phonetic?: string;
+    /** Path to curated chanting audio file */
+    audio?: string;
 }
 
 export type MantraId = (typeof MANTRA_IDS)[number];

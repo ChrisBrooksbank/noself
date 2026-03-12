@@ -2,6 +2,12 @@ import { parse } from 'yaml';
 import { z } from 'zod';
 import type { Sutra } from './index.js';
 
+const glossEntrySchema = z.object({
+    word: z.string(),
+    meaning: z.string(),
+    phonetic: z.string().optional(),
+});
+
 const sutraSectionSchema = z.object({
     id: z.string(),
     order: z.number(),
@@ -11,6 +17,9 @@ const sutraSectionSchema = z.object({
     translation: z.string(),
     commentary: z.string(),
     relatedConcepts: z.array(z.string()).default([]),
+    phonetic: z.string().optional(),
+    audio: z.string().optional(),
+    gloss: z.array(glossEntrySchema).optional(),
 });
 
 const sutraSchema = z.object({

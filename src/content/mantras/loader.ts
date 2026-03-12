@@ -5,6 +5,8 @@ import type { Mantra } from './index.js';
 const mantraSyllableSchema = z.object({
     text: z.string(),
     meaning: z.string(),
+    phonetic: z.string().optional(),
+    literal: z.string().optional(),
 });
 
 const mantraSchema = z.object({
@@ -22,6 +24,8 @@ const mantraSchema = z.object({
     usage: z.string(),
     defaultRepetitions: z.number().int().positive(),
     relatedConcepts: z.array(z.string()).default([]),
+    phonetic: z.string().optional(),
+    audio: z.string().optional(),
 });
 
 const rawYaml = import.meta.glob('./*.yaml', {

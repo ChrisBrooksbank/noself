@@ -2,6 +2,19 @@ id: three-jewels
 title: The Three Jewels
 pali: Tiratana
 sanskrit: Triratna
+terms:
+    pali:
+        text: Tiratana
+        language: pali
+        literal: three jewels
+        etymology: 'ti (three) + ratana (jewel, treasure)'
+        phonetic: tee-RAH-tah-nah
+    sanskrit:
+        text: Triratna
+        language: sanskrit
+        literal: three jewels
+        etymology: 'tri (three) + ratna (jewel, gem)'
+        phonetic: tree-RAHT-nah
 category: foundational
 related: [four-noble-truths, noble-eightfold-path, awakening, middle-way]
 

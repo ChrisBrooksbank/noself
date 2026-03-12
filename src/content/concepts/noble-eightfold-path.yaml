@@ -2,6 +2,19 @@ id: noble-eightfold-path
 title: The Noble Eightfold Path
 pali: Ariya Aṭṭhaṅgika Magga
 sanskrit: Āryāṣṭāṅgamārga
+terms:
+    pali:
+        text: Ariya Aṭṭhaṅgika Magga
+        language: pali
+        literal: noble eightfold path
+        etymology: 'ariya (noble) + aṭṭha (eight) + aṅgika (factored) + magga (path)'
+        phonetic: ah-REE-yah aht-THAHN-gee-kah MAHG-gah
+    sanskrit:
+        text: Āryāṣṭāṅgamārga
+        language: sanskrit
+        literal: noble eightfold path
+        etymology: 'ārya (noble) + aṣṭa (eight) + aṅga (limb) + mārga (path)'
+        phonetic: AHR-yah-ashtAHN-gah-MAHR-gah
 category: foundational
 related:
     [

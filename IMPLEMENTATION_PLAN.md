@@ -150,7 +150,7 @@ Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no
 ### Sanskrit/Pali Enrichment — Phase 2: Concept YAMLs
 
 - [x] Add `terms` (pali/sanskrit SacredTerm) to Three Marks concepts: anatta.yaml, anicca.yaml, dukkha.yaml (spec: specs/sanskrit-enrichment.md, example in docs/plan-sanskrit-enrichment.md)
-- [ ] Add `terms` to Foundational concepts: four-noble-truths.yaml, noble-eightfold-path.yaml, three-jewels.yaml, middle-way.yaml, three-marks.yaml (spec: specs/sanskrit-enrichment.md)
+- [x] Add `terms` to Foundational concepts: four-noble-truths.yaml, noble-eightfold-path.yaml, three-jewels.yaml, middle-way.yaml, three-marks.yaml (spec: specs/sanskrit-enrichment.md)
 - [ ] Add `terms` to Brahmaviharas concepts: metta.yaml, karuna.yaml, mudita.yaml, upekkha.yaml (spec: specs/sanskrit-enrichment.md)
 - [ ] Add `terms` to Mind & Practice concepts: sati.yaml, bhavana.yaml, samatha.yaml, vipassana.yaml, five-precepts.yaml, karma.yaml (spec: specs/sanskrit-enrichment.md)
 - [ ] Add `terms` to Buddhist Psychology concepts: five-aggregates.yaml, three-poisons.yaml, dependent-origination.yaml, twelve-links.yaml (spec: specs/sanskrit-enrichment.md)

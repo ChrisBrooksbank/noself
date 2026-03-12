@@ -2,6 +2,19 @@ id: three-marks
 title: The Three Marks of Existence
 pali: Tilakkhaṇa
 sanskrit: Trilakṣaṇa
+terms:
+    pali:
+        text: Tilakkhaṇa
+        language: pali
+        literal: three marks
+        etymology: 'ti (three) + lakkhaṇa (mark, characteristic, sign)'
+        phonetic: tee-LAHK-khah-nah
+    sanskrit:
+        text: Trilakṣaṇa
+        language: sanskrit
+        literal: three marks
+        etymology: 'tri (three) + lakṣaṇa (mark, characteristic)'
+        phonetic: tree-LAHK-shah-nah
 category: foundational
 related: [anicca, dukkha, anatta, four-noble-truths, dependent-origination, vipassana]
 

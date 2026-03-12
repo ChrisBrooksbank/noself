@@ -2,6 +2,19 @@ id: four-noble-truths
 title: The Four Noble Truths
 pali: Cattāri Ariyasaccāni
 sanskrit: Catvāri Āryasatyāni
+terms:
+    pali:
+        text: Cattāri Ariyasaccāni
+        language: pali
+        literal: four noble truths
+        etymology: 'cattāri (four) + ariya (noble) + saccāni (truths)'
+        phonetic: caht-TAH-ree ah-REE-yah saht-CHAH-nee
+    sanskrit:
+        text: Catvāri Āryasatyāni
+        language: sanskrit
+        literal: four noble truths
+        etymology: 'catvāri (four) + ārya (noble) + satyāni (truths)'
+        phonetic: caht-VAH-ree AHR-yah saht-YAH-nee
 category: foundational
 related:
     [

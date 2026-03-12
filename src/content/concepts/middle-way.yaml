@@ -2,6 +2,19 @@ id: middle-way
 title: The Middle Way
 pali: Majjhimā Paṭipadā
 sanskrit: Madhyamā Pratipad
+terms:
+    pali:
+        text: Majjhimā Paṭipadā
+        language: pali
+        literal: middle path
+        etymology: 'majjhimā (middle) + paṭipadā (path, way of practice)'
+        phonetic: mahj-JEE-mah pah-tee-PAH-dah
+    sanskrit:
+        text: Madhyamā Pratipad
+        language: sanskrit
+        literal: middle path
+        etymology: 'madhyamā (middle) + pratipad (path, way)'
+        phonetic: MAHD-yah-mah PRAH-tee-pahd
 category: foundational
 related: [four-noble-truths, noble-eightfold-path, sunyata, awakening]
 

@@ -36,6 +36,48 @@ sections:
       relatedConcepts:
           - three-jewels
           - sati
+      phonetic: >-
+          E-vam MA-ya SHRU-tam. e-KAS-min sa-MA-ye bha-GA-van
+          SHRA-vas-tyam vi-HA-ra-ti sma je-TA-va-ne
+          a-NA-tha-pin-DA-da-sya A-ra-me ma-HA-ta-bhik-SHU-san-GHE-na
+          SAR-dham.
+      gloss:
+          - word: Evam
+            meaning: thus / in this way
+            phonetic: E-vam
+          - word: maya
+            meaning: by me (instrumental of "I")
+            phonetic: MA-ya
+          - word: shrutam
+            meaning: heard (past passive participle of shru)
+            phonetic: SHRU-tam
+          - word: Ekasmin samaye
+            meaning: at one time / on one occasion
+            phonetic: e-KAS-min sa-MA-ye
+          - word: Bhagavan
+            meaning: Blessed One / Lord / the Exalted One
+            phonetic: bha-GA-van
+          - word: Shravasyam
+            meaning: in Shravasti (ancient city in northern India)
+            phonetic: SHRA-vas-tyam
+          - word: viharati sma
+            meaning: was dwelling / was residing
+            phonetic: vi-HA-ra-ti sma
+          - word: Jetavane
+            meaning: in Jeta Grove (garden donated to the sangha)
+            phonetic: je-TA-va-ne
+          - word: Anathapindadasya
+            meaning: of Anathapindada (the lay donor who purchased the grove)
+            phonetic: a-NA-tha-pin-DA-da-sya
+          - word: arame
+            meaning: in the garden / in the park
+            phonetic: a-RA-me
+          - word: mahatabhikshu-sanghena
+            meaning: with a great assembly of monks
+            phonetic: ma-HA-ta-bhik-SHU-san-GHE-na
+          - word: sardham
+            meaning: together with / accompanied by
+            phonetic: SAR-dham
 
     - id: subhutis-question
       order: 2
@@ -60,6 +102,10 @@ sections:
           - bodhisattva
           - bhavana
           - prajna
+      phonetic: >-
+          KA-tham bha-GA-van bo-dhi-SAHT-tva-YA-ne sam-pras-THI-te-na
+          STHA-tum, KA-tham pra-ti-PAT-tav-yam, KA-tham CHIT-tam
+          pra-gra-HI-tav-yam?
 
     - id: the-nature-of-generosity
       order: 3
@@ -84,6 +130,9 @@ sections:
           - bodhisattva
           - anatta
           - karma
+      phonetic: >-
+          na bo-dhi-SAHT-tve-na vas-tu-pra-tish-THI-te-na DA-nam
+          DA-tav-yam. na KVA-chit-pra-tish-THI-te-na DA-nam DA-tav-yam.
 
     - id: no-self-no-being
       order: 4
@@ -109,6 +158,10 @@ sections:
           - anatta
           - sunyata
           - five-aggregates
+      phonetic: >-
+          na su-BHU-te bo-dhi-SAHT-tve-na ma-HA-saht-tve-na
+          AT-ma-sam-JNA ut-PA-da-yi-tav-ya, na SAHT-tva-sam-JNA,
+          na JI-va-sam-JNA, na pud-GA-la-sam-JNA ut-PA-da-yi-tav-ya.
 
     - id: the-raft-metaphor
       order: 5
@@ -134,6 +187,10 @@ sections:
           - sunyata
           - middle-way
           - prajna
+      phonetic: >-
+          DHAR-ma-par-YA-ya-sya-PI pra-HA-na-TA-ya DHAR-ma E-va
+          pra-HA-tav-yah, PRA-ga e-va-DHAR-ma. ko-LO-pa-mam vo
+          bha-GA-va-ta DHAR-ma-par-YA-yam DE-shi-tam a-JA-na-ta.
 
     - id: wherever-there-are-signs
       order: 6
@@ -160,6 +217,10 @@ sections:
           - three-marks
           - prajna
           - vipassana
+      phonetic: >-
+          YA-vat su-BHU-te lak-SHA-na-SAM-pat ta-VAN-ne-va
+          mri-SHA-va-dam. SAR-va-sam-JNA-a-PE-ta hy a-SAM-jna
+          BUD-dhah I-ti VAK-tav-yah.
 
     - id: the-merit-of-the-sutra
       order: 7
@@ -191,6 +252,14 @@ sections:
           - karma
           - prajna
           - bodhisattva
+      phonetic: >-
+          yash CHA-yam su-BHU-te ku-la-PUT-ro va ku-la-du-HI-ta va
+          tri-sa-HAS-ra-ma-ha-SA-has-ram lo-ka-DHA-tum-ap-ta-RAT-na
+          pa-ri-PUR-nam KRIT-va DA-nam DAD-yat, yash chai-TAH
+          su-TRAN-ta-cha-tur-PA-di-kam-A-pi GA-tham ud-GRIH-ya
+          pa-reb-HYO DE-sha-yet, A-yam E-va TA-to ni-DA-nam
+          ba-HU-ta-ram PUN-ya-SKAN-dham pra-su-NU-yat,
+          ap-ra-MA-nam a-san-KHYE-yam.
 
     - id: the-diamond-analogy
       order: 8
@@ -215,6 +284,8 @@ sections:
           - prajna
           - sunyata
           - awakening
+      phonetic: >-
+          VAJ-rac-CHE-di-ka NA-ma PRAJ-na-pa-RA-mi-ta.
 
     - id: the-closing-verse
       order: 9
@@ -244,3 +315,47 @@ sections:
           - sunyata
           - dependent-origination
           - awakening
+      phonetic: >-
+          TA-ra ka ti-MI-ra mash-O-ka-bud-BU-da SVAP-na VID-yud
+          I-va cha abh-ra-LAK-sha-na. E-vam DRASH-tav-yam
+          SAR-va-sam-SKA-ra.
+      gloss:
+          - word: Tara
+            meaning: star
+            phonetic: TA-ra
+          - word: ka
+            meaning: and / also
+            phonetic: ka
+          - word: timira
+            meaning: fault of vision / eye-floater / darkness
+            phonetic: ti-MI-ra
+          - word: mashoka
+            meaning: lamp / small thing (dewdrop or lamp depending on recension)
+            phonetic: mash-O-ka
+          - word: budbuda
+            meaning: bubble
+            phonetic: bud-BU-da
+          - word: svapna
+            meaning: dream
+            phonetic: SVAP-na
+          - word: vidyud
+            meaning: lightning / flash of lightning
+            phonetic: VID-yud
+          - word: iva
+            meaning: like / as if
+            phonetic: I-va
+          - word: cha
+            meaning: and
+            phonetic: cha
+          - word: abhralakshana
+            meaning: marked by clouds / cloud-like in nature
+            phonetic: abh-ra-LAK-sha-na
+          - word: Evam
+            meaning: thus / in this way
+            phonetic: E-vam
+          - word: drashtavyam
+            meaning: should be regarded / should be seen
+            phonetic: DRASH-tav-yam
+          - word: sarva-samskara
+            meaning: all conditioned things / all compounded phenomena
+            phonetic: SAR-va-sam-SKA-ra

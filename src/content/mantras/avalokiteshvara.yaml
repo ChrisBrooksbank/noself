@@ -7,21 +7,30 @@ description: >-
     The mantra of Avalokiteshvara, the bodhisattva of compassion. Among the most
     widely recited mantras in Tibetan and East Asian Buddhism, it embodies the
     qualities of compassion and wisdom inseparable from emptiness.
+phonetic: 'OHM mah-NEE pahd-MAY HOOM'
 syllables:
     - text: Om
+      phonetic: 'OHM'
+      literal: 'sacred universal syllable'
       meaning: >-
           The sacred syllable representing the body, speech, and mind of all buddhas.
           It purifies pride and the obscurations of the body.
     - text: Mani
+      phonetic: 'mah-NEE'
+      literal: 'jewel'
       meaning: >-
           "Jewel" — symbolising the altruistic intention to awaken for the benefit of
           all beings (bodhicitta). It purifies jealousy and obscurations of speech.
     - text: Padme
+      phonetic: 'pahd-MAY'
+      literal: 'lotus'
       meaning: >-
           "Lotus" — wisdom that perceives the nature of reality; the lotus grows from
           mud yet remains unstained, symbolising purity within samsara. It purifies
           attachment and obscurations of mind.
     - text: Hum
+      phonetic: 'HOOM'
+      literal: 'indivisibility; thus'
       meaning: >-
           Indivisibility of method (compassion) and wisdom. It purifies aggression
           and the obscurations of the senses, sealing the mantra with non-dual

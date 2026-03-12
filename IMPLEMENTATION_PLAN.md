@@ -159,7 +159,7 @@ Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no
 
 ### Sanskrit/Pali Enrichment — Phase 3: Mantras
 
-- [ ] Add `phonetic` + `literal` to each syllable and top-level `phonetic` in avalokiteshvara.yaml and green-tara.yaml (spec: specs/sanskrit-enrichment.md)
+- [x] Add `phonetic` + `literal` to each syllable and top-level `phonetic` in avalokiteshvara.yaml and green-tara.yaml (spec: specs/sanskrit-enrichment.md)
 
 ### Sanskrit/Pali Enrichment — Phase 4: Puja
 

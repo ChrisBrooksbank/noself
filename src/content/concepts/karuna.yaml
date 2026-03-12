@@ -2,6 +2,19 @@ id: karuna
 title: Compassion
 pali: Karuṇā
 sanskrit: Karuṇā
+terms:
+    pali:
+        text: Karuṇā
+        language: pali
+        literal: compassion, the wish to remove suffering
+        etymology: 'kara (doing, acting) — one who cries out or makes others cry out in sympathy'
+        phonetic: kah-ROO-nah
+    sanskrit:
+        text: Karuṇā
+        language: sanskrit
+        literal: compassion, suffering-with
+        etymology: 'kṛ (to do, to act) — active co-feeling with the suffering of others'
+        phonetic: kah-ROO-nah
 category: brahmaviharas
 related: [metta, mudita, upekkha, bodhisattva, dukkha, anatta]
 

@@ -2,6 +2,19 @@ id: mudita
 title: Sympathetic Joy
 pali: Muditā
 sanskrit: Muditā
+terms:
+    pali:
+        text: Muditā
+        language: pali
+        literal: sympathetic joy, appreciative joy
+        etymology: 'mud (to be glad, to rejoice) + itā (abstract noun suffix)'
+        phonetic: moo-dee-TAH
+    sanskrit:
+        text: Muditā
+        language: sanskrit
+        literal: gladness, delight in others happiness
+        etymology: 'mud (to be joyful) + itā — joy arising from witnessing another beings happiness'
+        phonetic: moo-dee-TAH
 category: brahmaviharas
 related: [metta, karuna, upekkha, three-poisons, anatta]
 

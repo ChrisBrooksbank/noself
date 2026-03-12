@@ -2,6 +2,19 @@ id: upekkha
 title: Equanimity
 pali: Upekkhā
 sanskrit: Upekṣā
+terms:
+    pali:
+        text: Upekkhā
+        language: pali
+        literal: equanimity, even-mindedness
+        etymology: 'upa (over, upon) + ikkha (to look) — looking over the whole with a panoramic view'
+        phonetic: oo-PEHK-khah
+    sanskrit:
+        text: Upekṣā
+        language: sanskrit
+        literal: equanimity, non-attachment, looking on evenly
+        etymology: 'upa (over, upon) + ikṣā (seeing, looking) — elevated, impartial seeing'
+        phonetic: oo-PEHK-shah
 category: brahmaviharas
 related: [metta, karuna, mudita, samatha, vipassana, three-marks]
 

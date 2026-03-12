@@ -2,6 +2,19 @@ id: metta
 title: Loving-Kindness
 pali: Mettā
 sanskrit: Maitrī
+terms:
+    pali:
+        text: Mettā
+        language: pali
+        literal: loving-kindness, friendliness
+        etymology: 'mitta (friend) + ā (abstract noun suffix)'
+        phonetic: MEHT-tah
+    sanskrit:
+        text: Maitrī
+        language: sanskrit
+        literal: loving-kindness, benevolence
+        etymology: 'mitra (friend, ally) + ī (abstract noun suffix)'
+        phonetic: MY-tree
 category: brahmaviharas
 related: [karuna, mudita, upekkha, bhavana, three-poisons, bodhisattva]
 

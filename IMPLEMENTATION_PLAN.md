@@ -155,7 +155,7 @@ Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no
 - [x] Add `terms` to Mind & Practice concepts: sati.yaml, bhavana.yaml, samatha.yaml, vipassana.yaml, five-precepts.yaml, karma.yaml (spec: specs/sanskrit-enrichment.md)
 - [x] Add `terms` to Buddhist Psychology concepts: five-aggregates.yaml, three-poisons.yaml, dependent-origination.yaml, twelve-links.yaml (spec: specs/sanskrit-enrichment.md)
 - [x] Add `terms` to Mahayana concepts: sunyata.yaml, buddha-nature.yaml, bodhisattva.yaml, interbeing.yaml, prajna.yaml (spec: specs/sanskrit-enrichment.md)
-- [ ] Add `terms` to Liberation concepts: nirvana.yaml, samsara.yaml, awakening.yaml (spec: specs/sanskrit-enrichment.md)
+- [x] Add `terms` to Liberation concepts: nirvana.yaml, samsara.yaml, awakening.yaml (spec: specs/sanskrit-enrichment.md)
 
 ### Sanskrit/Pali Enrichment — Phase 3: Mantras
 

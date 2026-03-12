@@ -2,6 +2,19 @@ id: nirvana
 title: The Unconditioned
 pali: Nibbāna
 sanskrit: Nirvāṇa
+terms:
+    pali:
+        text: Nibbāna
+        language: pali
+        literal: blowing out
+        etymology: 'ni (out) + vāna (blowing)'
+        phonetic: nih-BAH-nah
+    sanskrit:
+        text: Nirvāṇa
+        language: sanskrit
+        literal: blowing out
+        etymology: 'nir (out) + vāṇa (blowing)'
+        phonetic: nir-VAH-nah
 category: liberation
 related:
     [four-noble-truths, samsara, awakening, three-marks, dukkha, dependent-origination]

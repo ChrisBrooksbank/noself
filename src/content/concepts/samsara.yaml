@@ -2,6 +2,19 @@ id: samsara
 title: The Cycle of Becoming
 pali: Saṃsāra
 sanskrit: Saṃsāra
+terms:
+    pali:
+        text: Saṃsāra
+        language: pali
+        literal: wandering on
+        etymology: 'saṃ (continuously) + sara (wandering, flowing)'
+        phonetic: sahm-SAH-rah
+    sanskrit:
+        text: Saṃsāra
+        language: sanskrit
+        literal: wandering on
+        etymology: 'saṃ (together) + sāra (flowing)'
+        phonetic: sahm-SAH-rah
 category: liberation
 related:
     [

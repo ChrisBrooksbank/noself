@@ -2,6 +2,19 @@ id: awakening
 title: Awakening
 pali: Bodhi
 sanskrit: Bodhi
+terms:
+    pali:
+        text: Bodhi
+        language: pali
+        literal: awakening
+        etymology: '√budh (to awaken, to understand)'
+        phonetic: BOH-dhee
+    sanskrit:
+        text: Bodhi
+        language: sanskrit
+        literal: awakening
+        etymology: '√budh (to awaken)'
+        phonetic: BOH-dhee
 category: liberation
 related:
     [nirvana, four-noble-truths, buddha-nature, noble-eightfold-path, prajna, middle-way]

@@ -2,6 +2,19 @@ id: dependent-origination
 title: Dependent Origination
 pali: Paṭicca Samuppāda
 sanskrit: Pratītyasamutpāda
+terms:
+    pali:
+        text: Paṭicca Samuppāda
+        language: pali
+        literal: dependent co-arising
+        etymology: 'paṭicca (dependent on) + samuppāda (arising together)'
+        phonetic: pah-TICH-chah sah-moo-PAH-dah
+    sanskrit:
+        text: Pratītyasamutpāda
+        language: sanskrit
+        literal: dependent origination
+        etymology: 'pratītya (having depended) + samutpāda (arising together)'
+        phonetic: prah-TEET-yah-sah-moot-PAH-dah
 category: buddhist-psychology
 related: [twelve-links, anatta, anicca, sunyata, four-noble-truths, interbeing, karma]
 

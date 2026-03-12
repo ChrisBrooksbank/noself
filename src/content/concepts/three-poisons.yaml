@@ -2,6 +2,19 @@ id: three-poisons
 title: The Three Poisons
 pali: Akusala-mūla
 sanskrit: Triviṣa
+terms:
+    pali:
+        text: Akusala-mūla
+        language: pali
+        literal: unwholesome roots
+        etymology: 'akusala (unwholesome) + mūla (root)'
+        phonetic: ah-KOO-sah-lah MOO-lah
+    sanskrit:
+        text: Triviṣa
+        language: sanskrit
+        literal: three poisons
+        etymology: 'tri (three) + viṣa (poison)'
+        phonetic: tree-VEE-shah
 category: buddhist-psychology
 related: [four-noble-truths, dukkha, karma, five-precepts, samsara, noble-eightfold-path]
 

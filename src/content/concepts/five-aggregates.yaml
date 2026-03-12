@@ -2,6 +2,19 @@ id: five-aggregates
 title: The Five Aggregates
 pali: Pañca Khandha
 sanskrit: Pañca Skandha
+terms:
+    pali:
+        text: Pañca Khandha
+        language: pali
+        literal: five aggregates
+        etymology: 'pañca (five) + khandha (heap, aggregate)'
+        phonetic: PAHN-chah KAHN-dah
+    sanskrit:
+        text: Pañca Skandha
+        language: sanskrit
+        literal: five aggregates
+        etymology: 'pañca (five) + skandha (heap, aggregate)'
+        phonetic: PAHN-chah SKAHN-dah
 category: buddhist-psychology
 related: [anatta, three-marks, dukkha, dependent-origination, vipassana]
 

@@ -2,6 +2,19 @@ id: twelve-links
 title: The Twelve Links
 pali: Dvādasanidāna
 sanskrit: Dvādaśanidāna
+terms:
+    pali:
+        text: Dvādasanidāna
+        language: pali
+        literal: twelve conditions
+        etymology: 'dvādasa (twelve) + nidāna (condition, cause)'
+        phonetic: dvah-DAH-sah-nih-DAH-nah
+    sanskrit:
+        text: Dvādaśanidāna
+        language: sanskrit
+        literal: twelve conditions
+        etymology: 'dvādaśa (twelve) + nidāna (condition, cause)'
+        phonetic: dvah-DAH-shah-nih-DAH-nah
 category: buddhist-psychology
 related: [dependent-origination, three-poisons, karma, samsara, anatta, five-aggregates]
 

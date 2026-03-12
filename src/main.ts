@@ -108,7 +108,7 @@ start((route) => {
             renderSutrasListView(viewHost);
             break;
         case 'sutraDetail':
-            renderSutraStudyView(viewHost, route.id);
+            currentCleanup = renderSutraStudyView(viewHost, route.id);
             break;
         case 'practice':
             renderPracticeHubView(viewHost);

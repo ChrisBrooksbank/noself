@@ -1567,6 +1567,68 @@ a.card:hover,
     letter-spacing: 0.04em;
 }
 
+.sutra-study__terms {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+}
+
+.sutra-section__gloss-details {
+    margin-top: var(--space-4);
+}
+
+.sutra-section__gloss-summary {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.sutra-section__gloss-summary:hover {
+    text-decoration: underline;
+}
+
+.sutra-section__phonetic {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: var(--space-3) 0;
+}
+
+.sutra-section__gloss-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    margin-top: var(--space-3);
+}
+
+.sutra-section__gloss-table th {
+    text-align: left;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-subtle);
+    padding: var(--space-1) var(--space-2) var(--space-1) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sutra-section__gloss-table td {
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-border-subtle, var(--color-border));
+}
+
+.sutra-section__gloss-word {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.sutra-section__gloss-phonetic {
+    color: var(--color-text-muted);
+    font-style: italic;
+    white-space: nowrap;
+}
+
 /* =========================================================
    Puja List View
    ========================================================= */

@@ -195,7 +195,7 @@ UI surface layer for the enriched data. Phases 1–5 below (prerequisite data la
 ### Sanskrit/Pali UI — Phase 3: View Integration
 
 - [x] Concept view — replace flat `concept.pali · concept.sanskrit` with interactive sacred-term spans + init popovers (spec: specs/sanskrit-ui.md)
-- [ ] Sutra study view — make sutra title term interactive, surface word-by-word gloss data in expandable sections (spec: specs/sanskrit-ui.md)
+- [x] Sutra study view — make sutra title term interactive, surface word-by-word gloss data in expandable sections (spec: specs/sanskrit-ui.md)
 - [ ] Puja study view — same interactive term + gloss pattern as sutra (spec: specs/sanskrit-ui.md)
 - [ ] Mantra detail view — add phonetic display alongside syllables (spec: specs/sanskrit-ui.md)
 

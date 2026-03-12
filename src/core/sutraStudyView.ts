@@ -1,7 +1,64 @@
 import { getSutraById } from '../content/sutras/index.js';
 import { getConceptById } from '../content/concepts/index.js';
 import { getExpertiseLevel } from './preferences.js';
-import type { Sutra, SutraSection } from '../content/sutras/index.js';
+import { renderSacredTermSpan, initSacredTermTooltips } from './sacredTerms.js';
+import type { Sutra, SutraSection, SutraTerms } from '../content/sutras/index.js';
+
+function renderTerms(terms: SutraTerms | undefined): string {
+    if (!terms?.pali && !terms?.sanskrit) return '';
+    const parts: string[] = [];
+    if (terms.pali) {
+        const opts = terms.sanskrit ? { counterpart: terms.sanskrit } : {};
+        parts.push(renderSacredTermSpan(terms.pali, opts));
+    }
+    if (terms.sanskrit) {
+        const opts = terms.pali ? { counterpart: terms.pali } : {};
+        parts.push(renderSacredTermSpan(terms.sanskrit, opts));
+    }
+    return `<p class="sutra-study__terms">${parts.join(' · ')}</p>`;
+}
+
+function renderGloss(section: SutraSection): string {
+    const hasPhonetic = !!section.phonetic;
+    const hasGloss = section.gloss && section.gloss.length > 0;
+    if (!hasPhonetic && !hasGloss) return '';
+
+    const phoneticBlock = hasPhonetic
+        ? `<p class="sutra-section__phonetic">${section.phonetic}</p>`
+        : '';
+
+    const glossRows =
+        hasGloss && section.gloss
+            ? section.gloss
+                  .map(
+                      (g) => `
+                <tr>
+                    <td class="sutra-section__gloss-word">${g.word}</td>
+                    ${g.phonetic ? `<td class="sutra-section__gloss-phonetic">${g.phonetic}</td>` : '<td></td>'}
+                    <td class="sutra-section__gloss-meaning">${g.meaning}</td>
+                </tr>`,
+                  )
+                  .join('')
+            : '';
+
+    const glossTable = hasGloss
+        ? `<table class="sutra-section__gloss-table">
+            <thead><tr>
+                <th>Word</th>
+                <th>Pronunciation</th>
+                <th>Meaning</th>
+            </tr></thead>
+            <tbody>${glossRows}</tbody>
+        </table>`
+        : '';
+
+    return `
+        <details class="sutra-section__gloss-details">
+            <summary class="sutra-section__gloss-summary">Word-by-word study</summary>
+            ${phoneticBlock}
+            ${glossTable}
+        </details>`;
+}
 
 function renderToc(sections: SutraSection[]): string {
     const items = sections
@@ -55,14 +112,17 @@ function renderSection(section: SutraSection): string {
                 <summary class="sutra-section__commentary-summary">Commentary</summary>
                 <p class="sutra-section__commentary">${section.commentary}</p>
             </details>
+            ${renderGloss(section)}
             ${renderRelatedConcepts(section.relatedConcepts)}
         </article>`;
 }
 
 function renderSutra(sutra: Sutra): string {
-    const sanskritLabel = sutra.sanskrit
-        ? `<p class="sutra-study__sanskrit">${sutra.sanskrit}</p>`
-        : '';
+    const termsBlock = renderTerms(sutra.terms);
+    const sanskritLabel =
+        !termsBlock && sutra.sanskrit
+            ? `<p class="sutra-study__sanskrit">${sutra.sanskrit}</p>`
+            : termsBlock || '';
 
     const sorted = [...sutra.sections].sort((a, b) => a.order - b.order);
 
@@ -92,7 +152,7 @@ function renderSutra(sutra: Sutra): string {
         </div>`;
 }
 
-export function renderSutraStudyView(container: HTMLElement, id: string): void {
+export function renderSutraStudyView(container: HTMLElement, id: string): () => void {
     const sutra = getSutraById(id);
 
     if (!sutra) {
@@ -101,10 +161,12 @@ export function renderSutraStudyView(container: HTMLElement, id: string): void {
                 <p>Sutra not found.</p>
                 <a href="#/sutras">Back to sutras</a>
             </div>`;
-        return;
+        return () => {};
     }
 
     container.innerHTML = renderSutra(sutra);
+
+    const cleanupTooltips = initSacredTermTooltips(container);
 
     container.addEventListener('click', (e) => {
         const target = (e.target as HTMLElement).closest<HTMLElement>('[data-scroll-to]');
@@ -114,4 +176,6 @@ export function renderSutraStudyView(container: HTMLElement, id: string): void {
             el?.scrollIntoView({ behavior: 'smooth' });
         }
     });
+
+    return cleanupTooltips;
 }

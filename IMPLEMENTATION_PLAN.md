@@ -188,9 +188,9 @@ UI surface layer for the enriched data. Phases 1–5 below (prerequisite data la
 
 ### Sanskrit/Pali UI — Phase 2: Popover Component
 
-- [ ] Create `renderSacredTermSpan()` — returns interactive `<span>` with data attributes for phonetic, literal, etymology, counterpart language (spec: specs/sanskrit-ui.md)
-- [ ] Create `initSacredTermTooltips()` — delegated click/tap singleton popover showing pronunciation, literal meaning, etymology, Pali↔Sanskrit equivalent; dismiss on outside click/Escape (spec: specs/sanskrit-ui.md)
-- [ ] Add CSS — dotted underline on `.sacred-term` spans, positioned popover using existing design tokens (spec: specs/sanskrit-ui.md)
+- [x] Create `renderSacredTermSpan()` — returns interactive `<span>` with data attributes for phonetic, literal, etymology, counterpart language (spec: specs/sanskrit-ui.md)
+- [x] Create `initSacredTermTooltips()` — delegated click/tap singleton popover showing pronunciation, literal meaning, etymology, Pali↔Sanskrit equivalent; dismiss on outside click/Escape (spec: specs/sanskrit-ui.md)
+- [x] Add CSS — dotted underline on `.sacred-term` spans, positioned popover using existing design tokens (spec: specs/sanskrit-ui.md)
 
 ### Sanskrit/Pali UI — Phase 3: View Integration
 

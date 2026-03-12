@@ -2693,6 +2693,95 @@ html[data-font-size='xl'] {
 }
 
 /* =========================================================
+   Sacred Terms — inline interactive spans + popover
+   ========================================================= */
+
+.sacred-term {
+    border-bottom: 1px dotted var(--color-gold);
+    cursor: pointer;
+    color: inherit;
+    transition: color 0.15s;
+}
+
+.sacred-term:hover,
+.sacred-term:focus {
+    color: var(--color-gold);
+    outline: none;
+}
+
+.sacred-term:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+.sacred-term-popover {
+    position: absolute;
+    z-index: 1000;
+    width: 260px;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+}
+
+.sacred-term-popover[hidden] {
+    display: none;
+}
+
+.sacred-term-popover__header {
+    margin-bottom: var(--space-2);
+}
+
+.sacred-term-popover__lang {
+    font-size: var(--text-xs);
+    font-style: italic;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sacred-term-popover__row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-top: var(--space-2);
+}
+
+.sacred-term-popover__label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sacred-term-popover__value {
+    color: var(--color-text);
+}
+
+.sacred-term-popover__counterpart {
+    padding-top: var(--space-2);
+    margin-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+}
+
+.sacred-term-popover__phonetic {
+    display: block;
+    color: var(--color-text-muted);
+    font-style: italic;
+    font-size: var(--text-xs);
+}
+
+.sacred-term-popover__literal {
+    display: block;
+    color: var(--color-text-subtle);
+    font-size: var(--text-xs);
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 

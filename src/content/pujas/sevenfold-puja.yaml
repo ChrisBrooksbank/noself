@@ -1,5 +1,20 @@
 id: sevenfold-puja
 title: The Sevenfold Puja
+sanskrit: Saptavidhā Pūjā
+pali: Sattavidhā Pūjā
+terms:
+    pali:
+        text: Sattavidhā Pūjā
+        language: pali
+        literal: Sevenfold Worship
+        etymology: 'satta (seven) + vidhā (fold, kind) + pūjā (worship, offering, devotion)'
+        phonetic: SAHT-tah-VEE-dah POO-jah
+    sanskrit:
+        text: Saptavidhā Pūjā
+        language: sanskrit
+        literal: Sevenfold Worship
+        etymology: 'sapta (seven) + vidhā (fold, kind) + pūjā (worship, offering, devotion)'
+        phonetic: SAHP-tah-VEE-dah POO-jah
 tradition: Triratna
 description: >
     A devotional liturgy from the Triratna Buddhist Community, drawing on

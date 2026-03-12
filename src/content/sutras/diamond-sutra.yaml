@@ -1,7 +1,14 @@
 id: diamond-sutra
 title: Diamond Sutra
-sanskrit: 'Vajracchedika Prajnaparamita'
+sanskrit: 'Vajracchedikā Prajñāpāramitā'
 pali: null
+terms:
+    sanskrit:
+        text: Vajracchedikā Prajñāpāramitā
+        language: sanskrit
+        literal: The Diamond Cutter of Perfect Wisdom
+        etymology: 'vajra (diamond, thunderbolt) + cchedikā (cutter, that which cuts) + prajñā (wisdom) + pāramitā (perfection, gone beyond)'
+        phonetic: vahj-rahch-CHEH-dee-kah prahj-nyah-PAH-rah-mee-tah
 tradition: Mahayana
 description: >-
     The Diamond Sutra is one of the most influential texts in Mahayana Buddhism.

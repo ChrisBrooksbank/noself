@@ -1,7 +1,14 @@
 id: heart-sutra
 title: Heart Sutra
-sanskrit: 'Prajnaparamitahridaya'
+sanskrit: 'Prajñāpāramitāhṛdaya'
 pali: null
+terms:
+    sanskrit:
+        text: Prajñāpāramitāhṛdaya
+        language: sanskrit
+        literal: Heart of the Perfection of Wisdom
+        etymology: 'prajñā (wisdom) + pāramitā (perfection, gone beyond) + hṛdaya (heart, essence)'
+        phonetic: prahj-nyah-PAH-rah-mee-tah-HREE-dah-yah
 tradition: Mahayana
 description: >-
     The Heart Sutra is the most widely recited text in Mahayana Buddhism.

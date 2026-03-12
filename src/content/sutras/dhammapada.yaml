@@ -2,6 +2,19 @@ id: dhammapada
 title: Dhammapada
 sanskrit: Dharmapada
 pali: Dhammapada
+terms:
+    pali:
+        text: Dhammapada
+        language: pali
+        literal: Path of the Dharma, Verses of Truth
+        etymology: 'dhamma (truth, teaching, dharma) + pada (foot, step, path, verse)'
+        phonetic: DAHM-mah-PAH-dah
+    sanskrit:
+        text: Dharmapada
+        language: sanskrit
+        literal: Path of the Dharma, Verses of Truth
+        etymology: 'dharma (truth, teaching, law) + pada (foot, step, path, verse)'
+        phonetic: DHAR-mah-PAH-dah
 tradition: Theravada
 description: >-
     The Dhammapada — "Verses of the Dharma" — is one of the best-known and most

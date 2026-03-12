@@ -163,7 +163,7 @@ Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no
 
 ### Sanskrit/Pali Enrichment — Phase 4: Puja
 
-- [ ] Add `phonetic` and `gloss` word-by-word breakdowns to each section in sevenfold-puja.yaml (spec: specs/sanskrit-enrichment.md)
+- [x] Add `phonetic` and `gloss` word-by-word breakdowns to each section in sevenfold-puja.yaml (spec: specs/sanskrit-enrichment.md)
 
 ### Sanskrit/Pali Enrichment — Phase 5: Sutras
 

@@ -44,6 +44,42 @@ sections:
           - buddha
           - dharma
           - sangha
+      phonetic: >
+          VAN-da-mi BOOD-dham ka-RU-na-ma-HA-sa-rum
+          VAN-da-mi DHAM-mam vi-MA-lat-va-DAS-sa-nam
+          VAN-da-mi SANG-ham VA-ra-SI-la-DHA-ram
+          van-da-NI-yam MA-ma NAT-thi-put-TA-ro
+      gloss:
+          - word: vandami
+            meaning: I worship / I bow down to
+            phonetic: VAN-da-mi
+          - word: buddham
+            meaning: the Buddha (accusative)
+            phonetic: BOOD-dham
+          - word: karunamahasarum
+            meaning: the great ocean of compassion
+            phonetic: ka-RU-na-ma-HA-sa-rum
+          - word: dhammam
+            meaning: the Dharma / the teaching (accusative)
+            phonetic: DHAM-mam
+          - word: vimalatvadassanam
+            meaning: pure and clear as a mirror (lit. flawless-seeing)
+            phonetic: vi-MA-lat-va-DAS-sa-nam
+          - word: sangham
+            meaning: the Sangha / the community (accusative)
+            phonetic: SANG-ham
+          - word: varasila-dharam
+            meaning: bearing the precious Precepts
+            phonetic: VA-ra-SI-la-DHA-ram
+          - word: vandaniyam
+            meaning: worthy of worship
+            phonetic: van-da-NI-yam
+          - word: mama
+            meaning: for me / mine
+            phonetic: MA-ma
+          - word: natthiputtaro
+            meaning: there is none higher / none more worthy
+            phonetic: NAT-thi-put-TA-ro
 
     - id: salutation
       order: 2
@@ -66,6 +102,24 @@ sections:
       relatedConcepts:
           - buddha
           - nirvana
+      phonetic: >
+          NA-mo TAS-sa bha-ga-VA-to a-RA-ha-to SAM-ma-sam-BOOD-dhas-sa
+      gloss:
+          - word: namo
+            meaning: homage / salutation (from namas, bowing)
+            phonetic: NA-mo
+          - word: tassa
+            meaning: to him (dative, referring to the Buddha)
+            phonetic: TAS-sa
+          - word: bhagavato
+            meaning: the Blessed One / the Fortunate One
+            phonetic: bha-ga-VA-to
+          - word: arahato
+            meaning: the Worthy One / the Arahant (fully liberated)
+            phonetic: a-RA-ha-to
+          - word: samma-sambuddhassa
+            meaning: the Perfectly and Fully Enlightened One
+            phonetic: SAM-ma-sam-BOOD-dhas-sa
 
     - id: going-for-refuge
       order: 3
@@ -89,6 +143,26 @@ sections:
       relatedConcepts:
           - three-jewels
           - sangha
+      phonetic: >
+          BOOD-dham SA-ra-nam GACH-cha-mi.
+          DHAM-mam SA-ra-nam GACH-cha-mi.
+          SANG-ham SA-ra-nam GACH-cha-mi.
+      gloss:
+          - word: Buddham
+            meaning: the Buddha (accusative — object of taking refuge)
+            phonetic: BOOD-dham
+          - word: saranam
+            meaning: refuge / shelter / protection
+            phonetic: SA-ra-nam
+          - word: gacchami
+            meaning: I go / I take (first person singular present)
+            phonetic: GACH-cha-mi
+          - word: Dhammam
+            meaning: the Dharma / the Teaching (accusative)
+            phonetic: DHAM-mam
+          - word: Sangham
+            meaning: the Sangha / the Community (accusative)
+            phonetic: SANG-ham
 
     - id: confession
       order: 4
@@ -113,6 +187,47 @@ sections:
       relatedConcepts:
           - karma
           - the-five-precepts
+      phonetic: >
+          KA-ye-na VA-ca CIT-te-na pa-MA-de-na MA-ya ka-TAM
+          ac-CA-yam KHA-ma-tha me BHAN-te
+          bhu-ri-PAN-na ta-THA-ga-ta
+      gloss:
+          - word: kayena
+            meaning: by body / through bodily action (instrumental)
+            phonetic: KA-ye-na
+          - word: vaca
+            meaning: by speech / through words (instrumental)
+            phonetic: VA-ca
+          - word: cittena
+            meaning: by mind / through thought (instrumental)
+            phonetic: CIT-te-na
+          - word: pamadena
+            meaning: through heedlessness / out of negligence
+            phonetic: pa-MA-de-na
+          - word: maya
+            meaning: by me (instrumental of aham)
+            phonetic: MA-ya
+          - word: katam
+            meaning: done / committed (past participle)
+            phonetic: ka-TAM
+          - word: accayam
+            meaning: fault / transgression / offence
+            phonetic: ac-CA-yam
+          - word: khamatha
+            meaning: please forgive / may you pardon (imperative)
+            phonetic: KHA-ma-tha
+          - word: me
+            meaning: me / my (dative / genitive)
+            phonetic: me
+          - word: bhante
+            meaning: Venerable Sir / Blessed One (respectful address)
+            phonetic: BHAN-te
+          - word: bhuripanna
+            meaning: of great wisdom / vast understanding
+            phonetic: bhu-ri-PAN-na
+          - word: tathagata
+            meaning: the Thus-Gone One / the Buddha (epithet)
+            phonetic: ta-THA-ga-ta
 
     - id: rejoicing
       order: 5
@@ -135,6 +250,44 @@ sections:
       relatedConcepts:
           - brahmaviharas
           - karma
+      phonetic: >
+          yad-I-dam KIN-ci KU-sa-lam KAM-mam
+          ka-TAM sat-TA-nam su-kha-VA-se-na
+          TAM a-nu-mo-DA-mi SAB-bam E-va
+      gloss:
+          - word: yad-idam
+            meaning: whatever / that which (relative pronoun + demonstrative)
+            phonetic: yad-I-dam
+          - word: kinci
+            meaning: any / whatever (indefinite pronoun)
+            phonetic: KIN-ci
+          - word: kusalam
+            meaning: meritorious / wholesome / skillful
+            phonetic: KU-sa-lam
+          - word: kammam
+            meaning: action / karma (accusative)
+            phonetic: KAM-mam
+          - word: katam
+            meaning: done / performed (past participle)
+            phonetic: ka-TAM
+          - word: sattanam
+            meaning: of beings / by beings (genitive plural)
+            phonetic: sat-TA-nam
+          - word: sukhavasena
+            meaning: for the sake of happiness / on account of happiness
+            phonetic: su-kha-VA-se-na
+          - word: tam
+            meaning: in that / in all of that (accusative demonstrative)
+            phonetic: TAM
+          - word: anumodami
+            meaning: I rejoice / I approve and delight in
+            phonetic: a-nu-mo-DA-mi
+          - word: sabbam
+            meaning: all / everything (accusative)
+            phonetic: SAB-bam
+          - word: eva
+            meaning: indeed / truly (emphatic particle)
+            phonetic: E-va
 
     - id: entreaty
       order: 6
@@ -161,6 +314,48 @@ sections:
       relatedConcepts:
           - dharma
           - compassion
+      phonetic: >
+          BRAH-ma ca lo-ka-DHI-pa-ti sa-HAM-pa-ti
+          ka-TAN-ja-li a-NA-tha-yi ya-CA-tha
+          a-ti-VIJ-jha-ma-NUS-se-hi-LO-kam
+          de-SE-tu DHAM-mam a-nu-KAM-pa-ya
+      gloss:
+          - word: Brahma
+            meaning: Brahma (a divine being; here Sahampati Brahma)
+            phonetic: BRAH-ma
+          - word: ca
+            meaning: and (conjunction)
+            phonetic: ca
+          - word: lokadhipati
+            meaning: lord of the world / ruler of the realm
+            phonetic: lo-ka-DHI-pa-ti
+          - word: sahampati
+            meaning: Sahampati (proper name of the Brahma deity)
+            phonetic: sa-HAM-pa-ti
+          - word: katanjali
+            meaning: with folded hands / with palms pressed together
+            phonetic: ka-TAN-ja-li
+          - word: anathayi
+            meaning: beseeching / imploring (the Blessed One)
+            phonetic: a-NA-tha-yi
+          - word: yacatha
+            meaning: requested / begged / entreated
+            phonetic: ya-CA-tha
+          - word: ativijjha
+            meaning: having penetrated / fully understanding
+            phonetic: a-ti-VIJ-jha
+          - word: manussehilokam
+            meaning: the world of human beings
+            phonetic: ma-NUS-se-hi-LO-kam
+          - word: desetu
+            meaning: may he teach / let him proclaim (optative)
+            phonetic: de-SE-tu
+          - word: dhammam
+            meaning: the Dharma / the Teaching (accusative)
+            phonetic: DHAM-mam
+          - word: anukampaya
+            meaning: out of compassion / with loving concern
+            phonetic: a-nu-KAM-pa-ya
 
     - id: transference
       order: 7
@@ -185,6 +380,44 @@ sections:
           - nirvana
           - bodhisattva
           - compassion
+      phonetic: >
+          I-dam me PUN-nam a-SAV-ak-kha-ya VA-ham HO-tu.
+          I-dam me PUN-nam NIB-ba-na-sac-chi-ka-RA-na VA-ham HO-tu.
+          MA-ma PUN-na-BHA-gam SAB-ba-SAT-ta-nam DE-ma.
+      gloss:
+          - word: idam
+            meaning: this (nominative/accusative demonstrative)
+            phonetic: I-dam
+          - word: me
+            meaning: of mine / my (genitive)
+            phonetic: me
+          - word: punnam
+            meaning: merit / wholesome kamma
+            phonetic: PUN-nam
+          - word: asavakkhaya
+            meaning: destruction of the taints / ending of the cankers
+            phonetic: a-SAV-ak-kha-ya
+          - word: vaham
+            meaning: leading to / conducive to (lit. carrying toward)
+            phonetic: VA-ham
+          - word: hotu
+            meaning: may it be / let it become (optative)
+            phonetic: HO-tu
+          - word: nibbana-sacchikarana
+            meaning: direct realisation of Nirvana (lit. making Nirvana evident)
+            phonetic: NIB-ba-na-sac-chi-ka-RA-na
+          - word: mama
+            meaning: my / of me (genitive)
+            phonetic: MA-ma
+          - word: punna-bhagam
+            meaning: a share of merit / a portion of the merit
+            phonetic: PUN-na-BHA-gam
+          - word: sabba-sattanam
+            meaning: to all beings (dative plural)
+            phonetic: SAB-ba-SAT-ta-nam
+          - word: dema
+            meaning: we give / we offer (first person plural present)
+            phonetic: DE-ma
 
 ritualSteps:
     - id: preparation

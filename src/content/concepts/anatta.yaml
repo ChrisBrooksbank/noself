@@ -2,6 +2,19 @@ id: anatta
 title: No-Self
 pali: Anattā
 sanskrit: Anātman
+terms:
+    pali:
+        text: Anattā
+        language: pali
+        literal: not-self
+        etymology: 'an (not) + attā (self)'
+        phonetic: ah-NAHT-tah
+    sanskrit:
+        text: Anātman
+        language: sanskrit
+        literal: not-self
+        etymology: 'an (not) + ātman (self, soul)'
+        phonetic: ah-NAHT-mahn
 category: three-marks
 related:
     [

@@ -2,6 +2,19 @@ id: dukkha
 title: Suffering / Unsatisfactoriness
 pali: Dukkha
 sanskrit: Duḥkha
+terms:
+    pali:
+        text: Dukkha
+        language: pali
+        literal: suffering, unsatisfactoriness
+        etymology: 'du (bad, difficult) + kha (axle-hole of a wheel)'
+        phonetic: DOOK-kah
+    sanskrit:
+        text: Duḥkha
+        language: sanskrit
+        literal: suffering, unsatisfactoriness
+        etymology: 'duḥ (bad, difficult) + kha (axle-hole of a wheel)'
+        phonetic: DOOK-kah
 category: three-marks
 related: [three-marks, anicca, anatta, four-noble-truths, three-poisons, samsara, nirvana]
 

@@ -2,6 +2,19 @@ id: anicca
 title: Impermanence
 pali: Anicca
 sanskrit: Anitya
+terms:
+    pali:
+        text: Anicca
+        language: pali
+        literal: impermanence
+        etymology: 'an (not) + nicca (permanent, stable)'
+        phonetic: ah-NIT-chah
+    sanskrit:
+        text: Anitya
+        language: sanskrit
+        literal: impermanence
+        etymology: 'a (not) + nitya (permanent, eternal)'
+        phonetic: ah-NIT-yah
 category: three-marks
 related: [three-marks, dukkha, anatta, dependent-origination, samsara, vipassana]
 

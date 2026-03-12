@@ -1,0 +1,86 @@
+id: manjushri
+title: Manjushri Mantra
+sanskrit: 'Om A Ra Pa Ca Na Dhih'
+pali: null
+tradition: Mahayana
+description: >-
+    The mantra of Manjushri, the bodhisattva of transcendent wisdom. Manjushri
+    wields the flaming sword of prajna that cuts through ignorance and
+    delusion. This mantra is recited to sharpen the mind, deepen insight into
+    emptiness, and develop the discriminating wisdom that sees the true nature
+    of all phenomena.
+phonetic: 'OHM AH RAH PAH CHAH NAH DHEE'
+syllables:
+    - text: Om
+      phonetic: 'OHM'
+      literal: 'sacred universal syllable'
+      meaning: >-
+          The universal sacred syllable representing the body, speech, and mind
+          of all buddhas. It opens the mantra to the totality of Manjushri's
+          wisdom.
+    - text: A
+      phonetic: 'AH'
+      literal: 'unborn; unproduced'
+      meaning: >-
+          Represents the insight that all dharmas are fundamentally unborn
+          (anutpanna) — nothing arises from its own side. This is the gateway
+          to understanding emptiness, the first of the six wisdom syllables.
+    - text: Ra
+      phonetic: 'RAH'
+      literal: 'free from dust; stainless'
+      meaning: >-
+          Represents freedom from defilement (rajas). All phenomena are
+          inherently pure and stainless when seen with the eye of wisdom,
+          beyond the contamination of afflictive emotions.
+    - text: Pa
+      phonetic: 'PAH'
+      literal: 'ultimate meaning; supreme'
+      meaning: >-
+          Represents the ultimate truth (paramartha). All dharmas are
+          expounded in the ultimate sense — their true nature is emptiness,
+          beyond elaboration and conceptual fabrication.
+    - text: Ca
+      phonetic: 'CHAH'
+      literal: 'cessation; passing away'
+      meaning: >-
+          Represents the cessation (cyuti) of birth and death. When wisdom
+          fully penetrates the nature of reality, the cycle of arising and
+          passing away is understood as empty of inherent existence.
+    - text: Na
+      phonetic: 'NAH'
+      literal: 'namelessness; beyond naming'
+      meaning: >-
+          Represents the transcendence of names (nama). Ultimate reality is
+          beyond all conceptual designation — it cannot be captured by words,
+          labels, or categories.
+    - text: Dhih
+      phonetic: 'DHEE'
+      literal: 'wisdom; understanding'
+      meaning: >-
+          The seed syllable of Manjushri, representing the essence of
+          transcendent wisdom (prajna). It is the culminating syllable that
+          gathers and concentrates the power of all the preceding insights
+          into a single point of luminous awareness.
+meaning: >-
+    The six syllables A-Ra-Pa-Ca-Na form the Arapacana alphabet, an ancient
+    mnemonic device for contemplating the nature of reality. Each syllable
+    opens a doorway to a specific aspect of emptiness and wisdom. The final
+    syllable Dhih is Manjushri's seed syllable — the concentrated essence of
+    prajna. Together, the mantra is a complete meditation on the progressive
+    unfolding of wisdom, from the initial insight into the unborn nature of
+    phenomena to the direct, non-conceptual realisation of ultimate reality.
+usage: >-
+    Recite silently or aloud during meditation, especially when studying
+    dharma texts, preparing for examinations, or undertaking any intellectual
+    work that benefits from clarity and insight. The traditional count is 108
+    repetitions per session. In the Tibetan tradition, practitioners often
+    repeat the final syllable "Dhih" many times in rapid succession (e.g.,
+    21 or 108 Dhih repetitions) to intensify the invocation of wisdom. You
+    may visualise Manjushri in his youthful golden form, wielding the flaming
+    sword of wisdom in his right hand and holding the Prajnaparamita sutra
+    in his left upon a lotus at his heart.
+defaultRepetitions: 108
+relatedConcepts:
+    - prajna
+    - sunyata
+    - bodhisattva

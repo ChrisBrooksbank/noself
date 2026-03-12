@@ -1,0 +1,151 @@
+id: sanskrit
+title: Introduction to Sanskrit
+language: sanskrit
+description: >-
+    A practical introduction to Sanskrit — the classical language of Indian
+    philosophy and the vehicle for Mahayana and Vajrayana Buddhist literature.
+brief: >-
+    Sanskrit is the primary literary language of ancient and classical India,
+    serving as the medium for the vast Mahayana and Vajrayana Buddhist
+    canons as well as Hindu philosophy, poetry, and science. In Buddhism,
+    Sanskrit preserves the great sutras, tantras, and philosophical treatises
+    that shaped East Asian and Tibetan traditions. Even a basic familiarity
+    with Sanskrit unlocks the etymological depth of terms that permeate every
+    school of Buddhism.
+essentials: >-
+    Classical Sanskrit uses the Devanagari script (देवनागरी), though Buddhist
+    Sanskrit texts were historically written in scripts like Siddham, Lantsa,
+    and various Central Asian scripts. In Romanised form, diacritics mark long
+    vowels (ā, ī, ū), retroflex consonants (ṭ, ḍ, ṇ, ṣ), and the palatal
+    sibilant (ś). Sanskrit grammar is highly systematic — Panini's Ashtadhyayi
+    (4th century BCE) codified the language in approximately 4,000 rules, making
+    it one of the earliest and most rigorous grammatical descriptions in human
+    history. Nouns decline for eight cases and three numbers; verbs conjugate
+    for ten classes with extensive use of prefixes and suffixes.
+deep: >-
+    Buddhist Hybrid Sanskrit — the language of many Mahayana sutras — is
+    distinct from classical Paninian Sanskrit. It retains Prakrit features
+    and idioms from the oral tradition, creating a register that is uniquely
+    Buddhist. Key texts like the Lotus Sutra, the Perfection of Wisdom sutras,
+    and the Lankavatara Sutra were composed in this hybrid register. The great
+    Buddhist universities of Nalanda and Vikramashila used Sanskrit as their
+    medium of instruction, and scholars like Nagarjuna, Asanga, Vasubandhu,
+    and Chandrakirti composed their philosophical masterworks in it. Modern
+    learners typically begin with Coulson's "Teach Yourself Sanskrit" or
+    Goldman's "Devavāṇīpraveśikā" before engaging with primary texts.
+sections:
+    - id: history
+      title: History and Origins
+      content: >-
+          Sanskrit belongs to the Indo-Aryan branch of the Indo-European
+          language family. Its earliest form, Vedic Sanskrit, dates to
+          approximately 1500 BCE and is preserved in the Rigveda. Classical
+          Sanskrit was codified by the grammarian Panini around the 4th
+          century BCE. Buddhism's relationship with Sanskrit evolved over
+          centuries — the earliest Buddhist texts were composed in Prakrits,
+          but as Buddhism spread across Central and East Asia, Sanskrit became
+          the prestige language of Buddhist scholarship. The massive Chinese
+          Buddhist canon (Taishō Tripiṭaka) consists largely of translations
+          from Sanskrit originals, and the Tibetan Kangyur and Tengyur are
+          direct translations from Sanskrit and related Indic languages.
+    - id: mahayana-importance
+      title: Importance in Mahayana and Vajrayana Buddhism
+      content: >-
+          Nearly all of the foundational Mahayana and Vajrayana scriptures
+          were composed or transmitted in Sanskrit. The Prajnaparamita sutras,
+          including the Heart Sutra and Diamond Sutra, are Sanskrit works.
+          The Madhyamaka and Yogacara philosophical traditions were elaborated
+          in Sanskrit treatises. In Vajrayana, the tantras — including the
+          Guhyasamaja, Hevajra, and Kalachakra — are Sanskrit texts. Mantras,
+          dharanis, and seed syllables (bija) retain their Sanskrit forms
+          across all Buddhist cultures, from Japan to Mongolia to Thailand,
+          because the sounds themselves are considered to carry transformative
+          power.
+    - id: key-texts
+      title: Key Buddhist Sanskrit Texts
+      content: >-
+          The Buddhist Sanskrit literary heritage is vast. Among the most
+          important works are: the Prajnaparamita sutras (Perfection of
+          Wisdom), including the Heart Sutra and the Ashtasahasrika; the
+          Saddharmapundarika (Lotus Sutra); the Lankavatara Sutra;
+          Nagarjuna's Mulamadhyamakakarika (Root Verses on the Middle Way);
+          Shantideva's Bodhicharyavatara (Guide to the Bodhisattva's Way of
+          Life); Vasubandhu's Abhidharmakosa; and Asanga's Yogacarabhumi.
+          These texts shaped the philosophical and contemplative traditions
+          of East Asian, Tibetan, and Southeast Asian Buddhism.
+    - id: devanagari
+      title: Devanagari Script Basics
+      content: >-
+          Devanagari (देवनागरी, "script of the divine city") is an abugida —
+          each consonant carries an inherent "a" vowel that is modified by
+          diacritical marks for other vowels. The script is written left to
+          right with a characteristic horizontal line (shirorekha) connecting
+          the letters along the top. The alphabet is organised phonetically:
+          vowels first, then consonants arranged by place of articulation from
+          the back of the throat (ka, kha, ga, gha, ṅa) to the lips (pa, pha,
+          ba, bha, ma). This systematic arrangement reflects the sophisticated
+          phonetic analysis of ancient Indian grammarians. While most Western
+          students of Buddhist Sanskrit work primarily in Romanised
+          transliteration, recognising Devanagari opens access to modern
+          Indian editions and inscriptions.
+    - id: phonetics
+      title: Phonetics and Pronunciation
+      content: >-
+          Sanskrit has a rich phonological system. Vowels are short or long
+          (a/ā, i/ī, u/ū) and include the syllabic consonants ṛ and ḷ. The
+          consonant system distinguishes five places of articulation: velar
+          (ka), palatal (ca), retroflex (ṭa), dental (ta), and labial (pa),
+          each with unaspirated, aspirated, voiced, voiced-aspirated, and
+          nasal variants — yielding a systematic 5×5 grid of 25 stops. Three
+          sibilants (ś, ṣ, s) and the aspirate h complete the basic system.
+          Sandhi — the joining and transformation of sounds at word boundaries
+          — is a defining feature of Sanskrit. In connected speech, the final
+          sound of one word regularly merges with the initial sound of the
+          next, creating the flowing, continuous quality characteristic of
+          Sanskrit verse and mantra recitation.
+keyTerms:
+    - text: Dharma
+      language: sanskrit
+      literal: teaching; truth; natural law; cosmic order
+      etymology: 'dhṛ (to hold, maintain)'
+      phonetic: 'DAHR-mah'
+    - text: Śūnyatā
+      language: sanskrit
+      literal: emptiness; voidness
+      etymology: 'śūnya (empty) + -tā (abstract suffix)'
+      phonetic: 'SHOON-yah-tah'
+    - text: Prajñā
+      language: sanskrit
+      literal: transcendent wisdom; insight
+      etymology: 'pra (before, forth) + jñā (to know)'
+      phonetic: 'PRAHJ-nyah'
+    - text: Bodhicitta
+      language: sanskrit
+      literal: awakening mind; mind of enlightenment
+      etymology: 'bodhi (awakening) + citta (mind)'
+      phonetic: 'BOH-dee-CHIHT-tah'
+    - text: Karuṇā
+      language: sanskrit
+      literal: compassion; empathy with suffering
+      phonetic: 'kah-ROO-nah'
+    - text: Sūtra
+      language: sanskrit
+      literal: thread; discourse
+      etymology: 'sīv (to sew)'
+      phonetic: 'SOO-trah'
+    - text: Mantra
+      language: sanskrit
+      literal: instrument of thought; sacred utterance
+      etymology: 'man (to think) + -tra (instrument)'
+      phonetic: 'MAHN-trah'
+    - text: Bodhisattva
+      language: sanskrit
+      literal: awakening being
+      etymology: 'bodhi (awakening) + sattva (being)'
+      phonetic: 'BOH-dee-SAHT-tvah'
+relatedConcepts:
+    - sunyata
+    - prajna
+    - bodhicitta
+    - karuna
+    - dharma

@@ -21,6 +21,7 @@
         "src/content/sutras/index.ts",
         "src/content/pujas/index.ts",
         "src/content/mantras/index.ts",
+        "src/content/primers/index.ts",
         "src/content/videos/index.ts"
     ]
 }

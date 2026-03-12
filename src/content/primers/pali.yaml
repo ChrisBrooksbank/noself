@@ -1,0 +1,138 @@
+id: pali
+title: Introduction to Pali
+language: pali
+description: >-
+    A practical introduction to the Pali language — the sacred tongue of the
+    Theravada Buddhist canon and the closest linguistic record of the Buddha's
+    own words.
+brief: >-
+    Pali is a Middle Indo-Aryan language that serves as the liturgical and
+    scriptural language of Theravada Buddhism. While it was never a vernacular
+    language in the modern sense, it preserves the earliest extensive record of
+    the Buddha's discourses. Understanding even basic Pali opens a direct
+    window into the original texture of the teachings — nuances that are
+    inevitably smoothed away in translation.
+essentials: >-
+    Pali has no native script; it is traditionally written in whatever script
+    is local to the Buddhist community (Sinhala, Burmese, Thai, Khmer, or
+    Roman). The Romanised form uses diacritics to mark long vowels (ā, ī, ū)
+    and retroflex consonants (ṭ, ḍ, ṇ). Pali grammar is relatively regular
+    compared to Sanskrit, with a simpler case system and fewer compound forms.
+    Verbs conjugate for person and number, and nouns decline for eight cases.
+    The language is phonetically faithful — what you see is what you pronounce.
+deep: >-
+    Pali evolved from the Prakrits (vernacular dialects) of ancient India and
+    shares a common ancestor with Sanskrit, though it is not derived from
+    classical Sanskrit. The relationship is more like that of siblings than
+    parent and child. The Pali Text Society, founded in 1881 by T.W. Rhys
+    Davids, produced the standard Romanised editions of the entire canon and
+    remains the foundation of modern Pali scholarship. Contemporary tools like
+    the Digital Pali Reader and the Sutta Central platform have made the
+    language more accessible than ever. Serious practitioners often begin with
+    Warder's "Introduction to Pali" or De Silva's "Pali Primer" before
+    progressing to reading suttas in the original.
+sections:
+    - id: history
+      title: History and Origins
+      content: >-
+          Pali emerged as a literary language around the 3rd century BCE, when
+          the Buddhist canon was first committed to writing in Sri Lanka. The
+          language is closely related to the Prakrits spoken in northern India
+          during the Buddha's lifetime (5th–4th century BCE). The name "Pali"
+          itself means "text" or "line" — it originally referred to the
+          canonical texts rather than the language, which was simply called
+          "the language of the texts" (pali-bhasa). The great commentator
+          Buddhaghosa (5th century CE) composed his exhaustive commentaries in
+          Pali, cementing its status as the scholarly language of Theravada.
+    - id: theravada-importance
+      title: Importance in Theravada Buddhism
+      content: >-
+          The entire Theravada canon — the Tipitaka — is preserved in Pali.
+          This includes the Vinaya Pitaka (monastic discipline), the Sutta
+          Pitaka (discourses), and the Abhidhamma Pitaka (systematic
+          philosophy). Monastics in Theravada countries chant in Pali daily,
+          and lay practitioners encounter the language in liturgical contexts
+          such as taking precepts, offering dana, and reciting protective
+          verses (paritta). Even a modest familiarity with Pali deepens one's
+          understanding of key doctrinal terms that have no exact English
+          equivalents — dukkha, anatta, nibbana, satipatthana.
+    - id: pali-canon
+      title: The Pali Canon (Tipitaka)
+      content: >-
+          The Tipitaka ("Three Baskets") is the most complete surviving early
+          Buddhist canon. The Sutta Pitaka alone contains over 10,000
+          discourses organised into five collections (nikayas): Digha Nikaya
+          (long discourses), Majjhima Nikaya (middle-length), Samyutta Nikaya
+          (connected), Anguttara Nikaya (numerical), and Khuddaka Nikaya
+          (minor collection, including the beloved Dhammapada and Jataka
+          tales). The Abhidhamma Pitaka contains seven books of systematic
+          analysis of mind and matter. The Vinaya Pitaka details the rules and
+          procedures governing monastic life.
+    - id: phonetics
+      title: Phonetics and Pronunciation
+      content: >-
+          Pali pronunciation is highly regular. Vowels are either short (a, i,
+          u) or long (ā, ī, ū); long vowels are held approximately twice as
+          long. The consonant system includes aspirated stops (kh, gh, ch, jh,
+          th, dh, ph, bh) which are pronounced with a distinct puff of air —
+          not as in English "th" or "ph." Retroflex consonants (ṭ, ḍ, ṇ) are
+          pronounced with the tongue curled back to touch the roof of the mouth.
+          The nasal ṃ (niggahita) is a pure nasal sound, like the "ng" in
+          "sing." Stress typically falls on the penultimate syllable if it is
+          long, otherwise on the antepenultimate.
+    - id: key-terms
+      title: Essential Pali Terms for Practitioners
+      content: >-
+          Even without formal study, familiarity with a core vocabulary
+          transforms one's relationship with the teachings. Terms like dukkha
+          (suffering/unsatisfactoriness), anatta (not-self), anicca
+          (impermanence), sati (mindfulness), and nibbana (unbinding/
+          extinguishing) carry layers of meaning that no single English word
+          can capture. Learning to recognise these terms in their original
+          Pali — in chanting, in sutta study, in meditation instructions —
+          connects the practitioner to 2,500 years of unbroken contemplative
+          tradition.
+keyTerms:
+    - text: Dukkha
+      language: pali
+      literal: suffering; unsatisfactoriness; stress
+      phonetic: 'DOOK-kah'
+    - text: Anattā
+      language: pali
+      literal: not-self; non-self
+      etymology: 'an (not) + attā (self)'
+      phonetic: 'ah-NAHT-tah'
+    - text: Aniccā
+      language: pali
+      literal: impermanence; inconstancy
+      etymology: 'a (not) + nicca (constant)'
+      phonetic: 'ah-NEECH-chah'
+    - text: Nibbāna
+      language: pali
+      literal: unbinding; extinguishing
+      etymology: 'ni (out) + vāna (blowing)'
+      phonetic: 'nib-BAH-nah'
+    - text: Sati
+      language: pali
+      literal: mindfulness; awareness; recollection
+      phonetic: 'SAH-tee'
+    - text: Satipaṭṭhāna
+      language: pali
+      literal: foundations of mindfulness
+      etymology: 'sati (mindfulness) + upaṭṭhāna (establishing)'
+      phonetic: 'sah-tee-paht-TAH-nah'
+    - text: Tipitaka
+      language: pali
+      literal: three baskets
+      etymology: 'ti (three) + pitaka (basket)'
+      phonetic: 'tee-PIT-ah-kah'
+    - text: Dhamma
+      language: pali
+      literal: teaching; truth; natural law; phenomenon
+      phonetic: 'DAHM-mah'
+relatedConcepts:
+    - anatta
+    - dukkha
+    - anicca
+    - satipatthana
+    - nibbana

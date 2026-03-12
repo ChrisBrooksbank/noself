@@ -1,0 +1,78 @@
+id: shakyamuni
+title: Shakyamuni Buddha Mantra
+sanskrit: 'Om Muni Muni Mahamuni Shakyamuniye Svaha'
+pali: null
+tradition: Mahayana
+description: >-
+    The mantra of Shakyamuni Buddha, the historical Buddha who attained
+    awakening under the Bodhi tree. This mantra honours his supreme wisdom and
+    invokes the blessings of the sage of the Shakya clan. It is recited to
+    deepen one's connection with the Buddha's teachings and to cultivate the
+    same qualities of silence, peace, and penetrating insight.
+phonetic: 'OHM MOO-nee MOO-nee mah-hah-MOO-nee SHAH-kyah-moo-NEE-yay SVAH-hah'
+syllables:
+    - text: Om
+      phonetic: 'OHM'
+      literal: 'sacred universal syllable'
+      meaning: >-
+          The universal sacred syllable representing the body, speech, and mind
+          of all buddhas. It invokes the totality of the Buddha's awakened
+          presence.
+    - text: Muni
+      phonetic: 'MOO-nee'
+      literal: 'sage; silent one'
+      meaning: >-
+          "Sage" or "silent one" — the first invocation calls upon the
+          Buddha's quality of inner silence, his mastery over the afflictions
+          of the desire realm through profound meditative stillness.
+    - text: Muni
+      phonetic: 'MOO-nee'
+      literal: 'sage; silent one'
+      meaning: >-
+          The second invocation deepens the call, honouring the Buddha's
+          mastery over the form realm — the subtler levels of attachment to
+          meditative experience and refined states of consciousness.
+    - text: Mahamuni
+      phonetic: 'mah-hah-MOO-nee'
+      literal: 'great sage'
+      meaning: >-
+          "Great sage" — the supreme invocation, honouring the Buddha's
+          complete transcendence of the formless realm and his attainment of
+          full awakening beyond all three realms of existence.
+    - text: Shakyamuniye
+      phonetic: 'SHAH-kyah-moo-NEE-yay'
+      literal: 'to the sage of the Shakyas'
+      meaning: >-
+          "To the sage of the Shakya clan" — the dative form directly
+          addresses Siddhartha Gautama, the historical Buddha born into the
+          Shakya clan, honouring his specific journey from prince to fully
+          awakened teacher.
+    - text: Svaha
+      phonetic: 'SVAH-hah'
+      literal: 'so be it; hail'
+      meaning: >-
+          "So be it" or "hail" — the sealing syllable that dedicates the
+          merit and establishes the blessings of the mantra in the
+          practitioner's mindstream.
+meaning: >-
+    The mantra is a threefold invocation of the Buddha as sage (Muni): first
+    conquering the desire realm, then the form realm, then the formless realm
+    (Mahamuni). By addressing Shakyamuni directly, the practitioner honours the
+    historical Buddha's complete journey to awakening and invites those same
+    qualities of silence, renunciation, and wisdom to manifest within. The
+    progressive repetition — Muni, Muni, Mahamuni — mirrors the deepening
+    stages of the path from initial renunciation to full buddhahood.
+usage: >-
+    Recite silently or aloud during seated meditation, especially on full moon
+    days or during Buddha Puja ceremonies. The traditional count is 108
+    repetitions per session. You may visualise Shakyamuni Buddha seated in
+    meditation beneath the Bodhi tree, his body golden and radiant, his right
+    hand touching the earth in the bhumi-sparsha mudra. Allow each repetition
+    to deepen your sense of stillness and connection with the lineage of
+    awakening that stretches from the Buddha to the present moment.
+defaultRepetitions: 108
+relatedConcepts:
+    - nirvana
+    - bodhi
+    - prajna
+    - sila

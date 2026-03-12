@@ -102,7 +102,7 @@ start((route) => {
             renderCatalogView(viewHost);
             break;
         case 'concept':
-            renderConceptView(viewHost, route.id);
+            currentCleanup = renderConceptView(viewHost, route.id);
             break;
         case 'sutras':
             renderSutrasListView(viewHost);

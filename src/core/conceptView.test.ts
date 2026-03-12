@@ -1,6 +1,19 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { renderConceptView } from './conceptView.js';
 
+vi.mock('./sacredTerms.js', () => ({
+    renderSacredTermSpan: (
+        term: { text: string; language: string },
+        opts?: { counterpart?: { text: string } },
+    ) => {
+        const counterpart = opts?.counterpart
+            ? ` data-counterpart-text="${opts.counterpart.text}"`
+            : '';
+        return `<span class="sacred-term" data-language="${term.language}"${counterpart}>${term.text}</span>`;
+    },
+    initSacredTermTooltips: () => vi.fn(),
+}));
+
 vi.mock('../content/concepts/index.js', () => ({
     getConceptById: (id: string) => {
         if (id === 'anatta') {
@@ -21,6 +34,36 @@ vi.mock('../content/concepts/index.js', () => ({
                         commentary: 'The Buddha addresses the five aggregates.',
                     },
                 ],
+            };
+        }
+        if (id === 'anatta-enriched') {
+            return {
+                id: 'anatta-enriched',
+                title: 'No-Self (Enriched)',
+                pali: 'Anattā',
+                sanskrit: 'Anātman',
+                category: 'three-marks',
+                related: [],
+                brief: 'The teaching that no permanent self exists.',
+                essentials: 'Essentials text here.',
+                deep: 'Deep teaching text here.',
+                examples: [],
+                terms: {
+                    pali: {
+                        text: 'Anattā',
+                        language: 'pali',
+                        phonetic: 'ah-NAHT-tah',
+                        literal: 'not-self',
+                        etymology: 'an (not) + attā (self)',
+                    },
+                    sanskrit: {
+                        text: 'Anātman',
+                        language: 'sanskrit',
+                        phonetic: 'ah-NAHT-man',
+                        literal: 'not-self',
+                        etymology: 'an (not) + ātman (self)',
+                    },
+                },
             };
         }
         if (id === 'anicca') {
@@ -184,6 +227,43 @@ describe('renderConceptView', () => {
     it('does not render terms section when pali and sanskrit are null', () => {
         renderConceptView(container, 'no-terms');
         expect(container.querySelector('.concept-terms')).toBeNull();
+    });
+
+    it('renders interactive sacred-term spans when terms data is present', () => {
+        renderConceptView(container, 'anatta-enriched');
+        const spans = container.querySelectorAll('.sacred-term');
+        expect(spans.length).toBe(2);
+    });
+
+    it('renders pali sacred-term span with correct text', () => {
+        renderConceptView(container, 'anatta-enriched');
+        const spans = Array.from(container.querySelectorAll('.sacred-term'));
+        const paliSpan = spans.find((s) => s.getAttribute('data-language') === 'pali');
+        expect(paliSpan?.textContent).toBe('Anattā');
+    });
+
+    it('renders sanskrit sacred-term span with correct text', () => {
+        renderConceptView(container, 'anatta-enriched');
+        const spans = Array.from(container.querySelectorAll('.sacred-term'));
+        const sanskritSpan = spans.find(
+            (s) => s.getAttribute('data-language') === 'sanskrit',
+        );
+        expect(sanskritSpan?.textContent).toBe('Anātman');
+    });
+
+    it('pali span has counterpart pointing to sanskrit', () => {
+        renderConceptView(container, 'anatta-enriched');
+        const spans = Array.from(container.querySelectorAll('.sacred-term'));
+        const paliSpan = spans.find((s) => s.getAttribute('data-language') === 'pali');
+        expect(paliSpan?.getAttribute('data-counterpart-text')).toBe('Anātman');
+    });
+
+    it('falls back to flat text when terms data is absent', () => {
+        renderConceptView(container, 'anatta');
+        const terms = container.querySelector('.concept-terms');
+        expect(terms?.querySelector('.sacred-term')).toBeNull();
+        expect(terms?.textContent).toContain('Anattā');
+        expect(terms?.textContent).toContain('Anātman');
     });
 
     it('does not render examples section when examples are empty', () => {

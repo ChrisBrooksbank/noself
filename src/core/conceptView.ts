@@ -8,6 +8,7 @@ import {
     getStatus,
 } from './readingHistory.js';
 import { getExpertiseLevel, getShowVideoLinks } from './preferences.js';
+import { renderSacredTermSpan, initSacredTermTooltips } from './sacredTerms.js';
 
 function renderExamples(examples: ConceptExample[]): string {
     if (examples.length === 0) return '';
@@ -90,11 +91,28 @@ function renderToggle(id: string): string {
         </section>`;
 }
 
+function buildTermStr(concept: Concept): string {
+    if (concept.terms?.pali || concept.terms?.sanskrit) {
+        const paliTerm = concept.terms.pali;
+        const sanskritTerm = concept.terms.sanskrit;
+        const parts: string[] = [];
+        if (paliTerm) {
+            const opts = sanskritTerm ? { counterpart: sanskritTerm } : {};
+            parts.push(renderSacredTermSpan(paliTerm, opts));
+        }
+        if (sanskritTerm) {
+            const opts = paliTerm ? { counterpart: paliTerm } : {};
+            parts.push(renderSacredTermSpan(sanskritTerm, opts));
+        }
+        return `<p class="concept-terms">${parts.join(' · ')}</p>`;
+    }
+    const terms = [concept.pali, concept.sanskrit].filter(Boolean);
+    return terms.length > 0 ? `<p class="concept-terms">${terms.join(' · ')}</p>` : '';
+}
+
 function buildConceptHTML(concept: Concept, id: string): string {
     const level = getExpertiseLevel();
-    const terms = [concept.pali, concept.sanskrit].filter(Boolean);
-    const termStr =
-        terms.length > 0 ? `<p class="concept-terms">${terms.join(' · ')}</p>` : '';
+    const termStr = buildTermStr(concept);
 
     const briefText =
         level === 1 ? (concept.simpleBrief ?? concept.brief) : concept.brief;
@@ -156,7 +174,7 @@ function applyToggleState(
     revisitBtn.setAttribute('aria-pressed', String(revisitActive));
 }
 
-export function renderConceptView(container: HTMLElement, id: string): void {
+export function renderConceptView(container: HTMLElement, id: string): () => void {
     const concept = getConceptById(id);
 
     if (!concept) {
@@ -165,18 +183,20 @@ export function renderConceptView(container: HTMLElement, id: string): void {
                 <p>Concept not found: <strong>${id}</strong></p>
                 <a href="#/">Return home</a>
             </div>`;
-        return;
+        return () => {};
     }
 
     markViewed(id);
     container.innerHTML = buildConceptHTML(concept, id);
+
+    const cleanupTooltips = initSacredTermTooltips(container);
 
     const contemBtn = container.querySelector<HTMLButtonElement>(
         '.js-toggle-contemplated',
     );
     const revisitBtn = container.querySelector<HTMLButtonElement>('.js-toggle-revisit');
 
-    if (!contemBtn || !revisitBtn) return;
+    if (!contemBtn || !revisitBtn) return cleanupTooltips;
 
     applyToggleState(contemBtn, revisitBtn, getStatus(id));
 
@@ -189,4 +209,6 @@ export function renderConceptView(container: HTMLElement, id: string): void {
         markRevisit(id);
         applyToggleState(contemBtn, revisitBtn, getStatus(id));
     });
+
+    return cleanupTooltips;
 }

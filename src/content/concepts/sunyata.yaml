@@ -2,6 +2,19 @@ id: sunyata
 title: Emptiness
 pali: Suññatā
 sanskrit: Śūnyatā
+terms:
+    pali:
+        text: Suññatā
+        language: pali
+        literal: emptiness
+        etymology: 'suñña (empty, void) + tā (suffix forming abstract nouns)'
+        phonetic: soon-YAH-tah
+    sanskrit:
+        text: Śūnyatā
+        language: sanskrit
+        literal: emptiness, voidness
+        etymology: 'śūnya (empty, zero) + tā (suffix forming abstract nouns)'
+        phonetic: SHOO-nyah-tah
 category: mahayana
 related: [anatta, dependent-origination, interbeing, prajna, middle-way, bodhisattva]
 

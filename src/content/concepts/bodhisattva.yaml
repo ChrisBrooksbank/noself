@@ -2,6 +2,19 @@ id: bodhisattva
 title: The Bodhisattva Path
 pali: Bodhisatta
 sanskrit: Bodhisattva
+terms:
+    pali:
+        text: Bodhisatta
+        language: pali
+        literal: awakening-being
+        etymology: 'bodhi (awakening, enlightenment) + satta (being, creature)'
+        phonetic: boh-dhee-SAH-tah
+    sanskrit:
+        text: Bodhisattva
+        language: sanskrit
+        literal: awakening-being
+        etymology: 'bodhi (awakening, enlightenment) + sattva (being, essence)'
+        phonetic: boh-dhee-SAHT-vah
 category: mahayana
 related: [karuna, metta, sunyata, buddha-nature, prajna, awakening, five-precepts]
 

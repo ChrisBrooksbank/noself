@@ -2,6 +2,13 @@ id: interbeing
 title: Interbeing
 pali: null
 sanskrit: null
+terms:
+    sanskrit:
+        text: Pratītyasamutpāda
+        language: sanskrit
+        literal: dependent origination, arising together in dependence
+        etymology: 'pratītya (having met, depending on) + sam (together) + utpāda (arising, production)'
+        phonetic: prah-TEET-yah-sah-moot-PAH-dah
 category: mahayana
 related: [dependent-origination, sunyata, anatta, karuna, metta, bodhisattva]
 

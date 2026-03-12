@@ -2,6 +2,19 @@ id: prajna
 title: Wisdom
 pali: Paññā
 sanskrit: Prajñā
+terms:
+    pali:
+        text: Paññā
+        language: pali
+        literal: wisdom, discernment
+        etymology: 'pa (forth, complete) + ñā (knowing, from jñā, to know)'
+        phonetic: pahn-YAH
+    sanskrit:
+        text: Prajñā
+        language: sanskrit
+        literal: wisdom, insight, understanding
+        etymology: 'pra (before, forth, completely) + jñā (to know, cognize)'
+        phonetic: PRAHG-nyah
 category: mahayana
 related:
     [

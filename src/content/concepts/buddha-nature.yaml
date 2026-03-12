@@ -2,6 +2,19 @@ id: buddha-nature
 title: Buddha-Nature
 pali: Buddhadhātu
 sanskrit: Tathāgatagarbha
+terms:
+    pali:
+        text: Buddhadhātu
+        language: pali
+        literal: buddha-element, buddha-realm
+        etymology: 'buddha (awakened one) + dhātu (element, realm, basis)'
+        phonetic: BOO-dah-DAH-too
+    sanskrit:
+        text: Tathāgatagarbha
+        language: sanskrit
+        literal: womb/embryo of the thus-gone one
+        etymology: 'tathāgata (thus-gone, buddha) + garbha (womb, embryo, essence)'
+        phonetic: tah-TAH-gah-tah-GAR-bah
 category: mahayana
 related: [awakening, sunyata, bodhisattva, three-jewels, anatta]
 

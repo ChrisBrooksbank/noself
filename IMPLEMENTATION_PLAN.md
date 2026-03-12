@@ -2,13 +2,13 @@
 
 ## Status
 
-- Planning iterations: 3
+- Planning iterations: 4
 - Build iterations: 18
-- Last updated: 2026-03-01
+- Last updated: 2026-03-12
 
 ## Gap Analysis
 
-### Fully Implemented (all 4 specs)
+### Fully Implemented (specs: content-display, daily-practice, navigation-search, offline-pwa)
 
 - [x] TypeScript `Concept` types + all 30 YAML concept files (`src/content/concepts/`)
 - [x] YAML loader with Zod validation (`src/content/concepts/loader.ts`)
@@ -24,14 +24,11 @@
 - [x] PWA manifest + service worker (vite-plugin-pwa)
 - [x] Install prompt (`src/core/installPrompt.ts`)
 - [x] Responsive layout (≤320px)
+- [x] Full practice system: meditations, prompts, paths, sutras, pujas, mantras
 
-### Failing Test (needs fix)
+### Not Implemented — Sanskrit/Pali Enrichment (spec: specs/sanskrit-enrichment.md)
 
-- `src/core/nav.test.ts` — expects "Home" link text but nav renders brand text ("noself") instead of a labeled Home link
-
-### Not Implemented — Puja & Mantra Sections
-
-Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully satisfied. Puja and Mantra are new practice modalities not yet started.
+Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no UI rendering required per spec acceptance criteria.
 
 ---
 
@@ -145,6 +142,38 @@ Planned in `docs/plan-puja-mantra-sections.md`. All 4 original specs are fully s
 - [x] Add view tests for all 6 new views: `pujaListView`, `pujaStudyView`, `pujaPerformView`, `mantraListView`, `mantraDetailView`, `mantraChantView` (mirror existing view test patterns) (spec: docs/plan-puja-mantra-sections.md)
 - [x] Update `src/core/router.test.ts` with 6 new parse cases for puja/mantra routes (spec: docs/plan-puja-mantra-sections.md)
 - [x] Update `src/core/practiceHistory.test.ts` with tests for `logPujaSession`, `getPujaSessions`, `logMantraSession`, `getMantraSessions`, updated `getTotalSessionCount` (spec: docs/plan-puja-mantra-sections.md)
+
+### Sanskrit/Pali Enrichment — Phase 1: Types + Schemas
+
+- [ ] Add `SacredTerm` and `GlossEntry` types to `src/types/`; update Concept Zod schema with optional `terms` field; update Mantra schema with optional `phonetic`/`literal` on syllables and top-level `phonetic`; update Sutra/Puja section schema with optional `phonetic`, `audio`, `gloss`; ensure backward compat; run `npm run check` (spec: specs/sanskrit-enrichment.md)
+
+### Sanskrit/Pali Enrichment — Phase 2: Concept YAMLs
+
+- [ ] Add `terms` (pali/sanskrit SacredTerm) to Three Marks concepts: anatta.yaml, anicca.yaml, dukkha.yaml (spec: specs/sanskrit-enrichment.md, example in docs/plan-sanskrit-enrichment.md)
+- [ ] Add `terms` to Foundational concepts: four-noble-truths.yaml, noble-eightfold-path.yaml, three-jewels.yaml, middle-way.yaml, three-marks.yaml (spec: specs/sanskrit-enrichment.md)
+- [ ] Add `terms` to Brahmaviharas concepts: metta.yaml, karuna.yaml, mudita.yaml, upekkha.yaml (spec: specs/sanskrit-enrichment.md)
+- [ ] Add `terms` to Mind & Practice concepts: sati.yaml, bhavana.yaml, samatha.yaml, vipassana.yaml, five-precepts.yaml, karma.yaml (spec: specs/sanskrit-enrichment.md)
+- [ ] Add `terms` to Buddhist Psychology concepts: five-aggregates.yaml, three-poisons.yaml, dependent-origination.yaml, twelve-links.yaml (spec: specs/sanskrit-enrichment.md)
+- [ ] Add `terms` to Mahayana concepts: sunyata.yaml, buddha-nature.yaml, bodhisattva.yaml, interbeing.yaml, prajna.yaml (spec: specs/sanskrit-enrichment.md)
+- [ ] Add `terms` to Liberation concepts: nirvana.yaml, samsara.yaml, awakening.yaml (spec: specs/sanskrit-enrichment.md)
+
+### Sanskrit/Pali Enrichment — Phase 3: Mantras
+
+- [ ] Add `phonetic` + `literal` to each syllable and top-level `phonetic` in avalokiteshvara.yaml and green-tara.yaml (spec: specs/sanskrit-enrichment.md)
+
+### Sanskrit/Pali Enrichment — Phase 4: Puja
+
+- [ ] Add `phonetic` and `gloss` word-by-word breakdowns to each section in sevenfold-puja.yaml (spec: specs/sanskrit-enrichment.md)
+
+### Sanskrit/Pali Enrichment — Phase 5: Sutras
+
+- [ ] Add `phonetic` to all sections and `gloss` to key passages in heart-sutra.yaml (the-setting, form-is-emptiness, the-mantra) (spec: specs/sanskrit-enrichment.md)
+- [ ] Add `phonetic` to all sections and `gloss` to key passages in diamond-sutra.yaml (opening formula, closing verse) (spec: specs/sanskrit-enrichment.md)
+- [ ] Add `phonetic` to all sections and `gloss` to twin-verses opening in dhammapada.yaml (spec: specs/sanskrit-enrichment.md)
+
+### Sanskrit/Pali Enrichment — Phase 6: Validation
+
+- [ ] Add/update loader tests to validate enriched YAML fields load correctly; verify all 30 concepts have `terms` with required SacredTerm fields; run full `npm run check` (spec: specs/sanskrit-enrichment.md)
 
 ---
 

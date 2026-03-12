@@ -266,6 +266,71 @@ describe('renderConceptView', () => {
         expect(terms?.textContent).toContain('Anātman');
     });
 
+    describe('terms detail card', () => {
+        it('renders terms detail card when enriched terms are present', () => {
+            renderConceptView(container, 'anatta-enriched');
+            expect(container.querySelector('.terms-detail-card')).not.toBeNull();
+        });
+
+        it('renders Sacred Terms heading when enriched terms are present', () => {
+            renderConceptView(container, 'anatta-enriched');
+            const headings = Array.from(container.querySelectorAll('h3'));
+            const heading = headings.find((h) => h.textContent === 'Sacred Terms');
+            expect(heading).toBeDefined();
+        });
+
+        it('renders Pali lang label in terms card', () => {
+            renderConceptView(container, 'anatta-enriched');
+            const langs = Array.from(
+                container.querySelectorAll('.terms-detail-card__lang'),
+            );
+            expect(langs.some((el) => el.textContent === 'Pāli')).toBe(true);
+        });
+
+        it('renders Sanskrit lang label in terms card', () => {
+            renderConceptView(container, 'anatta-enriched');
+            const langs = Array.from(
+                container.querySelectorAll('.terms-detail-card__lang'),
+            );
+            expect(langs.some((el) => el.textContent === 'Sanskrit')).toBe(true);
+        });
+
+        it('renders term text in terms card', () => {
+            renderConceptView(container, 'anatta-enriched');
+            const texts = Array.from(
+                container.querySelectorAll('.terms-detail-card__text'),
+            );
+            expect(texts.some((el) => el.textContent === 'Anattā')).toBe(true);
+            expect(texts.some((el) => el.textContent === 'Anātman')).toBe(true);
+        });
+
+        it('renders phonetic in terms card', () => {
+            renderConceptView(container, 'anatta-enriched');
+            expect(container.querySelector('.terms-detail-card')?.textContent).toContain(
+                'ah-NAHT-tah',
+            );
+        });
+
+        it('renders literal meaning in terms card', () => {
+            renderConceptView(container, 'anatta-enriched');
+            expect(container.querySelector('.terms-detail-card')?.textContent).toContain(
+                'not-self',
+            );
+        });
+
+        it('renders etymology in terms card when present', () => {
+            renderConceptView(container, 'anatta-enriched');
+            expect(container.querySelector('.terms-detail-card')?.textContent).toContain(
+                'an (not) + attā (self)',
+            );
+        });
+
+        it('does not render terms detail card when no enriched terms', () => {
+            renderConceptView(container, 'anatta');
+            expect(container.querySelector('.terms-detail-card')).toBeNull();
+        });
+    });
+
     it('does not render examples section when examples are empty', () => {
         renderConceptView(container, 'no-terms');
         const headings = Array.from(container.querySelectorAll('h2'));

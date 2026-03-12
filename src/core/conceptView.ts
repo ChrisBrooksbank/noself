@@ -1,5 +1,6 @@
 import { getConceptById } from '../content/concepts/index.js';
 import type { Concept, ConceptExample } from '../content/concepts/index.js';
+import type { SacredTerm } from '../types/sacred-terms.js';
 import { loadVideos } from '../content/videos/index.js';
 import {
     markViewed,
@@ -91,6 +92,50 @@ function renderToggle(id: string): string {
         </section>`;
 }
 
+function renderSingleTerm(term: SacredTerm): string {
+    const langLabel =
+        term.language === 'pali'
+            ? 'Pāli'
+            : term.language === 'sanskrit'
+              ? 'Sanskrit'
+              : 'Hybrid';
+
+    const etymologyRow = term.etymology
+        ? `<div class="terms-detail-card__row">
+                <span class="terms-detail-card__label">Etymology</span>
+                <span class="terms-detail-card__value">${term.etymology}</span>
+            </div>`
+        : '';
+
+    return `<div class="terms-detail-card__term">
+            <span class="terms-detail-card__lang">${langLabel}</span>
+            <span class="terms-detail-card__text">${term.text}</span>
+            <div class="terms-detail-card__row">
+                <span class="terms-detail-card__label">Pronunciation</span>
+                <span class="terms-detail-card__value">${term.phonetic}</span>
+            </div>
+            <div class="terms-detail-card__row">
+                <span class="terms-detail-card__label">Meaning</span>
+                <span class="terms-detail-card__value">${term.literal}</span>
+            </div>
+            ${etymologyRow}
+        </div>`;
+}
+
+function renderTermsDetailCard(concept: Concept): string {
+    if (!concept.terms?.pali && !concept.terms?.sanskrit) return '';
+
+    const termItems: string[] = [];
+    if (concept.terms.pali) termItems.push(renderSingleTerm(concept.terms.pali));
+    if (concept.terms.sanskrit) termItems.push(renderSingleTerm(concept.terms.sanskrit));
+
+    return `
+        <section class="concept-section">
+            <h3 class="concept-section__heading">Sacred Terms</h3>
+            <div class="terms-detail-card card">${termItems.join('')}</div>
+        </section>`;
+}
+
 function buildTermStr(concept: Concept): string {
     if (concept.terms?.pali || concept.terms?.sanskrit) {
         const paliTerm = concept.terms.pali;
@@ -135,6 +180,8 @@ function buildConceptHTML(concept: Concept, id: string): string {
 
     const examplesSection = level >= 3 ? renderExamples(concept.examples) : '';
 
+    const termsDetailCard = renderTermsDetailCard(concept);
+
     const levelHint =
         level < 3
             ? `<p class="concept-level-hint">There's more to explore — change your level in Settings.</p>`
@@ -152,6 +199,7 @@ function buildConceptHTML(concept: Concept, id: string): string {
             ${essentialsSection}
             ${deepSection}
             ${examplesSection}
+            ${termsDetailCard}
             ${renderVideos(id, level)}
             ${renderRelated(concept.related)}
             ${renderToggle(id)}

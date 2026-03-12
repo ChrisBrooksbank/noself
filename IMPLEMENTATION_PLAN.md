@@ -201,7 +201,7 @@ UI surface layer for the enriched data. Phases 1–5 below (prerequisite data la
 
 ### Sanskrit/Pali UI — Phase 4: Terms Detail Card
 
-- [ ] Sacred Terms section in concept detail — visible card showing both Pali and Sanskrit with all metadata at a glance, no interaction needed (spec: specs/sanskrit-ui.md)
+- [x] Sacred Terms section in concept detail — visible card showing both Pali and Sanskrit with all metadata at a glance, no interaction needed (spec: specs/sanskrit-ui.md)
 
 ### Sanskrit/Pali UI — Phase 5: Testing
 

@@ -5,8 +5,8 @@
  * the schema defined by the types below.
  */
 
-import type { GlossEntry } from '../../types/sacred-terms.js';
-export type { GlossEntry };
+import type { GlossEntry, SacredTerm } from '../../types/sacred-terms.js';
+export type { GlossEntry, SacredTerm };
 
 export interface SutraSection {
     /** URL-safe identifier for in-page anchoring */
@@ -33,6 +33,11 @@ export interface SutraSection {
     gloss?: GlossEntry[];
 }
 
+export interface SutraTerms {
+    pali?: SacredTerm;
+    sanskrit?: SacredTerm;
+}
+
 export interface Sutra {
     /** URL-safe identifier, matches the filename */
     id: string;
@@ -48,6 +53,8 @@ export interface Sutra {
     description: string;
     /** Ordered study sections */
     sections: SutraSection[];
+    /** Sanskrit/Pali sacred term metadata */
+    terms?: SutraTerms;
 }
 
 export { loadSutras, getSutraById, resetSutraCache } from './loader.js';

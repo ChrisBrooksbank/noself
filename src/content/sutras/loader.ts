@@ -1,5 +1,6 @@
 import { parse } from 'yaml';
 import { z } from 'zod';
+import { sacredTermSchema } from '../../types/sacred-terms.js';
 import type { Sutra } from './index.js';
 
 const glossEntrySchema = z.object({
@@ -22,6 +23,11 @@ const sutraSectionSchema = z.object({
     gloss: z.array(glossEntrySchema).optional(),
 });
 
+const sutraTermsSchema = z.object({
+    pali: sacredTermSchema.optional(),
+    sanskrit: sacredTermSchema.optional(),
+});
+
 const sutraSchema = z.object({
     id: z.string(),
     title: z.string(),
@@ -36,6 +42,7 @@ const sutraSchema = z.object({
     tradition: z.string(),
     description: z.string(),
     sections: z.array(sutraSectionSchema).default([]),
+    terms: sutraTermsSchema.optional(),
 });
 
 const rawYaml = import.meta.glob('./*.yaml', {

@@ -66,6 +66,34 @@ describe('getSutraById', () => {
     });
 });
 
+describe('Sutra terms field', () => {
+    beforeEach(() => {
+        resetSutraCache();
+    });
+
+    it('heart-sutra has terms.sanskrit with required fields', () => {
+        const sutra = getSutraById('heart-sutra');
+        expect(sutra?.terms?.sanskrit).toBeDefined();
+        expect(sutra?.terms?.sanskrit?.text).toBeTruthy();
+        expect(sutra?.terms?.sanskrit?.phonetic).toBeTruthy();
+        expect(sutra?.terms?.sanskrit?.literal).toBeTruthy();
+    });
+
+    it('all sutras with terms have at least one term entry', () => {
+        const sutras = loadSutras();
+        for (const sutra of sutras) {
+            if (sutra.terms) {
+                const hasPali = sutra.terms.pali !== undefined;
+                const hasSanskrit = sutra.terms.sanskrit !== undefined;
+                expect(
+                    hasPali || hasSanskrit,
+                    `${sutra.id} has terms object but no pali or sanskrit entry`,
+                ).toBe(true);
+            }
+        }
+    });
+});
+
 describe('Sanskrit/Pali enrichment — sutras', () => {
     beforeEach(() => {
         resetSutraCache();

@@ -173,7 +173,7 @@ Phases 1–6 below. Data-only enrichment (types, YAML fields, validation) — no
 
 ### Sanskrit/Pali Enrichment — Phase 6: Validation
 
-- [ ] Add/update loader tests to validate enriched YAML fields load correctly; verify all 30 concepts have `terms` with required SacredTerm fields; run full `npm run check` (spec: specs/sanskrit-enrichment.md)
+- [x] Add/update loader tests to validate enriched YAML fields load correctly; verify all 30 concepts have `terms` with required SacredTerm fields; run full `npm run check` (spec: specs/sanskrit-enrichment.md)
 
 ---
 

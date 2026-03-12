@@ -47,6 +47,29 @@ describe('loadMantras', () => {
         }
     });
 
+    it('each mantra has top-level phonetic (enrichment)', () => {
+        const mantras = loadMantras();
+        for (const m of mantras) {
+            expect(m.phonetic, `${m.id} missing top-level phonetic`).toBeTruthy();
+        }
+    });
+
+    it('each syllable has phonetic and literal (enrichment)', () => {
+        const mantras = loadMantras();
+        for (const m of mantras) {
+            for (const syllable of m.syllables) {
+                expect(
+                    syllable.phonetic,
+                    `${m.id} syllable '${syllable.text}' missing phonetic`,
+                ).toBeTruthy();
+                expect(
+                    syllable.literal,
+                    `${m.id} syllable '${syllable.text}' missing literal`,
+                ).toBeTruthy();
+            }
+        }
+    });
+
     it('returns cached result on second call', () => {
         const first = loadMantras();
         const second = loadMantras();

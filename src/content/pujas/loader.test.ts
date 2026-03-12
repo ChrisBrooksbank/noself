@@ -46,6 +46,44 @@ describe('loadPujas', () => {
         }
     });
 
+    it('each puja section has phonetic enrichment', () => {
+        const pujas = loadPujas();
+        for (const p of pujas) {
+            for (const section of p.sections) {
+                expect(
+                    section.phonetic,
+                    `${p.id} section '${section.id}' missing phonetic`,
+                ).toBeTruthy();
+            }
+        }
+    });
+
+    it('each puja section has gloss word-by-word enrichment', () => {
+        const pujas = loadPujas();
+        for (const p of pujas) {
+            for (const section of p.sections) {
+                expect(
+                    section.gloss,
+                    `${p.id} section '${section.id}' missing gloss`,
+                ).toBeDefined();
+                expect(
+                    section.gloss!.length,
+                    `${p.id} section '${section.id}' gloss is empty`,
+                ).toBeGreaterThan(0);
+                for (const entry of section.gloss!) {
+                    expect(
+                        entry.word,
+                        `${p.id}/${section.id} gloss entry missing word`,
+                    ).toBeTruthy();
+                    expect(
+                        entry.meaning,
+                        `${p.id}/${section.id} gloss entry missing meaning`,
+                    ).toBeTruthy();
+                }
+            }
+        }
+    });
+
     it('each puja has at least one ritual step', () => {
         const pujas = loadPujas();
         for (const p of pujas) {

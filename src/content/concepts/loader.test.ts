@@ -30,6 +30,40 @@ describe('loadConcepts', () => {
         const second = loadConcepts();
         expect(first).toBe(second);
     });
+
+    it('every concept has at least one SacredTerm (pali or sanskrit)', () => {
+        const concepts = loadConcepts();
+        for (const concept of concepts) {
+            const hasTerm =
+                concept.terms?.pali != null || concept.terms?.sanskrit != null;
+            expect(
+                hasTerm,
+                `concept '${concept.id}' is missing terms.pali and terms.sanskrit`,
+            ).toBe(true);
+        }
+    });
+
+    it('each SacredTerm has required fields: text, language, literal, phonetic', () => {
+        const concepts = loadConcepts();
+        for (const concept of concepts) {
+            for (const [key, term] of Object.entries(concept.terms ?? {})) {
+                if (term == null) continue;
+                expect(term.text, `${concept.id}.terms.${key}.text missing`).toBeTruthy();
+                expect(
+                    term.language,
+                    `${concept.id}.terms.${key}.language missing`,
+                ).toMatch(/^(pali|sanskrit|hybrid)$/);
+                expect(
+                    term.literal,
+                    `${concept.id}.terms.${key}.literal missing`,
+                ).toBeTruthy();
+                expect(
+                    term.phonetic,
+                    `${concept.id}.terms.${key}.phonetic missing`,
+                ).toBeTruthy();
+            }
+        }
+    });
 });
 
 describe('getConceptById', () => {

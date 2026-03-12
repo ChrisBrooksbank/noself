@@ -65,3 +65,62 @@ describe('getSutraById', () => {
         expect(sutra?.sections).toHaveLength(9);
     });
 });
+
+describe('Sanskrit/Pali enrichment — sutras', () => {
+    beforeEach(() => {
+        resetSutraCache();
+    });
+
+    it('all sutra sections have phonetic', () => {
+        const sutras = loadSutras();
+        for (const sutra of sutras) {
+            for (const section of sutra.sections) {
+                expect(
+                    section.phonetic,
+                    `${sutra.id} section '${section.id}' missing phonetic`,
+                ).toBeTruthy();
+            }
+        }
+    });
+
+    it('heart sutra key passages have gloss', () => {
+        const sutra = getSutraById('heart-sutra');
+        const glossedIds = ['the-setting', 'form-is-emptiness', 'the-mantra'];
+        for (const id of glossedIds) {
+            const section = sutra?.sections.find((s) => s.id === id);
+            expect(section, `heart-sutra section '${id}' not found`).toBeDefined();
+            expect(
+                section?.gloss,
+                `heart-sutra section '${id}' missing gloss`,
+            ).toBeDefined();
+            expect(
+                section?.gloss?.length,
+                `heart-sutra section '${id}' gloss is empty`,
+            ).toBeGreaterThan(0);
+        }
+    });
+
+    it('diamond sutra key passages have gloss', () => {
+        const sutra = getSutraById('diamond-sutra');
+        expect(sutra, 'diamond-sutra not found').toBeDefined();
+        const glossedSections = sutra!.sections.filter(
+            (s) => s.gloss && s.gloss.length > 0,
+        );
+        expect(
+            glossedSections.length,
+            'diamond-sutra should have at least one section with gloss',
+        ).toBeGreaterThan(0);
+    });
+
+    it('dhammapada twin-verses opening has gloss', () => {
+        const sutra = getSutraById('dhammapada');
+        expect(sutra, 'dhammapada not found').toBeDefined();
+        const glossedSections = sutra!.sections.filter(
+            (s) => s.gloss && s.gloss.length > 0,
+        );
+        expect(
+            glossedSections.length,
+            'dhammapada should have at least one section with gloss',
+        ).toBeGreaterThan(0);
+    });
+});

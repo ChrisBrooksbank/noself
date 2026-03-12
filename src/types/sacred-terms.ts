@@ -1,3 +1,15 @@
+import { z } from 'zod';
+
+export const sacredTermSchema = z.object({
+    text: z.string(),
+    language: z.enum(['pali', 'sanskrit', 'hybrid']),
+    literal: z.string(),
+    etymology: z.string().optional(),
+    phonetic: z.string(),
+    ipa: z.string().optional(),
+    audio: z.string().optional(),
+});
+
 /** Reusable metadata for any Sanskrit or Pali term/phrase */
 export interface SacredTerm {
     /** The term itself: "Anattā", "Pratītyasamutpāda" */

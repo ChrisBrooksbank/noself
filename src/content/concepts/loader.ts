@@ -1,16 +1,7 @@
 import { parse } from 'yaml';
 import { z } from 'zod';
 import type { Concept, ConceptCategory } from './index.js';
-
-const sacredTermSchema = z.object({
-    text: z.string(),
-    language: z.enum(['pali', 'sanskrit', 'hybrid']),
-    literal: z.string(),
-    etymology: z.string().optional(),
-    phonetic: z.string(),
-    ipa: z.string().optional(),
-    audio: z.string().optional(),
-});
+import { sacredTermSchema } from '../../types/sacred-terms.js';
 
 const conceptCategoryValues = [
     'foundational',

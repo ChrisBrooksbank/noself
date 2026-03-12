@@ -181,7 +181,7 @@ UI surface layer for the enriched data. Phases 1–5 below (prerequisite data la
 
 ### Sanskrit/Pali UI — Phase 1: Wire Up Data
 
-- [ ] Extract shared `sacredTermSchema` from concepts loader to a shared location so all loaders can reuse it (spec: specs/sanskrit-ui.md)
+- [x] Extract shared `sacredTermSchema` from concepts loader to a shared location so all loaders can reuse it (spec: specs/sanskrit-ui.md)
 - [ ] Add `terms` field to Sutra types + loaders — currently silently dropped from YAML (spec: specs/sanskrit-ui.md)
 - [ ] Add `terms` field to Puja types + loaders — currently silently dropped from YAML (spec: specs/sanskrit-ui.md)
 - [ ] Add loader tests to verify terms are parsed for sutras and pujas (spec: specs/sanskrit-ui.md)

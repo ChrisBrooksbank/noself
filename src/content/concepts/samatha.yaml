@@ -2,6 +2,19 @@ id: samatha
 title: Calm Abiding
 pali: Samatha
 sanskrit: Śamatha
+terms:
+    pali:
+        text: Samatha
+        language: pali
+        literal: tranquility, calm, peace
+        etymology: 'from sama (calm, peace, equanimity)'
+        phonetic: SAH-mah-tah
+    sanskrit:
+        text: Śamatha
+        language: sanskrit
+        literal: tranquility, calm abiding
+        etymology: 'from śama (calm, pacification)'
+        phonetic: SHAH-mah-tah
 category: mind-and-practice
 related: [bhavana, vipassana, sati, noble-eightfold-path, upekkha]
 

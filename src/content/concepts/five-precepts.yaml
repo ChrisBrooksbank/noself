@@ -2,6 +2,19 @@ id: five-precepts
 title: The Five Precepts
 pali: Pañca Sīla
 sanskrit: Pañca Śīla
+terms:
+    pali:
+        text: Pañca Sīla
+        language: pali
+        literal: five ethics, five virtues
+        etymology: 'pañca (five) + sīla (ethics, virtue, moral conduct)'
+        phonetic: PAN-chah SEE-lah
+    sanskrit:
+        text: Pañca Śīla
+        language: sanskrit
+        literal: five ethics, five virtues
+        etymology: 'pañca (five) + śīla (ethics, character, moral conduct)'
+        phonetic: PAN-chah SHEE-lah
 category: mind-and-practice
 related: [noble-eightfold-path, karma, four-noble-truths, metta, karuna]
 

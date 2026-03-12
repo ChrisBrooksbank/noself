@@ -2,6 +2,19 @@ id: bhavana
 title: Meditation
 pali: Bhāvanā
 sanskrit: Bhāvanā
+terms:
+    pali:
+        text: Bhāvanā
+        language: pali
+        literal: cultivation, development, making become
+        etymology: 'from bhū (to become, to be) + -anā (action suffix)'
+        phonetic: BHAH-vah-nah
+    sanskrit:
+        text: Bhāvanā
+        language: sanskrit
+        literal: cultivation, development, bringing into being
+        etymology: 'from bhū (to become) + -anā (action suffix)'
+        phonetic: BHAH-vah-nah
 category: mind-and-practice
 related: [samatha, vipassana, sati, noble-eightfold-path, metta]
 

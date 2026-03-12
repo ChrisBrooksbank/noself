@@ -2,6 +2,19 @@ id: karma
 title: Action and Consequence
 pali: Kamma
 sanskrit: Karma
+terms:
+    pali:
+        text: Kamma
+        language: pali
+        literal: action, deed, volitional act
+        etymology: 'from karoti (to do, to make)'
+        phonetic: KAM-mah
+    sanskrit:
+        text: Karma
+        language: sanskrit
+        literal: action, deed, work
+        etymology: 'from kṛ (to do, to make, to act)'
+        phonetic: KAR-mah
 category: mind-and-practice
 related:
     [

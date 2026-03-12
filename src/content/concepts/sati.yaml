@@ -2,6 +2,19 @@ id: sati
 title: Mindfulness
 pali: Sati
 sanskrit: Smṛti
+terms:
+    pali:
+        text: Sati
+        language: pali
+        literal: mindfulness, memory, recollection
+        etymology: 'from sarati (to remember, to bear in mind)'
+        phonetic: SAH-tee
+    sanskrit:
+        text: Smṛti
+        language: sanskrit
+        literal: memory, mindfulness, recollection
+        etymology: 'from smṛ (to remember)'
+        phonetic: SMRI-tee
 category: mind-and-practice
 related: [noble-eightfold-path, bhavana, vipassana, samatha, four-noble-truths]
 

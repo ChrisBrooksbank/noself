@@ -2,6 +2,19 @@ id: vipassana
 title: Insight Meditation
 pali: Vipassanā
 sanskrit: Vipaśyanā
+terms:
+    pali:
+        text: Vipassanā
+        language: pali
+        literal: clear seeing, insight, special seeing
+        etymology: 'vi (clear, special, through) + passanā (seeing, from passati: to see)'
+        phonetic: vih-PAHS-sah-nah
+    sanskrit:
+        text: Vipaśyanā
+        language: sanskrit
+        literal: clear seeing, insight
+        etymology: 'vi (clear, special) + paśyanā (seeing, from paśyati: to see)'
+        phonetic: vih-PAHSH-yah-nah
 category: mind-and-practice
 related: [bhavana, samatha, sati, three-marks, anicca, dukkha, anatta, prajna]
 

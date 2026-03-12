@@ -139,7 +139,7 @@ start((route) => {
             renderPujaListView(viewHost);
             break;
         case 'practicePujaStudy':
-            renderPujaStudyView(viewHost, route.id);
+            currentCleanup = renderPujaStudyView(viewHost, route.id);
             break;
         case 'practicePujaPerform':
             currentCleanup = renderPujaPerformView(viewHost, route.id);

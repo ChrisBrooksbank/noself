@@ -7,6 +7,22 @@ const mockPuja: Puja = {
     title: 'The Sevenfold Puja',
     tradition: 'Triratna',
     description: 'A devotional liturgy in seven movements.',
+    terms: {
+        pali: {
+            text: 'Sattavidhā Pūjā',
+            language: 'pali',
+            literal: 'Sevenfold Worship',
+            etymology: 'satta + vidhā + pūjā',
+            phonetic: 'SAHT-tah-VEE-dah POO-jah',
+        },
+        sanskrit: {
+            text: 'Saptavidhā Pūjā',
+            language: 'sanskrit',
+            literal: 'Sevenfold Worship',
+            etymology: 'sapta + vidhā + pūjā',
+            phonetic: 'SAHP-tah-VEE-dah POO-jah',
+        },
+    },
     sections: [
         {
             id: 'worship',
@@ -17,6 +33,11 @@ const mockPuja: Puja = {
             translation: 'I worship the Buddha...',
             commentary: 'This section opens the puja with reverence.',
             relatedConcepts: ['three-jewels'],
+            phonetic: 'VAN-da-mi BOOD-dham...',
+            gloss: [
+                { word: 'vandami', meaning: 'I worship', phonetic: 'VAN-da-mi' },
+                { word: 'buddham', meaning: 'the Buddha', phonetic: 'BOOD-dham' },
+            ],
         },
         {
             id: 'going-for-refuge',
@@ -34,6 +55,12 @@ const mockPuja: Puja = {
 
 vi.mock('../preferences.js', () => ({
     getShowVideoLinks: vi.fn(() => true),
+}));
+
+vi.mock('../sacredTerms.js', () => ({
+    renderSacredTermSpan: (term: { text: string; language: string }) =>
+        `<span class="sacred-term" data-language="${term.language}">${term.text}</span>`,
+    initSacredTermTooltips: () => vi.fn(),
 }));
 
 vi.mock('../../content/pujas/index.js', () => ({
@@ -153,5 +180,48 @@ describe('renderPujaStudyView', () => {
         );
         expect(titles[0]).toBe('Worship');
         expect(titles[1]).toBe('Going for Refuge');
+    });
+
+    it('renders interactive sacred term spans when terms data is present', () => {
+        renderPujaStudyView(container, 'sevenfold-puja');
+        const termsEl = container.querySelector('.puja-study__terms');
+        expect(termsEl).toBeTruthy();
+        const sacredTerms = termsEl?.querySelectorAll('.sacred-term');
+        expect(sacredTerms?.length).toBe(2);
+        const texts = Array.from(sacredTerms ?? []).map((el) => el.textContent);
+        expect(texts).toContain('Sattavidhā Pūjā');
+        expect(texts).toContain('Saptavidhā Pūjā');
+    });
+
+    it('renders word-by-word gloss details for sections that have gloss data', () => {
+        renderPujaStudyView(container, 'sevenfold-puja');
+        const glossDetails = container.querySelectorAll('.puja-section__gloss-details');
+        expect(glossDetails.length).toBe(1);
+    });
+
+    it('renders gloss table rows', () => {
+        renderPujaStudyView(container, 'sevenfold-puja');
+        const rows = container.querySelectorAll('.puja-section__gloss-word');
+        expect(rows.length).toBe(2);
+        const words = Array.from(rows).map((el) => el.textContent);
+        expect(words).toContain('vandami');
+        expect(words).toContain('buddham');
+    });
+
+    it('renders phonetic line for sections with phonetic data', () => {
+        renderPujaStudyView(container, 'sevenfold-puja');
+        const phonetic = container.querySelector('.puja-section__phonetic');
+        expect(phonetic).toBeTruthy();
+        expect(phonetic?.textContent).toContain('VAN-da-mi');
+    });
+
+    it('returns a cleanup function', () => {
+        const cleanup = renderPujaStudyView(container, 'sevenfold-puja');
+        expect(typeof cleanup).toBe('function');
+    });
+
+    it('returns a cleanup function for not-found puja', () => {
+        const cleanup = renderPujaStudyView(container, 'unknown-puja');
+        expect(typeof cleanup).toBe('function');
     });
 });

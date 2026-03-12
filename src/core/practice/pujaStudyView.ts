@@ -1,7 +1,64 @@
 import { getPujaById } from '../../content/pujas/index.js';
 import { getConceptById } from '../../content/concepts/index.js';
 import { getShowVideoLinks } from '../preferences.js';
-import type { Puja, PujaSection } from '../../content/pujas/index.js';
+import { renderSacredTermSpan, initSacredTermTooltips } from '../sacredTerms.js';
+import type { Puja, PujaSection, PujaTerms } from '../../content/pujas/index.js';
+
+function renderTerms(terms: PujaTerms | undefined): string {
+    if (!terms?.pali && !terms?.sanskrit) return '';
+    const parts: string[] = [];
+    if (terms.pali) {
+        const opts = terms.sanskrit ? { counterpart: terms.sanskrit } : {};
+        parts.push(renderSacredTermSpan(terms.pali, opts));
+    }
+    if (terms.sanskrit) {
+        const opts = terms.pali ? { counterpart: terms.pali } : {};
+        parts.push(renderSacredTermSpan(terms.sanskrit, opts));
+    }
+    return `<p class="puja-study__terms">${parts.join(' · ')}</p>`;
+}
+
+function renderGloss(section: PujaSection): string {
+    const hasPhonetic = !!section.phonetic;
+    const hasGloss = section.gloss && section.gloss.length > 0;
+    if (!hasPhonetic && !hasGloss) return '';
+
+    const phoneticBlock = hasPhonetic
+        ? `<p class="puja-section__phonetic">${section.phonetic}</p>`
+        : '';
+
+    const glossRows =
+        hasGloss && section.gloss
+            ? section.gloss
+                  .map(
+                      (g) => `
+                <tr>
+                    <td class="puja-section__gloss-word">${g.word}</td>
+                    ${g.phonetic ? `<td class="puja-section__gloss-phonetic">${g.phonetic}</td>` : '<td></td>'}
+                    <td class="puja-section__gloss-meaning">${g.meaning}</td>
+                </tr>`,
+                  )
+                  .join('')
+            : '';
+
+    const glossTable = hasGloss
+        ? `<table class="puja-section__gloss-table">
+            <thead><tr>
+                <th>Word</th>
+                <th>Pronunciation</th>
+                <th>Meaning</th>
+            </tr></thead>
+            <tbody>${glossRows}</tbody>
+        </table>`
+        : '';
+
+    return `
+        <details class="puja-section__gloss-details">
+            <summary class="puja-section__gloss-summary">Word-by-word study</summary>
+            ${phoneticBlock}
+            ${glossTable}
+        </details>`;
+}
 
 function renderPujaVideos(puja: Puja): string {
     if (!getShowVideoLinks() || !puja.videos || puja.videos.length === 0) return '';
@@ -50,11 +107,12 @@ function renderSection(section: PujaSection): string {
                 <h3 class="puja-section__subheading">Commentary</h3>
                 <p class="puja-section__commentary-text">${section.commentary}</p>
             </div>
+            ${renderGloss(section)}
             ${renderRelatedConcepts(section.relatedConcepts)}
         </section>`;
 }
 
-export function renderPujaStudyView(container: HTMLElement, id: string): void {
+export function renderPujaStudyView(container: HTMLElement, id: string): () => void {
     const puja = getPujaById(id);
 
     if (!puja) {
@@ -63,10 +121,11 @@ export function renderPujaStudyView(container: HTMLElement, id: string): void {
                 <p>Puja not found: <strong>${id}</strong></p>
                 <a href="#/practice/pujas">Return to Pujas</a>
             </div>`;
-        return;
+        return () => {};
     }
 
     const sorted = [...puja.sections].sort((a, b) => a.order - b.order);
+    const termsBlock = renderTerms(puja.terms);
 
     container.innerHTML = `
         <div class="puja-study-view page stack-lg" role="main">
@@ -74,6 +133,7 @@ export function renderPujaStudyView(container: HTMLElement, id: string): void {
             <header class="puja-study__header stack-sm">
                 <span class="badge">${puja.tradition}</span>
                 <h1 class="puja-study__title">${puja.title}</h1>
+                ${termsBlock}
                 <p class="puja-study__desc">${puja.description}</p>
                 <a href="#/practice/puja/${puja.id}/perform" class="btn btn--sm puja-study__perform-link">Perform Ritual</a>
             </header>
@@ -82,4 +142,6 @@ export function renderPujaStudyView(container: HTMLElement, id: string): void {
                 ${sorted.map(renderSection).join('')}
             </div>
         </div>`;
+
+    return initSacredTermTooltips(container);
 }

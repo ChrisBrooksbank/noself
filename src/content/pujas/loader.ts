@@ -1,5 +1,6 @@
 import { parse } from 'yaml';
 import { z } from 'zod';
+import { sacredTermSchema } from '../../types/sacred-terms.js';
 import type { Puja } from './index.js';
 
 const glossEntrySchema = z.object({
@@ -39,6 +40,11 @@ const ritualStepSchema = z.object({
         .transform((v) => v ?? null),
 });
 
+const pujaTermsSchema = z.object({
+    pali: sacredTermSchema.optional(),
+    sanskrit: sacredTermSchema.optional(),
+});
+
 const pujaVideoSchema = z.object({
     title: z.string(),
     teacher: z.string(),
@@ -54,6 +60,7 @@ const pujaSchema = z.object({
     videos: z.array(pujaVideoSchema).optional(),
     sections: z.array(pujaSectionSchema).default([]),
     ritualSteps: z.array(ritualStepSchema).default([]),
+    terms: pujaTermsSchema.optional(),
 });
 
 const rawYaml = import.meta.glob('./*.yaml', {

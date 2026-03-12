@@ -5,8 +5,8 @@
  * the schema defined by the types below.
  */
 
-import type { GlossEntry } from '../../types/sacred-terms.js';
-export type { GlossEntry };
+import type { GlossEntry, SacredTerm } from '../../types/sacred-terms.js';
+export type { GlossEntry, SacredTerm };
 
 /** A YouTube video linked to a puja */
 export interface PujaVideo {
@@ -62,6 +62,11 @@ export interface RitualStep {
     sectionRef: string | null;
 }
 
+export interface PujaTerms {
+    pali?: SacredTerm;
+    sanskrit?: SacredTerm;
+}
+
 export interface Puja {
     /** URL-safe identifier, matches the filename (e.g. "sevenfold-puja") */
     id: string;
@@ -77,6 +82,8 @@ export interface Puja {
     sections: PujaSection[];
     /** Ordered ritual steps (for perform view) */
     ritualSteps: RitualStep[];
+    /** Sanskrit/Pali sacred term metadata */
+    terms?: PujaTerms;
 }
 
 export type PujaId = (typeof PUJA_IDS)[number];

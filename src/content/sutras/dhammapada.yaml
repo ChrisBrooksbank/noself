@@ -51,6 +51,63 @@ sections:
           - karma
           - sati
           - three-poisons
+      phonetic: >-
+          MA-no-pub-BAN-ga-ma DHAM-ma, MA-no-SET-tha MA-no-MA-ya.
+          MA-na-sa ce pa-DUT-the-na, BHA-sa-ti va ka-RO-ti va,
+          TA-to nam DUK-kha-MAN-ve-ti, CHAK-kam-va VA-ha-to PA-dam.
+
+          MA-no-pub-BAN-ga-ma DHAM-ma, MA-no-SET-tha MA-no-MA-ya.
+          MA-na-sa ce pa-SAN-ne-na, BHA-sa-ti va ka-RO-ti va,
+          TA-to nam SUK-ha-MAN-ve-ti, CHA-ya-va a-NA-pa-YI-ni.
+      gloss:
+          - word: Manopubbangama
+            meaning: mind-forerunner / mind goes before (mano = mind + pubba = before + gama = going)
+            phonetic: MA-no-pub-BAN-ga-ma
+          - word: dhamma
+            meaning: phenomena / mental states / things
+            phonetic: DHAM-ma
+          - word: manosettha
+            meaning: mind-chief / dominated by mind (mano = mind + settha = chief)
+            phonetic: MA-no-SET-tha
+          - word: manomaya
+            meaning: mind-made / created by mind (mano = mind + maya = made of)
+            phonetic: MA-no-MA-ya
+          - word: Manasa
+            meaning: by the mind / with the mind (instrumental case)
+            phonetic: MA-na-sa
+          - word: padutthena
+            meaning: corrupted / defiled / with a corrupt (mind)
+            phonetic: pa-DUT-the-na
+          - word: bhasati
+            meaning: speaks
+            phonetic: BHA-sa-ti
+          - word: karoti
+            meaning: acts / does
+            phonetic: ka-RO-ti
+          - word: dukkhamanveti
+            meaning: suffering follows after (dukkha = suffering + anveti = follows)
+            phonetic: DUK-kha-MAN-ve-ti
+          - word: cakkamva
+            meaning: like a wheel (cakka = wheel + va = like)
+            phonetic: CHAK-kam-va
+          - word: vahato
+            meaning: of the draught animal / of the ox (genitive)
+            phonetic: VA-ha-to
+          - word: padam
+            meaning: foot / step / track
+            phonetic: PA-dam
+          - word: pasannena
+            meaning: with a pure/clear/serene (mind)
+            phonetic: pa-SAN-ne-na
+          - word: sukhamanveti
+            meaning: happiness follows (sukha = happiness + anveti = follows)
+            phonetic: SUK-ha-MAN-ve-ti
+          - word: chayava
+            meaning: like a shadow (chaya = shadow + va = like)
+            phonetic: CHA-ya-va
+          - word: anapayini
+            meaning: never departing / that never leaves
+            phonetic: a-NA-pa-YI-ni
 
     - id: appamadavagga
       order: 2
@@ -83,6 +140,12 @@ sections:
           - sati
           - noble-eightfold-path
           - anicca
+      phonetic: >-
+          AP-pa-MA-do a-MA-ta-PA-dam, PA-ma-do mac-CU-no PA-dam.
+          AP-pa-MAT-ta na mi-YAN-ti, ye pa-MAT-ta YA-tha MA-ta.
+
+          uy-YUN-jan-ti SA-ti-MAN-to, na ni-KE-te ra-MAN-ti-yo.
+          HAM-sa a-PA-the-VA-nu-YAN-ti, O-kam-O-kam ja-HAN-ti te.
 
     - id: cittavagga
       order: 3
@@ -115,6 +178,12 @@ sections:
           - bhavana
           - samatha
           - sati
+      phonetic: >-
+          PHAN-da-nam CA-pa-lam CIT-tam, dur-AK-kham dun-ni-VA-ra-yam.
+          U-jum ka-RO-ti me-DHA-vi, U-su-KA-ro va te-JA-nam.
+
+          dun-NIG-ga-HAS-sa LA-hu-no, yat-tha-KA-ma-ni-PA-ti-no,
+          CIT-tas-sa DA-ma-tho SA-dhu. CIT-tam DAN-tam su-KHA-va-ham.
 
     - id: pupphavagga
       order: 4
@@ -148,6 +217,12 @@ sections:
           - anicca
           - three-marks
           - vipassana
+      phonetic: >-
+          YA-tha-pi PUP-pham VAN-na-GAN-dha-sam-PAN-nam, PE-ta-lam
+          a-pa-GAN-dha-ka-MA-ne-va.
+
+          yo ca VAS-sa-SA-tam JI-ve, a-PAS-sam u-da-YAB-ba-yam,
+          E-ka-ham JI-vi-tam SEY-yo, PAS-sa-to u-da-YAB-ba-yam.
 
     - id: balavagga
       order: 5
@@ -182,6 +257,12 @@ sections:
           - three-poisons
           - dukkha
           - samsara
+      phonetic: >-
+          DI-gha JA-ga-RA-to RAT-ti, DI-gham SAN-tas-sa YO-ja-nam.
+          DI-gho BA-la-nam SAM-SA-ro, sad-DHAM-man a-vi-JA-na-tam.
+
+          YA-va-JI-vam-pi ce BA-lo, PAN-di-tam pa-yir-U-pa-SA-ti,
+          na so DHAM-mam vi-JA-NA-ti, DAB-bi SU-pa-ra-sam YA-tha.
 
     - id: panditavagga
       order: 6
@@ -215,6 +296,12 @@ sections:
           - prajna
           - three-jewels
           - bhavana
+      phonetic: >-
+          ni-DHA-na-VI-dam I-va BHU-mim, vin-DEY-ya ra-TAN-as-sa
+          sad-DHAM-ma-SA-va-nam.
+
+          yo ca VAS-sa-SA-tam JI-ve, dup-PAN-no a-sa-MA-hi-to,
+          E-ka-ham JI-vi-tam SEY-yo, PAN-na-VAN-tas-sa JHA-yi-no.
 
     - id: dhammatthavagga
       order: 7
@@ -248,6 +335,12 @@ sections:
           - five-precepts
           - noble-eightfold-path
           - karma
+      phonetic: >-
+          na TE-na HO-ti DHAM-mat-tho, yen-AT-tham SA-ha-SA-na-ya-na.
+          yo ca AT-tham an-AT-than-ca, U-bho NIC-chey-ya PAN-di-to.
+
+          a-SA-ha-SE-na DHAM-ME-na, SA-me-na NA-ya-ti PA-re.
+          DHAM-mas-sa GUT-to ME-DHA-vi, DHAM-mat-tho ti pa-VUC-ca-ti.
 
     - id: malavagga
       order: 8
@@ -284,6 +377,13 @@ sections:
           - three-poisons
           - karma
           - bhavana
+      phonetic: >-
+          a-YA-SA-va MA-lam sa-MUT-thi-tam, ta-TUT-tha-ya tam-E-va KHA-da-ti.
+          E-vam a-ti-DHO-na-CA-ri-nam, SA-ka-ni KAM-MA-ni na-YAN-ti dug-GA-tim.
+
+          AT-ta-NA va KA-tam PA-pam, AT-ta-NA san-ki-LIS-sa-ti.
+          AT-ta-NA a-KA-tam PA-pam, AT-ta-NA va vi-SUJ-jha-ti.
+          SUD-dhi a-SUD-dhi pac-CAT-tam, NAN-no AN-nam vi-SO-dha-ye.
 
     - id: bhikkhuvagga
       order: 9
@@ -318,6 +418,12 @@ sections:
           - middle-way
           - nirvana
           - noble-eightfold-path
+      phonetic: >-
+          SAB-ba-SAN-kha-ra-SA-ma-tham, SAB-bu-PA-dhi-pa-ti-NIS-sag-gam,
+          TAN-hak-KHA-yam vi-RA-gam NI-ro-dham NIB-BA-nam.
+
+          SI-la ca BA-le ba-HUS-su-te ca, DHAM-me-su ca sup-pa-ti-PAT-ti-yo.
+          E-tad-E-va MAN-ga-lam-UT-ta-mam.
 
     - id: buddhavagga
       order: 10
@@ -355,3 +461,9 @@ sections:
           - four-noble-truths
           - bhavana
           - sati
+      phonetic: >-
+          YAS-sa JI-tam na-VA-ji-YA-ti, JI-tam-AS-sa no YA-ti KO-ci LO-ke.
+          tam BUD-dham-a-NAN-ta-CO-ca-ram, a-PA-dam KE-na PA-de-na NES-sa-tha.
+
+          TUM-he-hi KIC-ca-mat-AP-pam, ak-KHA-TA-ro ta-THA-GA-ta.
+          pa-ti-PAN-na pa-MOK-khan-ti, JHA-yi-no MA-ra-BAN-da-na.

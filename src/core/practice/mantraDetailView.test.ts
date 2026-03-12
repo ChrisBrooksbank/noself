@@ -165,4 +165,87 @@ describe('renderMantraDetailView', () => {
         const backLink = container.querySelector('.back-link');
         expect(backLink?.getAttribute('href')).toBe('#/practice/mantras');
     });
+
+    it('does not render top-level phonetic when absent', () => {
+        renderMantraDetailView(container, 'avalokiteshvara');
+        const phonetic = container.querySelector('.mantra-detail__phonetic');
+        expect(phonetic).toBeNull();
+    });
+
+    it('renders top-level phonetic when present', () => {
+        const mantraWithPhonetic: Mantra = {
+            ...mockMantra,
+            phonetic: 'OHM mah-NEE pahd-MAY HOOM',
+        };
+        vi.mocked(getMantraById).mockReturnValueOnce(mantraWithPhonetic);
+        renderMantraDetailView(container, 'avalokiteshvara');
+        const phonetic = container.querySelector('.mantra-detail__phonetic');
+        expect(phonetic?.textContent).toBe('OHM mah-NEE pahd-MAY HOOM');
+    });
+
+    it('does not render syllable phonetic when absent', () => {
+        renderMantraDetailView(container, 'avalokiteshvara');
+        const phoneticSpans = container.querySelectorAll(
+            '.mantra-detail__syllable-phonetic',
+        );
+        expect(phoneticSpans.length).toBe(0);
+    });
+
+    it('renders syllable phonetic when present', () => {
+        const mantraWithSyllablePhonetics: Mantra = {
+            ...mockMantra,
+            syllables: [
+                {
+                    text: 'Om',
+                    phonetic: 'OHM',
+                    literal: 'sacred syllable',
+                    meaning: 'The sacred syllable.',
+                },
+                {
+                    text: 'Mani',
+                    phonetic: 'mah-NEE',
+                    literal: 'jewel',
+                    meaning: 'Jewel — bodhicitta.',
+                },
+            ],
+        };
+        vi.mocked(getMantraById).mockReturnValueOnce(mantraWithSyllablePhonetics);
+        renderMantraDetailView(container, 'avalokiteshvara');
+        const phoneticSpans = container.querySelectorAll(
+            '.mantra-detail__syllable-phonetic',
+        );
+        expect(phoneticSpans.length).toBe(2);
+        const texts = Array.from(phoneticSpans).map((el) => el.textContent);
+        expect(texts).toContain('OHM');
+        expect(texts).toContain('mah-NEE');
+    });
+
+    it('renders syllable literal when present', () => {
+        const mantraWithLiterals: Mantra = {
+            ...mockMantra,
+            syllables: [
+                {
+                    text: 'Om',
+                    phonetic: 'OHM',
+                    literal: 'sacred syllable',
+                    meaning: 'The sacred syllable.',
+                },
+                {
+                    text: 'Mani',
+                    phonetic: 'mah-NEE',
+                    literal: 'jewel',
+                    meaning: 'Jewel — bodhicitta.',
+                },
+            ],
+        };
+        vi.mocked(getMantraById).mockReturnValueOnce(mantraWithLiterals);
+        renderMantraDetailView(container, 'avalokiteshvara');
+        const literalSpans = container.querySelectorAll(
+            '.mantra-detail__syllable-literal',
+        );
+        expect(literalSpans.length).toBe(2);
+        const texts = Array.from(literalSpans).map((el) => el.textContent);
+        expect(texts).toContain('sacred syllable');
+        expect(texts).toContain('jewel');
+    });
 });

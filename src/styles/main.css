@@ -1866,6 +1866,12 @@ a.card:hover,
     font-style: italic;
 }
 
+.mantra-detail__phonetic {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    letter-spacing: 0.03em;
+}
+
 /* Syllable grid */
 .mantra-detail__section-heading {
     font-size: var(--text-xs);
@@ -1889,6 +1895,22 @@ a.card:hover,
     font-family: var(--font-heading);
     font-style: italic;
     color: var(--color-gold);
+}
+
+.mantra-detail__syllable-phonetic {
+    display: block;
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    letter-spacing: 0.03em;
+}
+
+.mantra-detail__syllable-literal {
+    display: block;
+    text-align: center;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-style: italic;
 }
 
 .mantra-detail__syllable-meaning {

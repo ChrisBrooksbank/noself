@@ -3,9 +3,17 @@ import { getConceptById } from '../../content/concepts/index.js';
 import type { MantraSyllable } from '../../content/mantras/index.js';
 
 function renderSyllable(syllable: MantraSyllable): string {
+    const phoneticHtml = syllable.phonetic
+        ? `<span class="mantra-detail__syllable-phonetic">${syllable.phonetic}</span>`
+        : '';
+    const literalHtml = syllable.literal
+        ? `<span class="mantra-detail__syllable-literal">${syllable.literal}</span>`
+        : '';
     return `
         <li class="mantra-detail__syllable card stack-sm">
             <span class="mantra-detail__syllable-text">${syllable.text}</span>
+            ${phoneticHtml}
+            ${literalHtml}
             <p class="mantra-detail__syllable-meaning">${syllable.meaning}</p>
         </li>`;
 }
@@ -40,6 +48,10 @@ export function renderMantraDetailView(container: HTMLElement, id: string): void
         ? `<p class="mantra-detail__pali">${mantra.pali}</p>`
         : '';
 
+    const phoneticSection = mantra.phonetic
+        ? `<p class="mantra-detail__phonetic">${mantra.phonetic}</p>`
+        : '';
+
     container.innerHTML = `
         <div class="mantra-detail-view page stack-lg" role="main">
             <a href="#/practice/mantras" class="back-link">&larr; Mantras</a>
@@ -51,6 +63,7 @@ export function renderMantraDetailView(container: HTMLElement, id: string): void
             <div class="mantra-detail__mantra-text stack-sm">
                 <p class="mantra-detail__sanskrit">${mantra.sanskrit}</p>
                 ${paliSection}
+                ${phoneticSection}
             </div>
             <section class="mantra-detail__syllables stack-sm">
                 <h2 class="mantra-detail__section-heading">Syllable Breakdown</h2>

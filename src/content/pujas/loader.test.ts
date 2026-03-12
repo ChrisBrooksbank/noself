@@ -130,3 +130,39 @@ describe('getPujaById', () => {
         expect(getPujaById('not-a-puja')).toBeUndefined();
     });
 });
+
+describe('Puja terms field', () => {
+    beforeEach(() => {
+        resetPujaCache();
+    });
+
+    it('sevenfold-puja has terms.pali with required fields', () => {
+        const puja = getPujaById('sevenfold-puja');
+        expect(puja?.terms?.pali).toBeDefined();
+        expect(puja?.terms?.pali?.text).toBeTruthy();
+        expect(puja?.terms?.pali?.phonetic).toBeTruthy();
+        expect(puja?.terms?.pali?.literal).toBeTruthy();
+    });
+
+    it('sevenfold-puja has terms.sanskrit with required fields', () => {
+        const puja = getPujaById('sevenfold-puja');
+        expect(puja?.terms?.sanskrit).toBeDefined();
+        expect(puja?.terms?.sanskrit?.text).toBeTruthy();
+        expect(puja?.terms?.sanskrit?.phonetic).toBeTruthy();
+        expect(puja?.terms?.sanskrit?.literal).toBeTruthy();
+    });
+
+    it('all pujas with terms have at least one term entry', () => {
+        const pujas = loadPujas();
+        for (const puja of pujas) {
+            if (puja.terms) {
+                const hasPali = puja.terms.pali !== undefined;
+                const hasSanskrit = puja.terms.sanskrit !== undefined;
+                expect(
+                    hasPali || hasSanskrit,
+                    `${puja.id} has terms object but no pali or sanskrit entry`,
+                ).toBe(true);
+            }
+        }
+    });
+});

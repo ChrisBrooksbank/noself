@@ -1,0 +1,23 @@
+id: anapanasati-prompts
+conceptId: anapanasati
+prompts:
+    - id: anapanasati-1
+      conceptId: anapanasati
+      depth: beginner
+      question: Right now, without changing anything, notice your next three breaths. Was each one long or short? What did you actually feel?
+      guidance: >
+          You don't need to meditate formally to try this. Simply pause, let the breath happen, and notice: was that in-breath long or short? Slow or quick? You may find it surprisingly hard to say — which is itself interesting. The Buddha's first two instructions are the most basic possible: know a long breath as long, a short breath as short. This is the beginning of ānāpānasati — not controlling the breath, not achieving anything, just knowing what is actually here. Try it again now. Three breaths. Long or short?
+
+    - id: anapanasati-2
+      conceptId: anapanasati
+      depth: intermediate
+      question: The second tetrad asks you to experience "rapture" and "pleasure" with the breath. Have you ever felt something like this in meditation — a subtle warmth, ease, or uplift? What conditions made it possible?
+      guidance: >
+          Pīti (rapture) and sukha (pleasure) are not exotic experiences reserved for advanced practitioners — they are the natural qualities of a mind that has stopped fighting. Think back to any moment in meditation, prayer, or deep rest when the body felt light, or a warmth seemed to spread through the chest, or sitting felt easy rather than effortful. That is the territory of the second tetrad. The Buddha's instruction is to recognise these states, breathe in them, and — crucially — not cling to them. Contemplate: what are the conditions that allow such ease to arise? What prevents it? And what happens when you try to produce it deliberately?
+
+    - id: anapanasati-3
+      conceptId: anapanasati
+      depth: advanced
+      question: The fourth tetrad ends with "contemplating relinquishment" — paṭinissagga, "throwing back." What exactly would it mean to relinquish everything on the out-breath — not as a metaphor but as a lived practice?
+      guidance: >
+          Paṭinissagga is the most demanding instruction in the sutta. Classical commentaries gloss it in two registers: giving up defilements (letting go of greed, aversion, and delusion), and giving back all phenomena to their nature (returning everything to the impersonal process it always was). Both point to the same gesture: an out-breath that releases not just tension but the practitioner's sense of standing apart from experience, the subtle "I" that holds and directs. Sit with this: what remains if nothing is held? Is that frightening, or peaceful, or both? The Buddha places relinquishment as a training-step rather than a final result — suggesting it can be enacted, however partially, breath by breath. Investigate what that enactment feels like right now.

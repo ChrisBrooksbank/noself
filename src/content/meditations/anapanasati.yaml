@@ -1,0 +1,187 @@
+id: anapanasati
+title: Ānāpānasati — Mindfulness of Breathing
+description: >
+    The sixteen-step breath practice taught by the Buddha in MN 118. Moving
+    through four tetrads — body, feeling, mind, and insight — this session
+    guides you from basic breath observation through calming the body,
+    touching the subtler qualities of rapture and ease, and resting in
+    open, liberated awareness.
+level: 2
+durations:
+    - 10
+    - 20
+steps:
+    10:
+        - instruction: >
+              Find a comfortable, upright posture. Let your hands rest in
+              your lap. Gently close your eyes or lower your gaze to the
+              floor.
+          durationSeconds: 30
+        - instruction: >
+              Take three slow, deliberate breaths to settle the body and
+              signal to the mind that it is time to be still.
+          durationSeconds: 40
+        - instruction: >
+              First Tetrad — Body. Let your breathing return to its
+              natural rhythm. Simply notice: is this breath long or short?
+              There is nothing to change. Just know each breath as it is.
+          durationSeconds: 60
+        - instruction: >
+              Now expand your awareness to the whole body as it breathes.
+              Feel the torso rising and falling, the subtle movement
+              throughout. Breathe in experiencing the whole body.
+              Breathe out experiencing the whole body.
+          durationSeconds: 60
+        - instruction: >
+              Let the breath settle further. With each out-breath, allow
+              the body to soften a little more. Breathe in calming the
+              body. Breathe out calming the body.
+          durationSeconds: 60
+        - instruction: >
+              Second Tetrad — Feelings. As the body calms, notice any
+              quality of ease or uplift in the breath. Rapture, warmth,
+              lightness — simply acknowledge whatever is present.
+              Breathe in experiencing these qualities.
+              Breathe out experiencing these qualities.
+          durationSeconds: 60
+        - instruction: >
+              Let those energies settle into a quieter pleasure — a simple
+              ease of being here. Breathe in calming the feeling.
+              Breathe out calming the feeling.
+          durationSeconds: 60
+        - instruction: >
+              Third Tetrad — Mind. Turn attention to the mind itself.
+              What is its quality right now? Notice without judging.
+              Breathe in experiencing the mind. Breathe out experiencing
+              the mind.
+          durationSeconds: 60
+        - instruction: >
+              Fourth Tetrad — Insight. Notice that each breath arises and
+              passes. Each in-breath ends. Each out-breath ends. Simply
+              see this clearly: impermanence in each cycle of the breath.
+          durationSeconds: 70
+        - instruction: >
+              With each passing breath, notice how nothing needs to be
+              held. Let each out-breath be a small releasing — a gentle
+              relinquishment of whatever was held. Breathe in.
+              Breathe out. Let go.
+          durationSeconds: 80
+        - instruction: >
+              Slowly deepen the breath. Become aware of the room around
+              you. Carry this stillness with you as you gently open
+              your eyes.
+          durationSeconds: 40
+    20:
+        - instruction: >
+              Find a comfortable, upright posture. Let your hands rest
+              in your lap. Gently close your eyes.
+          durationSeconds: 30
+        - instruction: >
+              Take three slow, deliberate breaths. With each exhale,
+              allow the body to settle a little more completely.
+          durationSeconds: 40
+        - instruction: >
+              First Tetrad — Body. Let the breath return to its natural
+              rhythm. Your only task: know each breath as it is. Is it
+              long? Is it short? Simply know.
+          durationSeconds: 60
+        - instruction: >
+              Rest with this bare knowing for several breaths. Long or
+              short — each breath fully known, fully itself.
+          durationSeconds: 90
+        - instruction: >
+              Now expand awareness to the whole body as it breathes.
+              Feel how breathing involves the entire torso, the subtle
+              movement of the ribs, the belly, even the chest. Breathe
+              in experiencing the whole body. Breathe out experiencing
+              the whole body.
+          durationSeconds: 90
+        - instruction: >
+              With each out-breath, invite the body to soften slightly.
+              Let tension release without effort. Breathe in calming
+              bodily formation. Breathe out calming bodily formation.
+          durationSeconds: 90
+        - instruction: >
+              Second Tetrad — Feelings. As the body quiets, attend to
+              feeling-tone. Notice any quality of warmth, uplift, or
+              rapture in the breath. Don't seek it — just notice if it
+              is already here. Breathe in experiencing rapture.
+              Breathe out experiencing rapture.
+          durationSeconds: 80
+        - instruction: >
+              Below the more energised uplift, notice a simpler
+              pleasure: the ease of sitting still and breathing.
+              Breathe in experiencing this pleasure.
+              Breathe out experiencing this pleasure.
+          durationSeconds: 80
+        - instruction: >
+              See how feeling-tone colours every moment: pleasant, unpleasant,
+              or neutral. This is how the mind is shaped. Breathe in
+              experiencing mental formation. Breathe out experiencing it.
+              Simply observe.
+          durationSeconds: 80
+        - instruction: >
+              Let even these subtle feelings settle. Breathe in calming
+              mental formation. Breathe out calming mental formation.
+              Allow the mind to become still and clear.
+          durationSeconds: 80
+        - instruction: >
+              Third Tetrad — Mind. Turn attention to the mind itself —
+              its overall quality, its texture. Is it alert or dull?
+              Spacious or tight? Know the mind as it is, right now.
+              Breathe in experiencing the mind. Breathe out experiencing
+              the mind.
+          durationSeconds: 80
+        - instruction: >
+              Allow a sense of gladness into the mind — not forced, but
+              the natural appreciation of being present, of practising.
+              Breathe in gladdening the mind.
+              Breathe out gladdening the mind.
+          durationSeconds: 70
+        - instruction: >
+              Let the mind gather and settle — unified around the breath.
+              Breathe in concentrating the mind.
+              Breathe out concentrating the mind.
+              Rest in this quiet collected awareness.
+          durationSeconds: 90
+        - instruction: >
+              Notice any remaining tightness or subtle clinging — and
+              release it with the out-breath. Breathe in liberating
+              the mind. Breathe out liberating the mind.
+              Nothing to hold. Nothing to achieve.
+          durationSeconds: 90
+        - instruction: >
+              Fourth Tetrad — Insight. Watch each breath arise and
+              pass. This in-breath was not here a moment ago; now it
+              is here; now it is gone. Breathe in contemplating
+              impermanence. Breathe out contemplating impermanence.
+          durationSeconds: 80
+        - instruction: >
+              Seeing this clearly — breath after breath — notice how
+              the pull of craving begins to fade. There is nothing to
+              grasp in what will inevitably pass. Breathe in
+              contemplating fading away. Breathe out contemplating
+              fading away.
+          durationSeconds: 80
+        - instruction: >
+              Each breath ends in a small cessation. Let that ending
+              be complete. Breathe in contemplating cessation.
+              Breathe out contemplating cessation.
+              Rest in the space after the out-breath.
+          durationSeconds: 80
+        - instruction: >
+              With each out-breath, relinquish a little more. Not
+              forcing letting go — simply not picking things back up.
+              Breathe in contemplating relinquishment.
+              Breathe out — and let go completely.
+          durationSeconds: 90
+        - instruction: >
+              Rest here in open awareness. The breath, breathing itself.
+              The mind, clear and unobstructed. No seeking. No holding.
+              Just this.
+          durationSeconds: 90
+        - instruction: >
+              Slowly deepen the breath. Let awareness expand outward —
+              sounds, the room, the body in space. When you are ready,
+              gently open your eyes.
+          durationSeconds: 50

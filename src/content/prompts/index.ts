@@ -37,6 +37,7 @@ export type PromptFileId = (typeof PROMPT_FILE_IDS)[number];
 
 /** All prompt file IDs in the library (one file per concept area) */
 export const PROMPT_FILE_IDS = [
+    'anapanasati-prompts',
     'anatta-prompts',
     'anicca-prompts',
     'dukkha-prompts',

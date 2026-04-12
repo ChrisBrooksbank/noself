@@ -54,6 +54,7 @@ export type MeditationId = (typeof MEDITATION_IDS)[number];
 
 /** All meditation IDs in the library */
 export const MEDITATION_IDS = [
+    'anapanasati',
     'breath-awareness',
     'metta',
     'body-scan',

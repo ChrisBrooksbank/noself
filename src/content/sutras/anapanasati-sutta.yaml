@@ -1,0 +1,408 @@
+id: anapanasati-sutta
+title: Ānāpānasati Sutta
+sanskrit: null
+pali: 'Ānāpānasatisutta'
+tradition: Theravada
+description: >-
+    The Discourse on Mindfulness of Breathing (MN 118), delivered by the
+    Buddha to a large assembly during the rains retreat at Savatthi. This
+    sutta presents the sixteen contemplations of ānāpānasati — four groups
+    of four steps that move through body, feeling, mind, and dharmas — and
+    declares that this single practice, fully developed, fulfils the entire
+    path to liberation.
+terms:
+    pali:
+        text: Ānāpānasatisutta
+        language: pali
+        literal: Discourse on Mindfulness of Breathing
+        etymology: >-
+            āna (in-breath) + apāna (out-breath) + sati (mindfulness) +
+            sutta (discourse, thread)
+        phonetic: AH-nah-PAH-nah-SAH-tee-SUT-tah
+
+sections:
+    - id: the-setting
+      order: 1
+      title: The Setting and the Assembly
+      original: >-
+          Ekaṃ samayaṃ bhagavā sāvatthiyaṃ viharati pubbārāme
+          migāramātupāsāde mahatā bhikkhusaṅghena saddhiṃ pañcamattehī
+          bhikkhusatehi, sabbeheva therabhikkhūhi.
+      originalLanguage: Pali
+      translation: >-
+          On one occasion the Blessed One was dwelling at Savatthi in the
+          Eastern Park, in the Mansion of Migara's Mother, together with a
+          large assembly of monks — with approximately five hundred monks,
+          all of them elder monks.
+      commentary: >-
+          The sutta opens by setting the scene with unusual specificity: five
+          hundred senior monks, gathered during the rains retreat. This was
+          not a casual audience. The Buddha then praises the assembly,
+          noting that many of the monks are themselves accomplished teachers
+          and that some have already attained various stages of awakening.
+          This framing signals that what follows is not elementary
+          instruction but a definitive teaching for those already committed
+          to the path. He then introduces ānāpānasati as the practice he
+          himself used in the weeks before and after his own awakening —
+          lending the instruction an autobiographical authority rare in the
+          Pali Canon.
+      relatedConcepts:
+          - sati
+          - bhavana
+          - samatha
+      phonetic: >-
+          E-kam SA-ma-yam BHA-ga-VAH SAH-vat-thi-yam vi-HA-ra-ti
+          pub-BAH-rah-may mi-GAH-rah-MAH-tu-PAH-sah-day
+
+    - id: first-tetrad
+      order: 2
+      title: First Tetrad — The Body (Kāya)
+      original: >-
+          Dīghaṃ vā assasanto "dīghaṃ assasāmī"ti pajānāti; dīghaṃ vā
+          passasanto "dīghaṃ passasāmī"ti pajānāti. Rassaṃ vā assasanto
+          "rassaṃ assasāmī"ti pajānāti; rassaṃ vā passasanto "rassaṃ
+          passasāmī"ti pajānāti. "Sabbakāyapaṭisaṃvedī assasissāmī"ti
+          sikkhati; "sabbakāyapaṭisaṃvedī passasissāmī"ti sikkhati.
+          "Passambhayaṃ kāyasaṅkhāraṃ assasissāmī"ti sikkhati;
+          "passambhayaṃ kāyasaṅkhāraṃ passasissāmī"ti sikkhati.
+      originalLanguage: Pali
+      translation: >-
+          Breathing in long, one knows "I breathe in long." Breathing out
+          long, one knows "I breathe out long." Breathing in short, one
+          knows "I breathe in short." Breathing out short, one knows "I
+          breathe out short." One trains: "I shall breathe in experiencing
+          the whole body." One trains: "I shall breathe out experiencing
+          the whole body." One trains: "I shall breathe in calming bodily
+          formation." One trains: "I shall breathe out calming bodily
+          formation."
+      commentary: >-
+          The first tetrad grounds the practice entirely in the body.
+          Steps 1 and 2 are pure observation: a long breath is known as
+          long; a short breath is known as short. There is no attempt to
+          control or alter the breath — only clear, non-reactive knowing.
+          This cultivates the most basic dimension of sati: direct
+          awareness of what is actually happening.
+
+          Step 3 expands the field. "Sabbakāya" means "the whole body" —
+          not just the sensation at the nostrils or the rise of the belly,
+          but the entire body as it breathes. Some commentators interpret
+          this as awareness of the full arc of each breath from start to
+          finish; others as a felt sense of the body as a single, breathing
+          whole.
+
+          Step 4 introduces an active element: "calming bodily formation"
+          (kāyasaṅkhāra). In Buddhist psychology, the in-breath and
+          out-breath are the bodily formation — the physical process that
+          conditions the body's state. To calm it is to allow the breath
+          to settle into a natural, gentle rhythm, and with it the entire
+          body. This calming is not forced; it is the natural consequence
+          of sustained, non-reactive attention.
+      relatedConcepts:
+          - sati
+          - anapanasati
+          - samatha
+      phonetic: >-
+          DEE-gham vah AS-sa-SAN-to DEE-gham AS-sa-SAH-mee-ti pa-JAH-na-ti.
+          RAS-sam vah AS-sa-SAN-to RAS-sam AS-sa-SAH-mee-ti pa-JAH-na-ti.
+          SAB-ba-KAH-ya-pa-ti-SAM-ve-dee AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          PAS-sam-BHA-yam KAH-ya-SANG-kha-ram AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+      gloss:
+          - word: dīghaṃ
+            meaning: long
+            phonetic: DEE-gham
+          - word: assasanto
+            meaning: breathing in / while inhaling
+            phonetic: AS-sa-SAN-to
+          - word: pajānāti
+            meaning: one knows / one discerns clearly
+            phonetic: pa-JAH-NAH-ti
+          - word: rassaṃ
+            meaning: short
+            phonetic: RAS-sam
+          - word: sabbakāya
+            meaning: the whole body / entire body
+            phonetic: SAB-ba-KAH-ya
+          - word: paṭisaṃvedī
+            meaning: experiencing / fully feeling
+            phonetic: pa-ti-SAM-ve-dee
+          - word: sikkhati
+            meaning: one trains / one practises
+            phonetic: SIK-kha-ti
+          - word: passambhayaṃ
+            meaning: calming / tranquillising
+            phonetic: PAS-sam-BHA-yam
+          - word: kāyasaṅkhāra
+            meaning: bodily formation; the in-breath and out-breath as the formation conditioning the body
+            phonetic: KAH-ya-SANG-kha-ra
+
+    - id: second-tetrad
+      order: 3
+      title: Second Tetrad — Feelings (Vedanā)
+      original: >-
+          "Pītipaṭisaṃvedī assasissāmī"ti sikkhati; "pītipaṭisaṃvedī
+          passasissāmī"ti sikkhati. "Sukhapaṭisaṃvedī assasissāmī"ti
+          sikkhati; "sukhapaṭisaṃvedī passasissāmī"ti sikkhati.
+          "Cittasaṅkhārapaṭisaṃvedī assasissāmī"ti sikkhati;
+          "cittasaṅkhārapaṭisaṃvedī passasissāmī"ti sikkhati.
+          "Passambhayaṃ cittasaṅkhāraṃ assasissāmī"ti sikkhati;
+          "passambhayaṃ cittasaṅkhāraṃ passasissāmī"ti sikkhati.
+      originalLanguage: Pali
+      translation: >-
+          One trains: "I shall breathe in experiencing rapture." One
+          trains: "I shall breathe out experiencing rapture." One trains:
+          "I shall breathe in experiencing pleasure." One trains: "I shall
+          breathe out experiencing pleasure." One trains: "I shall breathe
+          in experiencing mental formation." One trains: "I shall breathe
+          out experiencing mental formation." One trains: "I shall breathe
+          in calming mental formation." One trains: "I shall breathe out
+          calming mental formation."
+      commentary: >-
+          As the body settles through the first tetrad, subtler qualities
+          begin to surface. Steps 5 and 6 attend to pīti and sukha — two
+          distinct but related qualities. Pīti (rapture) is an energised,
+          sometimes physical sense of uplift: a spreading warmth, a
+          lightness, an inner brightness. Sukha (pleasure) is quieter — a
+          settled ease that remains when pīti's more active energy
+          subsides. In the jhāna literature, pīti is associated with the
+          first and second jhāna; sukha with the first through third. Here,
+          in the context of ānāpānasati, the instruction is simply to
+          notice these qualities as they arise with each breath.
+
+          Step 7 turns to cittasaṅkhāra — "mental formation." The
+          commentary identifies feeling (vedanā) and perception (saññā) as
+          the formations that condition the mind in the way that breath
+          conditions the body. To experience them is to see clearly how the
+          mind is being shaped moment by moment by the emotional and
+          perceptual tone of experience.
+
+          Step 8 mirrors step 4: calming the mental formations. As the
+          grosser energies of rapture settle into pleasure, and pleasure
+          itself becomes more refined, the mind's agitated doing gives way
+          to a more spacious being. The breath — still present, still the
+          object — becomes the vehicle for this deepening stillness.
+      relatedConcepts:
+          - anapanasati
+          - sati
+          - samatha
+          - vipassana
+      phonetic: >-
+          PEE-ti-pa-ti-SAM-ve-dee AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          SUK-ha-pa-ti-SAM-ve-dee AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          chit-ta-SANG-kha-ra-pa-ti-SAM-ve-dee AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          PAS-sam-BHA-yam chit-ta-SANG-kha-ram AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+      gloss:
+          - word: pīti
+            meaning: rapture / joy / energised uplift
+            phonetic: PEE-ti
+          - word: sukha
+            meaning: pleasure / happiness / settled ease
+            phonetic: SUK-ha
+          - word: cittasaṅkhāra
+            meaning: mental formation; feeling and perception as conditions of the mind
+            phonetic: chit-ta-SANG-kha-ra
+
+    - id: third-tetrad
+      order: 4
+      title: Third Tetrad — The Mind (Citta)
+      original: >-
+          "Cittapaṭisaṃvedī assasissāmī"ti sikkhati; "cittapaṭisaṃvedī
+          passasissāmī"ti sikkhati. "Abhippamodayaṃ cittaṃ assasissāmī"ti
+          sikkhati; "abhippamodayaṃ cittaṃ passasissāmī"ti sikkhati.
+          "Samādahaṃ cittaṃ assasissāmī"ti sikkhati; "samādahaṃ cittaṃ
+          passasissāmī"ti sikkhati. "Vimocayaṃ cittaṃ assasissāmī"ti
+          sikkhati; "vimocayaṃ cittaṃ passasissāmī"ti sikkhati.
+      originalLanguage: Pali
+      translation: >-
+          One trains: "I shall breathe in experiencing the mind." One
+          trains: "I shall breathe out experiencing the mind." One trains:
+          "I shall breathe in gladdening the mind." One trains: "I shall
+          breathe out gladdening the mind." One trains: "I shall breathe in
+          concentrating the mind." One trains: "I shall breathe out
+          concentrating the mind." One trains: "I shall breathe in
+          liberating the mind." One trains: "I shall breathe out liberating
+          the mind."
+      commentary: >-
+          The third tetrad turns attention from what arises in the mind to
+          the mind itself. Step 9 — "experiencing the mind" — is a
+          reflexive awareness: the mind knowing its own quality. Is it
+          contracted or spacious? Dull or alert? Filled with desire, with
+          aversion, with neither? The practitioner simply knows the mind
+          as it is.
+
+          Step 10 — "gladdening the mind" — is often glossed as
+          introducing the qualities of pīti and sukha (cultivated in the
+          second tetrad) directly into the mind's field, refreshing it.
+          Some interpreters read this as actively recollecting one's
+          generosity or virtue to lift a sluggish mind; others as simply
+          allowing the gladness already present in the practice to fully
+          permeate awareness.
+
+          Step 11 — "concentrating the mind" — is samādhi itself: a
+          unified, collected, one-pointed mind. At this stage the breath
+          may become very subtle; awareness rests in a clear, still space
+          that is nonetheless fully present.
+
+          Step 12 — "liberating the mind" — is the culmination of the
+          first twelve steps. The mind is released from whatever still
+          obscures it: hindrances, clinging, subtle identification. The
+          Ānāpānasati Sutta is unusual in placing liberation as a
+          training-step rather than a final result — pointing to the
+          possibility of a moment-by-moment releasing that prefigures
+          final awakening.
+      relatedConcepts:
+          - anapanasati
+          - sati
+          - samatha
+          - vipassana
+          - bhavana
+      phonetic: >-
+          chit-ta-pa-ti-SAM-ve-dee AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          ab-hip-pa-MO-da-yam CHIT-tam AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          sa-MAH-da-ham CHIT-tam AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          vi-MO-ca-yam CHIT-tam AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+      gloss:
+          - word: citta
+            meaning: mind / heart-mind / cognising awareness
+            phonetic: CHIT-ta
+          - word: abhippamodayaṃ
+            meaning: gladdening / uplifting / refreshing with joy
+            phonetic: ab-hip-pa-MO-da-yam
+          - word: samādahaṃ
+            meaning: concentrating / unifying / collecting
+            phonetic: sa-MAH-da-ham
+          - word: vimocayaṃ
+            meaning: liberating / releasing / freeing
+            phonetic: vi-MO-ca-yam
+
+    - id: fourth-tetrad
+      order: 5
+      title: Fourth Tetrad — Dharmas (Dhammā)
+      original: >-
+          "Aniccānupassī assasissāmī"ti sikkhati; "aniccānupassī
+          passasissāmī"ti sikkhati. "Virāgānupassī assasissāmī"ti
+          sikkhati; "virāgānupassī passasissāmī"ti sikkhati.
+          "Nirodhānupassī assasissāmī"ti sikkhati; "nirodhānupassī
+          passasissāmī"ti sikkhati. "Paṭinissaggānupassī assasissāmī"ti
+          sikkhati; "paṭinissaggānupassī passasissāmī"ti sikkhati.
+      originalLanguage: Pali
+      translation: >-
+          One trains: "I shall breathe in contemplating impermanence."
+          One trains: "I shall breathe out contemplating impermanence."
+          One trains: "I shall breathe in contemplating fading away."
+          One trains: "I shall breathe out contemplating fading away."
+          One trains: "I shall breathe in contemplating cessation."
+          One trains: "I shall breathe out contemplating cessation."
+          One trains: "I shall breathe in contemplating relinquishment."
+          One trains: "I shall breathe out contemplating relinquishment."
+      commentary: >-
+          The fourth tetrad is the pivot from samatha (tranquillity) to
+          vipassanā (insight). Using the settled, concentrated mind built
+          through the first three tetrads, the practitioner now turns
+          that same awareness onto the nature of experience itself.
+
+          Step 13 — aniccānupassī ("contemplating impermanence") — sees
+          directly that every breath, every moment of awareness, arises
+          and passes. This is not an intellectual conclusion but a lived
+          perception: the breath that came is already gone; the breath
+          arriving will itself pass.
+
+          Step 14 — virāgānupassī ("contemplating fading away") — arises
+          naturally from sustained seeing of impermanence. Virāga literally
+          means "fading" or "discolouring," but in the contemplative context
+          it points to disenchantment or dispassion: the mind no longer
+          reacts with craving to what is pleasant or with aversion to what
+          is unpleasant. The colouring of greed and clinging begins to fade.
+
+          Step 15 — nirodhānupassī ("contemplating cessation") — takes this
+          further: not just the fading of reactive coloring but the direct
+          seeing of cessation itself. Each out-breath ceases. Each moment
+          of awareness ceases. In advanced practice, the mind directly
+          encounters nirodha — the stopping that points to nibbāna.
+
+          Step 16 — paṭinissaggānupassī ("contemplating relinquishment") —
+          is the culmination. Paṭinissagga means "throwing back" or "giving
+          back." In later traditions this was understood in two senses:
+          giving up defilements, and giving back all conditioned phenomena
+          to their nature. Both point to the same gesture: a complete
+          letting go, in which nothing is held.
+
+          These four insights are sometimes called the three gateways to
+          liberation: impermanence leading to the signless liberation,
+          fading to the desireless liberation, and cessation/relinquishment
+          to the emptiness liberation.
+      relatedConcepts:
+          - anicca
+          - anapanasati
+          - vipassana
+          - nirvana
+          - dependent-origination
+          - samsara
+      phonetic: >-
+          a-nic-CAH-nu-PAS-see AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          vi-RAH-gah-nu-PAS-see AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          ni-RO-dah-nu-PAS-see AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+          pa-ti-nis-SAG-gah-nu-PAS-see AS-sa-SIS-sah-mee-ti SIK-kha-ti.
+      gloss:
+          - word: aniccānupassī
+            meaning: one who contemplates impermanence (anicca = impermanent + anupassī = contemplating)
+            phonetic: a-nic-CAH-nu-PAS-see
+          - word: virāgānupassī
+            meaning: one who contemplates fading away / dispassion (virāga = fading, dispassion)
+            phonetic: vi-RAH-gah-nu-PAS-see
+          - word: nirodhānupassī
+            meaning: one who contemplates cessation (nirodha = cessation, stopping)
+            phonetic: ni-RO-dah-nu-PAS-see
+          - word: paṭinissaggānupassī
+            meaning: one who contemplates relinquishment / throwing back (paṭinissagga = letting go, giving back)
+            phonetic: pa-ti-nis-SAG-gah-nu-PAS-see
+
+    - id: the-fulfilment
+      order: 6
+      title: The Fulfilment — How This Practice Completes the Path
+      original: >-
+          Ānāpānasati, bhikkhave, bhāvitā bahulīkatā cattāro satipaṭṭhāne
+          paripūreti. Cattāro satipaṭṭhānā bhāvitā bahulīkatā satta
+          bojjhaṅge paripūrenti. Satta bojjhaṅgā bhāvitā bahulīkatā
+          vijjāvimuttiṃ paripūrenti.
+      originalLanguage: Pali
+      translation: >-
+          Monks, mindfulness of breathing, developed and cultivated,
+          fulfils the four foundations of mindfulness. The four foundations
+          of mindfulness, developed and cultivated, fulfil the seven factors
+          of awakening. The seven factors of awakening, developed and
+          cultivated, fulfil true knowledge and liberation.
+      commentary: >-
+          The sutta concludes with the Buddha's own summary of why
+          ānāpānasati is a complete path, not merely one technique. The
+          logic is precise: the sixteen contemplations, when worked
+          through, practise all four foundations of mindfulness
+          (body, feeling, mind, dharmas). These four foundations, when
+          matured, naturally develop the seven awakening factors
+          (sati, investigation of dharmas, energy, rapture, tranquillity,
+          concentration, equanimity). And these seven factors, when fully
+          cultivated, complete vijjāvimutti — "true knowledge and
+          liberation."
+
+          The word "fulfil" (paripūreti) is important. It does not say
+          ānāpānasati is the only path, but that it is a sufficient one:
+          a practitioner who fully cultivates the sixteen steps, attending
+          to body, feeling, mind, and dharmas in the way described, need
+          not seek a different practice. The breath is the whole vehicle.
+
+          In the Theravada tradition this teaching has been elaborated
+          extensively in commentaries from Buddhaghosa's Visuddhimagga to
+          modern teachers such as Ajahn Brahm, Bhikkhu Bodhi, and Thanissaro
+          Bhikkhu — each of whom has emphasised different aspects of the
+          teaching while affirming its completeness as a path to nibbāna.
+      relatedConcepts:
+          - anapanasati
+          - sati
+          - nirvana
+          - vipassana
+          - samatha
+          - four-noble-truths
+      phonetic: >-
+          AH-nah-PAH-nah-SAH-ti BIK-kha-ve BHAh-vi-TAH ba-hu-lee-KA-tah
+          cat-TAH-ro sa-ti-pat-THAN-ay pa-ri-POO-re-ti.
+          SAT-ta BOJI-ang-GAH BHAh-vi-TAH ba-hu-lee-KA-tah
+          vig-JAH-vi-MUT-tim pa-ri-POO-ren-ti.

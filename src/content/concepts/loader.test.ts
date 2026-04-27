@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
+import { CONCEPT_IDS } from './index.js';
 import { loadConcepts, getConceptById, resetConceptCache } from './loader.js';
 
 describe('loadConcepts', () => {
@@ -6,9 +7,9 @@ describe('loadConcepts', () => {
         resetConceptCache();
     });
 
-    it('loads all 30 concepts', () => {
+    it('loads all concepts', () => {
         const concepts = loadConcepts();
-        expect(concepts).toHaveLength(30);
+        expect(concepts).toHaveLength(CONCEPT_IDS.length);
     });
 
     it('each concept has required fields', () => {

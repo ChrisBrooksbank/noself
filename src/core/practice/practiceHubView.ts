@@ -4,6 +4,9 @@ import {
     getPromptSessions,
     getPujaSessions,
     getMantraSessions,
+    getCurrentStreak,
+    getLongestStreak,
+    hasPracticedToday,
 } from '../practiceHistory.js';
 import { getExpertiseLevel } from '../preferences.js';
 
@@ -13,18 +16,28 @@ function renderStatsSummary(
     promptCount: number,
     pujaCount: number,
     mantraCount: number,
+    currentStreak: number,
+    longestStreak: number,
+    practicedToday: boolean,
 ): string {
     if (totalSessions === 0) {
         return `<p class="practice-hub__empty">No practice sessions yet. Start below.</p>`;
     }
     return `
-        <p class="practice-hub__stats">
-            ${totalSessions} session${totalSessions === 1 ? '' : 's'} total
-            &mdash; ${meditationCount} meditation${meditationCount === 1 ? '' : 's'},
-            ${promptCount} prompt${promptCount === 1 ? '' : 's'} sat with,
-            ${pujaCount} puja${pujaCount === 1 ? '' : 's'},
-            ${mantraCount} mantra${mantraCount === 1 ? '' : 's'}
-        </p>`;
+        <section class="practice-hub__stats card stack-sm" aria-label="Practice summary">
+            <p class="practice-hub__today">${practicedToday ? 'Practice logged today.' : 'No practice logged today yet.'}</p>
+            <div class="practice-hub__stat-grid">
+                <span><strong>${currentStreak}</strong> current streak</span>
+                <span><strong>${longestStreak}</strong> longest streak</span>
+                <span><strong>${totalSessions}</strong> session${totalSessions === 1 ? '' : 's'}</span>
+            </div>
+            <p class="practice-hub__stats-detail">
+                ${meditationCount} meditation${meditationCount === 1 ? '' : 's'},
+                ${promptCount} prompt${promptCount === 1 ? '' : 's'} sat with,
+                ${pujaCount} puja${pujaCount === 1 ? '' : 's'},
+                ${mantraCount} mantra${mantraCount === 1 ? '' : 's'}
+            </p>
+        </section>`;
 }
 
 function renderCard(
@@ -48,6 +61,9 @@ export function renderPracticeHubView(container: HTMLElement): void {
     const promptCount = getPromptSessions().length;
     const pujaCount = getPujaSessions().length;
     const mantraCount = getMantraSessions().length;
+    const currentStreak = getCurrentStreak();
+    const longestStreak = getLongestStreak();
+    const practicedToday = hasPracticedToday();
 
     const meditateCard = renderCard(
         '#/practice/meditate',
@@ -89,7 +105,7 @@ export function renderPracticeHubView(container: HTMLElement): void {
     container.innerHTML = `
         <div class="practice-hub-view page stack-lg" role="main">
             <h1 class="practice-hub__heading">Practice</h1>
-            ${renderStatsSummary(totalSessions, meditationCount, promptCount, pujaCount, mantraCount)}
+            ${renderStatsSummary(totalSessions, meditationCount, promptCount, pujaCount, mantraCount, currentStreak, longestStreak, practicedToday)}
             <div class="practice-hub__cards stack-md">
                 ${meditateCard}
                 ${contemplateCard}

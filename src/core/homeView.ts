@@ -2,6 +2,12 @@ import { getDailyConcept } from './dailyConcept.js';
 import { getViewedIds } from './readingHistory.js';
 import { getConceptById, CONCEPT_IDS } from '../content/concepts/index.js';
 import { getExpertiseLevel } from './preferences.js';
+import {
+    getCurrentStreak,
+    getInactiveDayCount,
+    hasPracticedToday,
+} from './practiceHistory.js';
+import { getReminderPreferences, formatReminderTime } from './reminders/preferences.js';
 
 const TOTAL_CONCEPTS = CONCEPT_IDS.length;
 const MAX_HISTORY = 5;
@@ -21,6 +27,39 @@ function renderProgress(viewedCount: number): string {
         <p class="home-progress" aria-label="Reading progress">
             ${viewedCount} of ${TOTAL_CONCEPTS} concepts explored
         </p>`;
+}
+
+function renderPracticeNudge(): string {
+    const practicedToday = hasPracticedToday();
+    const currentStreak = getCurrentStreak();
+    const inactiveDays = getInactiveDayCount();
+    const preferences = getReminderPreferences();
+    const reminderText =
+        preferences.enabled && !practicedToday
+            ? `<span class="home-practice__reminder">Reminder set for ${formatReminderTime(preferences)}.</span>`
+            : '';
+
+    if (practicedToday) {
+        return `
+            <section class="home-practice card stack-sm" aria-label="Daily practice">
+                <h2 class="home-section__heading">Practice Today</h2>
+                <p class="home-practice__text">Practice is logged for today.</p>
+                <p class="home-practice__meta">${currentStreak} day${currentStreak === 1 ? '' : 's'} of continuity.</p>
+            </section>`;
+    }
+
+    const text =
+        inactiveDays >= 3
+            ? 'Begin again gently. One prompt, one breath, one minute is enough.'
+            : "Today's prompt is waiting when you are ready.";
+
+    return `
+        <section class="home-practice card stack-sm" aria-label="Daily practice">
+            <h2 class="home-section__heading">Practice Today</h2>
+            <p class="home-practice__text">${text}</p>
+            ${reminderText}
+            <a href="#/practice/prompts" class="home-practice__link btn">Open Prompt</a>
+        </section>`;
 }
 
 const GUIDANCE_KEY = 'noself:guidanceLastShown';
@@ -108,6 +147,7 @@ export function renderHomeView(container: HTMLElement): void {
     container.innerHTML = `
         <div class="home-view page stack-lg" role="main">
             ${renderDailyCard(concept.id, concept.title, briefText)}
+            ${renderPracticeNudge()}
             ${renderProgress(viewedIds.length)}
             ${renderHistory(viewedIds)}
         </div>`;

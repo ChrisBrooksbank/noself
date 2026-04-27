@@ -63,10 +63,10 @@ describe('getDailyConceptId', () => {
         expect(getDailyConceptId(day1)).not.toBe(getDailyConceptId(day2));
     });
 
-    it('cycles through all 30 concept IDs over 30 consecutive days', () => {
+    it('cycles through all concept IDs over a full rotation', () => {
         const baseDate = new Date('2024-01-01T00:00:00Z');
         const seen = new Set<string>();
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < CONCEPT_IDS.length; i++) {
             const date = new Date(baseDate.getTime() + i * 24 * 60 * 60 * 1000);
             seen.add(getDailyConceptId(date));
         }
@@ -77,8 +77,8 @@ describe('getDailyConceptId', () => {
         const epoch = new Date(0);
         expect(getDailyConceptId(epoch)).toBe(CONCEPT_IDS[0]);
 
-        const day30 = new Date(30 * 24 * 60 * 60 * 1000);
-        expect(getDailyConceptId(day30)).toBe(CONCEPT_IDS[0]);
+        const firstDayAfterRotation = new Date(CONCEPT_IDS.length * 24 * 60 * 60 * 1000);
+        expect(getDailyConceptId(firstDayAfterRotation)).toBe(CONCEPT_IDS[0]);
     });
 });
 

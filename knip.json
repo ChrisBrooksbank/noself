@@ -10,6 +10,7 @@
     },
     "entry": [
         "src/api/index.ts",
+        "src/sw.ts",
         "src/core/index.ts",
         "src/types/index.ts",
         "src/utils/index.ts",
@@ -22,6 +23,9 @@
         "src/content/pujas/index.ts",
         "src/content/mantras/index.ts",
         "src/content/primers/index.ts",
-        "src/content/videos/index.ts"
+        "src/content/videos/index.ts",
+        "netlify/functions/delete-push-subscription.ts",
+        "netlify/functions/save-push-subscription.ts",
+        "netlify/functions/send-daily-reminders.ts"
     ]
 }

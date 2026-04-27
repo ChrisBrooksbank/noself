@@ -13,6 +13,12 @@ import {
     logMantraSession,
     getMantraSessions,
     getTotalSessionCount,
+    getPracticeDaySummaries,
+    hasPracticedToday,
+    getLastPracticeDate,
+    getCurrentStreak,
+    getLongestStreak,
+    getInactiveDayCount,
 } from './practiceHistory.js';
 
 beforeEach(() => {
@@ -198,5 +204,121 @@ describe('persistence', () => {
         expect(getPujaSessions()).toEqual([]);
         expect(getMantraSessions()).toEqual([]);
         expect(getMeditationSessions()).toHaveLength(1);
+    });
+});
+
+describe('practice day summaries and streaks', () => {
+    it('summarizes all practice types by local date', () => {
+        localStorage.setItem(
+            'noself:practiceHistory',
+            JSON.stringify({
+                meditations: [
+                    {
+                        meditationId: 'metta',
+                        durationMinutes: 10,
+                        completedAt: '2024-01-01T10:00:00.000Z',
+                    },
+                ],
+                prompts: [{ promptId: 'anatta-1', satWith: '2024-01-01T12:00:00.000Z' }],
+                pathSessions: [
+                    {
+                        pathId: 'seven-day-metta',
+                        sessionIndex: 0,
+                        completedAt: '2024-01-02T10:00:00.000Z',
+                    },
+                ],
+                pujas: [],
+                mantras: [
+                    {
+                        mantraId: 'avalokiteshvara',
+                        repetitions: 108,
+                        completedAt: '2024-01-02T11:00:00.000Z',
+                    },
+                ],
+            }),
+        );
+
+        expect(getPracticeDaySummaries()).toEqual([
+            {
+                date: '2024-01-01',
+                meditationCount: 1,
+                promptCount: 1,
+                pathSessionCount: 0,
+                pujaCount: 0,
+                mantraCount: 0,
+                totalCount: 2,
+            },
+            {
+                date: '2024-01-02',
+                meditationCount: 0,
+                promptCount: 0,
+                pathSessionCount: 1,
+                pujaCount: 0,
+                mantraCount: 1,
+                totalCount: 2,
+            },
+        ]);
+    });
+
+    it('detects today and latest practice date', () => {
+        localStorage.setItem(
+            'noself:practiceHistory',
+            JSON.stringify({
+                meditations: [
+                    {
+                        meditationId: 'metta',
+                        durationMinutes: 10,
+                        completedAt: '2024-01-02T10:00:00.000Z',
+                    },
+                ],
+                prompts: [],
+                pathSessions: [],
+                pujas: [],
+                mantras: [],
+            }),
+        );
+
+        expect(hasPracticedToday(new Date('2024-01-02T18:00:00'))).toBe(true);
+        expect(hasPracticedToday(new Date('2024-01-03T18:00:00'))).toBe(false);
+        expect(getLastPracticeDate()).toBe('2024-01-02');
+    });
+
+    it('calculates current and longest streaks', () => {
+        localStorage.setItem(
+            'noself:practiceHistory',
+            JSON.stringify({
+                meditations: [
+                    {
+                        meditationId: 'metta',
+                        durationMinutes: 10,
+                        completedAt: '2024-01-01T10:00:00.000Z',
+                    },
+                    {
+                        meditationId: 'metta',
+                        durationMinutes: 10,
+                        completedAt: '2024-01-02T10:00:00.000Z',
+                    },
+                    {
+                        meditationId: 'metta',
+                        durationMinutes: 10,
+                        completedAt: '2024-01-04T10:00:00.000Z',
+                    },
+                    {
+                        meditationId: 'metta',
+                        durationMinutes: 10,
+                        completedAt: '2024-01-05T10:00:00.000Z',
+                    },
+                ],
+                prompts: [],
+                pathSessions: [],
+                pujas: [],
+                mantras: [],
+            }),
+        );
+
+        expect(getCurrentStreak(new Date('2024-01-05T18:00:00'))).toBe(2);
+        expect(getCurrentStreak(new Date('2024-01-06T18:00:00'))).toBe(2);
+        expect(getLongestStreak()).toBe(2);
+        expect(getInactiveDayCount(new Date('2024-01-07T18:00:00'))).toBe(2);
     });
 });

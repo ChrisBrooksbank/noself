@@ -11,6 +11,19 @@ import {
     type FontSize,
     type ExpertiseLevel,
 } from './preferences.js';
+import {
+    formatReminderTime,
+    getReminderPreferences,
+    parseReminderTime,
+    setReminderPreferences,
+    type ReminderType,
+} from './reminders/preferences.js';
+import {
+    getNotificationPermission,
+    requestNotificationPermission,
+    subscribeToPushReminders,
+    unsubscribeFromPushReminders,
+} from './reminders/notifications.js';
 
 let panelEl: HTMLElement | null = null;
 let isOpen = false;
@@ -20,6 +33,8 @@ function buildPanel(): string {
     const fontSize = getFontSize();
     const expertiseLevel = getExpertiseLevel();
     const showVideoLinks = getShowVideoLinks();
+    const reminders = getReminderPreferences();
+    const notificationPermission = getNotificationPermission();
 
     const themeOptions: { value: Theme; label: string }[] = [
         { value: 'dark', label: 'Dark' },
@@ -79,6 +94,15 @@ function buildPanel(): string {
         )
         .join('');
 
+    const notificationText =
+        notificationPermission === 'granted'
+            ? 'Browser notifications allowed'
+            : notificationPermission === 'denied'
+              ? 'Browser notifications blocked in this browser'
+              : notificationPermission === 'unsupported'
+                ? 'Browser notifications unavailable'
+                : 'Browser notifications optional';
+
     return `
         <div class="settings-panel" role="dialog" aria-label="Accessibility settings">
             <div class="settings-panel__inner">
@@ -104,6 +128,31 @@ function buildPanel(): string {
                             <input type="checkbox" name="showVideoLinks"${showVideoLinks ? ' checked' : ''}>
                             <span class="settings-panel__toggle-label">Show video links</span>
                         </label>
+                    </fieldset>
+                    <fieldset class="settings-panel__fieldset settings-panel__fieldset--reminders">
+                        <legend class="settings-panel__legend">Reminders</legend>
+                        <label class="settings-panel__toggle">
+                            <input type="checkbox" name="remindersEnabled"${reminders.enabled ? ' checked' : ''}>
+                            <span class="settings-panel__toggle-label">Daily reminder</span>
+                        </label>
+                        <label class="settings-panel__field">
+                            <span class="settings-panel__field-label">Time</span>
+                            <input class="settings-panel__time" type="time" name="reminderTime" value="${formatReminderTime(reminders)}">
+                        </label>
+                        <label class="settings-panel__field">
+                            <span class="settings-panel__field-label">Focus</span>
+                            <select class="settings-panel__select" name="reminderType">
+                                <option value="daily-prompt"${reminders.reminderType === 'daily-prompt' ? ' selected' : ''}>Daily prompt</option>
+                                <option value="daily-concept"${reminders.reminderType === 'daily-concept' ? ' selected' : ''}>Daily concept</option>
+                                <option value="meditation"${reminders.reminderType === 'meditation' ? ' selected' : ''}>Meditation</option>
+                            </select>
+                        </label>
+                        <p class="settings-panel__hint">${notificationText}</p>
+                        <div class="settings-panel__actions">
+                            <button class="btn btn--sm settings-panel__notify-btn" type="button">Allow browser notifications</button>
+                            <button class="btn btn--sm settings-panel__push-btn" type="button">Sync push reminder</button>
+                            <button class="btn btn--sm settings-panel__push-off-btn" type="button">Turn off push</button>
+                        </div>
                     </fieldset>
                 </div>
             </div>
@@ -177,6 +226,48 @@ function bindPanelEvents(): void {
     videoCheckbox?.addEventListener('change', () => {
         setShowVideoLinks(videoCheckbox.checked);
     });
+
+    const remindersEnabled = panelEl.querySelector<HTMLInputElement>(
+        'input[name="remindersEnabled"]',
+    );
+    remindersEnabled?.addEventListener('change', () => {
+        setReminderPreferences({ enabled: remindersEnabled.checked });
+    });
+
+    const reminderTime = panelEl.querySelector<HTMLInputElement>(
+        'input[name="reminderTime"]',
+    );
+    reminderTime?.addEventListener('change', () => {
+        setReminderPreferences(parseReminderTime(reminderTime.value));
+    });
+
+    const reminderType = panelEl.querySelector<HTMLSelectElement>(
+        'select[name="reminderType"]',
+    );
+    reminderType?.addEventListener('change', () => {
+        setReminderPreferences({ reminderType: reminderType.value as ReminderType });
+    });
+
+    panelEl
+        .querySelector<HTMLButtonElement>('.settings-panel__notify-btn')
+        ?.addEventListener('click', async () => {
+            await requestNotificationPermission();
+            openPanel();
+        });
+
+    panelEl
+        .querySelector<HTMLButtonElement>('.settings-panel__push-btn')
+        ?.addEventListener('click', async () => {
+            await subscribeToPushReminders();
+            openPanel();
+        });
+
+    panelEl
+        .querySelector<HTMLButtonElement>('.settings-panel__push-off-btn')
+        ?.addEventListener('click', async () => {
+            await unsubscribeFromPushReminders();
+            openPanel();
+        });
 }
 
 function updateToggleButton(): void {

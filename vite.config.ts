@@ -5,6 +5,9 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
     plugins: [
         VitePWA({
+            strategies: 'injectManifest',
+            srcDir: 'src',
+            filename: 'sw.ts',
             registerType: 'prompt',
             includeAssets: ['favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png'],
             manifest: {
@@ -31,7 +34,7 @@ export default defineConfig({
                     },
                 ],
             },
-            workbox: {
+            injectManifest: {
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
             },
         }),

@@ -73,6 +73,7 @@ export const CONCEPT_IDS = [
     // Mind & Practice
     'sati',
     'bhavana',
+    'anapanasati',
     'samatha',
     'vipassana',
     'five-precepts',

@@ -22,6 +22,7 @@ import { renderMantraListView } from '@core/practice/mantraListView.js';
 import { renderMantraDetailView } from '@core/practice/mantraDetailView.js';
 import { renderPujaListView } from '@core/practice/pujaListView.js';
 import { renderPujaStudyView } from '@core/practice/pujaStudyView.js';
+import { initEngagementReminders } from '@core/reminders/inAppReminder.js';
 
 const config = loadConfig();
 
@@ -56,6 +57,14 @@ initUpdatePrompt(updateHost);
 
 const settingsHost = app.querySelector<HTMLElement>('#settings-host')!;
 initSettingsPanel(settingsHost);
+initEngagementReminders();
+
+navigator.serviceWorker?.addEventListener('message', (event) => {
+    if (event.data?.type !== 'noself:navigate') return;
+    const url = new URL(String(event.data.url));
+    window.location.hash = url.hash;
+    window.focus();
+});
 
 let currentCleanup: (() => void) | null = null;
 

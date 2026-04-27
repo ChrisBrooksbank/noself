@@ -1,9 +1,10 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import {
+    CONCEPT_IDS,
     loadConcepts,
     getConceptById,
     resetConceptCache,
-} from './content/concepts/loader.js';
+} from './content/concepts/index.js';
 
 describe('offline smoke test', () => {
     beforeEach(() => {
@@ -16,10 +17,10 @@ describe('offline smoke test', () => {
         vi.restoreAllMocks();
     });
 
-    it('loads all 30 concepts when offline', () => {
+    it('loads all concepts when offline', () => {
         expect(navigator.onLine).toBe(false);
         const concepts = loadConcepts();
-        expect(concepts).toHaveLength(30);
+        expect(concepts).toHaveLength(CONCEPT_IDS.length);
     });
 
     it('retrieves a specific concept by id when offline', () => {

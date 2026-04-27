@@ -11,6 +11,9 @@ vi.mock('../practiceHistory.js', () => ({
     getPromptSessions: vi.fn(() => []),
     getPujaSessions: vi.fn(() => []),
     getMantraSessions: vi.fn(() => []),
+    getCurrentStreak: vi.fn(() => 0),
+    getLongestStreak: vi.fn(() => 0),
+    hasPracticedToday: vi.fn(() => false),
 }));
 
 import * as practiceHistory from '../practiceHistory.js';
@@ -25,6 +28,9 @@ describe('renderPracticeHubView', () => {
         vi.mocked(practiceHistory.getPromptSessions).mockReturnValue([]);
         vi.mocked(practiceHistory.getPujaSessions).mockReturnValue([]);
         vi.mocked(practiceHistory.getMantraSessions).mockReturnValue([]);
+        vi.mocked(practiceHistory.getCurrentStreak).mockReturnValue(0);
+        vi.mocked(practiceHistory.getLongestStreak).mockReturnValue(0);
+        vi.mocked(practiceHistory.hasPracticedToday).mockReturnValue(false);
     });
 
     it('renders the Practice heading', () => {
@@ -131,7 +137,7 @@ describe('renderPracticeHubView', () => {
         renderPracticeHubView(container);
         const stats = container.querySelector('.practice-hub__stats');
         expect(stats).toBeTruthy();
-        expect(stats?.textContent).toContain('7 sessions total');
+        expect(stats?.textContent).toContain('7 sessions');
         expect(stats?.textContent).toContain('3 meditations');
         expect(stats?.textContent).toContain('2 prompts');
         expect(stats?.textContent).toContain('1 puja');
@@ -151,7 +157,7 @@ describe('renderPracticeHubView', () => {
 
         renderPracticeHubView(container);
         const stats = container.querySelector('.practice-hub__stats');
-        expect(stats?.textContent).toContain('1 session total');
+        expect(stats?.textContent).toContain('1 session');
         expect(stats?.textContent).toContain('1 meditation,');
     });
 });

@@ -11,8 +11,11 @@ Thirty-one core Buddhist teachings, four sutras, seven mantras, six guided medit
 ![PWA](https://img.shields.io/badge/PWA-offline%20ready-5a0fc8?logo=pwa&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-600%2B%20passing-2ea44f?logo=vitest&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/license-MIT-c9a227)
+[![Netlify](https://img.shields.io/badge/live-noself.netlify.app-00c7b7?logo=netlify&logoColor=white)](https://noself.netlify.app)
 
-<img src="docs/images/noself-tour.gif" alt="A tour of noself: today's concept, the catalog, a concept with a Pali term tooltip, a guided meditation and the mala bead counter" width="320" />
+**[✨ Try it now at noself.netlify.app ✨](https://noself.netlify.app)**
+
+<a href="https://noself.netlify.app"><img src="docs/images/noself-tour.gif" alt="A tour of noself: today's concept, the catalog, a concept with a Pali term tooltip, a guided meditation and the mala bead counter" width="320" /></a>
 
 </div>
 
@@ -84,6 +87,10 @@ Section-by-section study editions of the **Heart Sutra**, **Diamond Sutra**, **�
 ---
 
 ## Getting started
+
+The quickest way is to open **[noself.netlify.app](https://noself.netlify.app)** on your phone and choose "Add to Home Screen". It installs like a native app and works offline.
+
+To run it locally:
 
 ```bash
 npm install

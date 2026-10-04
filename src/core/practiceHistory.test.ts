@@ -194,7 +194,7 @@ describe('persistence', () => {
                 {
                     meditationId: 'metta',
                     durationMinutes: 10,
-                    completedAt: '2024-01-01T00:00:00.000Z',
+                    completedAt: '2024-01-01T00:00:00.000',
                 },
             ],
             prompts: [],
@@ -216,15 +216,15 @@ describe('practice day summaries and streaks', () => {
                     {
                         meditationId: 'metta',
                         durationMinutes: 10,
-                        completedAt: '2024-01-01T10:00:00.000Z',
+                        completedAt: '2024-01-01T10:00:00.000',
                     },
                 ],
-                prompts: [{ promptId: 'anatta-1', satWith: '2024-01-01T12:00:00.000Z' }],
+                prompts: [{ promptId: 'anatta-1', satWith: '2024-01-01T12:00:00.000' }],
                 pathSessions: [
                     {
                         pathId: 'seven-day-metta',
                         sessionIndex: 0,
-                        completedAt: '2024-01-02T10:00:00.000Z',
+                        completedAt: '2024-01-02T10:00:00.000',
                     },
                 ],
                 pujas: [],
@@ -232,7 +232,7 @@ describe('practice day summaries and streaks', () => {
                     {
                         mantraId: 'avalokiteshvara',
                         repetitions: 108,
-                        completedAt: '2024-01-02T11:00:00.000Z',
+                        completedAt: '2024-01-02T11:00:00.000',
                     },
                 ],
             }),
@@ -268,7 +268,7 @@ describe('practice day summaries and streaks', () => {
                     {
                         meditationId: 'metta',
                         durationMinutes: 10,
-                        completedAt: '2024-01-02T10:00:00.000Z',
+                        completedAt: '2024-01-02T10:00:00.000',
                     },
                 ],
                 prompts: [],
@@ -291,22 +291,22 @@ describe('practice day summaries and streaks', () => {
                     {
                         meditationId: 'metta',
                         durationMinutes: 10,
-                        completedAt: '2024-01-01T10:00:00.000Z',
+                        completedAt: '2024-01-01T10:00:00.000',
                     },
                     {
                         meditationId: 'metta',
                         durationMinutes: 10,
-                        completedAt: '2024-01-02T10:00:00.000Z',
+                        completedAt: '2024-01-02T10:00:00.000',
                     },
                     {
                         meditationId: 'metta',
                         durationMinutes: 10,
-                        completedAt: '2024-01-04T10:00:00.000Z',
+                        completedAt: '2024-01-04T10:00:00.000',
                     },
                     {
                         meditationId: 'metta',
                         durationMinutes: 10,
-                        completedAt: '2024-01-05T10:00:00.000Z',
+                        completedAt: '2024-01-05T10:00:00.000',
                     },
                 ],
                 prompts: [],

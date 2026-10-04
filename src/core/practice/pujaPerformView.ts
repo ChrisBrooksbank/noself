@@ -1,3 +1,4 @@
+import { escapeHtml } from '../../utils/formatText.js';
 import { getPujaById } from '../../content/pujas/index.js';
 import { playBell, resumeAudioContext } from './bellSound.js';
 import { logPujaSession } from '../practiceHistory.js';
@@ -30,7 +31,7 @@ export function renderPujaPerformView(
         container.innerHTML = `
             <div class="page stack" role="main">
                 <a href="#/practice/pujas" class="back-link">&larr; Pujas</a>
-                <p>Puja not found: <strong>${pujaId}</strong></p>
+                <p>Puja not found: <strong>${escapeHtml(pujaId)}</strong></p>
             </div>`;
         return () => {};
     }
@@ -50,6 +51,9 @@ export function renderPujaPerformView(
     let currentStepIndex = 0;
     let stepElapsed = 0;
     let intervalId: ReturnType<typeof setInterval> | null = null;
+    // Wall-clock bookkeeping so throttled background intervals don't stretch steps.
+    let runStartedAt = 0;
+    let stepElapsedBeforeRunMs = 0;
 
     container.innerHTML = `
         <div class="puja-perform-view page stack-lg" role="main">
@@ -97,6 +101,7 @@ export function renderPujaPerformView(
     function enterStep(index: number): void {
         currentStepIndex = index;
         stepElapsed = 0;
+        stepElapsedBeforeRunMs = 0;
         const step = steps[index]!;
         stepCountEl.textContent = `Step ${index + 1} of ${steps.length}`;
         stepTitleEl.textContent = step.title;
@@ -109,14 +114,21 @@ export function renderPujaPerformView(
         playBell();
     }
 
+    function complete(): void {
+        clearTimer();
+        state = 'completed';
+        statusEl.textContent = 'Puja complete. May all beings benefit.';
+        timeDisplayEl.textContent = '';
+        // Log on completion so leaving via the back link or nav doesn't lose it.
+        logPujaSession(pujaId);
+        updateControls();
+    }
+
     function advanceStep(): void {
         clearTimer();
         const nextIndex = currentStepIndex + 1;
         if (nextIndex >= steps.length) {
-            state = 'completed';
-            statusEl.textContent = 'Puja complete. May all beings benefit.';
-            timeDisplayEl.textContent = '';
-            updateControls();
+            complete();
         } else {
             enterStep(nextIndex);
             startStepTimer();
@@ -131,8 +143,11 @@ export function renderPujaPerformView(
             // open-ended step — no auto-advance
             return;
         }
+        runStartedAt = Date.now();
         intervalId = setInterval(() => {
-            stepElapsed++;
+            stepElapsed = Math.floor(
+                (stepElapsedBeforeRunMs + Date.now() - runStartedAt) / 1000,
+            );
             const step = steps[currentStepIndex]!;
             if (step.durationSeconds !== null) {
                 const remaining = Math.max(0, step.durationSeconds - stepElapsed);
@@ -184,6 +199,9 @@ export function renderPujaPerformView(
             .querySelector<HTMLButtonElement>('.js-pause')
             ?.addEventListener('click', () => {
                 if (state !== 'running') return;
+                if (intervalId !== null) {
+                    stepElapsedBeforeRunMs += Date.now() - runStartedAt;
+                }
                 clearTimer();
                 state = 'paused';
                 statusEl.textContent = 'Paused';
@@ -207,6 +225,7 @@ export function renderPujaPerformView(
                 state = 'idle';
                 currentStepIndex = 0;
                 stepElapsed = 0;
+                stepElapsedBeforeRunMs = 0;
                 stepCountEl.textContent = '';
                 stepTitleEl.textContent = '';
                 instructionEl.textContent = steps[0]!.instruction;
@@ -218,10 +237,7 @@ export function renderPujaPerformView(
             .querySelector<HTMLButtonElement>('.js-next')
             ?.addEventListener('click', () => {
                 if (currentStepIndex === steps.length - 1) {
-                    state = 'completed';
-                    statusEl.textContent = 'Puja complete. May all beings benefit.';
-                    timeDisplayEl.textContent = '';
-                    updateControls();
+                    complete();
                 } else {
                     enterStep(currentStepIndex + 1);
                     startStepTimer();
@@ -231,7 +247,6 @@ export function renderPujaPerformView(
         container
             .querySelector<HTMLButtonElement>('.js-done')
             ?.addEventListener('click', () => {
-                logPujaSession(pujaId);
                 window.location.hash = '#/practice/pujas';
             });
     }

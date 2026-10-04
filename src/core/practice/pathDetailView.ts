@@ -72,16 +72,44 @@ function renderSessionItem(pathId: string, session: PathSession, index: number):
         </li>`;
 }
 
-function attachEventListeners(container: HTMLElement): void {
+function updateProgress(container: HTMLElement, pathId: string, total: number): void {
+    let completed = 0;
+    for (let i = 0; i < total; i++) {
+        if (isPathSessionComplete(pathId, i)) completed++;
+    }
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+    const label = progressLabelFor(completed, total);
+
+    container
+        .querySelector('.path-detail__progress')
+        ?.setAttribute('aria-label', `Progress: ${label}`);
+    const bar = container.querySelector<HTMLElement>('.path-item__progress-bar');
+    bar?.setAttribute('aria-valuenow', String(pct));
+    const fill = container.querySelector<HTMLElement>('.path-item__progress-fill');
+    if (fill) fill.style.width = `${pct}%`;
+    const labelEl = container.querySelector<HTMLElement>('.path-item__progress-label');
+    if (labelEl) labelEl.textContent = label;
+}
+
+function progressLabelFor(completed: number, total: number): string {
+    if (completed === 0) return 'Not started';
+    if (completed === total) return 'Complete';
+    return `${completed} of ${total} sessions`;
+}
+
+function attachEventListeners(
+    container: HTMLElement,
+    pathId: string,
+    total: number,
+): void {
     container.addEventListener('change', (event) => {
         const checkbox = (event.target as HTMLElement).closest<HTMLInputElement>(
             '.path-session__checkbox',
         );
         if (!checkbox) return;
 
-        const pathId = checkbox.dataset.pathId;
         const indexStr = checkbox.dataset.sessionIndex;
-        if (!pathId || indexStr === undefined) return;
+        if (indexStr === undefined) return;
 
         const index = parseInt(indexStr, 10);
         if (isNaN(index)) return;
@@ -90,6 +118,7 @@ function attachEventListeners(container: HTMLElement): void {
             logPathSessionComplete(pathId, index);
             const li = checkbox.closest<HTMLElement>('.path-session');
             li?.classList.add('path-session--done');
+            updateProgress(container, pathId, total);
         } else {
             // Re-render checkbox as checked — completion is not reversible
             checkbox.checked = true;
@@ -118,12 +147,7 @@ export function renderPathDetailView(container: HTMLElement, pathId: string): vo
     ).length;
     const total = path.sessions.length;
     const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
-    const progressLabel =
-        completed === 0
-            ? 'Not started'
-            : completed === total
-              ? 'Complete'
-              : `${completed} of ${total} sessions`;
+    const progressLabel = progressLabelFor(completed, total);
 
     container.innerHTML = `
         <div class="path-detail-view page stack-lg" role="main">
@@ -141,5 +165,8 @@ export function renderPathDetailView(container: HTMLElement, pathId: string): vo
             </ul>
         </div>`;
 
-    attachEventListeners(container);
+    // Listen on the view root (replaced on every render) rather than the
+    // long-lived container, so listeners don't accumulate across visits.
+    const root = container.querySelector<HTMLElement>('.path-detail-view')!;
+    attachEventListeners(root, path.id, total);
 }

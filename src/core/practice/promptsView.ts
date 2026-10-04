@@ -3,6 +3,11 @@ import { getAllPrompts } from '../../content/prompts/loader.js';
 import type { Prompt, PromptDepth } from '../../content/prompts/index.js';
 import { logPromptSatWith, isPromptSatWith } from '../practiceHistory.js';
 import { getExpertiseLevel } from '../preferences.js';
+import { getConceptById } from '../../content/concepts/index.js';
+
+function conceptLabel(conceptId: string): string {
+    return getConceptById(conceptId)?.title ?? conceptId;
+}
 
 const DEPTH_LABELS: Record<PromptDepth, string> = {
     beginner: 'Beginner',
@@ -34,7 +39,7 @@ function renderDailyPromptSection(prompt: Prompt): string {
     return `
         <section class="prompts-daily card stack-sm" aria-label="Prompt of the day">
             <h2 class="prompts-section__heading">Today's Prompt</h2>
-            <span class="prompt-card__concept">${prompt.conceptId}</span>
+            <span class="prompt-card__concept">${conceptLabel(prompt.conceptId)}</span>
             <span class="prompt-card__depth prompt-card__depth--${prompt.depth}">${DEPTH_LABELS[prompt.depth]}</span>
             <p class="prompts-daily__question">${prompt.question}</p>
             <details class="prompt-card__guidance-details">
@@ -88,12 +93,16 @@ function renderBrowseGroups(prompts: Prompt[], activeDepth: PromptDepth | 'all')
     }
 
     return [...grouped.entries()]
+        .map(
+            ([conceptId, conceptPrompts]) =>
+                [conceptLabel(conceptId), conceptPrompts] as const,
+        )
         .sort(([a], [b]) => a.localeCompare(b))
-        .map(([conceptId, conceptPrompts]) => {
+        .map(([label, conceptPrompts]) => {
             const cards = conceptPrompts.map((p) => renderPromptCard(p)).join('');
             return `
-                <section class="prompts-concept-group stack-sm" aria-label="${conceptId} prompts">
-                    <h3 class="prompts-concept-group__title">${conceptId}</h3>
+                <section class="prompts-concept-group stack-sm" aria-label="${label} prompts">
+                    <h3 class="prompts-concept-group__title">${label}</h3>
                     ${cards}
                 </section>`;
         })
@@ -188,5 +197,8 @@ export function renderPromptsView(container: HTMLElement): void {
             ${renderBrowseSection(allPrompts, 'all')}
         </div>`;
 
-    attachEventListeners(container, allPrompts);
+    // Listen on the view root (replaced on every render) rather than the
+    // long-lived container, so listeners don't accumulate across visits.
+    const root = container.querySelector<HTMLElement>('.prompts-view')!;
+    attachEventListeners(root, allPrompts);
 }

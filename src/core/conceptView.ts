@@ -1,4 +1,6 @@
+import { escapeHtml } from '../utils/formatText.js';
 import { getConceptById } from '../content/concepts/index.js';
+import { CATEGORY_LABELS } from '../content/concepts/categories.js';
 import type { Concept, ConceptExample } from '../content/concepts/index.js';
 import type { SacredTerm } from '../types/sacred-terms.js';
 import { loadVideos } from '../content/videos/index.js';
@@ -190,7 +192,7 @@ function buildConceptHTML(concept: Concept, id: string): string {
     return `
         <article class="concept-view page stack-lg" aria-label="${concept.title}">
             <header class="concept-header stack-sm">
-                <span class="badge">${concept.category}</span>
+                <span class="badge">${CATEGORY_LABELS[concept.category] ?? concept.category}</span>
                 <h1 class="concept-title">${concept.title}</h1>
                 ${termStr}
                 <p class="concept-brief">${briefText}</p>
@@ -228,7 +230,7 @@ export function renderConceptView(container: HTMLElement, id: string): () => voi
     if (!concept) {
         container.innerHTML = `
             <div class="page stack" role="main">
-                <p>Concept not found: <strong>${id}</strong></p>
+                <p>Concept not found: <strong>${escapeHtml(id)}</strong></p>
                 <a href="#/">Return home</a>
             </div>`;
         return () => {};

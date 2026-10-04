@@ -146,7 +146,7 @@ describe('renderConceptView', () => {
 
     it('renders category badge', () => {
         renderConceptView(container, 'anatta');
-        expect(container.querySelector('.badge')?.textContent).toBe('three-marks');
+        expect(container.querySelector('.badge')?.textContent).toBe('Three Marks');
     });
 
     it('renders brief text', () => {

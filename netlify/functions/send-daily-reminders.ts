@@ -22,7 +22,8 @@ function getZonedNow(timezone: string, now: Date): ZonedNow {
         month: '2-digit',
         day: '2-digit',
         hour: '2-digit',
-        hour12: false,
+        // 'h23' avoids midnight being reported as hour 24 (as hour12: false can).
+        hourCycle: 'h23',
     }).formatToParts(now);
     const lookup = Object.fromEntries(parts.map((part) => [part.type, part.value]));
 
@@ -32,8 +33,7 @@ function getZonedNow(timezone: string, now: Date): ZonedNow {
     };
 }
 
-function isDue(subscription: StoredPushSubscription, now: Date): boolean {
-    const zonedNow = getZonedNow(subscription.timezone, now);
+function isDue(subscription: StoredPushSubscription, zonedNow: ZonedNow): boolean {
     return (
         zonedNow.hour === subscription.reminderHour &&
         subscription.lastSentDate !== zonedNow.date
@@ -100,21 +100,35 @@ export default async function handler(): Promise<Response> {
     const subscriptions = await listSubscriptions();
     let sent = 0;
     let removed = 0;
+    let failed = 0;
 
+    // Each subscription is handled independently so that one bad record
+    // (invalid timezone, push service error) cannot block everyone else's reminder.
     for (const subscription of subscriptions) {
-        if (!isDue(subscription, now)) continue;
+        try {
+            const zonedNow = getZonedNow(subscription.timezone, now);
+            if (!isDue(subscription, zonedNow)) continue;
 
-        const result = await sendReminder(subscription);
-        if (result === 'gone') {
-            await deleteSubscriptionById(subscription.id);
-            removed += 1;
-            continue;
+            const result = await sendReminder(subscription);
+            if (result === 'gone') {
+                await deleteSubscriptionById(subscription.id);
+                removed += 1;
+                continue;
+            }
+
+            await updateSubscription({ ...subscription, lastSentDate: zonedNow.date });
+            sent += 1;
+        } catch (error) {
+            failed += 1;
+            console.error(`Failed to process subscription ${subscription.id}`, error);
         }
-
-        const zonedNow = getZonedNow(subscription.timezone, now);
-        await updateSubscription({ ...subscription, lastSentDate: zonedNow.date });
-        sent += 1;
     }
 
-    return Response.json({ ok: true, checked: subscriptions.length, sent, removed });
+    return Response.json({
+        ok: true,
+        checked: subscriptions.length,
+        sent,
+        removed,
+        failed,
+    });
 }

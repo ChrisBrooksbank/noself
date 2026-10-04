@@ -1,4 +1,5 @@
 import { loadConcepts } from '../content/concepts/index.js';
+import { CATEGORY_LABELS } from '../content/concepts/categories.js';
 import { isViewed } from './readingHistory.js';
 import { debounce } from '../utils/helpers.js';
 import { getExpertiseLevel } from './preferences.js';
@@ -6,13 +7,9 @@ import type { Concept, ConceptCategory } from '../content/concepts/index.js';
 
 const CATEGORIES: Array<{ value: ConceptCategory | 'all'; label: string }> = [
     { value: 'all', label: 'All' },
-    { value: 'foundational', label: 'Foundational' },
-    { value: 'three-marks', label: 'Three Marks' },
-    { value: 'mind-and-practice', label: 'Mind & Practice' },
-    { value: 'buddhist-psychology', label: 'Psychology' },
-    { value: 'brahmaviharas', label: 'Brahmaviharas' },
-    { value: 'mahayana', label: 'Mahayana' },
-    { value: 'liberation', label: 'Liberation' },
+    ...(Object.entries(CATEGORY_LABELS) as Array<[ConceptCategory, string]>).map(
+        ([value, label]) => ({ value, label }),
+    ),
 ];
 
 function renderConceptItem(concept: Concept): string {

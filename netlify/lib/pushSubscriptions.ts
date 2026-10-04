@@ -53,6 +53,16 @@ function normalizeReminderHour(value: unknown): number {
     return Number.isInteger(hour) && hour >= 0 && hour <= 23 ? hour : 9;
 }
 
+function normalizeTimezone(value: unknown): string {
+    if (typeof value !== 'string' || !value) return 'UTC';
+    try {
+        new Intl.DateTimeFormat('en-CA', { timeZone: value });
+        return value;
+    } catch {
+        return 'UTC';
+    }
+}
+
 export function normalizeSubscription(
     subscription: BrowserPushSubscription,
     preferences: BrowserReminderPreferences,
@@ -69,7 +79,7 @@ export function normalizeSubscription(
             p256dh: subscription.keys.p256dh,
             auth: subscription.keys.auth,
         },
-        timezone: preferences.timezone || 'UTC',
+        timezone: normalizeTimezone(preferences.timezone),
         reminderHour: normalizeReminderHour(preferences.reminderHour),
         reminderType: isReminderType(preferences.reminderType)
             ? preferences.reminderType

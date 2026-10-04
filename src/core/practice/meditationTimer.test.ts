@@ -317,3 +317,39 @@ describe('cleanup()', () => {
         expect(timer.getState()).toBe('idle');
     });
 });
+
+describe('background throttling', () => {
+    it('catches up to wall-clock time when interval callbacks are delayed', () => {
+        const cb = makeCallbacks();
+        const timer = createMeditationTimer(STEPS, cb);
+        timer.start();
+        // Simulate a hidden tab: 25s of wall-clock time pass but only one
+        // interval callback fires.
+        vi.setSystemTime(Date.now() + 24_000);
+        vi.advanceTimersByTime(1000);
+        expect(cb.onTick).toHaveBeenLastCalledWith(15, 5, 25);
+        expect(timer.getCurrentStepIndex()).toBe(1);
+    });
+
+    it('completes a session that elapsed entirely while throttled', () => {
+        const cb = makeCallbacks();
+        const timer = createMeditationTimer(STEPS, cb);
+        timer.start();
+        vi.setSystemTime(Date.now() + 60_000);
+        vi.advanceTimersByTime(1000);
+        expect(timer.getState()).toBe('completed');
+        expect(cb.onTick).toHaveBeenCalledTimes(35);
+    });
+
+    it('does not count time spent paused', () => {
+        const cb = makeCallbacks();
+        const timer = createMeditationTimer(STEPS, cb);
+        timer.start();
+        vi.advanceTimersByTime(3000);
+        timer.pause();
+        vi.setSystemTime(Date.now() + 60_000);
+        timer.resume();
+        vi.advanceTimersByTime(1000);
+        expect(cb.onTick).toHaveBeenLastCalledWith(4, 6, 4);
+    });
+});

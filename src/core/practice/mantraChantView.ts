@@ -1,3 +1,4 @@
+import { escapeHtml } from '../../utils/formatText.js';
 import { getMantraById } from '../../content/mantras/index.js';
 import { playBell, resumeAudioContext } from './bellSound.js';
 import { logMantraSession } from '../practiceHistory.js';
@@ -54,7 +55,7 @@ export function renderMantraChantView(container: HTMLElement, id: string): () =>
         container.innerHTML = `
             <div class="page stack" role="main">
                 <a href="#/practice/mantras" class="back-link">&larr; Mantras</a>
-                <p>Mantra not found: <strong>${id}</strong></p>
+                <p>Mantra not found: <strong>${escapeHtml(id)}</strong></p>
             </div>`;
         return () => {};
     }

@@ -93,3 +93,20 @@ describe('persistence', () => {
         expect(raw).toContain('nirvana');
     });
 });
+
+describe('corrupted storage', () => {
+    it('recovers when stored data is missing fields', () => {
+        localStorage.setItem(
+            'noself:readingHistory',
+            JSON.stringify({ viewed: ['anatta'] }),
+        );
+        expect(() => markViewed('anicca')).not.toThrow();
+        expect(getViewedIds()).toEqual(['anatta', 'anicca']);
+        expect(getStatus('anicca')).toBe('viewed');
+    });
+
+    it('recovers when stored data is null', () => {
+        localStorage.setItem('noself:readingHistory', 'null');
+        expect(getViewedIds()).toEqual([]);
+    });
+});

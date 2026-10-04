@@ -11,7 +11,15 @@ function load(): HistoryStore {
     try {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (raw) {
-            return JSON.parse(raw) as HistoryStore;
+            const parsed = JSON.parse(raw) as Partial<HistoryStore> | null;
+            // Tolerate missing or malformed fields from older/corrupted data
+            return {
+                viewed: Array.isArray(parsed?.viewed) ? parsed.viewed : [],
+                statuses:
+                    parsed?.statuses && typeof parsed.statuses === 'object'
+                        ? parsed.statuses
+                        : {},
+            };
         }
     } catch {
         // ignore parse errors

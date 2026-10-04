@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { renderPujaPerformView } from './pujaPerformView.js';
+import * as practiceHistory from '../practiceHistory.js';
 import type { Puja } from '../../content/pujas/index.js';
 
 const mockPuja: Puja = {
@@ -200,5 +201,16 @@ describe('renderPujaPerformView', () => {
 
         const stepCount = container.querySelector('.puja-perform__step-count');
         expect(stepCount?.textContent).toBe('Step 1 of 2');
+    });
+
+    it('logs the puja as soon as it completes, without pressing Done', () => {
+        vi.mocked(practiceHistory.logPujaSession).mockClear();
+        cleanup = renderPujaPerformView(container, 'sevenfold-puja');
+        container.querySelector<HTMLButtonElement>('.js-start')!.click();
+        vi.advanceTimersByTime(61 * 1000);
+        container.querySelector<HTMLButtonElement>('.js-next')!.click();
+
+        expect(practiceHistory.logPujaSession).toHaveBeenCalledTimes(1);
+        expect(practiceHistory.logPujaSession).toHaveBeenCalledWith('sevenfold-puja');
     });
 });

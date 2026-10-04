@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { renderMeditationSessionView } from './meditationSessionView.js';
 import type { Meditation } from '../../content/meditations/index.js';
+import * as practiceHistory from '../practiceHistory.js';
 
 const mockMeditation: Meditation = {
     id: 'breath-awareness',
@@ -181,5 +182,18 @@ describe('renderMeditationSessionView', () => {
 
         const doneBtn = container.querySelector('.js-done');
         expect(doneBtn).toBeTruthy();
+    });
+
+    it('logs the session as soon as it completes, without pressing Done', () => {
+        vi.mocked(practiceHistory.logMeditationSession).mockClear();
+        cleanup = renderMeditationSessionView(container, 'breath-awareness?duration=5');
+        container.querySelector<HTMLButtonElement>('.js-start')!.click();
+        vi.advanceTimersByTime(301 * 1000);
+
+        expect(practiceHistory.logMeditationSession).toHaveBeenCalledTimes(1);
+        expect(practiceHistory.logMeditationSession).toHaveBeenCalledWith(
+            'breath-awareness',
+            5,
+        );
     });
 });

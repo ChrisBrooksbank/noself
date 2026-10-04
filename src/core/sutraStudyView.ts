@@ -168,7 +168,10 @@ export function renderSutraStudyView(container: HTMLElement, id: string): () => 
 
     const cleanupTooltips = initSacredTermTooltips(container);
 
-    container.addEventListener('click', (e) => {
+    // Listen on the view root (replaced on every render) rather than the
+    // long-lived container, so listeners don't accumulate across visits.
+    const root = container.querySelector<HTMLElement>('.sutra-study') ?? container;
+    root.addEventListener('click', (e) => {
         const target = (e.target as HTMLElement).closest<HTMLElement>('[data-scroll-to]');
         if (target) {
             e.preventDefault();

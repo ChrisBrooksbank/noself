@@ -1,3 +1,4 @@
+import { escapeHtml } from '../../utils/formatText.js';
 import { loadMeditations } from '../../content/meditations/loader.js';
 import type { MeditationDuration } from '../../content/meditations/index.js';
 import { createMeditationTimer } from './meditationTimer.js';
@@ -38,7 +39,7 @@ export function renderMeditationSessionView(
         container.innerHTML = `
             <div class="page stack" role="main">
                 <a href="#/practice/meditate" class="back-link">&larr; Meditations</a>
-                <p>Meditation not found: <strong>${meditationId}</strong></p>
+                <p>Meditation not found: <strong>${escapeHtml(meditationId)}</strong></p>
             </div>`;
         return () => {};
     }
@@ -138,7 +139,6 @@ export function renderMeditationSessionView(
         container
             .querySelector<HTMLButtonElement>('.js-done')
             ?.addEventListener('click', () => {
-                logMeditationSession(meditationId, availableDuration);
                 window.location.hash = '#/practice/meditate';
             });
     }
@@ -158,6 +158,8 @@ export function renderMeditationSessionView(
             } else if (state === 'completed') {
                 statusEl.textContent = 'Session complete. Well done.';
                 stepRemainingEl.textContent = '';
+                // Log on completion so leaving via the back link or nav doesn't lose it.
+                logMeditationSession(meditationId, availableDuration);
             }
         },
         onStepChange(_stepIndex, step) {

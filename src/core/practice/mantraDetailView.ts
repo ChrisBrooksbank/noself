@@ -1,3 +1,4 @@
+import { escapeHtml } from '../../utils/formatText.js';
 import { getMantraById } from '../../content/mantras/index.js';
 import { getConceptById } from '../../content/concepts/index.js';
 import type { MantraSyllable } from '../../content/mantras/index.js';
@@ -38,7 +39,7 @@ export function renderMantraDetailView(container: HTMLElement, id: string): void
     if (!mantra) {
         container.innerHTML = `
             <div class="page stack" role="main">
-                <p>Mantra not found: <strong>${id}</strong></p>
+                <p>Mantra not found: <strong>${escapeHtml(id)}</strong></p>
                 <a href="#/practice/mantras">Return to Mantras</a>
             </div>`;
         return;

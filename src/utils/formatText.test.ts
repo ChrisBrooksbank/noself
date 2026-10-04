@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatText } from './formatText.js';
+import { formatText, escapeHtml } from './formatText.js';
 
 describe('formatText', () => {
     it('wraps a single paragraph in <p> tags', () => {
@@ -50,5 +50,13 @@ describe('formatText', () => {
 
     it('trims leading and trailing whitespace from paragraphs', () => {
         expect(formatText('  Hello  ')).toBe('<p>Hello</p>');
+    });
+});
+
+describe('escapeHtml', () => {
+    it('escapes HTML special characters', () => {
+        expect(escapeHtml(`<img src="x" onerror='y'>&`)).toBe(
+            '&lt;img src=&quot;x&quot; onerror=&#39;y&#39;&gt;&amp;',
+        );
     });
 });

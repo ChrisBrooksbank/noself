@@ -36,6 +36,13 @@ vi.mock('../../content/prompts/loader.js', () => ({
     getAllPrompts: vi.fn(() => mockPrompts),
 }));
 
+vi.mock('../../content/concepts/index.js', () => ({
+    getConceptById: vi.fn(
+        (id: string) =>
+            ({ anatta: { title: 'No-Self' }, anicca: { title: 'Impermanence' } })[id],
+    ),
+}));
+
 vi.mock('../preferences.js', () => ({
     getExpertiseLevel: vi.fn(() => 3),
 }));
@@ -85,10 +92,10 @@ describe('renderPromptsView', () => {
         );
     });
 
-    it('renders the daily prompt concept ID', () => {
+    it('renders the daily prompt concept title', () => {
         renderPromptsView(container);
         const concept = container.querySelector('.prompt-card__concept');
-        expect(concept?.textContent).toBe('anatta');
+        expect(concept?.textContent).toBe('No-Self');
     });
 
     it('renders the daily prompt depth badge', () => {
@@ -122,8 +129,8 @@ describe('renderPromptsView', () => {
         renderPromptsView(container);
         const groups = container.querySelectorAll('.prompts-concept-group__title');
         const titles = Array.from(groups).map((g) => g.textContent);
-        expect(titles).toContain('anatta');
-        expect(titles).toContain('anicca');
+        expect(titles).toContain('No-Self');
+        expect(titles).toContain('Impermanence');
     });
 
     it('renders all prompt cards in the browse section', () => {
@@ -175,5 +182,14 @@ describe('renderPromptsView', () => {
         renderPromptsView(container);
         const details = container.querySelectorAll('.prompt-card__guidance-details');
         expect(details.length).toBeGreaterThan(0);
+    });
+
+    it('logs a prompt only once after repeated visits', () => {
+        renderPromptsView(container);
+        renderPromptsView(container);
+        renderPromptsView(container);
+        vi.mocked(practiceHistory.logPromptSatWith).mockClear();
+        container.querySelector<HTMLButtonElement>('.prompt-card__sat-btn')!.click();
+        expect(practiceHistory.logPromptSatWith).toHaveBeenCalledTimes(1);
     });
 });

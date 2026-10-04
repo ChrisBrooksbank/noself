@@ -1,3 +1,4 @@
+import { escapeHtml } from '../../utils/formatText.js';
 import { getPujaById } from '../../content/pujas/index.js';
 import { getConceptById } from '../../content/concepts/index.js';
 import { getShowVideoLinks } from '../preferences.js';
@@ -118,7 +119,7 @@ export function renderPujaStudyView(container: HTMLElement, id: string): () => v
     if (!puja) {
         container.innerHTML = `
             <div class="page stack" role="main">
-                <p>Puja not found: <strong>${id}</strong></p>
+                <p>Puja not found: <strong>${escapeHtml(id)}</strong></p>
                 <a href="#/practice/pujas">Return to Pujas</a>
             </div>`;
         return () => {};

@@ -240,4 +240,36 @@ describe('renderPathDetailView', () => {
         // Should be forced back to checked
         expect(checkbox.checked).toBe(true);
     });
+
+    it('updates the progress bar when a session is checked', () => {
+        renderPathDetailView(container, 'seven-day-metta');
+        vi.mocked(practiceHistory.isPathSessionComplete).mockImplementation(
+            (_id, index) => index === 0,
+        );
+        const checkbox = container.querySelector<HTMLInputElement>(
+            '.path-session__checkbox[data-session-index="0"]',
+        )!;
+        checkbox.checked = true;
+        checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+        expect(container.querySelector('.path-item__progress-label')?.textContent).toBe(
+            '1 of 3 sessions',
+        );
+        expect(
+            container.querySelector<HTMLElement>('.path-item__progress-fill')?.style
+                .width,
+        ).toBe('33%');
+    });
+
+    it('does not accumulate listeners across re-renders', () => {
+        renderPathDetailView(container, 'seven-day-metta');
+        renderPathDetailView(container, 'seven-day-metta');
+        renderPathDetailView(container, 'seven-day-metta');
+        vi.mocked(practiceHistory.logPathSessionComplete).mockClear();
+        const checkbox = container.querySelector<HTMLInputElement>(
+            '.path-session__checkbox[data-session-index="1"]',
+        )!;
+        checkbox.checked = true;
+        checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+        expect(practiceHistory.logPathSessionComplete).toHaveBeenCalledTimes(1);
+    });
 });

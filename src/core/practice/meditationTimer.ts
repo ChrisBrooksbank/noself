@@ -60,6 +60,11 @@ export function createMeditationTimer(
     let stepElapsed = 0;
     let totalElapsed = 0;
     let intervalId: ReturnType<typeof setInterval> | null = null;
+    // Wall-clock bookkeeping: browsers throttle intervals in background tabs and
+    // on locked screens, so progress is derived from Date.now() rather than from
+    // counting interval callbacks.
+    let runStartedAt = 0;
+    let elapsedBeforeRunMs = 0;
 
     function setState(next: TimerState): void {
         state = next;
@@ -78,6 +83,28 @@ export function createMeditationTimer(
         stepElapsed = 0;
         callbacks.onBell?.();
         callbacks.onStepChange?.(index, steps[index]!);
+    }
+
+    function startInterval(): void {
+        runStartedAt = Date.now();
+        intervalId = setInterval(catchUp, 1000);
+    }
+
+    function stopInterval(): void {
+        if (intervalId !== null) {
+            elapsedBeforeRunMs += Date.now() - runStartedAt;
+        }
+        clearTimer();
+    }
+
+    /** Advance one second at a time until totalElapsed matches the wall clock. */
+    function catchUp(): void {
+        const target = Math.floor(
+            (elapsedBeforeRunMs + Date.now() - runStartedAt) / 1000,
+        );
+        while (state === 'running' && totalElapsed < target) {
+            tick();
+        }
     }
 
     function tick(): void {
@@ -105,21 +132,24 @@ export function createMeditationTimer(
             currentStepIndex = 0;
             stepElapsed = 0;
             totalElapsed = 0;
+            elapsedBeforeRunMs = 0;
             setState('running');
             enterStep(0);
-            intervalId = setInterval(tick, 1000);
+            startInterval();
         },
 
         pause() {
             if (state !== 'running') return;
-            clearTimer();
+            catchUp();
+            if (state !== 'running') return;
+            stopInterval();
             setState('paused');
         },
 
         resume() {
             if (state !== 'paused') return;
             setState('running');
-            intervalId = setInterval(tick, 1000);
+            startInterval();
         },
 
         stop() {
@@ -128,6 +158,7 @@ export function createMeditationTimer(
             currentStepIndex = 0;
             stepElapsed = 0;
             totalElapsed = 0;
+            elapsedBeforeRunMs = 0;
             setState('idle');
         },
 

@@ -19,6 +19,34 @@ vi.mock('../practiceHistory.js', () => ({
             completedAt: '2026-03-01T08:00:00.000Z',
         },
     ],
+    getPujaSessions: () => [
+        { pujaId: 'sevenfold-puja', completedAt: '2026-03-01T07:00:00.000Z' },
+    ],
+    getMantraSessions: () => [
+        {
+            mantraId: 'avalokiteshvara',
+            repetitions: 108,
+            completedAt: '2026-03-01T06:00:00.000Z',
+        },
+    ],
+}));
+
+vi.mock('../../content/meditations/loader.js', () => ({
+    getMeditationById: (id: string) =>
+        id === 'breath-awareness' ? { title: 'Breath Awareness' } : undefined,
+}));
+vi.mock('../../content/prompts/loader.js', () => ({
+    getPromptById: () => undefined,
+}));
+vi.mock('../../content/paths/loader.js', () => ({
+    getPathById: (id: string) =>
+        id === 'seven-day-metta' ? { title: 'Seven Days of Metta' } : undefined,
+}));
+vi.mock('../../content/pujas/loader.js', () => ({
+    getPujaById: () => ({ title: 'Sevenfold Puja' }),
+}));
+vi.mock('../../content/mantras/loader.js', () => ({
+    getMantraById: () => undefined,
 }));
 
 describe('renderPracticeHistoryView', () => {
@@ -44,7 +72,7 @@ describe('renderPracticeHistoryView', () => {
     it('renders history entries', () => {
         renderPracticeHistoryView(container);
         const items = container.querySelectorAll('.history-entry');
-        expect(items.length).toBe(3);
+        expect(items.length).toBe(5);
     });
 
     it('renders meditation entry with label and detail', () => {
@@ -52,7 +80,7 @@ describe('renderPracticeHistoryView', () => {
         const labels = Array.from(
             container.querySelectorAll('.history-entry__label'),
         ).map((el) => el.textContent);
-        expect(labels).toContain('breath-awareness');
+        expect(labels).toContain('Breath Awareness');
     });
 
     it('renders meditation detail text with duration', () => {
@@ -76,7 +104,7 @@ describe('renderPracticeHistoryView', () => {
         const labels = Array.from(
             container.querySelectorAll('.history-entry__label'),
         ).map((el) => el.textContent);
-        expect(labels).toContain('seven-day-metta — Session 1');
+        expect(labels).toContain('Seven Days of Metta — Session 1');
     });
 
     it('entries are sorted newest first', () => {
@@ -86,8 +114,10 @@ describe('renderPracticeHistoryView', () => {
         );
         // 10:00 prompt > 09:00 meditation > 08:00 path session
         expect(items[0]).toBe('anatta-beginner');
-        expect(items[1]).toBe('breath-awareness');
-        expect(items[2]).toBe('seven-day-metta — Session 1');
+        expect(items[1]).toBe('Breath Awareness');
+        expect(items[2]).toBe('Seven Days of Metta — Session 1');
+        expect(items[3]).toBe('Sevenfold Puja');
+        expect(items[4]).toBe('avalokiteshvara');
     });
 
     it('renders entry type classes', () => {
@@ -95,6 +125,16 @@ describe('renderPracticeHistoryView', () => {
         expect(container.querySelector('.history-entry--meditation')).toBeTruthy();
         expect(container.querySelector('.history-entry--prompt')).toBeTruthy();
         expect(container.querySelector('.history-entry--path')).toBeTruthy();
+        expect(container.querySelector('.history-entry--puja')).toBeTruthy();
+        expect(container.querySelector('.history-entry--mantra')).toBeTruthy();
+    });
+
+    it('renders mantra repetitions detail', () => {
+        renderPracticeHistoryView(container);
+        const details = Array.from(
+            container.querySelectorAll('.history-entry__detail'),
+        ).map((el) => el.textContent);
+        expect(details).toContain('108 repetitions');
     });
 
     it('renders the history list', () => {

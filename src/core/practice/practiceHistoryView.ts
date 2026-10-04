@@ -2,7 +2,14 @@ import {
     getMeditationSessions,
     getPromptSessions,
     getPathSessions,
+    getPujaSessions,
+    getMantraSessions,
 } from '../practiceHistory.js';
+import { getMeditationById } from '../../content/meditations/loader.js';
+import { getPromptById } from '../../content/prompts/loader.js';
+import { getPathById } from '../../content/paths/loader.js';
+import { getPujaById } from '../../content/pujas/loader.js';
+import { getMantraById } from '../../content/mantras/loader.js';
 
 function formatDate(isoString: string): string {
     const date = new Date(isoString);
@@ -22,7 +29,7 @@ interface HistoryEntry {
     timestamp: string;
     label: string;
     detail: string;
-    type: 'meditation' | 'prompt' | 'path';
+    type: 'meditation' | 'prompt' | 'path' | 'puja' | 'mantra';
 }
 
 function buildEntries(): HistoryEntry[] {
@@ -31,7 +38,7 @@ function buildEntries(): HistoryEntry[] {
     for (const s of getMeditationSessions()) {
         entries.push({
             timestamp: s.completedAt,
-            label: s.meditationId,
+            label: getMeditationById(s.meditationId)?.title ?? s.meditationId,
             detail: `${s.durationMinutes} min meditation`,
             type: 'meditation',
         });
@@ -40,7 +47,7 @@ function buildEntries(): HistoryEntry[] {
     for (const p of getPromptSessions()) {
         entries.push({
             timestamp: p.satWith,
-            label: p.promptId,
+            label: getPromptById(p.promptId)?.question ?? p.promptId,
             detail: 'Sat with prompt',
             type: 'prompt',
         });
@@ -49,9 +56,27 @@ function buildEntries(): HistoryEntry[] {
     for (const ps of getPathSessions()) {
         entries.push({
             timestamp: ps.completedAt,
-            label: `${ps.pathId} — Session ${ps.sessionIndex + 1}`,
+            label: `${getPathById(ps.pathId)?.title ?? ps.pathId} — Session ${ps.sessionIndex + 1}`,
             detail: 'Path session',
             type: 'path',
+        });
+    }
+
+    for (const pj of getPujaSessions()) {
+        entries.push({
+            timestamp: pj.completedAt,
+            label: getPujaById(pj.pujaId)?.title ?? pj.pujaId,
+            detail: 'Puja performed',
+            type: 'puja',
+        });
+    }
+
+    for (const m of getMantraSessions()) {
+        entries.push({
+            timestamp: m.completedAt,
+            label: getMantraById(m.mantraId)?.title ?? m.mantraId,
+            detail: `${m.repetitions} repetitions`,
+            type: 'mantra',
         });
     }
 

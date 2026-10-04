@@ -22,49 +22,49 @@ vi.mock('../content/concepts/index.js', async (importOriginal) => {
 });
 
 describe('daysSinceEpoch', () => {
-    it('returns 0 for the Unix epoch', () => {
-        expect(daysSinceEpoch(new Date(0))).toBe(0);
+    it('returns 0 for the local calendar day of the Unix epoch', () => {
+        expect(daysSinceEpoch(new Date(1970, 0, 1, 12))).toBe(0);
     });
 
-    it('returns 1 for one day after the epoch', () => {
-        expect(daysSinceEpoch(new Date(24 * 60 * 60 * 1000))).toBe(1);
+    it('returns 1 for the following local day', () => {
+        expect(daysSinceEpoch(new Date(1970, 0, 2, 12))).toBe(1);
     });
 
-    it('is stable for any instant within the same UTC day', () => {
-        const startOfDay = new Date('2024-01-15T00:00:00Z');
-        const midDay = new Date('2024-01-15T12:00:00Z');
-        const endOfDay = new Date('2024-01-15T23:59:59Z');
+    it('is stable for any instant within the same local day', () => {
+        const startOfDay = new Date(2024, 0, 15, 0, 0, 0);
+        const midDay = new Date(2024, 0, 15, 12, 0, 0);
+        const endOfDay = new Date(2024, 0, 15, 23, 59, 59);
         expect(daysSinceEpoch(startOfDay)).toBe(daysSinceEpoch(midDay));
         expect(daysSinceEpoch(midDay)).toBe(daysSinceEpoch(endOfDay));
     });
 
     it('increments by 1 across a day boundary', () => {
-        const beforeMidnight = new Date('2024-01-15T23:59:59Z');
-        const afterMidnight = new Date('2024-01-16T00:00:00Z');
+        const beforeMidnight = new Date(2024, 0, 15, 23, 59, 59);
+        const afterMidnight = new Date(2024, 0, 16, 0, 0, 0);
         expect(daysSinceEpoch(afterMidnight)).toBe(daysSinceEpoch(beforeMidnight) + 1);
     });
 });
 
 describe('getDailyConceptId', () => {
     it('returns a valid concept ID', () => {
-        const id = getDailyConceptId(new Date('2024-01-01T00:00:00Z'));
+        const id = getDailyConceptId(new Date('2024-01-01T00:00:00'));
         expect(CONCEPT_IDS).toContain(id);
     });
 
     it('is deterministic for the same date', () => {
-        const date1 = new Date('2024-06-15T08:00:00Z');
-        const date2 = new Date('2024-06-15T20:00:00Z');
+        const date1 = new Date('2024-06-15T08:00:00');
+        const date2 = new Date('2024-06-15T20:00:00');
         expect(getDailyConceptId(date1)).toBe(getDailyConceptId(date2));
     });
 
     it('returns different IDs on different days', () => {
-        const day1 = new Date('2024-01-01T00:00:00Z');
-        const day2 = new Date('2024-01-02T00:00:00Z');
+        const day1 = new Date('2024-01-01T00:00:00');
+        const day2 = new Date('2024-01-02T00:00:00');
         expect(getDailyConceptId(day1)).not.toBe(getDailyConceptId(day2));
     });
 
     it('cycles through all concept IDs over a full rotation', () => {
-        const baseDate = new Date('2024-01-01T00:00:00Z');
+        const baseDate = new Date('2024-01-01T00:00:00');
         const seen = new Set<string>();
         for (let i = 0; i < CONCEPT_IDS.length; i++) {
             const date = new Date(baseDate.getTime() + i * 24 * 60 * 60 * 1000);
@@ -74,23 +74,23 @@ describe('getDailyConceptId', () => {
     });
 
     it('uses epoch day index modulo concept count', () => {
-        const epoch = new Date(0);
+        const epoch = new Date(1970, 0, 1, 12);
         expect(getDailyConceptId(epoch)).toBe(CONCEPT_IDS[0]);
 
-        const firstDayAfterRotation = new Date(CONCEPT_IDS.length * 24 * 60 * 60 * 1000);
+        const firstDayAfterRotation = new Date(1970, 0, 1 + CONCEPT_IDS.length, 12);
         expect(getDailyConceptId(firstDayAfterRotation)).toBe(CONCEPT_IDS[0]);
     });
 });
 
 describe('getDailyConcept', () => {
     it('returns a concept object with the expected id', () => {
-        const date = new Date('2024-01-01T00:00:00Z');
+        const date = new Date('2024-01-01T00:00:00');
         const concept = getDailyConcept(date);
         expect(concept.id).toBe(getDailyConceptId(date));
     });
 
     it('returns a concept with required fields', () => {
-        const concept = getDailyConcept(new Date('2024-03-10T00:00:00Z'));
+        const concept = getDailyConcept(new Date('2024-03-10T00:00:00'));
         expect(concept).toHaveProperty('id');
         expect(concept).toHaveProperty('title');
         expect(concept).toHaveProperty('brief');

@@ -18,7 +18,7 @@ export function getDailyPromptId(date: Date = new Date()): string {
 
 /**
  * Returns the prompt for today (or the given date).
- * The result is stable for the same calendar day (UTC).
+ * The result is stable for the same local calendar day.
  */
 export function getDailyPrompt(date: Date = new Date()): Prompt {
     const id = getDailyPromptId(date);

@@ -1,3 +1,5 @@
+import { readStorage, writeStorage } from '@utils/storage.js';
+
 const DISMISSED_KEY = 'noself:install-dismissed';
 
 interface BeforeInstallPromptEvent extends Event {
@@ -6,12 +8,12 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 export function initInstallPrompt(container: HTMLElement): () => void {
-    if (localStorage.getItem(DISMISSED_KEY)) return () => {};
+    if (readStorage(DISMISSED_KEY)) return () => {};
 
     let deferredPrompt: BeforeInstallPromptEvent | null = null;
 
     function dismiss(): void {
-        localStorage.setItem(DISMISSED_KEY, '1');
+        writeStorage(DISMISSED_KEY, '1');
         container.innerHTML = '';
     }
 

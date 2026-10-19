@@ -1,4 +1,5 @@
 import type { ReminderPreferences } from './preferences.js';
+import { readStorage, removeStorage, writeStorage } from '@utils/storage.js';
 
 const LAST_SHOWN_KEY = 'noself:reminderLastShownDate';
 
@@ -28,7 +29,7 @@ export function isReminderDue(
     now: Date = new Date(),
 ): boolean {
     if (!preferences.enabled) return false;
-    const lastShownDate = localStorage.getItem(LAST_SHOWN_KEY);
+    const lastShownDate = readStorage(LAST_SHOWN_KEY);
     const today = localDateKey(now);
     if (lastShownDate === today) return false;
 
@@ -38,9 +39,9 @@ export function isReminderDue(
 }
 
 export function markReminderShown(now: Date = new Date()): void {
-    localStorage.setItem(LAST_SHOWN_KEY, localDateKey(now));
+    writeStorage(LAST_SHOWN_KEY, localDateKey(now));
 }
 
 export function resetReminderShownForTests(): void {
-    localStorage.removeItem(LAST_SHOWN_KEY);
+    removeStorage(LAST_SHOWN_KEY);
 }

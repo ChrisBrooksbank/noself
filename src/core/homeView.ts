@@ -8,6 +8,7 @@ import {
     hasPracticedToday,
 } from './practiceHistory.js';
 import { getReminderPreferences, formatReminderTime } from './reminders/preferences.js';
+import { readStorage, writeStorage } from '@utils/storage.js';
 
 const TOTAL_CONCEPTS = CONCEPT_IDS.length;
 const MAX_HISTORY = 5;
@@ -66,13 +67,13 @@ const GUIDANCE_KEY = 'noself:guidanceLastShown';
 const GUIDANCE_INTERVAL_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
 
 function shouldShowGuidance(): boolean {
-    const last = localStorage.getItem(GUIDANCE_KEY);
+    const last = readStorage(GUIDANCE_KEY);
     if (!last) return true;
     return Date.now() - Number(last) >= GUIDANCE_INTERVAL_MS;
 }
 
 function markGuidanceShown(): void {
-    localStorage.setItem(GUIDANCE_KEY, String(Date.now()));
+    writeStorage(GUIDANCE_KEY, String(Date.now()));
 }
 
 function renderGuidanceModal(): string {

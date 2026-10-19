@@ -1,3 +1,5 @@
+import { readStorage, writeStorage } from '@utils/storage.js';
+
 export type ReminderType = 'daily-prompt' | 'daily-concept' | 'meditation';
 
 export interface ReminderPreferences {
@@ -38,7 +40,7 @@ function clampMinute(value: unknown): number {
 
 export function getReminderPreferences(): ReminderPreferences {
     try {
-        const raw = localStorage.getItem(STORAGE_KEY);
+        const raw = readStorage(STORAGE_KEY);
         if (!raw) return DEFAULT_PREFERENCES;
 
         const parsed = JSON.parse(raw) as Partial<ReminderPreferences>;
@@ -82,7 +84,7 @@ export function setReminderPreferences(
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || current.timezone,
     };
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    writeStorage(STORAGE_KEY, JSON.stringify(next));
     window.dispatchEvent(new CustomEvent('noself:reminder-preferences-changed'));
     return next;
 }

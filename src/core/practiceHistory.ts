@@ -1,3 +1,5 @@
+import { readStorage, writeStorage } from '@utils/storage.js';
+
 const STORAGE_KEY = 'noself:practiceHistory';
 
 interface MeditationSession {
@@ -78,7 +80,7 @@ function addDayCounts(
 
 function load(): PracticeStore {
     try {
-        const raw = localStorage.getItem(STORAGE_KEY);
+        const raw = readStorage(STORAGE_KEY);
         if (raw) {
             const parsed = JSON.parse(raw) as Partial<PracticeStore>;
             return {
@@ -96,7 +98,7 @@ function load(): PracticeStore {
 }
 
 function save(store: PracticeStore): void {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    writeStorage(STORAGE_KEY, JSON.stringify(store));
 }
 
 export function logMeditationSession(

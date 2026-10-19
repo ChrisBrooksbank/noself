@@ -1,3 +1,5 @@
+import { readStorage, writeStorage } from '@utils/storage.js';
+
 const STORAGE_KEY = 'noself:readingHistory';
 
 type ConceptStatus = 'viewed' | 'contemplated' | 'revisit';
@@ -9,7 +11,7 @@ interface HistoryStore {
 
 function load(): HistoryStore {
     try {
-        const raw = localStorage.getItem(STORAGE_KEY);
+        const raw = readStorage(STORAGE_KEY);
         if (raw) {
             const parsed = JSON.parse(raw) as Partial<HistoryStore> | null;
             // Tolerate missing or malformed fields from older/corrupted data
@@ -28,7 +30,7 @@ function load(): HistoryStore {
 }
 
 function save(store: HistoryStore): void {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    writeStorage(STORAGE_KEY, JSON.stringify(store));
 }
 
 export function markViewed(id: string): void {

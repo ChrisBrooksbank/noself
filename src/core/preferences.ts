@@ -2,6 +2,8 @@ export type Theme = 'dark' | 'light' | 'auto';
 export type FontSize = 'small' | 'medium' | 'large' | 'xl';
 export type ExpertiseLevel = 1 | 2 | 3;
 
+import { readStorage, writeStorage } from '@utils/storage.js';
+
 const THEME_KEY = 'noself:theme';
 const FONT_SIZE_KEY = 'noself:fontSize';
 const EXPERTISE_KEY = 'noself:expertiseLevel';
@@ -24,42 +26,42 @@ function isExpertiseLevel(value: unknown): value is ExpertiseLevel {
 }
 
 export function getTheme(): Theme {
-    const stored = localStorage.getItem(THEME_KEY);
+    const stored = readStorage(THEME_KEY);
     return isTheme(stored) ? stored : 'dark';
 }
 
 export function setTheme(theme: Theme): void {
-    localStorage.setItem(THEME_KEY, theme);
+    writeStorage(THEME_KEY, theme);
     applyTheme(theme);
 }
 
 export function getFontSize(): FontSize {
-    const stored = localStorage.getItem(FONT_SIZE_KEY);
+    const stored = readStorage(FONT_SIZE_KEY);
     return isFontSize(stored) ? stored : 'medium';
 }
 
 export function setFontSize(size: FontSize): void {
-    localStorage.setItem(FONT_SIZE_KEY, size);
+    writeStorage(FONT_SIZE_KEY, size);
     applyFontSize(size);
 }
 
 export function getExpertiseLevel(): ExpertiseLevel {
-    const stored = Number(localStorage.getItem(EXPERTISE_KEY));
+    const stored = Number(readStorage(EXPERTISE_KEY));
     return isExpertiseLevel(stored) ? stored : 1;
 }
 
 export function setExpertiseLevel(level: ExpertiseLevel): void {
-    localStorage.setItem(EXPERTISE_KEY, String(level));
+    writeStorage(EXPERTISE_KEY, String(level));
     applyExpertiseLevel(level);
 }
 
 export function getShowVideoLinks(): boolean {
-    const stored = localStorage.getItem(SHOW_VIDEO_LINKS_KEY);
+    const stored = readStorage(SHOW_VIDEO_LINKS_KEY);
     return stored === null ? true : stored === 'true';
 }
 
 export function setShowVideoLinks(show: boolean): void {
-    localStorage.setItem(SHOW_VIDEO_LINKS_KEY, String(show));
+    writeStorage(SHOW_VIDEO_LINKS_KEY, String(show));
     applyShowVideoLinks(show);
 }
 

@@ -1,5 +1,6 @@
 {
     "ignoreBinaries": ["netlify"],
+    "ignoreDependencies": ["playwright"],
     "paths": {
         "@/*": ["src/*"],
         "@api/*": ["src/api/*"],
@@ -26,6 +27,7 @@
         "src/content/videos/index.ts",
         "netlify/functions/delete-push-subscription.ts",
         "netlify/functions/save-push-subscription.ts",
-        "netlify/functions/send-daily-reminders.ts"
+        "netlify/functions/send-daily-reminders.ts",
+        "docs/make-gifs.mjs"
     ]
 }

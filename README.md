@@ -2,6 +2,10 @@
 
 # noself
 
+<!-- hub-link -->
+> Part of [Chris's app hub](https://chrisbrooksbank-hub.netlify.app) - a directory of all my deployed apps.
+<!-- /hub-link -->
+
 **A quiet place to study the Dharma, and a nudge to go and practise it with other people.**
 
 A calm, free app for learning the Buddha's teachings, sitting a guided meditation, and building a daily habit. It installs on your phone, works offline and never asks who you are.
